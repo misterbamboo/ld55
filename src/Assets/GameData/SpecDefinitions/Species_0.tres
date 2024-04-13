@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://lf0vbopaquwk"]
+
+[ext_resource type="Script" path="res://Contexts/Summoning/ScriptableSpecDefinition.cs" id="1_ifkbv"]
+
+[resource]
+script = ExtResource("1_ifkbv")
+Id = "Species_0"
+SpecType = 2
+SpecNaming = "Undead"
+MonsterNaming = "Undead"
+Value = 0

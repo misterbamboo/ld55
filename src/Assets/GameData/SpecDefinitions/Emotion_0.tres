@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c034ohmbyy5md"]
+
+[ext_resource type="Script" path="res://Contexts/Summoning/ScriptableSpecDefinition.cs" id="1_ifkbv"]
+
+[resource]
+script = ExtResource("1_ifkbv")
+Id = "Emotion_0"
+SpecType = 0
+SpecNaming = "Sadness"
+MonsterNaming = "Sadened"
+Value = 0

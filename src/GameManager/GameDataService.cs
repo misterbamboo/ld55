@@ -8,14 +8,27 @@ public partial class GameDataService : Node
     public static string Path = "/root/GameDataService";
 
     private Dictionary<string, Ingredient> ingredientsById;
+    private Dictionary<string, SpecDefinition> specDefinitionsById;
 
     public override void _Ready()
     {
         var ingredients = LoadAssetsRecursive<ScriptableIngredient>("Ingredients");
-
         ingredientsById = ingredients.Select(l => l.ToEntity()).ToDictionary(l => l.Id, l => l);
 
+        var specDefinitions = LoadAssetsRecursive<ScriptableSpecDefinition>("SpecDefinitions");
+        specDefinitionsById = specDefinitions.Select(l => l.ToEntity()).ToDictionary(l => l.Id, l => l);
+
         GD.Print("Service Loaded GameDataService");
+    }
+
+    public SpecDefinition GetSpecDefinition(string specDefinitionId)
+    {
+        if (!specDefinitionsById.ContainsKey(specDefinitionId))
+        {
+            throw new IndexOutOfRangeException($"SpecDefinition {specDefinitionId} not found");
+        }
+
+        return specDefinitionsById[specDefinitionId];
     }
 
     public Ingredient GetIngredient(string ingredientId)

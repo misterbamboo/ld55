@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3rjv3lawqwe7"]
+
+[ext_resource type="Script" path="res://Scenes/SpecDefinitionsTests/SpecDefTestScript.cs" id="1_e5qrc"]
+
+[node name="NicoScene" type="Node2D"]
+
+[node name="TestControls" type="Node" parent="." node_paths=PackedStringArray("RichTextLabel")]
+script = ExtResource("1_e5qrc")
+RichTextLabel = NodePath("../RichTextLabel")
+
+[node name="HSlider_Emotion" type="HSlider" parent="."]
+offset_top = 196.0
+offset_right = 327.0
+offset_bottom = 228.0
+size_flags_horizontal = 0
+max_value = 5.0
+
+[node name="Label_Emotion" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 173.0
+offset_right = 65.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Emotion"
+
+[node name="HSlider_Element" type="HSlider" parent="."]
+offset_top = 247.0
+offset_right = 327.0
+offset_bottom = 279.0
+size_flags_horizontal = 0
+max_value = 5.0
+
+[node name="Label_Element" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 226.0
+offset_right = 65.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Element"
+
+[node name="HSlider_Species" type="HSlider" parent="."]
+offset_top = 300.0
+offset_right = 327.0
+offset_bottom = 332.0
+size_flags_horizontal = 0
+max_value = 5.0
+
+[node name="Label_Species" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 279.0
+offset_right = 65.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Species"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 341.0
+offset_top = 173.0
+offset_right = 716.0
+offset_bottom = 332.0
+text = "<place holder>"
+
+[connection signal="value_changed" from="HSlider_Emotion" to="TestControls" method="EmotionChanged"]
+[connection signal="value_changed" from="HSlider_Element" to="TestControls" method="ElementChanged"]
+[connection signal="value_changed" from="HSlider_Species" to="TestControls" method="SpeciesChanged"]
