@@ -78,21 +78,9 @@ public class Inventory
 
     public void SwapItems(int index1, int index2)
     {
-        if (index2IsATrailingVoidItem(index2)) return;
-
         var temp = Ingredients[index1];
         Ingredients[index1] = Ingredients[index2];
         Ingredients[index2] = temp;
-    }
-
-    private bool index2IsATrailingVoidItem(int index2)
-    {
-        var index2IsAVoidItem = Ingredients[index2].IsVoid;
-        if (!index2IsAVoidItem) return false;
-
-        var OnlyVoidItemsAreAfterIndex2 = Ingredients.Skip(index2 + 1).All(ingredient => ingredient.IsVoid);
-
-        return OnlyVoidItemsAreAfterIndex2;
     }
 }
 

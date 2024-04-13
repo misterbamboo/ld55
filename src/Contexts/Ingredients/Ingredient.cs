@@ -32,7 +32,7 @@ public class Ingredient
 
     public static Ingredient Void()
     {
-        return new Ingredient(Ingredient.None, None, None, None, 0,0,0);
+        return new Ingredient(None, None, None, None, 0,0,0);
     }
 
     public bool IsVoid => Id == None;

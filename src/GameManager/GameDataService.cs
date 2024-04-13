@@ -18,7 +18,7 @@ public partial class GameDataService : Node
         GD.Print("Service Loaded GameDataService");
     }
 
-    public Ingredient GetLocation(string ingredientId)
+    public Ingredient GetIngredient(string ingredientId)
     {
         if (!ingredientsById.ContainsKey(ingredientId))
         {
