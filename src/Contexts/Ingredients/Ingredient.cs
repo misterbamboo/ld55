@@ -4,11 +4,11 @@
     public string DisplayName { get; set; }
     public string Icon { get; set; }
     public string ProcessedIcon { get; set; }
-    public SummoningValue Emotion { get; set; }
-    public SummoningValue Species { get; set; }
-    public SummoningValue Elements { get; set; }
+    public RotatingValue Emotion { get; set; }
+    public RotatingValue Species { get; set; }
+    public RotatingValue Elements { get; set; }
 
-    public Ingredient(string id, string displayName, string icon, string processedIcon, SummoningValue emotion, SummoningValue species, SummoningValue elements)
+    public Ingredient(string id, string displayName, string icon, string processedIcon, RotatingValue emotion, RotatingValue species, RotatingValue elements)
     {
         Id = id;
         DisplayName = displayName;
@@ -25,8 +25,8 @@
         DisplayName = displayName;
         Icon = icon;
         ProcessedIcon = processedIcon;
-        Emotion = new SummoningValue(emotion);
-        Species = new SummoningValue(species);
-        Elements = new SummoningValue(elements);
+        Emotion = new RotatingValue(emotion);
+        Species = new RotatingValue(species);
+        Elements = new RotatingValue(elements);
     }
 }

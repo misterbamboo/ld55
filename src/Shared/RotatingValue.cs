@@ -17,7 +17,12 @@ public struct RotatingValue
         var sum = a + b;
         var signedValue = sum % MaxCount;
         var positiveValue = (signedValue + MaxCount) % MaxCount;
-        return Math.Round(positiveValue, 4);
+        return RoundDigits(positiveValue);
+    }
+
+    private double RoundDigits(double value)
+    {
+        return Math.Round(value, 4);
     }
 
     public RotatingValue Add(double added)
@@ -46,6 +51,34 @@ public struct RotatingValue
     public override int GetHashCode()
     {
         return Value.GetHashCode();
+    }
+
+    public int IndexDistanceOf(RotatingValue destination)
+    {
+        return (int)DistanceOf(destination);
+    }
+
+    public double DistanceOf(RotatingValue destination)
+    {
+        var src = Value;
+        var dst = destination.Value;
+
+        var distance = dst - src;
+        var overflowDistanceLeft = -AddInternal(0, src - dst);
+        var overFlowDistanceRight = (MaxCount - src) + dst;
+
+        if (Math.Abs(distance) < Math.Abs(overflowDistanceLeft) && Math.Abs(distance) < Math.Abs(overFlowDistanceRight))
+        {
+            return RoundDigits(distance);
+        }
+        else if (Math.Abs(overflowDistanceLeft) < Math.Abs(overFlowDistanceRight))
+        {
+            return RoundDigits(overflowDistanceLeft);
+        }
+        else
+        {
+            return RoundDigits(overFlowDistanceRight);
+        }
     }
 
     #region RotatingValue operators
