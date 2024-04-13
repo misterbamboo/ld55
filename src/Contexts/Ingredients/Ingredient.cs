@@ -8,31 +8,26 @@ public class Ingredient
     public string DisplayName { get; set; }
     public string Icon { get; set; }
     public string ProcessedIcon { get; set; }
-    public SummoningValue Emotion { get; set; }
-    public SummoningValue Species { get; set; }
-    public SummoningValue Elements { get; set; }
+    public SummoningSpecs SummoningSpecs { get; set; }
+   
     public float Processing { get; set; }
 
-    public Ingredient(string id, string displayName, string icon, string processedIcon, SummoningValue emotion, SummoningValue species, SummoningValue elements)
+    public Ingredient(string id, string displayName, string icon, string processedIcon, RotatingValue emotion, RotatingValue species, RotatingValue element)
     {
         Id = id;
         DisplayName = displayName;
         Icon = icon;
         ProcessedIcon = processedIcon;
-        Emotion = emotion;
-        Species = species;
-        Elements = elements;
+        SummoningSpecs = new SummoningSpecs(emotion, element, species);
     }
 
-    public Ingredient(string id, string displayName, string icon, string processedIcon, float emotion, float species, float elements)
+    public Ingredient(string id, string displayName, string icon, string processedIcon, double emotion, double species, double element)
     {
         Id = id;
         DisplayName = displayName;
         Icon = icon;
         ProcessedIcon = processedIcon;
-        Emotion = new SummoningValue(emotion);
-        Species = new SummoningValue(species);
-        Elements = new SummoningValue(elements);
+        SummoningSpecs = new SummoningSpecs(emotion, element, species);
     }
 
     public static Ingredient Void()
