@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://t7ecarm6blew"]
+
+[ext_resource type="Script" path="res://GameManager/InventoryService.cs" id="1_t0hg4"]
+
+[node name="InventoryService" type="Node" node_paths=PackedStringArray("InventorySlots")]
+script = ExtResource("1_t0hg4")
+InventorySlots = []

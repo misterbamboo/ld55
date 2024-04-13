@@ -1,32 +1,41 @@
-﻿public class Ingredient
+﻿using Godot;
+
+public class Ingredient
 {
+    public const string None = "None";
+
     public string Id { get; set; }
     public string DisplayName { get; set; }
     public string Icon { get; set; }
     public string ProcessedIcon { get; set; }
-    public RotatingValue Emotion { get; set; }
-    public RotatingValue Species { get; set; }
-    public RotatingValue Elements { get; set; }
+    public SummoningSpecs SummoningSpecs { get; set; }
+   
+    public float Processing { get; set; }
 
-    public Ingredient(string id, string displayName, string icon, string processedIcon, RotatingValue emotion, RotatingValue species, RotatingValue elements)
+    public Ingredient(string id, string displayName, string icon, string processedIcon, RotatingValue emotion, RotatingValue species, RotatingValue element)
     {
         Id = id;
         DisplayName = displayName;
         Icon = icon;
         ProcessedIcon = processedIcon;
-        Emotion = emotion;
-        Species = species;
-        Elements = elements;
+        SummoningSpecs = new SummoningSpecs(emotion, element, species);
     }
 
-    public Ingredient(string id, string displayName, string icon, string processedIcon, float emotion, float species, float elements)
+    public Ingredient(string id, string displayName, string icon, string processedIcon, double emotion, double species, double element)
     {
         Id = id;
         DisplayName = displayName;
         Icon = icon;
         ProcessedIcon = processedIcon;
-        Emotion = new RotatingValue(emotion);
-        Species = new RotatingValue(species);
-        Elements = new RotatingValue(elements);
+        SummoningSpecs = new SummoningSpecs(emotion, element, species);
     }
+
+    public static Ingredient Void()
+    {
+        return new Ingredient(Ingredient.None, None, None, None, 0,0,0);
+    }
+
+    public bool IsVoid => Id == None;
+
+    
 }

@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Ld 55"
+run/main_scene="res://Scenes/spood_scene.tscn"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameDataService="*res://GameManager/GameDataService.tscn"
+GameAssetsService="*res://GameManager/GameAssetsService.tscn"
 
 [display]
 
