@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://dkhxehjchf36v"]
 
-[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_lgo5s"]
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_v1rry"]
 
 [resource]
-script = ExtResource("1_lgo5s")
-Id = "in_sappling_root"
+script = ExtResource("1_v1rry")
+Id = "ingredient_sappling_root"
 DisplayName = "Saplling Roots"
 Icon = ""
 ProcessedIcon = ""

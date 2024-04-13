@@ -1,5 +1,9 @@
-﻿public class Ingredient
+﻿using Godot;
+
+public class Ingredient
 {
+    public const string None = "None";
+
     public string Id { get; set; }
     public string DisplayName { get; set; }
     public string Icon { get; set; }
@@ -7,6 +11,7 @@
     public SummoningValue Emotion { get; set; }
     public SummoningValue Species { get; set; }
     public SummoningValue Elements { get; set; }
+    public float Processing { get; set; }
 
     public Ingredient(string id, string displayName, string icon, string processedIcon, SummoningValue emotion, SummoningValue species, SummoningValue elements)
     {
@@ -29,4 +34,13 @@
         Species = new SummoningValue(species);
         Elements = new SummoningValue(elements);
     }
+
+    public static Ingredient Void()
+    {
+        return new Ingredient(Ingredient.None, None, None, None, 0,0,0);
+    }
+
+    public bool IsVoid => Id == None;
+
+    
 }
