@@ -1,5 +1,4 @@
 ﻿using Xunit;
-using static Godot.HttpRequest;
 
 namespace UnitTests.Contexts.Combat;
 
