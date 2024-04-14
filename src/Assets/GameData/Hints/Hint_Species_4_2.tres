@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://crwihae80wpyn"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_2cfye"]
+
+[resource]
+script = ExtResource("1_2cfye")
+SpecType = 2
+FromIndex = 4
+ToIndex = 1
+Text = "The Ghost's ethereal form eludes the Golem's grasp, slipping through its stony fingers and leaving the Golem unable to land a decisive blow."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://chwio6056fpt3"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_3crgs"]
+
+[resource]
+script = ExtResource("1_3crgs")
+SpecType = 1
+FromIndex = 2
+ToIndex = 0
+Text = "They shouldn't mess with electricity when they have wet feet."

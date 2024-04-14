@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b1jaldmy2d10q"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_vthad"]
+
+[resource]
+script = ExtResource("1_vthad")
+SpecType = 1
+FromIndex = 4
+ToIndex = 3
+Text = "You buried their flames under a pile of sand."

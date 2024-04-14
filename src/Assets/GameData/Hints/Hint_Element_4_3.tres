@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dwnyr2x37ge6o"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_afn0o"]
+
+[resource]
+script = ExtResource("1_afn0o")
+SpecType = 1
+FromIndex = 4
+ToIndex = 2
+Text = "Their electricity returned to the \"ground\"."

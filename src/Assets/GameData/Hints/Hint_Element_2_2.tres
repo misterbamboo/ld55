@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://qjrc7su7ilnu"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_0567i"]
+
+[resource]
+script = ExtResource("1_0567i")
+SpecType = 1
+FromIndex = 2
+ToIndex = 2
+Text = "Someone should come and break this \"Tension\"."

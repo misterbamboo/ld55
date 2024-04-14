@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dqg4oo0ew8bnt"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_tqxdw"]
+
+[resource]
+script = ExtResource("1_tqxdw")
+SpecType = 1
+FromIndex = 3
+ToIndex = 2
+Text = "Charizard was always cooler than Pikachu."
