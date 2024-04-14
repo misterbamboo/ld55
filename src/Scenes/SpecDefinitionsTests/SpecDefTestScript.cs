@@ -36,7 +36,8 @@ public partial class SpecDefTestScript : Node
         var id = $"{SpecTypes.Emotion}_{PlayerIndex}";
         var spec = GameDataService.GetSpecDefinition(id);
         PlayerEmotionSpec = spec;
-        UpdateDisplayText();
+        PlayerChanged();
+
     }
 
     public void ElementChanged(float value)
@@ -45,7 +46,7 @@ public partial class SpecDefTestScript : Node
         var id = $"{SpecTypes.Element}_{PlayerIndex}";
         var spec = GameDataService.GetSpecDefinition(id);
         PlayerElementSpec = spec;
-        UpdateDisplayText();
+        PlayerChanged();
     }
 
     public void SpeciesChanged(float value)
@@ -54,6 +55,45 @@ public partial class SpecDefTestScript : Node
         var id = $"{SpecTypes.Species}_{PlayerIndex}";
         var spec = GameDataService.GetSpecDefinition(id);
         PlayerSpeciesSpec = spec;
+        PlayerChanged();
+    }
+
+    public void EnemyEmotionChanged(float value)
+    {
+        CombatType = SpecTypes.Emotion;
+        BossIndex = (int)value;
+        var spec = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(CombatType, BossIndex));
+        BossEmotionSpec = spec;
+        BossChanged();
+
+    }
+    public void EnemyElementChanged(float value)
+    {
+        CombatType = SpecTypes.Element;
+        BossIndex = (int)value;
+        var spec = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(CombatType, BossIndex));
+        BossElementSpec = spec;
+        BossChanged();
+    }
+
+    public void EnemySpeciesChanged(float value)
+    {
+        CombatType = SpecTypes.Species;
+        BossIndex = (int)value;
+        var spec = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(CombatType, BossIndex));
+        BossSpeciesSpec = spec;
+        BossChanged();
+    }
+
+    public void PlayerChanged()
+    {
+        var playerSpecs = new SummoningSpecs(PlayerEmotionSpec.Index, PlayerElementSpec.Index, PlayerSpeciesSpec.Index);
+        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, playerSpecs.Emotion.Index));
+        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, playerSpecs.Element.Index));
+        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, playerSpecs.Species.Index));
+
+        PlayerMonsterCardUI.Init(playerSpecs, emotion, element, species);
+        PlayerMonsterCardUI.RedrawMonster();
         UpdateDisplayText();
     }
 
@@ -65,29 +105,15 @@ public partial class SpecDefTestScript : Node
             $"Monster: {PlayerEmotionSpec.MonsterNaming} {PlayerElementSpec.MonsterNaming} {PlayerSpeciesSpec.MonsterNaming}";
     }
 
-    public void EnemyEmotionChanged(float value)
+    public void BossChanged()
     {
-        CombatType = SpecTypes.Emotion;
-        BossIndex = (int)value;
-        var spec = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(CombatType, BossIndex));
-        BossEmotionSpec = spec;
-        UpdateDisplayCombatText();
-    }
-    public void EnemyElementChanged(float value)
-    {
-        CombatType = SpecTypes.Element;
-        BossIndex = (int)value;
-        var spec = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(CombatType, BossIndex));
-        BossElementSpec = spec;
-        UpdateDisplayCombatText();
-    }
+        var bossSpecs = new SummoningSpecs(BossEmotionSpec.Index, BossElementSpec.Index, BossSpeciesSpec.Index);
+        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, bossSpecs.Emotion.Index));
+        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, bossSpecs.Element.Index));
+        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, bossSpecs.Species.Index));
 
-    public void EnemySpeciesChanged(float value)
-    {
-        CombatType = SpecTypes.Species;
-        BossIndex = (int)value;
-        var spec = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(CombatType, BossIndex));
-        BossSpeciesSpec = spec;
+        BossMonsterCardUI.Init(bossSpecs, emotion, element, species);
+        BossMonsterCardUI.RedrawMonster();
         UpdateDisplayCombatText();
     }
 
@@ -95,17 +121,5 @@ public partial class SpecDefTestScript : Node
     {
         var hint = GameDataService.GetHintDefinition($"{CombatType}_{PlayerIndex}_{BossIndex}");
         CombatRichTextLabel.Text = hint.Text;
-    }
-
-    public void PlayerChanged()
-    {
-        PlayerMonsterCardUI.Init(new SummoningSpecs(PlayerEmotionSpec.Index, PlayerElementSpec.Index, PlayerSpeciesSpec.Index));
-        PlayerMonsterCardUI.RedrawMonster();
-    }
-
-    public void BossChanged()
-    {
-        BossMonsterCardUI.Init(new SummoningSpecs(BossEmotionSpec.Index, BossElementSpec.Index, BossSpeciesSpec.Index));
-        BossMonsterCardUI.RedrawMonster();
     }
 }

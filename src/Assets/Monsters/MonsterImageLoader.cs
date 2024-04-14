@@ -71,8 +71,8 @@ public partial class MonsterImageLoader : Node
         var elementName = elementSpec.Spec.SpecNaming;
 
         var folderPath = $"res://Assets/Monsters/{speciesName}";
-        var speciesElement = $"{speciesName}_{elementName}";
-        var speciesElementPath = $"{folderPath}/{speciesElement}";
+        var speciesElementFile = $"{speciesName}_{elementName}.png";
+        var speciesElementPath = $"{folderPath}/{speciesElementFile}";
 
         return speciesElementPath;
     }
@@ -86,22 +86,25 @@ public partial class MonsterImageLoader : Node
         var emotionName = emotionSpec.Spec.SpecNaming;
 
         var folderPath = $"res://Assets/Monsters/{speciesName}/Emotions";
-        var speciesEmotion = $"{speciesName}_{emotionName}";
-        var speciesEmotionPath = $"{folderPath}/{speciesEmotion}";
+        var speciesEmotionFile = $"{speciesName}_{emotionName}.png";
+        var speciesEmotionPath = $"{folderPath}/{speciesEmotionFile}";
 
         return speciesEmotionPath;
     }
 
-    private static Image LoadImageFromFile(string speciesElementPath)
+    private static ImageTexture LoadImageFromFile(string speciesElementPath)
     {
+        Image image = null;
+        GD.Print($"Try loading monster at: {speciesElementPath}");
         if (ResourceLoader.Exists(speciesElementPath))
         {
-            return Image.LoadFromFile(speciesElementPath);
+            image = Image.LoadFromFile(speciesElementPath);
         }
         else
         {
-            return Image.LoadFromFile(NoImagePath);
+            image = Image.LoadFromFile(NoImagePath);
         }
+        return ImageTexture.CreateFromImage(image);
     }
 
     private class MonsterImageLoaderCache

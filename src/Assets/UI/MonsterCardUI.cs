@@ -1,22 +1,29 @@
 using Godot;
-using System;
 
 public partial class MonsterCardUI : Control
 {
     [Export] private RichTextLabel NameLabel { get; set; }
-    [Export] private PanelContainer SpeciesImage { get; set; }
-    [Export] private PanelContainer EmotionImage { get; set; }
+    [Export] private TextureRect SpeciesImage { get; set; }
+    [Export] private TextureRect EmotionImage { get; set; }
     private MonsterImageLoader MonsterImageLoader { get; set; }
-    private GameDataService GameDataService { get; set; }
-    public SummoningSpecs MonsterSpecs { get; set; }
+    public SummoningSpecs MonsterSpecs { get; set; } = new SummoningSpecs();
 
-    public void Init(SummoningSpecs monsterSpecs)
+    private SpecDefinition Emotion { get; set; } = SpecDefinition.Empty();
+    private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
+    private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
+
+    public void Init(SummoningSpecs monsterSpecs, SpecDefinition emotion, SpecDefinition element, SpecDefinition species)
     {
         MonsterSpecs = monsterSpecs;
+        Emotion = emotion;
+        Element = element;
+        Species = species;
     }
 
     public override void _Ready()
     {
+        MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
+
         RedrawMonster();
     }
 
@@ -27,19 +34,14 @@ public partial class MonsterCardUI : Control
 
     private void ChangeImage(MonsterImageResult imageResult)
     {
-        //SpeciesImage
-        //EmotionImage
+        SpeciesImage.Texture = imageResult.SpeciesImage;
+        EmotionImage.Texture = imageResult.EmotionImage;
     }
 
     public void RedrawMonster()
     {
-        GameDataService = GetNode<GameDataService>(GameDataService.Path);
-        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, MonsterSpecs.Emotion.Index));
-        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, MonsterSpecs.Element.Index));
-        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, MonsterSpecs.Species.Index));
-        ChangeName($"{emotion.MonsterNaming} {element.MonsterNaming} {species.MonsterNaming}");
+        ChangeName($"{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}");
 
-        MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
         var imageResult = MonsterImageLoader.GetMonsterImage(MonsterSpecs);
         ChangeImage(imageResult);
     }

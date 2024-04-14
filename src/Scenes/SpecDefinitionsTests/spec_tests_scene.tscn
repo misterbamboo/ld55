@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3rjv3lawqwe7"]
+[gd_scene load_steps=3 format=3 uid="uid://d3rjv3lawqwe7"]
 
 [ext_resource type="Script" path="res://Scenes/SpecDefinitionsTests/SpecDefTestScript.cs" id="1_4cu7i"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="2_adgrr"]
 
 [node name="NicoScene" type="Node2D"]
 
-[node name="TestControls" type="Node" parent="." node_paths=PackedStringArray("RichTextLabel", "CombatRichTextLabel")]
+[node name="TestControls" type="Node" parent="." node_paths=PackedStringArray("RichTextLabel", "CombatRichTextLabel", "PlayerMonsterCardUI", "BossMonsterCardUI")]
 script = ExtResource("1_4cu7i")
 RichTextLabel = NodePath("../RichTextLabel")
 CombatRichTextLabel = NodePath("../RichTextLabel2")
+PlayerMonsterCardUI = NodePath("../MonsterCard_Player")
+BossMonsterCardUI = NodePath("../MonsterCard_Boss")
+
+[node name="MonsterCard_Player" parent="." instance=ExtResource("2_adgrr")]
+offset_left = 782.0
+offset_top = 78.0
+offset_right = 970.0
+offset_bottom = 341.0
 
 [node name="HSlider_Emotion" type="HSlider" parent="."]
 offset_top = 196.0
@@ -97,6 +106,12 @@ offset_top = 173.0
 offset_right = 716.0
 offset_bottom = 332.0
 text = "<place holder>"
+
+[node name="MonsterCard_Boss" parent="." instance=ExtResource("2_adgrr")]
+offset_left = 782.0
+offset_top = 373.0
+offset_right = 970.0
+offset_bottom = 636.0
 
 [node name="HSlider_Emotion2" type="HSlider" parent="."]
 offset_top = 419.0

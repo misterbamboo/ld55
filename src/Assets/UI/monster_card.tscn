@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d208w3cp6gy31"]
+[gd_scene load_steps=12 format=3 uid="uid://d208w3cp6gy31"]
 
 [ext_resource type="Texture2D" uid="uid://dd5qxkpnaifvp" path="res://Assets/UI/Temp/Slime_fire.png" id="1_4dixt"]
+[ext_resource type="Script" path="res://Assets/UI/MonsterCardUI.cs" id="1_hlve0"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="2_7nagw"]
 [ext_resource type="Texture2D" uid="uid://ctghhpoa0jdxo" path="res://Assets/UI/Temp/Slime_Joy.png" id="2_184oq"]
 [ext_resource type="Texture2D" uid="uid://chqd7teis2go" path="res://Assets/icons/Disgust.png" id="2_pu3o5"]
@@ -47,7 +48,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkjj2"]
-bg_color = Color(0.98, 0.751333, 0.49, 1)
+bg_color = Color(1, 0.877, 0.82, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -58,11 +59,15 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="MonsterCard" type="PanelContainer"]
+[node name="MonsterCard" type="PanelContainer" node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage")]
 offset_right = 184.0
 offset_bottom = 262.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_dklhk")
+script = ExtResource("1_hlve0")
+NameLabel = NodePath("BoxContainer/MonsterName")
+SpeciesImage = NodePath("BoxContainer/MonsterComp/MonsterLayerBottom")
+EmotionImage = NodePath("BoxContainer/MonsterComp/MonsterLayerTop")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 2

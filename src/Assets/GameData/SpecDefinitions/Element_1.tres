@@ -6,5 +6,5 @@
 script = ExtResource("1_gxkpv")
 Index = 1
 SpecType = 1
-SpecNaming = "Rock"
-MonsterNaming = "Rock"
+SpecNaming = "Ice"
+MonsterNaming = "Ice"
