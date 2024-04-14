@@ -3,22 +3,24 @@ using System.Linq;
 
 public partial class InventoryService : Node
 {
-    public const string Path = "/root/InventoryService";
-
+    private GameDataService gameDataService;
     [Export] private Godot.Collections.Array<IngredientSlotUI> InventorySlots;
+    [Export] private SummoningStatsUI summoningStats;
 
     private Inventory Inventory;
 
     public override void _Ready()
     {
+        gameDataService = GetNode<GameDataService>(GameDataService.Path);
+        summoningStats = GetNode<SummoningStatsUI>("../SummoningStatsUI");
         Inventory = new Inventory();
 
-        Inventory.AddItem(new Ingredient("ingredient_sappling_root", "Sappling Root", "ingredient_sappling_root", "ingredient_sappling_root", 1, 0, 0));
-        Inventory.AddItem(new Ingredient("ingredient_sappling_root", "Sappling Root", "ingredient_sappling_root", "ingredient_sappling_root", 1, 0, 0));
-        Inventory.AddItem(new Ingredient("ingredient_sappling_root", "Sappling Root", "ingredient_sappling_root", "ingredient_sappling_root", 1, 0, 0));
-        Inventory.AddItem(new Ingredient("ingredient_sappling_root", "Sappling Root", "ingredient_sappling_root", "ingredient_sappling_root", 1, 0, 0));
-        Inventory.AddItem(new Ingredient("ingredient_sappling_root", "Sappling Root", "ingredient_sappling_root", "ingredient_sappling_root", 1, 0, 0));
-        
+        foreach (var ingredient in gameDataService.Ingredients)
+        {
+            Inventory.AddItem(ingredient);
+            Inventory.AddItem(ingredient);
+        }
+     
         VerifyInventorySlotsOrder();
         RedrawInventoryItems();
     }
@@ -53,11 +55,39 @@ public partial class InventoryService : Node
     {
         Inventory.SwapItems(index1, index2);
         RedrawInventoryItems();
+
+        if (index1 >= Inventory.InventorySlots || index2 >= Inventory.InventorySlots)
+        {
+            CountProperties();
+        }
     }
 
-    public void CancelMove()
+    public void CountProperties()
     {
-        RedrawInventoryItems();
+        GD.Print("Something in special slots");
+        var monsterSpecs = new SummoningSpecs(2.5,2.5,2.5);
+
+        for(int i = Inventory.TotalSlots-2; i >= Inventory.TotalSlots-6; i--)
+        {
+            var ingredient = Inventory.GetItemInSlot(i);
+            monsterSpecs.AddEmotion(ingredient.Emotion);
+            monsterSpecs.AddSpecies(ingredient.Species);
+            monsterSpecs.AddElement(ingredient.Element);
+        }
+
+        summoningStats.SetBars(monsterSpecs);
+
+        if (!Inventory.GetItemInSlot(Inventory.TotalSlots - 1).IsVoid)
+        {
+            GD.Print("Something in the mixer");
+            var previewSpecs = new SummoningSpecs(monsterSpecs.Emotion.Value, monsterSpecs.Element.Value, monsterSpecs.Species.Value);
+            var ingredient = Inventory.GetItemInSlot(Inventory.TotalSlots - 1);
+            previewSpecs.AddEmotion(ingredient.Emotion);
+            previewSpecs.AddSpecies(ingredient.Species);
+            previewSpecs.AddElement(ingredient.Element);
+
+            summoningStats.SetPreviews(previewSpecs);
+        }
     }
 }
 

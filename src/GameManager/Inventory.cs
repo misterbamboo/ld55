@@ -27,6 +27,11 @@ public class Inventory
         return Ingredients.Where(ingredient => !ingredient.IsVoid);
     }
 
+    public Ingredient GetItemInSlot(int index)
+    {
+        return Ingredients[index];
+    }
+
     public Ingredient GetItem(string ingredientId)
     {
         if (ItemIndex(ingredientId) != -1)

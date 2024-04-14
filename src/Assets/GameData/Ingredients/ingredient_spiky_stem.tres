@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b2ismhd0v6iyf"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_t3ruu"]
+
+[resource]
+script = ExtResource("1_t3ruu")
+Id = "ingredient_spiky_stem"
+DisplayName = "Spiky Stem"
+Icon = "ingredient_spiky_stem"
+ProcessedIcon = "ingredient_spiky_stem"
+Emotion = 1.0
+Species = 0.0
+Elements = 0.0
