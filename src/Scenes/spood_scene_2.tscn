@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ivv04qm8881o"]
+[gd_scene load_steps=5 format=3 uid="uid://ivv04qm8881o"]
 
+[ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_ir7a2"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="1_nag1a"]
 [ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="2_cj88i"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="3_bmbgk"]
@@ -12,52 +13,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Setup3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.12549)
+position = Vector2(953, 761)
+texture = ExtResource("1_ir7a2")
+
 [node name="IngredientSlotUI20" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 601.0
-offset_top = 266.0
-offset_right = -1219.0
-offset_bottom = -714.0
+offset_left = 1390.0
+offset_top = 572.0
+offset_right = -430.0
+offset_bottom = -408.0
 index = 20
 
 [node name="IngredientSlotUI21" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 892.0
-offset_top = 505.0
-offset_right = -928.0
-offset_bottom = -475.0
+offset_left = 1571.0
+offset_top = 661.0
+offset_right = -249.0
+offset_bottom = -319.0
 index = 21
 
 [node name="IngredientSlotUI22" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 784.0
-offset_top = 797.0
-offset_right = -1036.0
-offset_bottom = -183.0
+offset_left = 1523.0
+offset_top = 817.0
+offset_right = -297.0
+offset_bottom = -163.0
 index = 22
 
 [node name="IngredientSlotUI23" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 483.0
-offset_top = 802.0
-offset_right = -1337.0
-offset_bottom = -178.0
+offset_left = 1275.0
+offset_top = 817.0
+offset_right = -545.0
+offset_bottom = -163.0
 index = 23
 
 [node name="IngredientSlotUI24" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 361.0
-offset_top = 514.0
-offset_right = -1459.0
-offset_bottom = -466.0
+offset_left = 1217.0
+offset_top = 665.0
+offset_right = -603.0
+offset_bottom = -315.0
 index = 24
 
 [node name="IngredientSlotUI25" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1221.0
-offset_top = 776.0
-offset_right = -599.0
-offset_bottom = -204.0
+offset_left = 835.0
+offset_top = 600.0
+offset_right = -985.0
+offset_bottom = -380.0
 index = 25
 
 [node name="GridContainer" type="GridContainer" parent="."]
@@ -67,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 531.0
-offset_top = 3.0
-offset_right = 943.0
-offset_bottom = 519.0
+offset_left = -765.0
+offset_top = -4.0
+offset_right = -353.0
+offset_bottom = 512.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
@@ -123,34 +130,42 @@ layout_mode = 2
 index = 11
 
 [node name="IngredientSlotUI12" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 12
 
 [node name="IngredientSlotUI13" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 13
 
 [node name="IngredientSlotUI14" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 14
 
 [node name="IngredientSlotUI15" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 15
 
 [node name="IngredientSlotUI16" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 16
 
 [node name="IngredientSlotUI17" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 17
 
 [node name="IngredientSlotUI18" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 18
 
 [node name="IngredientSlotUI19" parent="GridContainer" instance=ExtResource("1_nag1a")]
+visible = false
 layout_mode = 2
 index = 19
 
@@ -159,7 +174,7 @@ InventorySlots = [NodePath("../GridContainer/IngredientSlotUI0"), NodePath("../G
 
 [node name="SummoningStatsUI" parent="." instance=ExtResource("3_bmbgk")]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 891.0
-offset_right = 439.0
-offset_bottom = 1041.0
+offset_left = 1235.0
+offset_top = 359.0
+offset_right = 1635.0
+offset_bottom = 509.0

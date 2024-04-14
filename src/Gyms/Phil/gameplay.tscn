@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://chdf7qox0k652"]
+[gd_scene load_steps=4 format=3 uid="uid://chdf7qox0k652"]
 
 [ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="1_5vvfi"]
+[ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="2_3staj"]
+[ext_resource type="PackedScene" uid="uid://ivv04qm8881o" path="res://Scenes/spood_scene_2.tscn" id="3_kuosc"]
 
 [node name="Gameplay" type="Control"]
 layout_mode = 3
@@ -39,3 +41,14 @@ offset_left = 416.0
 offset_top = 32.0
 offset_right = 600.0
 offset_bottom = 294.0
+
+[node name="Setup3" type="Sprite2D" parent="."]
+position = Vector2(953, 761)
+texture = ExtResource("2_3staj")
+
+[node name="SpoodScene" parent="." instance=ExtResource("3_kuosc")]
+layout_mode = 1
+offset_left = -8.0
+offset_top = 1.0
+offset_right = -8.0
+offset_bottom = 1.0
