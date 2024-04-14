@@ -10,6 +10,8 @@ public partial class GameDataService : Node
     private Dictionary<string, Ingredient> ingredientsById;
     private Dictionary<string, SpecDefinition> specDefinitionsById;
 
+    public IEnumerable<Ingredient> Ingredients => ingredientsById.Select(kvp=>kvp.Value);
+
     public override void _Ready()
     {
         var ingredients = LoadAssetsRecursive<ScriptableIngredient>("Ingredients");

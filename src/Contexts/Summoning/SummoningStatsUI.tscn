@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://2p7mktjrd7ag"]
+
+[ext_resource type="PackedScene" uid="uid://vqavlstvgnvl" path="res://Contexts/Summoning/PropertyBarUI.tscn" id="1_24ueg"]
+[ext_resource type="Script" path="res://Contexts/Summoning/SummoningStatsUI.cs" id="1_bfwpp"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+custom_minimum_size = Vector2(400, 150)
+offset_right = 400.0
+offset_bottom = 150.0
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("1_bfwpp")
+
+[node name="EmotionBar" parent="." instance=ExtResource("1_24ueg")]
+layout_mode = 2
+
+[node name="SpeciesBar" parent="." instance=ExtResource("1_24ueg")]
+layout_mode = 2
+
+[node name="ElementBar" parent="." instance=ExtResource("1_24ueg")]
+layout_mode = 2

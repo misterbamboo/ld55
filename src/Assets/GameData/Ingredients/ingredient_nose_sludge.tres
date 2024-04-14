@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://coa2uicitdjlk"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_xymsh"]
+
+[resource]
+script = ExtResource("1_xymsh")
+Id = "ingredient_nose_sludge"
+DisplayName = "Nose Sludge"
+Icon = "ingredient_nose_sludge"
+ProcessedIcon = "ingredient_nose_sludge"
+Emotion = 1.0
+Species = 0.0
+Elements = 0.0
