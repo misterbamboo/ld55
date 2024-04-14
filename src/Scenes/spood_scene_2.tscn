@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ivv04qm8881o"]
+[gd_scene load_steps=6 format=3 uid="uid://ivv04qm8881o"]
 
 [ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_ir7a2"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="1_nag1a"]
+[ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_c26d7"]
 [ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="2_cj88i"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="3_bmbgk"]
 
@@ -19,53 +20,66 @@ modulate = Color(1, 1, 1, 0.12549)
 position = Vector2(953, 761)
 texture = ExtResource("1_ir7a2")
 
+[node name="ArcaneFocus" parent="." instance=ExtResource("2_c26d7")]
+layout_mode = 1
+offset_left = -351.0
+offset_top = -141.0
+offset_right = 249.0
+offset_bottom = 459.0
+scale = Vector2(0.75, 0.75)
+
 [node name="IngredientSlotUI20" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1390.0
-offset_top = 572.0
-offset_right = -430.0
-offset_bottom = -408.0
+offset_left = 1404.0
+offset_top = 532.0
+offset_right = -416.0
+offset_bottom = -448.0
 index = 20
 
 [node name="IngredientSlotUI21" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1571.0
-offset_top = 661.0
-offset_right = -249.0
-offset_bottom = -319.0
+offset_left = 1547.0
+offset_top = 653.0
+offset_right = -273.0
+offset_bottom = -327.0
 index = 21
 
 [node name="IngredientSlotUI22" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1523.0
+offset_left = 1491.0
 offset_top = 817.0
-offset_right = -297.0
+offset_right = -329.0
 offset_bottom = -163.0
 index = 22
 
 [node name="IngredientSlotUI23" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1275.0
-offset_top = 817.0
-offset_right = -545.0
-offset_bottom = -163.0
+offset_left = 1323.0
+offset_top = 813.0
+offset_right = -497.0
+offset_bottom = -167.0
 index = 23
 
 [node name="IngredientSlotUI24" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1217.0
-offset_top = 665.0
-offset_right = -603.0
-offset_bottom = -315.0
+offset_left = 1261.0
+offset_top = 649.0
+offset_right = -559.0
+offset_bottom = -331.0
 index = 24
 
 [node name="IngredientSlotUI25" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 835.0
-offset_top = 600.0
-offset_right = -985.0
-offset_bottom = -380.0
+offset_left = 770.0
+offset_top = 708.0
+offset_right = -1050.0
+offset_bottom = -272.0
 index = 25
+
+[node name="Control" type="Control" parent="IngredientSlotUI25"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -74,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -765.0
-offset_top = -4.0
-offset_right = -353.0
-offset_bottom = 512.0
+offset_left = -897.0
+offset_top = -48.0
+offset_right = -485.0
+offset_bottom = 468.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
@@ -130,42 +144,34 @@ layout_mode = 2
 index = 11
 
 [node name="IngredientSlotUI12" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 12
 
 [node name="IngredientSlotUI13" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 13
 
 [node name="IngredientSlotUI14" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 14
 
 [node name="IngredientSlotUI15" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 15
 
 [node name="IngredientSlotUI16" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 16
 
 [node name="IngredientSlotUI17" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 17
 
 [node name="IngredientSlotUI18" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 18
 
 [node name="IngredientSlotUI19" parent="GridContainer" instance=ExtResource("1_nag1a")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 19
 

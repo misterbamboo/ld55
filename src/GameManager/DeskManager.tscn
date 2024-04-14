@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clpg66vsepc1c"]
+
+[ext_resource type="Script" path="res://GameManager/DeskManager.cs" id="1_rpwqf"]
+
+[node name="DeskManager" type="Node"]
+script = ExtResource("1_rpwqf")
