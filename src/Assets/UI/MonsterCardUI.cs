@@ -1,29 +1,31 @@
 using Godot;
+using System;
 
 public partial class MonsterCardUI : Control
 {
     [Export] private RichTextLabel NameLabel { get; set; }
-
+    [Export] private PanelContainer SpeciesImage { get; set; }
+    [Export] private PanelContainer EmotionImage { get; set; }
+    private MonsterImageLoader MonsterImageLoader { get; set; }
     private GameDataService GameDataService { get; set; }
-
     public SummoningSpecs MonsterSpecs { get; set; }
+
+    public void Init(SummoningSpecs monsterSpecs)
+    {
+        MonsterSpecs = monsterSpecs;
+    }
 
     public override void _Ready()
     {
         GameDataService = GetNode<GameDataService>(GameDataService.Path);
-        var emotionId = $"{SpecTypes.Emotion}_{MonsterSpecs.Emotion.Index}";
-        var elementId = $"{SpecTypes.Element}_{MonsterSpecs.Element.Index}";
-        var speciesId = $"{SpecTypes.Species}_{MonsterSpecs.Species.Index}";
-
-        var emotion = GameDataService.GetSpecDefinition(emotionId);
-        var element = GameDataService.GetSpecDefinition(elementId);
-        var species = GameDataService.GetSpecDefinition(speciesId);
-
+        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, MonsterSpecs.Emotion.Index));
+        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, MonsterSpecs.Element.Index));
+        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, MonsterSpecs.Species.Index));
         ChangeName($"{emotion.MonsterNaming} {element.MonsterNaming} {species.MonsterNaming}");
-    }
 
-    public override void _Process(double delta)
-    {
+        MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
+        var imageResult = MonsterImageLoader.GetMonsterImage(MonsterSpecs);
+        ChangeImage(imageResult);
     }
 
     private void ChangeName(string name)
@@ -31,8 +33,9 @@ public partial class MonsterCardUI : Control
         NameLabel.Text = name;
     }
 
-    public void Init(SummoningSpecs monsterSpecs)
+    private void ChangeImage(MonsterImageResult imageResult)
     {
-        MonsterSpecs = monsterSpecs;
+        //SpeciesImage
+        //EmotionImage
     }
 }

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameDataService="*res://GameManager/GameDataService.tscn"
 GameAssetsService="*res://GameManager/GameAssetsService.tscn"
+MonsterImageLoader="*res://Assets/Monsters/MonsterImageLoader.cs"
 
 [display]
 
