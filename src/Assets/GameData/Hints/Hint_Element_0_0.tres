@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_0lun2")
-SpecType = 0
+SpecType = 1
 FromIndex = 0
 ToIndex = 0
 Text = "You both used splash, it was not very effective..."
