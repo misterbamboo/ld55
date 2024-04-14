@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://d208w3cp6gy31"]
+
+[ext_resource type="Texture2D" uid="uid://dbls31whf1bly" path="res://Assets/MonsterTemplate.png" id="1_jkajy"]
+[ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="2_7nagw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dklhk"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.866667, 0.807843, 0.729412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.8415, 0.765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.0588235)
+shadow_size = 8
+shadow_offset = Vector2(2.08165e-12, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4qbu"]
+bg_color = Color(0.5, 0.452333, 0.39, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkjj2"]
+bg_color = Color(1, 0.877, 0.82, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.452333, 0.39, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="MonsterCard" type="PanelContainer"]
+offset_right = 176.0
+offset_bottom = 254.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dklhk")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+vertical = true
+
+[node name="PanelContainer" type="TextureRect" parent="BoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("1_jkajy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
+modulate = Color(0.333333, 0.258824, 0.156863, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_7nagw")
+bbcode_enabled = true
+text = "[center]Disgusted Water Undead
+[/center]"
+fit_content = true
+
+[node name="ProgressBar" type="ProgressBar" parent="BoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.333333, 0.258824, 0.156863, 1)
+theme_override_colors/font_outline_color = Color(0.85, 0.79475, 0.7225, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_7nagw")
+theme_override_styles/background = SubResource("StyleBoxFlat_j4qbu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nkjj2")
+value = 50.0
+show_percentage = false

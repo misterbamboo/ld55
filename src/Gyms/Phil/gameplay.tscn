@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://chdf7qox0k652"]
+
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="1_5vvfi"]
+
+[node name="Gameplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.792157, 0.717647, 0.619608, 1)
+
+[node name="MonsterCard" parent="." instance=ExtResource("1_5vvfi")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 216.0
+offset_bottom = 294.0
+
+[node name="MonsterCard2" parent="." instance=ExtResource("1_5vvfi")]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 32.0
+offset_right = 408.0
+offset_bottom = 294.0
+
+[node name="MonsterCard3" parent="." instance=ExtResource("1_5vvfi")]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 32.0
+offset_right = 600.0
+offset_bottom = 294.0
