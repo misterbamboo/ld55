@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using System.Linq;
 
 public partial class InventoryService : Node
@@ -88,6 +89,17 @@ public partial class InventoryService : Node
 
             summoningStats.SetPreviews(previewSpecs);
         }
+    }
+
+    public void ClearSummoningBoard()
+    {
+        Inventory.ClearSlot(20);
+        Inventory.ClearSlot(21);
+        Inventory.ClearSlot(22);
+        Inventory.ClearSlot(23);
+        Inventory.ClearSlot(24);
+
+        RedrawInventoryItems();
     }
 }
 
