@@ -48,6 +48,7 @@ public partial class BossQueueManager : Node
         var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, monsterSpecs.Element.Index));
         var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, monsterSpecs.Species.Index));
 
+        newMonsterCard.IsDraggable = false;
         newMonsterCard.Init(monsterSpecs, emotion, element, species);
 
         var targetPos = new Vector2(ScreenSize.X - (newMonsterCard.Size.X), 0);

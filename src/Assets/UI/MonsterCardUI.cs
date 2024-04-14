@@ -3,6 +3,7 @@ using System;
 
 public partial class MonsterCardUI : Control
 {
+    [Export] public bool IsDraggable { get; set; } = true;
     [Export] private RichTextLabel NameLabel { get; set; }
 
     [Export] private TextureRect SpeciesImage { get; set; }
@@ -18,6 +19,9 @@ public partial class MonsterCardUI : Control
     private SpecDefinition Emotion { get; set; } = SpecDefinition.Empty();
     private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
     private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
+
+    private MonsterCardUIDragHandler DragHandler { get; set; }
+
 
     // ShiftAnim
     Vector2 shiftInitPos;
@@ -38,12 +42,22 @@ public partial class MonsterCardUI : Control
     public override void _Ready()
     {
         MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
+        DragHandler = new MonsterCardUIDragHandler(this);
         RedrawMonster();
     }
 
     public override void _Process(double delta)
     {
         ShiftAnim((float)delta);
+    }
+
+
+    public override void _Input(InputEvent @event)
+    {
+        if (IsDraggable)
+        {
+            DragHandler.HandleInput(@event);
+        }
     }
 
     private void ChangeName(string name)
