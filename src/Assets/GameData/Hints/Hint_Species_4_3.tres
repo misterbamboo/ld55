@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bf3033ib6x03u"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_c1kpg"]
+
+[resource]
+script = ExtResource("1_c1kpg")
+SpecType = 2
+FromIndex = 4
+ToIndex = 3
+Text = "The Golem's sturdy fists smash through the Slime's gooey form, breaking it apart and leaving it scattered across the battlefield in defeat."

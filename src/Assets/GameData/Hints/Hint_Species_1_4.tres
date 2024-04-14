@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://csxy2hrn5x0al"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_27l56"]
+
+[resource]
+script = ExtResource("1_27l56")
+SpecType = 2
+FromIndex = 1
+ToIndex = 4
+Text = "The Ghost, untouchable by the Golem's stone fists, drains the essence of its soul, leaving the construct powerless and inert."

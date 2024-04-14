@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://djon2l3wn43e1"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_xph6v"]
+
+[resource]
+script = ExtResource("1_xph6v")
+SpecType = 0
+FromIndex = 4
+ToIndex = 2
+Text = "Joy's vibrant cheer diffuses Anger's heat, soothing the fiery temper with smiles."

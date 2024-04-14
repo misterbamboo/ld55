@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bv0thpp14ni30"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_bwjfx"]
+
+[resource]
+script = ExtResource("1_bwjfx")
+SpecType = 0
+FromIndex = 3
+ToIndex = 0
+Text = "Sadness engulfs Disgust, dampening its revulsion with a wave of melancholy."

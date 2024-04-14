@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cx77dai3dpwo1"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_71ek5"]
+
+[resource]
+script = ExtResource("1_71ek5")
+SpecType = 1
+FromIndex = 3
+ToIndex = 0
+Text = "Your fire was drowned out."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cttbn8b3c1isi"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_gikox"]
+
+[resource]
+script = ExtResource("1_gikox")
+SpecType = 0
+FromIndex = 2
+ToIndex = 4
+Text = "Joy's radiant warmth melts away Anger's fury, soothing its fiery wrath."

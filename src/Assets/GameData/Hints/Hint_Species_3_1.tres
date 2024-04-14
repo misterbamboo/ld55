@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c7plq3oycfqhm"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_5np0g"]
+
+[resource]
+script = ExtResource("1_5np0g")
+SpecType = 2
+FromIndex = 3
+ToIndex = 1
+Text = "The Slime oozes over the Ghost, its sticky substance seeping into the ethereal being and solidifying it, trapping the ghostly essence within its gooey grasp."

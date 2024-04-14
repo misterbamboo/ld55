@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b0ybh5nf1ks10"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_plgok"]
+
+[resource]
+script = ExtResource("1_plgok")
+SpecType = 2
+FromIndex = 0
+ToIndex = 3
+Text = "The Undead drains the very essence of the Slime, sapping its gelatinous vigor until it dissolves into a lifeless puddle."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dkt140qkem3t3"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_vgpcl"]
+
+[resource]
+script = ExtResource("1_vgpcl")
+SpecType = 1
+FromIndex = 0
+ToIndex = 3
+Text = "Their fire was easily extinguisghed."

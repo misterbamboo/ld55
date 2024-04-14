@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cpv5mkdh72dj1"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_0lun2"]
+
+[resource]
+script = ExtResource("1_0lun2")
+SpecType = 1
+FromIndex = 0
+ToIndex = 0
+Text = "You both used splash, it was not very effective..."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://wgc2umqdldgm"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_obf80"]
+
+[resource]
+script = ExtResource("1_obf80")
+SpecType = 0
+FromIndex = 0
+ToIndex = 3
+Text = "Sadness's deep gloom overcomes Disgust, enveloping it in a melancholic fog."

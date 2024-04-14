@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b35uwurw2pjy5"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_mgqmw"]
+
+[resource]
+script = ExtResource("1_mgqmw")
+SpecType = 2
+FromIndex = 0
+ToIndex = 4
+Text = "The Undead summons a swarm of spectral forces that seep into the Golem's cracks, breaking it down from within and crumbling its stony form."

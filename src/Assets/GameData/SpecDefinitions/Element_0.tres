@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bqa5ehttpl7c1"]
+
+[ext_resource type="Script" path="res://Contexts/Summoning/Scriptable/ScriptableSpecDefinition.cs" id="1_ifkbv"]
+
+[resource]
+script = ExtResource("1_ifkbv")
+Id = "Element_0"
+SpecType = 1
+SpecNaming = "Water"
+MonsterNaming = "Water"
+Value = 0

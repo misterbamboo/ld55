@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ctxfua723bms8"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_25p0i"]
+
+[resource]
+script = ExtResource("1_25p0i")
+SpecType = 1
+FromIndex = 3
+ToIndex = 1
+Text = "They melted down like a snowman in summer."

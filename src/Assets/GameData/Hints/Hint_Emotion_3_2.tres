@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://uo30qn0teclw"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_p2x6n"]
+
+[resource]
+script = ExtResource("1_p2x6n")
+SpecType = 0
+FromIndex = 3
+ToIndex = 2
+Text = "Disgust overwhelms Anger with a foul stench, quenching its fiery energy."

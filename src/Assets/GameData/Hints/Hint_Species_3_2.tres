@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://csf8vdlgw561o"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_ifvgh"]
+
+[resource]
+script = ExtResource("1_ifvgh")
+SpecType = 2
+FromIndex = 3
+ToIndex = 2
+Text = "The Slime overwhelms the Fairy, its sticky mass enveloping the delicate creature and leaving it trapped and powerless."

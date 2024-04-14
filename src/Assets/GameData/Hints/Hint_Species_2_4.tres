@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b12perix65rkg"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_3rpkx"]
+
+[resource]
+script = ExtResource("1_3rpkx")
+SpecType = 2
+FromIndex = 2
+ToIndex = 4
+Text = "The Golem's sturdy form withstands the Fairy's magical assaults, leaving the Fairy unable to break through its solid defenses."

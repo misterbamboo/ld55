@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://5i4vqegtcqgs"]
+
+[ext_resource type="Script" path="res://Contexts/Summoning/Scriptable/ScriptableSpecDefinition.cs" id="1_pnoqf"]
+
+[resource]
+script = ExtResource("1_pnoqf")
+Index = 2
+SpecType = 1
+SpecNaming = "Fire"
+MonsterNaming = "Fire"

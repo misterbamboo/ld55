@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://crmvi4wysyu36"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_tn0yl"]
+
+[resource]
+script = ExtResource("1_tn0yl")
+SpecType = 2
+FromIndex = 3
+ToIndex = 3
+Text = "The two Slimes merge and split in an endless cycle, their gelatinous forms unable to overpower each other in their slimy deadlock."

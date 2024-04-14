@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dviygai01xltv"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_x8ylp"]
+
+[resource]
+script = ExtResource("1_x8ylp")
+Id = "ingredient_yellow_strawberry"
+DisplayName = "Yellow Strawberry"
+Icon = "ingredient_yellow_strawberry"
+ProcessedIcon = "ingredient_yellow_strawberry"
+Emotion = 0.0
+Species = 2.0
+Elements = 0.0

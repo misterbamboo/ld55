@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://gi0f2ti5hhde"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_cfhqd"]
+
+[resource]
+script = ExtResource("1_cfhqd")
+SpecType = 0
+FromIndex = 0
+ToIndex = 0
+Text = "Both enveloped in sorrow, they mirror each other's melancholy, unable to gain the upper hand."

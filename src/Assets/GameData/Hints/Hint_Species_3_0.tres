@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dv53l0j2x0mqp"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_tgm4m"]
+
+[resource]
+script = ExtResource("1_tgm4m")
+SpecType = 2
+FromIndex = 3
+ToIndex = 0
+Text = "The Undead's spectral form is unaffected by the Slime's gooey assault, leaving the Slime unable to penetrate its incorporeal defenses."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b52lgwoacu0nf"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_42c5a"]
+
+[resource]
+script = ExtResource("1_42c5a")
+SpecType = 2
+FromIndex = 0
+ToIndex = 2
+Text = "The Fairy's radiant magic purifies the air, banishing the Undead back to the shadows from whence it came."

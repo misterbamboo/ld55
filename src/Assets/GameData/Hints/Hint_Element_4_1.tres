@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://04vcjhabtknu"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_eiswb"]
+
+[resource]
+script = ExtResource("1_eiswb")
+SpecType = 1
+FromIndex = 4
+ToIndex = 1
+Text = "Earth becomes brittle when it freezes."

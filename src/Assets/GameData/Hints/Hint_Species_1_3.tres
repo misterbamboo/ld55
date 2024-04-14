@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnpnesd1jblxj"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_6ludp"]
+
+[resource]
+script = ExtResource("1_6ludp")
+SpecType = 2
+FromIndex = 1
+ToIndex = 3
+Text = "The Ghost's ethereal form is slowly engulfed by the Slime, its insubstantial essence unable to withstand the relentless advance of the gelatinous creature."

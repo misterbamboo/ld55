@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://deafd3kohoy2y"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_ate7c"]
+
+[resource]
+script = ExtResource("1_ate7c")
+SpecType = 1
+FromIndex = 1
+ToIndex = 0
+Text = "Water freezes under 0º C"

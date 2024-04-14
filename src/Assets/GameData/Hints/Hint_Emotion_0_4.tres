@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://inwlcn3n6hbg"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_euso1"]
+
+[resource]
+script = ExtResource("1_euso1")
+SpecType = 0
+FromIndex = 0
+ToIndex = 4
+Text = "Sadness dims Joy's light, casting a shadow over its brightness."
