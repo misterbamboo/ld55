@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://ivv04qm8881o"]
+[gd_scene load_steps=11 format=3 uid="uid://ivv04qm8881o"]
 
 [ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_ir7a2"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="1_nag1a"]
 [ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_c26d7"]
 [ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="2_cj88i"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="3_bmbgk"]
+[ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_au28v"]
+[ext_resource type="Texture2D" uid="uid://cs11so735vm13" path="res://GameManager/candles/candle_lit.png" id="5_m7vg6"]
+[ext_resource type="Texture2D" uid="uid://lmjxns65vgu7" path="res://GameManager/candles/candle_off.png" id="7_i33pu"]
+[ext_resource type="Texture2D" uid="uid://bhhe3thjoehn0" path="res://GameManager/candles/candle_trunk.png" id="8_b6sgq"]
+[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="9_b8wiq"]
 
 [node name="SpoodScene" type="Control"]
 layout_mode = 3
@@ -30,42 +35,42 @@ scale = Vector2(0.75, 0.75)
 
 [node name="IngredientSlotUI20" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1404.0
-offset_top = 532.0
-offset_right = -416.0
-offset_bottom = -448.0
+offset_left = 1400.0
+offset_top = 900.0
+offset_right = -420.0
+offset_bottom = -80.0
 index = 20
 
 [node name="IngredientSlotUI21" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1547.0
-offset_top = 653.0
-offset_right = -273.0
-offset_bottom = -327.0
+offset_left = 1520.0
+offset_top = 785.0
+offset_right = -300.0
+offset_bottom = -195.0
 index = 21
 
 [node name="IngredientSlotUI22" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1491.0
-offset_top = 817.0
-offset_right = -329.0
-offset_bottom = -163.0
+offset_left = 1457.0
+offset_top = 657.0
+offset_right = -363.0
+offset_bottom = -323.0
 index = 22
 
 [node name="IngredientSlotUI23" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1323.0
-offset_top = 813.0
-offset_right = -497.0
-offset_bottom = -167.0
+offset_left = 1326.0
+offset_top = 656.0
+offset_right = -494.0
+offset_bottom = -324.0
 index = 23
 
 [node name="IngredientSlotUI24" parent="." instance=ExtResource("1_nag1a")]
 layout_mode = 1
-offset_left = 1261.0
-offset_top = 649.0
-offset_right = -559.0
-offset_bottom = -331.0
+offset_left = 1264.0
+offset_top = 791.0
+offset_right = -556.0
+offset_bottom = -189.0
 index = 24
 
 [node name="IngredientSlotUI25" parent="." instance=ExtResource("1_nag1a")]
@@ -175,6 +180,12 @@ index = 18
 layout_mode = 2
 index = 19
 
+[node name="CandleManager" type="Node" parent="." node_paths=PackedStringArray("candleTextures")]
+script = ExtResource("4_au28v")
+candleTextures = [NodePath("../Candles/Candle0/Flame"), NodePath("../Candles/Candle1/Flame"), NodePath("../Candles/Candle2/Flame"), NodePath("../Candles/Candle3/Flame"), NodePath("../Candles/Candle4/Flame")]
+litCandle = ExtResource("5_m7vg6")
+unlitCandle = ExtResource("7_i33pu")
+
 [node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("2_cj88i")]
 InventorySlots = [NodePath("../GridContainer/IngredientSlotUI0"), NodePath("../GridContainer/IngredientSlotUI1"), NodePath("../GridContainer/IngredientSlotUI2"), NodePath("../GridContainer/IngredientSlotUI3"), NodePath("../GridContainer/IngredientSlotUI4"), NodePath("../GridContainer/IngredientSlotUI5"), NodePath("../GridContainer/IngredientSlotUI6"), NodePath("../GridContainer/IngredientSlotUI7"), NodePath("../GridContainer/IngredientSlotUI8"), NodePath("../GridContainer/IngredientSlotUI9"), NodePath("../GridContainer/IngredientSlotUI10"), NodePath("../GridContainer/IngredientSlotUI11"), NodePath("../GridContainer/IngredientSlotUI12"), NodePath("../GridContainer/IngredientSlotUI13"), NodePath("../GridContainer/IngredientSlotUI14"), NodePath("../GridContainer/IngredientSlotUI15"), NodePath("../GridContainer/IngredientSlotUI16"), NodePath("../GridContainer/IngredientSlotUI17"), NodePath("../GridContainer/IngredientSlotUI18"), NodePath("../GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
 
@@ -184,3 +195,227 @@ offset_left = 1251.0
 offset_top = 269.0
 offset_right = 1651.0
 offset_bottom = 459.0
+
+[node name="Candles" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1672.0
+offset_top = 738.0
+offset_right = 1712.0
+offset_bottom = 778.0
+
+[node name="Candle0" type="Control" parent="Candles"]
+anchors_preset = 0
+offset_left = -293.0
+offset_top = 204.0
+offset_right = -165.0
+offset_bottom = 332.0
+
+[node name="Flame" type="TextureRect" parent="Candles/Candle0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -104.0
+offset_right = 77.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i33pu")
+expand_mode = 1
+
+[node name="CandleBase" type="TextureRect" parent="Candles/Candle0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_b6sgq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Candles/Candle0"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 130.0
+texture_normal = ExtResource("9_b8wiq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Candle1" type="Control" parent="Candles"]
+anchors_preset = 0
+offset_left = -79.0
+offset_top = 52.0
+offset_right = 49.0
+offset_bottom = 180.0
+
+[node name="Flame" type="TextureRect" parent="Candles/Candle1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -104.0
+offset_right = 77.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i33pu")
+expand_mode = 1
+
+[node name="CandleBase" type="TextureRect" parent="Candles/Candle1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_b6sgq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Candles/Candle1"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 130.0
+texture_normal = ExtResource("9_b8wiq")
+ignore_texture_size = true
+
+[node name="Candle2" type="Control" parent="Candles"]
+anchors_preset = 0
+offset_left = -155.0
+offset_top = -204.0
+offset_right = -27.0
+offset_bottom = -76.0
+
+[node name="Flame" type="TextureRect" parent="Candles/Candle2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -104.0
+offset_right = 77.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i33pu")
+expand_mode = 1
+
+[node name="CandleBase" type="TextureRect" parent="Candles/Candle2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_b6sgq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Candles/Candle2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 130.0
+texture_normal = ExtResource("9_b8wiq")
+ignore_texture_size = true
+
+[node name="Candle3" type="Control" parent="Candles"]
+anchors_preset = 0
+offset_left = -454.0
+offset_top = -207.0
+offset_right = -326.0
+offset_bottom = -79.0
+
+[node name="Flame" type="TextureRect" parent="Candles/Candle3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -104.0
+offset_right = 77.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i33pu")
+expand_mode = 1
+
+[node name="CandleBase" type="TextureRect" parent="Candles/Candle3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_b6sgq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Candles/Candle3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 130.0
+texture_normal = ExtResource("9_b8wiq")
+ignore_texture_size = true
+
+[node name="Candle4" type="Control" parent="Candles"]
+anchors_preset = 0
+offset_left = -513.0
+offset_top = 51.0
+offset_right = -385.0
+offset_bottom = 179.0
+
+[node name="Flame" type="TextureRect" parent="Candles/Candle4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -104.0
+offset_right = 77.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i33pu")
+expand_mode = 1
+
+[node name="CandleBase" type="TextureRect" parent="Candles/Candle4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_b6sgq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Candles/Candle4"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 130.0
+texture_normal = ExtResource("9_b8wiq")
+ignore_texture_size = true
+
+[connection signal="pressed" from="Candles/Candle0/TextureButton" to="CandleManager" method="ToggleCandle" binds= [0]]
+[connection signal="pressed" from="Candles/Candle1/TextureButton" to="CandleManager" method="ToggleCandle" binds= [1]]
+[connection signal="pressed" from="Candles/Candle2/TextureButton" to="CandleManager" method="ToggleCandle" binds= [2]]
+[connection signal="pressed" from="Candles/Candle3/TextureButton" to="CandleManager" method="ToggleCandle" binds= [3]]
+[connection signal="pressed" from="Candles/Candle4/TextureButton" to="CandleManager" method="ToggleCandle" binds= [4]]
