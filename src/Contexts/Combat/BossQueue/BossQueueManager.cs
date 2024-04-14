@@ -1,9 +1,13 @@
 using Godot;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class BossQueueManager : Node
 {
-    private const double SpawnRateInSecs = 2;
+    public const int MaxInQueue = 5;
+    public static BossQueueManager Instance { get; private set; }
+
+    private const double SpawnRateInSecs = 1;
 
     private double timeBeforeNextSpawn;
 
@@ -17,8 +21,21 @@ public partial class BossQueueManager : Node
 
     private GameDataService GameDataService { get; set; }
 
+    internal MonsterCardUI PullNextCard()
+    {
+        if (!MonsterQueue.Any())
+        {
+            SpawnCard();
+        }
+
+        var card = MonsterQueue.Dequeue();
+        ShiftOtherMonsters();
+        return card;
+    }
+
     public override void _Ready()
     {
+        Instance = this;
         ScreenSize = GetTree().Root.Size;
 
         GameDataService = GetNode<GameDataService>(GameDataService.Path);
@@ -35,11 +52,15 @@ public partial class BossQueueManager : Node
         if (timeBeforeNextSpawn <= 0)
         {
             timeBeforeNextSpawn = SpawnRateInSecs;
-            SpawnMonster();
+
+            if (MonsterQueue.Count < MaxInQueue)
+            {
+                SpawnCard();
+            }
         }
     }
 
-    private void SpawnMonster()
+    private void SpawnCard()
     {
         var newMonsterCard = MonsterCardUIPrefab.Instantiate<MonsterCardUI>();
         var monsterSpecs = new SummoningSpecs(rand.RandiRange(0, 4), rand.RandiRange(0, 4), rand.RandiRange(0, 4));

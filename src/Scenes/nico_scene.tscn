@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckg03b32w6u6n"]
+
+[ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="1_2jicv"]
+[ext_resource type="PackedScene" uid="uid://dmgne0x5bexws" path="res://Contexts/Combat/CombatZone/combat_zone.tscn" id="2_cmisy"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="3_rlun8"]
+
+[node name="NicoScene" type="Node2D"]
+
+[node name="BossQueueManager" parent="." instance=ExtResource("1_2jicv")]
+
+[node name="CombatZone" parent="." instance=ExtResource("2_cmisy")]
+position = Vector2(1670, 460)
+
+[node name="MonsterCard" parent="." instance=ExtResource("3_rlun8")]
+offset_left = 286.0
+offset_top = 695.0
+offset_right = 474.0
+offset_bottom = 958.0

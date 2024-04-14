@@ -20,8 +20,7 @@ public partial class MonsterCardUI : Control
     private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
     private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
 
-    private MonsterCardUIDragHandler DragHandler { get; set; }
-
+    private ControlDragHandler DragHandler { get; set; }
 
     // ShiftAnim
     Vector2 shiftInitPos;
@@ -42,7 +41,7 @@ public partial class MonsterCardUI : Control
     public override void _Ready()
     {
         MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
-        DragHandler = new MonsterCardUIDragHandler(this);
+        DragHandler = new ControlDragHandler(this, allowDrag: true);
         RedrawMonster();
     }
 
