@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://dadf370eja8uq"]
 
-[ext_resource type="Script" path="res://Contexts/Summoning/ScriptableSpecDefinition.cs" id="1_5wu0k"]
+[ext_resource type="Script" path="res://Contexts/Summoning/Scriptable/ScriptableSpecDefinition.cs" id="1_5wu0k"]
 
 [resource]
 script = ExtResource("1_5wu0k")

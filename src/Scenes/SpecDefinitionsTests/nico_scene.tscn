@@ -4,16 +4,17 @@
 
 [node name="NicoScene" type="Node2D"]
 
-[node name="TestControls" type="Node" parent="." node_paths=PackedStringArray("RichTextLabel")]
+[node name="TestControls" type="Node" parent="." node_paths=PackedStringArray("RichTextLabel", "CombatRichTextLabel")]
 script = ExtResource("1_e5qrc")
 RichTextLabel = NodePath("../RichTextLabel")
+CombatRichTextLabel = NodePath("../RichTextLabel2")
 
 [node name="HSlider_Emotion" type="HSlider" parent="."]
 offset_top = 196.0
 offset_right = 327.0
 offset_bottom = 228.0
 size_flags_horizontal = 0
-max_value = 5.0
+max_value = 4.0
 
 [node name="Label_Emotion" type="Label" parent="."]
 anchors_preset = 7
@@ -30,12 +31,28 @@ pivot_offset = Vector2(0, 23)
 size_flags_vertical = 8
 text = "Emotion"
 
+[node name="Label_Naming" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_top = 149.0
+offset_right = 406.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Naming:"
+
 [node name="HSlider_Element" type="HSlider" parent="."]
 offset_top = 247.0
 offset_right = 327.0
 offset_bottom = 279.0
 size_flags_horizontal = 0
-max_value = 5.0
+max_value = 4.0
 
 [node name="Label_Element" type="Label" parent="."]
 anchors_preset = 7
@@ -57,7 +74,7 @@ offset_top = 300.0
 offset_right = 327.0
 offset_bottom = 332.0
 size_flags_horizontal = 0
-max_value = 5.0
+max_value = 4.0
 
 [node name="Label_Species" type="Label" parent="."]
 anchors_preset = 7
@@ -81,6 +98,98 @@ offset_right = 716.0
 offset_bottom = 332.0
 text = "<place holder>"
 
+[node name="HSlider_Emotion2" type="HSlider" parent="."]
+offset_top = 419.0
+offset_right = 327.0
+offset_bottom = 451.0
+size_flags_horizontal = 0
+max_value = 4.0
+
+[node name="Label_Emotion2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 396.0
+offset_right = 65.0
+offset_bottom = 419.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Emotion"
+
+[node name="Label_Combat_text" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_top = 373.0
+offset_right = 441.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Combat text:"
+
+[node name="HSlider_Element2" type="HSlider" parent="."]
+offset_top = 470.0
+offset_right = 327.0
+offset_bottom = 502.0
+size_flags_horizontal = 0
+max_value = 4.0
+
+[node name="Label_Element2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 449.0
+offset_right = 65.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Element"
+
+[node name="HSlider_Species2" type="HSlider" parent="."]
+offset_top = 523.0
+offset_right = 327.0
+offset_bottom = 555.0
+size_flags_horizontal = 0
+max_value = 4.0
+
+[node name="Label_Species2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 502.0
+offset_right = 65.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 23)
+size_flags_vertical = 8
+text = "Species"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 341.0
+offset_top = 396.0
+offset_right = 716.0
+offset_bottom = 555.0
+text = "<place holder>"
+
 [connection signal="value_changed" from="HSlider_Emotion" to="TestControls" method="EmotionChanged"]
 [connection signal="value_changed" from="HSlider_Element" to="TestControls" method="ElementChanged"]
 [connection signal="value_changed" from="HSlider_Species" to="TestControls" method="SpeciesChanged"]
+[connection signal="value_changed" from="HSlider_Emotion2" to="TestControls" method="EnemyEmotionChanged"]
+[connection signal="value_changed" from="HSlider_Element2" to="TestControls" method="EnemyElementChanged"]
+[connection signal="value_changed" from="HSlider_Species2" to="TestControls" method="EnemySpeciesChanged"]

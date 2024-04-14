@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using static Godot.OpenXRHand;
 
 public partial class GameDataService : Node
 {
@@ -9,6 +10,7 @@ public partial class GameDataService : Node
 
     private Dictionary<string, Ingredient> ingredientsById;
     private Dictionary<string, SpecDefinition> specDefinitionsById;
+    private Dictionary<string, HintDef> HintDefById;
 
     public override void _Ready()
     {
@@ -17,6 +19,9 @@ public partial class GameDataService : Node
 
         var specDefinitions = LoadAssetsRecursive<ScriptableSpecDefinition>("SpecDefinitions");
         specDefinitionsById = specDefinitions.Select(l => l.ToEntity()).ToDictionary(l => l.Id, l => l);
+
+        var hintDefinitions = LoadAssetsRecursive<ScriptableHintDef>("Hints");
+        HintDefById = hintDefinitions.Select(l => l.ToEntity()).ToDictionary(l => l.Id, l => l);
 
         GD.Print("Service Loaded GameDataService");
     }
@@ -29,6 +34,16 @@ public partial class GameDataService : Node
         }
 
         return specDefinitionsById[specDefinitionId];
+    }
+
+    public HintDef GetHintDefinition(string hintDefId)
+    {
+        if (!HintDefById.ContainsKey(hintDefId))
+        {
+            throw new IndexOutOfRangeException($"HintDefinition {hintDefId} not found");
+        }
+
+        return HintDefById[hintDefId];
     }
 
     public Ingredient GetIngredient(string ingredientId)
