@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ccf2haeti3fwc"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_e8wy3"]
+
+[resource]
+script = ExtResource("1_e8wy3")
+SpecType = 0
+FromIndex = 1
+ToIndex = 1
+Text = "Both paralyzed by terror, neither can advance, locked in a stalemate of fright."

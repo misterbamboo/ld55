@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://wn3gp7gfm835"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_qwdej"]
+
+[resource]
+script = ExtResource("1_qwdej")
+SpecType = 0
+FromIndex = 2
+ToIndex = 2
+Text = "Both fueled by fury, their relentless rage matches blow for blow, leading to an intense stalemate."

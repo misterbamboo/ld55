@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c3na75mh2cils"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_hsetp"]
+
+[resource]
+script = ExtResource("1_hsetp")
+SpecType = 2
+FromIndex = 1
+ToIndex = 1
+Text = "In the eerie silence of the spectral realm, the two Ghosts circle each other, their incorporeal forms unable to inflict harm upon one another, locked in an eternal standoff."

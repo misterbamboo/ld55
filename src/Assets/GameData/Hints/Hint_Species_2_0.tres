@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bubwuh37pedo1"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_od7bp"]
+
+[resource]
+script = ExtResource("1_od7bp")
+SpecType = 2
+FromIndex = 2
+ToIndex = 0
+Text = "The Fairy's enchanted aura pierces through the darkness, guiding the Undead back to the peaceful embrace of eternal rest."

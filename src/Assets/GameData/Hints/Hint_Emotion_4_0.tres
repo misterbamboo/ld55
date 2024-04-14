@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dmijsnkvp8cq3"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_14488"]
+
+[resource]
+script = ExtResource("1_14488")
+SpecType = 0
+FromIndex = 4
+ToIndex = 0
+Text = "Sadness's deep melancholy drowns out Joy's light, overshadowing its brightness."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cjyllrybu36dl"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_smqa6"]
+
+[resource]
+script = ExtResource("1_smqa6")
+SpecType = 2
+FromIndex = 2
+ToIndex = 1
+Text = "The Fairy's radiant magic overwhelms the Ghost, dispersing its ethereal form with a burst of pure light."

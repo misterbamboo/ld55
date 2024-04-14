@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://qr470ri0nwil"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_63c37"]
+
+[resource]
+script = ExtResource("1_63c37")
+SpecType = 0
+FromIndex = 2
+ToIndex = 3
+Text = "Disgust repulses Anger's fiery assault, neutralizing its rage with a wave of revulsion."

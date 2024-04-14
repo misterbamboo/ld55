@@ -4,8 +4,7 @@
 
 [resource]
 script = ExtResource("1_ifkbv")
-Id = "Species_0"
+Index = 0
 SpecType = 2
 SpecNaming = "Undead"
 MonsterNaming = "Undead"
-Value = 0

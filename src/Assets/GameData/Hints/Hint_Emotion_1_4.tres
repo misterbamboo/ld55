@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cfsv68pictuhi"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_ed5vb"]
+
+[resource]
+script = ExtResource("1_ed5vb")
+SpecType = 0
+FromIndex = 1
+ToIndex = 4
+Text = "Fear casts a shadow over Joy, extinguishing its light with a shiver of dread."

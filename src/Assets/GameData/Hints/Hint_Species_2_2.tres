@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://do0ole40aimw"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_nqmb7"]
+
+[resource]
+script = ExtResource("1_nqmb7")
+SpecType = 2
+FromIndex = 2
+ToIndex = 2
+Text = "In a dazzling display of magic, the two Fairies engage in a mesmerizing dance, their spells canceling each other out in a harmonious deadlock."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://2bxw3qirgg5h"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_d1iki"]
+
+[resource]
+script = ExtResource("1_d1iki")
+SpecType = 0
+FromIndex = 2
+ToIndex = 0
+Text = "Anger shatters the quiet of Sadness with its roaring intensity, breaking through the gloom."
