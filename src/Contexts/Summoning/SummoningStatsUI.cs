@@ -7,7 +7,7 @@ public partial class SummoningStatsUI : Node
 	private PropertyBarUI ElementBar;
 	// Called when the node enters the scene tree for the first time.
 
-	private SummoningSpecs monsterSpecs;
+	public SummoningSpecs monsterSpecs;
 	private SummoningSpecs previewSpecs;
 
     public override void _Ready()
@@ -27,6 +27,8 @@ public partial class SummoningStatsUI : Node
 
 	public void SetBars(SummoningSpecs specs)
 	{
+		previewSpecs = specs;
+
 		EmotionBar.SetValue(specs.Emotion.Value / 5);
         SpeciesBar.SetValue(specs.Species.Value / 5);
         ElementBar.SetValue(specs.Element.Value / 5);
@@ -34,6 +36,8 @@ public partial class SummoningStatsUI : Node
 
 	public void SetPreviews(SummoningSpecs specs)
 	{
+		monsterSpecs = specs;
+
         EmotionBar.SetPreview(specs.Emotion.Value / 5);
         SpeciesBar.SetPreview(specs.Species.Value / 5);
         ElementBar.SetPreview(specs.Element.Value / 5);

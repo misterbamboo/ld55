@@ -2,9 +2,8 @@ using Godot;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using static Godot.OpenXRHand;
 
-public partial class GameDataService : Node
+public partial class GameDataService : Node, IHintProvider
 {
     public static string Path = "/root/GameDataService";
 
@@ -93,5 +92,10 @@ public partial class GameDataService : Node
         }
 
         return assets;
+    }
+
+    public string GetHintFor(SpecTypes specType, int summonIndex, int bossIndex)
+    {
+        return GetHintDefinition($"{specType}_{summonIndex}_{bossIndex}").Text;
     }
 }

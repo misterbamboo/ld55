@@ -8,6 +8,6 @@ Id = "ingredient_spiky_stem"
 DisplayName = "Spiky Stem"
 Icon = "ingredient_spiky_stem"
 ProcessedIcon = "ingredient_spiky_stem"
-Emotion = 1.0
+Emotion = 2.0
 Species = 0.0
 Elements = 0.0
