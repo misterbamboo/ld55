@@ -10,9 +10,9 @@ public partial class SummoningStatsUI : Node
     public override void _Ready()
 	{
 		deskManager = GetNode<DeskManager>(DeskManager.Path);
-		EmotionBar = GetNode<PropertyBarUI>("EmotionBar");
-		SpeciesBar = GetNode<PropertyBarUI>("SpeciesBar");
-		ElementBar = GetNode<PropertyBarUI>("ElementBar");
+		EmotionBar = GetNode<PropertyBarUI>("VBoxContainer/EmotionBar");
+		SpeciesBar = GetNode<PropertyBarUI>("VBoxContainer/SpeciesBar");
+		ElementBar = GetNode<PropertyBarUI>("VBoxContainer/ElementBar");
 
 		SetPreviews(new SummoningSpecs(2.5, 2.5, 2.5));
 		SetBars(new SummoningSpecs(2.5, 2.5, 2.5));

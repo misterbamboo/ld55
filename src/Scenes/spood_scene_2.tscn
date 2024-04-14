@@ -180,7 +180,7 @@ InventorySlots = [NodePath("../GridContainer/IngredientSlotUI0"), NodePath("../G
 
 [node name="SummoningStatsUI" parent="." instance=ExtResource("3_bmbgk")]
 layout_mode = 0
-offset_left = 1235.0
-offset_top = 359.0
-offset_right = 1635.0
-offset_bottom = 509.0
+offset_left = 1251.0
+offset_top = 269.0
+offset_right = 1651.0
+offset_bottom = 459.0
