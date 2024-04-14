@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_i3m3u")
-SpecType = 1
+SpecType = 2
 FromIndex = 4
 ToIndex = 0
 Text = "The Golem's sturdy attacks find no effect against the mysterious resilience of the Undead, leaving the Golem unable to secure victory."
