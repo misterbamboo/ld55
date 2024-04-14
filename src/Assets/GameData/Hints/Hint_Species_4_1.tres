@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bwnaoalxpiw7s"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_5218c"]
+
+[resource]
+script = ExtResource("1_5218c")
+SpecType = 2
+FromIndex = 4
+ToIndex = 0
+Text = "The Golem's sturdy attacks find no effect against the mysterious resilience of the Undead, leaving the Golem unable to secure victory."

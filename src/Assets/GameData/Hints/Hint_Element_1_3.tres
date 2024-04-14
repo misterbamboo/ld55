@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bxs65g2mwknq3"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_ikf56"]
+
+[resource]
+script = ExtResource("1_ikf56")
+SpecType = 1
+FromIndex = 1
+ToIndex = 2
+Text = "You were just \"chiling\" when they \"stormed\" in."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cx6o1x544ula7"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_o5eqn"]
+
+[resource]
+script = ExtResource("1_o5eqn")
+SpecType = 1
+FromIndex = 3
+ToIndex = 3
+Text = "It's getting hot in here."

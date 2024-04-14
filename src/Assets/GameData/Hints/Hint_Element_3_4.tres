@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dj25c2kaaljd"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_uacld"]
+
+[resource]
+script = ExtResource("1_uacld")
+SpecType = 1
+FromIndex = 3
+ToIndex = 4
+Text = "Earth just isn't very flammable"

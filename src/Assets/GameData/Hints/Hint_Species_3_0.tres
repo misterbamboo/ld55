@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dv53l0j2x0mqp"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_tgm4m"]
+
+[resource]
+script = ExtResource("1_tgm4m")
+SpecType = 2
+FromIndex = 4
+ToIndex = 4
+Text = "The two Golems clash with earth-shattering force, their mighty blows cancelling each other out in a deadlock of unstoppable strength."

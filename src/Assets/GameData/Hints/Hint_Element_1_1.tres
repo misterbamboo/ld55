@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d1g2r0pd0pr7"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_10h1l"]
+
+[resource]
+script = ExtResource("1_10h1l")
+SpecType = 1
+FromIndex = 1
+ToIndex = 1
+Text = "The athmosphere was a bit too chill."

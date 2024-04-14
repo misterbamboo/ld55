@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ccvslvkclcojd"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_gjqsg"]
+
+[resource]
+script = ExtResource("1_gjqsg")
+SpecType = 2
+FromIndex = 3
+ToIndex = 4
+Text = "The Golem's solid form remains unaffected by the Slime's sticky attacks, its rocky exterior providing impenetrable defense against the gooey onslaught."
