@@ -6,5 +6,5 @@
 script = ExtResource("1_5218c")
 SpecType = 2
 FromIndex = 4
-ToIndex = 0
-Text = "The Golem's sturdy attacks find no effect against the mysterious resilience of the Undead, leaving the Golem unable to secure victory."
+ToIndex = 1
+Text = "The Ghost's ethereal form eludes the Golem's grasp, slipping through its stony fingers and leaving the Golem unable to land a decisive blow."

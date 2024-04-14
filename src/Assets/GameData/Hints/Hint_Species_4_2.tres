@@ -6,5 +6,5 @@
 script = ExtResource("1_2cfye")
 SpecType = 2
 FromIndex = 4
-ToIndex = 1
-Text = "The Ghost's ethereal form eludes the Golem's grasp, slipping through its stony fingers and leaving the Golem unable to land a decisive blow."
+ToIndex = 2
+Text = "The Golem's relentless assault overwhelms the delicate Fairy, its solid blows shattering the Fairy's defenses and leaving it defeated."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cy4ory714pce6"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_vxj4t"]
+
+[resource]
+script = ExtResource("1_vxj4t")
+SpecType = 2
+FromIndex = 0
+ToIndex = 1
+Text = "The Ghost's ethereal form passes through the Undead, disrupting its spectral energy and sending it back to the realm of the living dead."

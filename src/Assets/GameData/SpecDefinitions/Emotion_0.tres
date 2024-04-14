@@ -4,8 +4,7 @@
 
 [resource]
 script = ExtResource("1_ifkbv")
-Id = "Emotion_0"
+Index = 0
 SpecType = 0
 SpecNaming = "Sadness"
 MonsterNaming = "Sadened"
-Value = 0

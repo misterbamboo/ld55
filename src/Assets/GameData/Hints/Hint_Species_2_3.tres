@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://qjyx4d3tvtkj"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_8lme0"]
+
+[resource]
+script = ExtResource("1_8lme0")
+SpecType = 2
+FromIndex = 2
+ToIndex = 3
+Text = "The Slime's gelatinous mass engulfs the Fairy, its sticky embrace neutralizing the Fairy's magical powers and rendering it powerless."

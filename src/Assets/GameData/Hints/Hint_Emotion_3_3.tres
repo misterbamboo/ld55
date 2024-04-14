@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://h7nujy2pns55"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_sgygj"]
+
+[resource]
+script = ExtResource("1_sgygj")
+SpecType = 0
+FromIndex = 3
+ToIndex = 3
+Text = "Both equally repelled, they recoil from each other's presence, unable to gain the upper hand."

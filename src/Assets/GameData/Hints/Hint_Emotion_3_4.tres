@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://6nrga4qtktb6"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_y7b84"]
+
+[resource]
+script = ExtResource("1_y7b84")
+SpecType = 0
+FromIndex = 3
+ToIndex = 4
+Text = "Joy's infectious cheer penetrates Disgust, breaking through its barriers with warmth and laughter."

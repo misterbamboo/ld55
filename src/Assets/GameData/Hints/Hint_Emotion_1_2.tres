@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://baw2hloo0ahlt"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_uyp1k"]
+
+[resource]
+script = ExtResource("1_uyp1k")
+SpecType = 0
+FromIndex = 1
+ToIndex = 2
+Text = "Anger blazes through Fear, shattering its icy grip with fiery rage."

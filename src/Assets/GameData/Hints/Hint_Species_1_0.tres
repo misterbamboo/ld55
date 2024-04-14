@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://x1p8sncs8ic0"]
+
+[ext_resource type="Script" path="res://Contexts/Hints/Scriptable/ScriptableHintDef.cs" id="1_34sr6"]
+
+[resource]
+script = ExtResource("1_34sr6")
+SpecType = 2
+FromIndex = 1
+ToIndex = 0
+Text = "The Ghost's otherworldly presence overwhelms the Undead, sending it back to the darkness of the afterlife from whence it emerged."
