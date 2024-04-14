@@ -6,5 +6,5 @@
 script = ExtResource("1_i3m3u")
 SpecType = 1
 FromIndex = 4
-ToIndex = 4
-Text = "You were just two very \"down to earth\" summons who didn't want to fight."
+ToIndex = 0
+Text = "The Golem's sturdy attacks find no effect against the mysterious resilience of the Undead, leaving the Golem unable to secure victory."
