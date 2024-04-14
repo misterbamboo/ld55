@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3rjv3lawqwe7"]
 
-[ext_resource type="Script" path="res://Scenes/SpecDefinitionsTests/SpecDefTestScript.cs" id="1_e5qrc"]
+[ext_resource type="Script" path="res://Scenes/SpecDefinitionsTests/SpecDefTestScript.cs" id="1_4cu7i"]
 
 [node name="NicoScene" type="Node2D"]
 
 [node name="TestControls" type="Node" parent="." node_paths=PackedStringArray("RichTextLabel", "CombatRichTextLabel")]
-script = ExtResource("1_e5qrc")
+script = ExtResource("1_4cu7i")
 RichTextLabel = NodePath("../RichTextLabel")
 CombatRichTextLabel = NodePath("../RichTextLabel2")
 

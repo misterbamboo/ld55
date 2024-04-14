@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://d208w3cp6gy31"]
+[gd_scene load_steps=7 format=3 uid="uid://d208w3cp6gy31"]
 
+[ext_resource type="Script" path="res://Assets/UI/MonsterCardUI.cs" id="1_hlve0"]
 [ext_resource type="Texture2D" uid="uid://dbls31whf1bly" path="res://Assets/MonsterTemplate.png" id="1_jkajy"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="2_7nagw"]
 
@@ -41,10 +42,12 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="MonsterCard" type="PanelContainer"]
+[node name="MonsterCard" type="PanelContainer" node_paths=PackedStringArray("NameLabel")]
 offset_right = 176.0
 offset_bottom = 254.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dklhk")
+script = ExtResource("1_hlve0")
+NameLabel = NodePath("BoxContainer/RichTextLabel")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 2

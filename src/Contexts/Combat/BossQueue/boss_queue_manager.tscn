@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://0u23ffo6lfqg"]
+
+[ext_resource type="Script" path="res://Contexts/Combat/BossQueue/BossQueueManager.cs" id="1_iljs8"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="2_a35ve"]
+
+[node name="BossQueueManager" type="Node"]
+script = ExtResource("1_iljs8")
+MonsterCardUIPrefab = ExtResource("2_a35ve")

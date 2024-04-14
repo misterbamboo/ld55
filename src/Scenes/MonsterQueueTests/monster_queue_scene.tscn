@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpi8gtwoep4uu"]
+
+[ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="1_2khxd"]
+
+[node name="MonsterQueueScene" type="Node2D"]
+
+[node name="BossQueueManager" parent="." instance=ExtResource("1_2khxd")]
