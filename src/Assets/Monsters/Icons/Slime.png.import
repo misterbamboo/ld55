@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nh84v534uwf"
-path="res://.godot/imported/Water.png-5a98de5b541fe4a4f822d9a0ed335a66.ctex"
+uid="uid://bq7ao0i6l45mi"
+path="res://.godot/imported/Slime.png-f87520e8ce760cf273702a8a14e14e3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Water.png"
-dest_files=["res://.godot/imported/Water.png-5a98de5b541fe4a4f822d9a0ed335a66.ctex"]
+source_file="res://Assets/Monsters/Icons/Slime.png"
+dest_files=["res://.godot/imported/Slime.png-f87520e8ce760cf273702a8a14e14e3c.ctex"]
 
 [params]
 

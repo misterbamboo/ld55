@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhwri2fmqt85j"
-path="res://.godot/imported/Golem.png-e957d5f87c247cebafc3c4b2678907be.ctex"
+uid="uid://chqd7teis2go"
+path="res://.godot/imported/Disgust.png-00cb618c85a199584a676419056a084a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Golem.png"
-dest_files=["res://.godot/imported/Golem.png-e957d5f87c247cebafc3c4b2678907be.ctex"]
+source_file="res://Assets/Monsters/Icons/Disgust.png"
+dest_files=["res://.godot/imported/Disgust.png-00cb618c85a199584a676419056a084a.ctex"]
 
 [params]
 

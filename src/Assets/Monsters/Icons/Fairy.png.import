@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0550hm0314jd"
-path="res://.godot/imported/Undead.png-f6cd92016494af260a4cb66e69037c20.ctex"
+uid="uid://dl2nwolx1sh2b"
+path="res://.godot/imported/Fairy.png-c7a44d09c3038e8e8e78dcd01249f578.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Undead.png"
-dest_files=["res://.godot/imported/Undead.png-f6cd92016494af260a4cb66e69037c20.ctex"]
+source_file="res://Assets/Monsters/Icons/Fairy.png"
+dest_files=["res://.godot/imported/Fairy.png-c7a44d09c3038e8e8e78dcd01249f578.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1skrc2waycoh"
-path="res://.godot/imported/Ghost.png-c630b596fbe701a5e4595b16aa0dbe07.ctex"
+uid="uid://b6ypy6fnno4m"
+path="res://.godot/imported/Fear.png-cefdd441a33d1b560c016835f34fcb85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Ghost.png"
-dest_files=["res://.godot/imported/Ghost.png-c630b596fbe701a5e4595b16aa0dbe07.ctex"]
+source_file="res://Assets/Monsters/Icons/Fear.png"
+dest_files=["res://.godot/imported/Fear.png-cefdd441a33d1b560c016835f34fcb85.ctex"]
 
 [params]
 

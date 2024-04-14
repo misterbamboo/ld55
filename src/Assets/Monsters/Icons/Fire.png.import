@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4ftx8ctng7e"
-path="res://.godot/imported/Anger.png-4ffe0d7fd1250738fc412ac3da15b3ae.ctex"
+uid="uid://b5o457mpieu7a"
+path="res://.godot/imported/Fire.png-735b654072d09c049394c01beebdb220.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Anger.png"
-dest_files=["res://.godot/imported/Anger.png-4ffe0d7fd1250738fc412ac3da15b3ae.ctex"]
+source_file="res://Assets/Monsters/Icons/Fire.png"
+dest_files=["res://.godot/imported/Fire.png-735b654072d09c049394c01beebdb220.ctex"]
 
 [params]
 

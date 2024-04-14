@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl2nwolx1sh2b"
-path="res://.godot/imported/Fairy.png-de5987d6ad58835f692c824892a31529.ctex"
+uid="uid://bmtn1p8hklloe"
+path="res://.godot/imported/Earth.png-aef5037dd8cf840fa07012167b84955d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Fairy.png"
-dest_files=["res://.godot/imported/Fairy.png-de5987d6ad58835f692c824892a31529.ctex"]
+source_file="res://Assets/Monsters/Icons/Earth.png"
+dest_files=["res://.godot/imported/Earth.png-aef5037dd8cf840fa07012167b84955d.ctex"]
 
 [params]
 

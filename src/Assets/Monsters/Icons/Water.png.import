@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglxs3gxna6ru"
-path="res://.godot/imported/Rock.png-208f44c9df92d2dc0355711a4ea55def.ctex"
+uid="uid://nh84v534uwf"
+path="res://.godot/imported/Water.png-61cda9c3c8520f5dde280b732042500c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Rock.png"
-dest_files=["res://.godot/imported/Rock.png-208f44c9df92d2dc0355711a4ea55def.ctex"]
+source_file="res://Assets/Monsters/Icons/Water.png"
+dest_files=["res://.godot/imported/Water.png-61cda9c3c8520f5dde280b732042500c.ctex"]
 
 [params]
 

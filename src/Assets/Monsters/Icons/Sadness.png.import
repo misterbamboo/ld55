@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmtn1p8hklloe"
-path="res://.godot/imported/Earth.png-f92eb467a9f96e23f5b82a2831897b2a.ctex"
+uid="uid://bpp8xkuw1np4o"
+path="res://.godot/imported/Sadness.png-3186af52ab5fc18652254cb55dc8ee4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Earth.png"
-dest_files=["res://.godot/imported/Earth.png-f92eb467a9f96e23f5b82a2831897b2a.ctex"]
+source_file="res://Assets/Monsters/Icons/Sadness.png"
+dest_files=["res://.godot/imported/Sadness.png-3186af52ab5fc18652254cb55dc8ee4a.ctex"]
 
 [params]
 

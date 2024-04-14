@@ -52,14 +52,29 @@ public partial class MonsterImageLoader : Node
 
     private MonsterImageResult LoadMonsterImageResultInCache(int speciesIndex, int elementIndex, int emotionIndex)
     {
-        var speciesElementPath = GetSpeciesElementImagePath(speciesIndex, elementIndex);
-        var speciesEmotionPath = GetSpeciesElementEmotionImagePath(speciesIndex, emotionIndex);
-        var speciesElementImage = LoadImageFromFile(speciesElementPath);
-        var speciesEmotionImage = LoadImageFromFile(speciesEmotionPath);
+        var speciesElementImagePath = GetSpeciesElementImagePath(speciesIndex, elementIndex);
+        var speciesEmotionImagePath = GetSpeciesElementEmotionImagePath(speciesIndex, emotionIndex);
+        var speciesIconFilePath = GetIconImagePath(SpecTypes.Species, speciesIndex);
+        var elementIconFilePath = GetIconImagePath(SpecTypes.Element, elementIndex);
+        var emotionIconFilePath = GetIconImagePath(SpecTypes.Emotion, emotionIndex);
 
-        var monsterImageResult = new MonsterImageResult(speciesIndex, elementIndex, emotionIndex, speciesElementImage, speciesEmotionImage);
+        var speciesElementImage = LoadImageFromFile(speciesElementImagePath);
+        var speciesEmotionImage = LoadImageFromFile(speciesEmotionImagePath);
+        var speciesIconImage = LoadImageFromFile(speciesIconFilePath);
+        var elementIconImage = LoadImageFromFile(elementIconFilePath);
+        var emotionIconImage = LoadImageFromFile(emotionIconFilePath);
+
+        var monsterImageResult = new MonsterImageResult(speciesIndex, elementIndex, emotionIndex, speciesElementImage, speciesEmotionImage, speciesIconImage, elementIconImage, emotionIconImage);
         MonsterImageResults.Add(monsterImageResult);
         return monsterImageResult;
+    }
+
+    private string GetIconImagePath(SpecTypes specType, int index)
+    {
+        var spec = SpecDefCache.Where(c => c.Type == specType && c.Index == index).FirstOrDefault();
+        var specName = spec.Spec.SpecNaming;
+        var iconFilePath = $"res://Assets/Monsters/Icons/{specName}.png";
+        return iconFilePath;
     }
 
     private string GetSpeciesElementImagePath(int species, int element)

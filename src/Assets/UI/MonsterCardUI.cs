@@ -3,8 +3,14 @@ using Godot;
 public partial class MonsterCardUI : Control
 {
     [Export] private RichTextLabel NameLabel { get; set; }
+
     [Export] private TextureRect SpeciesImage { get; set; }
     [Export] private TextureRect EmotionImage { get; set; }
+
+    [Export] private TextureRect EmotionIconImage { get; set; }
+    [Export] private TextureRect ElementIconImage { get; set; }
+    [Export] private TextureRect SpeciesIconImage { get; set; }
+
     private MonsterImageLoader MonsterImageLoader { get; set; }
     public SummoningSpecs MonsterSpecs { get; set; } = new SummoningSpecs();
 
@@ -32,10 +38,13 @@ public partial class MonsterCardUI : Control
         NameLabel.Text = name;
     }
 
-    private void ChangeImage(MonsterImageResult imageResult)
+    private void ChangeImageAndIcons(MonsterImageResult imageResult)
     {
         SpeciesImage.Texture = imageResult.SpeciesImage;
         EmotionImage.Texture = imageResult.EmotionImage;
+        EmotionIconImage.Texture = imageResult.EmotionIconImage;
+        ElementIconImage.Texture = imageResult.ElementIconImage;
+        SpeciesIconImage.Texture = imageResult.SpeciesIconImage;
     }
 
     public void RedrawMonster()
@@ -43,6 +52,6 @@ public partial class MonsterCardUI : Control
         ChangeName($"{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}");
 
         var imageResult = MonsterImageLoader.GetMonsterImage(MonsterSpecs);
-        ChangeImage(imageResult);
+        ChangeImageAndIcons(imageResult);
     }
 }

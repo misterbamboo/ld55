@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpp8xkuw1np4o"
-path="res://.godot/imported/Sadness.png-5ca68a6d31f0bb15162c8d746acbb31b.ctex"
+uid="uid://d1skrc2waycoh"
+path="res://.godot/imported/Ghost.png-94266f33103f7eec525ba720054d9bf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Sadness.png"
-dest_files=["res://.godot/imported/Sadness.png-5ca68a6d31f0bb15162c8d746acbb31b.ctex"]
+source_file="res://Assets/Monsters/Icons/Ghost.png"
+dest_files=["res://.godot/imported/Ghost.png-94266f33103f7eec525ba720054d9bf8.ctex"]
 
 [params]
 

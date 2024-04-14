@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5o457mpieu7a"
-path="res://.godot/imported/Fire.png-fd71ed4853a72dce1840b50dbc7e6274.ctex"
+uid="uid://dhwri2fmqt85j"
+path="res://.godot/imported/Golem.png-489a0e98aab067d12def05cd26d73cff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Fire.png"
-dest_files=["res://.godot/imported/Fire.png-fd71ed4853a72dce1840b50dbc7e6274.ctex"]
+source_file="res://Assets/Monsters/Icons/Golem.png"
+dest_files=["res://.godot/imported/Golem.png-489a0e98aab067d12def05cd26d73cff.ctex"]
 
 [params]
 

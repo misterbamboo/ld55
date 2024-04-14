@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvjn3pwaope4t"
-path="res://.godot/imported/Joy.png-03970496c2f0bcad2687088be43fc984.ctex"
+uid="uid://cglxs3gxna6ru"
+path="res://.godot/imported/Rock.png-fb2bdad22c87cb3c22fd3365c502182f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Joy.png"
-dest_files=["res://.godot/imported/Joy.png-03970496c2f0bcad2687088be43fc984.ctex"]
+source_file="res://Assets/Monsters/Icons/Rock.png"
+dest_files=["res://.godot/imported/Rock.png-fb2bdad22c87cb3c22fd3365c502182f.ctex"]
 
 [params]
 
