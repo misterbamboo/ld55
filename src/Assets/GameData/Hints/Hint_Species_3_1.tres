@@ -6,5 +6,5 @@
 script = ExtResource("1_5np0g")
 SpecType = 2
 FromIndex = 3
-ToIndex = 0
-Text = "The Undead's spectral form is unaffected by the Slime's gooey assault, leaving the Slime unable to penetrate its incorporeal defenses."
+ToIndex = 1
+Text = "The Slime oozes over the Ghost, its sticky substance seeping into the ethereal being and solidifying it, trapping the ghostly essence within its gooey grasp."

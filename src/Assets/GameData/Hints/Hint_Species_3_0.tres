@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_tgm4m")
 SpecType = 2
-FromIndex = 4
-ToIndex = 4
-Text = "The two Golems clash with earth-shattering force, their mighty blows cancelling each other out in a deadlock of unstoppable strength."
+FromIndex = 3
+ToIndex = 0
+Text = "The Undead's spectral form is unaffected by the Slime's gooey assault, leaving the Slime unable to penetrate its incorporeal defenses."
