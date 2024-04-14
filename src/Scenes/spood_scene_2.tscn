@@ -1,0 +1,165 @@
+[gd_scene load_steps=4 format=3 uid="uid://ivv04qm8881o"]
+
+[ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="1_nag1a"]
+[ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="2_cj88i"]
+[ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="3_bmbgk"]
+
+[node name="SpoodScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IngredientSlotUI20" parent="." instance=ExtResource("1_nag1a")]
+layout_mode = 1
+offset_left = 601.0
+offset_top = 266.0
+offset_right = -1219.0
+offset_bottom = -714.0
+index = 20
+
+[node name="IngredientSlotUI21" parent="." instance=ExtResource("1_nag1a")]
+layout_mode = 1
+offset_left = 892.0
+offset_top = 505.0
+offset_right = -928.0
+offset_bottom = -475.0
+index = 21
+
+[node name="IngredientSlotUI22" parent="." instance=ExtResource("1_nag1a")]
+layout_mode = 1
+offset_left = 784.0
+offset_top = 797.0
+offset_right = -1036.0
+offset_bottom = -183.0
+index = 22
+
+[node name="IngredientSlotUI23" parent="." instance=ExtResource("1_nag1a")]
+layout_mode = 1
+offset_left = 483.0
+offset_top = 802.0
+offset_right = -1337.0
+offset_bottom = -178.0
+index = 23
+
+[node name="IngredientSlotUI24" parent="." instance=ExtResource("1_nag1a")]
+layout_mode = 1
+offset_left = 361.0
+offset_top = 514.0
+offset_right = -1459.0
+offset_bottom = -466.0
+index = 24
+
+[node name="IngredientSlotUI25" parent="." instance=ExtResource("1_nag1a")]
+layout_mode = 1
+offset_left = 1221.0
+offset_top = 776.0
+offset_right = -599.0
+offset_bottom = -204.0
+index = 25
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 531.0
+offset_top = 3.0
+offset_right = 943.0
+offset_bottom = 519.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="IngredientSlotUI0" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+
+[node name="IngredientSlotUI1" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 1
+
+[node name="IngredientSlotUI2" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 2
+
+[node name="IngredientSlotUI3" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 3
+
+[node name="IngredientSlotUI4" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 4
+
+[node name="IngredientSlotUI5" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 5
+
+[node name="IngredientSlotUI6" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 6
+
+[node name="IngredientSlotUI7" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 7
+
+[node name="IngredientSlotUI8" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 8
+
+[node name="IngredientSlotUI9" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 9
+
+[node name="IngredientSlotUI10" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 10
+
+[node name="IngredientSlotUI11" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 11
+
+[node name="IngredientSlotUI12" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 12
+
+[node name="IngredientSlotUI13" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 13
+
+[node name="IngredientSlotUI14" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 14
+
+[node name="IngredientSlotUI15" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 15
+
+[node name="IngredientSlotUI16" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 16
+
+[node name="IngredientSlotUI17" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 17
+
+[node name="IngredientSlotUI18" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 18
+
+[node name="IngredientSlotUI19" parent="GridContainer" instance=ExtResource("1_nag1a")]
+layout_mode = 2
+index = 19
+
+[node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("2_cj88i")]
+InventorySlots = [NodePath("../GridContainer/IngredientSlotUI0"), NodePath("../GridContainer/IngredientSlotUI1"), NodePath("../GridContainer/IngredientSlotUI2"), NodePath("../GridContainer/IngredientSlotUI3"), NodePath("../GridContainer/IngredientSlotUI4"), NodePath("../GridContainer/IngredientSlotUI5"), NodePath("../GridContainer/IngredientSlotUI6"), NodePath("../GridContainer/IngredientSlotUI7"), NodePath("../GridContainer/IngredientSlotUI8"), NodePath("../GridContainer/IngredientSlotUI9"), NodePath("../GridContainer/IngredientSlotUI10"), NodePath("../GridContainer/IngredientSlotUI11"), NodePath("../GridContainer/IngredientSlotUI12"), NodePath("../GridContainer/IngredientSlotUI13"), NodePath("../GridContainer/IngredientSlotUI14"), NodePath("../GridContainer/IngredientSlotUI15"), NodePath("../GridContainer/IngredientSlotUI16"), NodePath("../GridContainer/IngredientSlotUI17"), NodePath("../GridContainer/IngredientSlotUI18"), NodePath("../GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
+
+[node name="SummoningStatsUI" parent="." instance=ExtResource("3_bmbgk")]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 891.0
+offset_right = 439.0
+offset_bottom = 1041.0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://tpsiifu8yrxw"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_xvlfj"]
+
+[resource]
+script = ExtResource("1_xvlfj")
+Id = "ingredient_insect_wings"
+DisplayName = "Insect Wings"
+Icon = "ingredient_insect_wings"
+ProcessedIcon = "ingredient_insect_wings"
+Emotion = 1.0
+Species = 0.0
+Elements = 0.0
