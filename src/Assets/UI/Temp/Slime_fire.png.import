@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgnymtwhannlt"
-path="res://.godot/imported/Ice.png-263cf5e1d792b997fc0aea0626b7528e.ctex"
+uid="uid://dd5qxkpnaifvp"
+path="res://.godot/imported/Slime_fire.png-981aa73e85b52ae85beab075df21c2e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/Ice.png"
-dest_files=["res://.godot/imported/Ice.png-263cf5e1d792b997fc0aea0626b7528e.ctex"]
+source_file="res://Assets/UI/Temp/Slime_fire.png"
+dest_files=["res://.godot/imported/Slime_fire.png-981aa73e85b52ae85beab075df21c2e5.ctex"]
 
 [params]
 
