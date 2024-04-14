@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_xkgjf")
 SpecType = 1
-FromIndex = 1
-ToIndex = 4
-Text = "Earth becomes brittle when it freezes."
+FromIndex = 2
+ToIndex = 0
+Text = "They shouldn't mess with electricity when they have wet feet."

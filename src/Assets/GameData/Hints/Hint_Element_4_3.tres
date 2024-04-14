@@ -6,5 +6,5 @@
 script = ExtResource("1_afn0o")
 SpecType = 1
 FromIndex = 4
-ToIndex = 2
-Text = "Their electricity returned to the \"ground\"."
+ToIndex = 3
+Text = "You buried their flames under a pile of sand."

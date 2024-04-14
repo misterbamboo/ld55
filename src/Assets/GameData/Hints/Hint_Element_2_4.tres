@@ -6,5 +6,5 @@
 script = ExtResource("1_fhq87")
 SpecType = 1
 FromIndex = 2
-ToIndex = 3
-Text = "Charizard was always cooler than Pikachu."
+ToIndex = 4
+Text = "Your electricity returned to the \"ground\"."

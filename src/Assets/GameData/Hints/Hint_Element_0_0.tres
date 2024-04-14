@@ -6,5 +6,5 @@
 script = ExtResource("1_0lun2")
 SpecType = 0
 FromIndex = 0
-ToIndex = 4
-Text = "Sadness dims Joy's light, casting a shadow over its brightness."
+ToIndex = 0
+Text = "You both used splash, it was not very effective..."

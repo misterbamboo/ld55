@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_l5k4a")
 SpecType = 1
-FromIndex = 3
-ToIndex = 4
-Text = "Earth just isn't very flammable"
+FromIndex = 4
+ToIndex = 0
+Text = "Water and earth make mud, mud is not very solid..  crushing defeat!"

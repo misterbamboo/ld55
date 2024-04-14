@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_ate7c")
 SpecType = 1
-FromIndex = 0
-ToIndex = 4
-Text = "Water and earth make mud, mud is not very solid.. easy victory!"
+FromIndex = 1
+ToIndex = 0
+Text = "Water freezes under 0º C"

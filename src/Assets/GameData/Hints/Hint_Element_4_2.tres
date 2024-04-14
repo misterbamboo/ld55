@@ -6,5 +6,5 @@
 script = ExtResource("1_snviw")
 SpecType = 1
 FromIndex = 4
-ToIndex = 1
-Text = "Earth becomes brittle when it freezes."
+ToIndex = 2
+Text = "Their electricity returned to the \"ground\"."

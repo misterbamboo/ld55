@@ -6,5 +6,5 @@
 script = ExtResource("1_25p0i")
 SpecType = 1
 FromIndex = 3
-ToIndex = 0
-Text = "Your fire was drowned out."
+ToIndex = 1
+Text = "They melted down like a snowman in summer."

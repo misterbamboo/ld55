@@ -6,5 +6,5 @@
 script = ExtResource("1_3y383")
 SpecType = 1
 FromIndex = 0
-ToIndex = 1
-Text = "Water freezes under 0º C"
+ToIndex = 2
+Text = "You shouldn't mess with electricity when you have wet feet."

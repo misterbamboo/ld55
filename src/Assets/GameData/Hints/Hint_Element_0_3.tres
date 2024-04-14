@@ -6,5 +6,5 @@
 script = ExtResource("1_vgpcl")
 SpecType = 1
 FromIndex = 0
-ToIndex = 2
-Text = "You shouldn't mess with electricity when you have wet feet."
+ToIndex = 3
+Text = "Their fire was easily extinguisghed."

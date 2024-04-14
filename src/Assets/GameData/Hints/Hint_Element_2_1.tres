@@ -6,5 +6,5 @@
 script = ExtResource("1_3crgs")
 SpecType = 1
 FromIndex = 2
-ToIndex = 0
-Text = "They shouldn't mess with electricity when they have wet feet."
+ToIndex = 1
+Text = "They were just \"chiling\" when you \"stormed\" in."
