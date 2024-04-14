@@ -21,26 +21,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.792157, 0.717647, 0.619608, 1)
 
-[node name="MonsterCard" parent="." instance=ExtResource("1_5vvfi")]
-layout_mode = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
 offset_left = 32.0
 offset_top = 32.0
-offset_right = 216.0
-offset_bottom = 294.0
+offset_right = 660.0
+offset_bottom = 344.0
+theme_override_constants/separation = 8
 
-[node name="MonsterCard2" parent="." instance=ExtResource("1_5vvfi")]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 32.0
-offset_right = 408.0
-offset_bottom = 294.0
+[node name="MonsterCard" parent="HBoxContainer" instance=ExtResource("1_5vvfi")]
+layout_mode = 2
 
-[node name="MonsterCard3" parent="." instance=ExtResource("1_5vvfi")]
-layout_mode = 0
-offset_left = 416.0
-offset_top = 32.0
-offset_right = 600.0
-offset_bottom = 294.0
+[node name="MonsterCard2" parent="HBoxContainer" instance=ExtResource("1_5vvfi")]
+layout_mode = 2
+
+[node name="MonsterCard3" parent="HBoxContainer" instance=ExtResource("1_5vvfi")]
+layout_mode = 2
 
 [node name="Setup3" type="Sprite2D" parent="."]
 position = Vector2(953, 761)

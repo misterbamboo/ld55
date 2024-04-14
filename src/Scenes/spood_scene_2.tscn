@@ -130,42 +130,42 @@ layout_mode = 2
 index = 11
 
 [node name="IngredientSlotUI12" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 12
 
 [node name="IngredientSlotUI13" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 13
 
 [node name="IngredientSlotUI14" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 14
 
 [node name="IngredientSlotUI15" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 15
 
 [node name="IngredientSlotUI16" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 16
 
 [node name="IngredientSlotUI17" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 17
 
 [node name="IngredientSlotUI18" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 18
 
 [node name="IngredientSlotUI19" parent="GridContainer" instance=ExtResource("1_nag1a")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 index = 19
 
