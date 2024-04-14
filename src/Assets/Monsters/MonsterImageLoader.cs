@@ -110,7 +110,6 @@ public partial class MonsterImageLoader : Node
     private static ImageTexture LoadImageFromFile(string speciesElementPath)
     {
         Image image = null;
-        GD.Print($"Try loading monster at: {speciesElementPath}");
         if (ResourceLoader.Exists(speciesElementPath))
         {
             image = Image.LoadFromFile(speciesElementPath);

@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpi8gtwoep4uu"]
+[gd_scene load_steps=3 format=3 uid="uid://dpi8gtwoep4uu"]
 
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="1_2khxd"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="2_ggbgi"]
 
 [node name="MonsterQueueScene" type="Node2D"]
 
 [node name="BossQueueManager" parent="." instance=ExtResource("1_2khxd")]
+
+[node name="MonsterCard" parent="." instance=ExtResource("2_ggbgi")]
+offset_left = 281.0
+offset_top = 294.0
+offset_right = 469.0
+offset_bottom = 557.0

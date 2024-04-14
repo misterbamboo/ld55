@@ -1,31 +1,40 @@
 using Godot;
-using System;
+using System.Collections.Generic;
 
 public partial class BossQueueManager : Node
 {
-    private double time;
-    int mult = 0;
+    private const double SpawnRateInSecs = 2;
 
+    private double timeBeforeNextSpawn;
 
     private RandomNumberGenerator rand;
 
     [Export] private PackedScene MonsterCardUIPrefab { get; set; }
+
+    private Queue<MonsterCardUI> MonsterQueue { get; set; } = new Queue<MonsterCardUI>();
+
+    private Vector2I ScreenSize { get; set; }
+
     private GameDataService GameDataService { get; set; }
 
     public override void _Ready()
     {
+        ScreenSize = GetTree().Root.Size;
+
         GameDataService = GetNode<GameDataService>(GameDataService.Path);
 
         rand = new RandomNumberGenerator();
         rand.Randomize();
+
+        timeBeforeNextSpawn = SpawnRateInSecs;
     }
 
     public override void _Process(double delta)
     {
-        time -= delta;
-        if (time <= 0)
+        timeBeforeNextSpawn -= delta;
+        if (timeBeforeNextSpawn <= 0)
         {
-            time = 0.5;
+            timeBeforeNextSpawn = SpawnRateInSecs;
             SpawnMonster();
         }
     }
@@ -41,8 +50,28 @@ public partial class BossQueueManager : Node
 
         newMonsterCard.Init(monsterSpecs, emotion, element, species);
 
-        mult++;
-        newMonsterCard.Position = new Vector2(10 * mult, 10 * mult);
+        var targetPos = new Vector2(ScreenSize.X - (newMonsterCard.Size.X), 0);
+        var spawnPos = new Vector2(ScreenSize.X, 50);
+        newMonsterCard.Position = spawnPos;
+        newMonsterCard.RotationDegrees = 15;
+        newMonsterCard.TriggerShiftAnim(targetPos);
+
         AddChild(newMonsterCard);
+        MoveChild(newMonsterCard, 0);
+
+        MonsterQueue.Enqueue(newMonsterCard);
+        ShiftOtherMonsters();
+    }
+
+    private void ShiftOtherMonsters()
+    {
+        float i = MonsterQueue.Count;
+        foreach (var monsterCard in MonsterQueue)
+        {
+            i--;
+            var offset = i * 15f;
+            var targetPos = new Vector2(ScreenSize.X - monsterCard.Size.X - offset, offset);
+            monsterCard.TriggerShiftAnim(targetPos);
+        }
     }
 }

@@ -13,7 +13,6 @@ public partial class PropertyBarUI : Node
 
 	public void SetValue(double value)
 	{
-        GD.Print($"Setting value to {value}");
         primarySlider.Value = value * 100;
 
         secondarySlider.Visible = false;
@@ -21,7 +20,6 @@ public partial class PropertyBarUI : Node
 
 	public void SetPreview(double value)
 	{
-        GD.Print($"Setting preview to {value}");
         secondarySlider.Value = value * 100;
 		
 		if(primarySlider.Value != secondarySlider.Value)

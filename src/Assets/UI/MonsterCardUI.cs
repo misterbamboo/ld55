@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class MonsterCardUI : Control
 {
@@ -18,6 +19,14 @@ public partial class MonsterCardUI : Control
     private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
     private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
 
+    // ShiftAnim
+    Vector2 shiftInitPos;
+    Vector2 shiftTargetPos;
+    float shiftInitRot;
+    float shiftTargetRot;
+    private double shiftT;
+    private bool shiftAnimRun;
+
     public void Init(SummoningSpecs monsterSpecs, SpecDefinition emotion, SpecDefinition element, SpecDefinition species)
     {
         MonsterSpecs = monsterSpecs;
@@ -29,8 +38,12 @@ public partial class MonsterCardUI : Control
     public override void _Ready()
     {
         MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
-
         RedrawMonster();
+    }
+
+    public override void _Process(double delta)
+    {
+        ShiftAnim((float)delta);
     }
 
     private void ChangeName(string name)
@@ -49,9 +62,45 @@ public partial class MonsterCardUI : Control
 
     public void RedrawMonster()
     {
-        ChangeName($"{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}");
+        ChangeName($"[center]{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}[/center]");
 
         var imageResult = MonsterImageLoader.GetMonsterImage(MonsterSpecs);
         ChangeImageAndIcons(imageResult);
+    }
+
+    internal void TriggerShiftAnim(Vector2 targetPos)
+    {
+        shiftInitPos = Position;
+        shiftTargetPos = targetPos;
+        shiftInitRot = RotationDegrees;
+        shiftTargetRot = 0;
+        shiftT = 0;
+        shiftAnimRun = true;
+    }
+
+    private void ShiftAnim(double delta)
+    {
+        if (shiftAnimRun)
+        {
+            shiftT += delta;
+            shiftT = Math.Clamp(shiftT, 0, 1);
+            float t = (float)EaseOutElastic(shiftT);
+            Position = shiftInitPos.Lerp(shiftTargetPos, t);
+            RotationDegrees = Mathf.Lerp(shiftInitRot, shiftTargetRot, t);
+        }
+
+        if (shiftT >= 1)
+        {
+            shiftAnimRun = false;
+        }
+    }
+
+    private double EaseOutElastic(double x)
+    {
+        var c4 = (2 * Math.PI) / 3;
+
+        return x <= 0 ? 0 :
+               x >= 1 ? 1 :
+               Mathf.Pow(2, -10 * x) * Mathf.Sin((x * 10 - 0.75) * c4) + 1;
     }
 }
