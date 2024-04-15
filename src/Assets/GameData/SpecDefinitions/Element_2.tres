@@ -6,5 +6,5 @@
 script = ExtResource("1_pnoqf")
 Index = 2
 SpecType = 1
-SpecNaming = "Lighting"
-MonsterNaming = "Lighting"
+SpecNaming = "Lightning"
+MonsterNaming = "Lightning"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dviyiswjp7wcw"
-path="res://.godot/imported/Ghost_Lighting.png-ebd835e26637cd304c06ad9bb99677ed.ctex"
+uid="uid://cn5ffk6rfw7k"
+path="res://.godot/imported/Golem _Disgust.png-0b9629838f1d41837458242735ae0c4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Ghost/Ghost_Lighting.png"
-dest_files=["res://.godot/imported/Ghost_Lighting.png-ebd835e26637cd304c06ad9bb99677ed.ctex"]
+source_file="res://Assets/Monsters/Golem/Emotions/Golem _Disgust.png"
+dest_files=["res://.godot/imported/Golem _Disgust.png-0b9629838f1d41837458242735ae0c4a.ctex"]
 
 [params]
 

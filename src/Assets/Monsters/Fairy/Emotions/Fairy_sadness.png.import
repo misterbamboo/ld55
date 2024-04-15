@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5mocvq7dh1h"
-path="res://.godot/imported/Slime_lighting.png-379cb0005cea14267324c3f7ecb2b668.ctex"
+uid="uid://17qcombvvukr"
+path="res://.godot/imported/Fairy_sadness.png-4c0b46bd0346f8b91001d9cbb21ed478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Slime/Slime_lighting.png"
-dest_files=["res://.godot/imported/Slime_lighting.png-379cb0005cea14267324c3f7ecb2b668.ctex"]
+source_file="res://Assets/Monsters/Fairy/Emotions/Fairy_sadness.png"
+dest_files=["res://.godot/imported/Fairy_sadness.png-4c0b46bd0346f8b91001d9cbb21ed478.ctex"]
 
 [params]
 
