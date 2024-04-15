@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=18 format=3 uid="uid://gnynltn8oj4w"]
 
+[ext_resource type="Texture2D" uid="uid://bms6emc6siw1l" path="res://Assets/DesktopAssets/Background_Game.png" id="1_godpu"]
 [ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_u3gc2"]
 [ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="3_t07eg"]
 [ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_sr65v"]
-[ext_resource type="Texture2D" uid="uid://cs11so735vm13" path="res://GameManager/candles/candle_lit.png" id="5_f0xyq"]
-[ext_resource type="Texture2D" uid="uid://lmjxns65vgu7" path="res://GameManager/candles/candle_off.png" id="6_k278y"]
+[ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/Candle_Lit.png" id="6_thiw4"]
+[ext_resource type="Texture2D" uid="uid://cqadmcqr81l3h" path="res://GameManager/candles/Candle_Lit_Selected.png" id="7_4d6mw"]
 [ext_resource type="PackedScene" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
+[ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
-[ext_resource type="Texture2D" uid="uid://bhhe3thjoehn0" path="res://GameManager/candles/candle_trunk.png" id="9_px0ix"]
+[ext_resource type="Texture2D" uid="uid://kdsmnasa043" path="res://GameManager/candles/Candle_Unlit_Selected.png" id="9_eprp0"]
 [ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="10_xx2s1"]
 [ext_resource type="PackedScene" uid="uid://dl70lx0ltf2wi" path="res://Contexts/Summoning/CardSpawnerUI.tscn" id="11_mi3xe"]
 [ext_resource type="Script" path="res://Scenes/SceneLoadedWitness.cs" id="12_e7igc"]
@@ -24,6 +26,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="BackgroundGame" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_godpu")
+
 [node name="Setup3" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.12549)
@@ -32,58 +38,58 @@ texture = ExtResource("1_u3gc2")
 
 [node name="ArcaneFocus" parent="." instance=ExtResource("2_emx3q")]
 layout_mode = 1
-offset_left = -351.0
-offset_top = -141.0
-offset_right = 249.0
-offset_bottom = 459.0
+offset_left = -253.0
+offset_top = -221.0
+offset_right = 347.0
+offset_bottom = 379.0
 scale = Vector2(0.75, 0.75)
 
 [node name="IngredientSlotUI20" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 1400.0
-offset_top = 900.0
-offset_right = -420.0
-offset_bottom = -80.0
+offset_left = 1500.0
+offset_top = 813.0
+offset_right = -320.0
+offset_bottom = -167.0
 index = 20
 
 [node name="IngredientSlotUI21" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 1520.0
-offset_top = 785.0
-offset_right = -300.0
-offset_bottom = -195.0
+offset_left = 1620.0
+offset_top = 698.0
+offset_right = -200.0
+offset_bottom = -282.0
 index = 21
 
 [node name="IngredientSlotUI22" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 1457.0
-offset_top = 657.0
-offset_right = -363.0
-offset_bottom = -323.0
+offset_left = 1557.0
+offset_top = 570.0
+offset_right = -263.0
+offset_bottom = -410.0
 index = 22
 
 [node name="IngredientSlotUI23" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 1326.0
-offset_top = 656.0
-offset_right = -494.0
-offset_bottom = -324.0
+offset_left = 1426.0
+offset_top = 569.0
+offset_right = -394.0
+offset_bottom = -411.0
 index = 23
 
 [node name="IngredientSlotUI24" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 1264.0
-offset_top = 791.0
-offset_right = -556.0
-offset_bottom = -189.0
+offset_left = 1364.0
+offset_top = 704.0
+offset_right = -456.0
+offset_bottom = -276.0
 index = 24
 
 [node name="IngredientSlotUI25" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 770.0
-offset_top = 708.0
-offset_right = -1050.0
-offset_bottom = -272.0
+offset_left = 869.0
+offset_top = 635.0
+offset_right = -951.0
+offset_bottom = -345.0
 index = 25
 
 [node name="Control" type="Control" parent="IngredientSlotUI25"]
@@ -98,10 +104,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -897.0
-offset_top = -48.0
-offset_right = -485.0
-offset_bottom = 468.0
+offset_left = -860.0
+offset_top = -61.0
+offset_right = -448.0
+offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
@@ -187,35 +193,37 @@ index = 19
 
 [node name="CandleManager" type="Node" parent="." node_paths=PackedStringArray("candleTextures")]
 script = ExtResource("4_sr65v")
-candleTextures = [NodePath("../Candles/Candle0/Flame"), NodePath("../Candles/Candle1/Flame"), NodePath("../Candles/Candle2/Flame"), NodePath("../Candles/Candle3/Flame"), NodePath("../Candles/Candle4/Flame")]
-litCandle = ExtResource("5_f0xyq")
-unlitCandle = ExtResource("6_k278y")
+candleTextures = [NodePath("../Candles/Candle0/CandleImg"), NodePath("../Candles/Candle1/CandleImg"), NodePath("../Candles/Candle2/CandleImg"), NodePath("../Candles/Candle3/CandleImg"), NodePath("../Candles/Candle4/CandleImg")]
+litCandle = ExtResource("6_thiw4")
+litCandleHover = ExtResource("7_4d6mw")
+unlitCandle = ExtResource("8_bp7fh")
+unlitCandleHover = ExtResource("9_eprp0")
 
 [node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("7_cohdj")]
 InventorySlots = [NodePath("../GridContainer/IngredientSlotUI0"), NodePath("../GridContainer/IngredientSlotUI1"), NodePath("../GridContainer/IngredientSlotUI2"), NodePath("../GridContainer/IngredientSlotUI3"), NodePath("../GridContainer/IngredientSlotUI4"), NodePath("../GridContainer/IngredientSlotUI5"), NodePath("../GridContainer/IngredientSlotUI6"), NodePath("../GridContainer/IngredientSlotUI7"), NodePath("../GridContainer/IngredientSlotUI8"), NodePath("../GridContainer/IngredientSlotUI9"), NodePath("../GridContainer/IngredientSlotUI10"), NodePath("../GridContainer/IngredientSlotUI11"), NodePath("../GridContainer/IngredientSlotUI12"), NodePath("../GridContainer/IngredientSlotUI13"), NodePath("../GridContainer/IngredientSlotUI14"), NodePath("../GridContainer/IngredientSlotUI15"), NodePath("../GridContainer/IngredientSlotUI16"), NodePath("../GridContainer/IngredientSlotUI17"), NodePath("../GridContainer/IngredientSlotUI18"), NodePath("../GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
 
 [node name="SummoningStatsUI" parent="." instance=ExtResource("8_nubsx")]
 layout_mode = 0
-offset_left = 1251.0
-offset_top = 269.0
-offset_right = 1651.0
-offset_bottom = 459.0
+offset_left = 1411.0
+offset_top = 71.0
+offset_right = 1811.0
+offset_bottom = 261.0
 
 [node name="Candles" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 1672.0
-offset_top = 738.0
-offset_right = 1712.0
-offset_bottom = 778.0
+offset_left = 1778.0
+offset_top = 647.0
+offset_right = 1818.0
+offset_bottom = 687.0
 
 [node name="Candle0" type="Control" parent="Candles"]
 anchors_preset = 0
-offset_left = -293.0
+offset_left = -404.0
 offset_top = 204.0
-offset_right = -165.0
-offset_bottom = 332.0
+offset_right = -356.0
+offset_bottom = 302.0
 
-[node name="Flame" type="TextureRect" parent="Candles/Candle0"]
+[node name="CandleImg" type="TextureRect" parent="Candles/Candle0"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -228,37 +236,27 @@ offset_right = 77.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_k278y")
-expand_mode = 1
-
-[node name="CandleBase" type="TextureRect" parent="Candles/Candle0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_px0ix")
+texture = ExtResource("8_bp7fh")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="Candles/Candle0"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 42.0
-offset_right = 96.0
-offset_bottom = 130.0
+offset_left = 24.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 67.0
 texture_normal = ExtResource("10_xx2s1")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Candle1" type="Control" parent="Candles"]
 anchors_preset = 0
-offset_left = -79.0
-offset_top = 52.0
-offset_right = 49.0
-offset_bottom = 180.0
+offset_left = -150.0
+offset_top = 230.0
+offset_right = -102.0
+offset_bottom = 328.0
 
-[node name="Flame" type="TextureRect" parent="Candles/Candle1"]
+[node name="CandleImg" type="TextureRect" parent="Candles/Candle1"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -271,36 +269,27 @@ offset_right = 77.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_k278y")
-expand_mode = 1
-
-[node name="CandleBase" type="TextureRect" parent="Candles/Candle1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_px0ix")
+texture = ExtResource("8_bp7fh")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="Candles/Candle1"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 42.0
-offset_right = 96.0
-offset_bottom = 130.0
+offset_left = 24.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 67.0
 texture_normal = ExtResource("10_xx2s1")
 ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Candle2" type="Control" parent="Candles"]
 anchors_preset = 0
-offset_left = -155.0
-offset_top = -204.0
-offset_right = -27.0
-offset_bottom = -76.0
+offset_left = -67.0
+offset_top = -33.0
+offset_right = -19.0
+offset_bottom = 65.0
 
-[node name="Flame" type="TextureRect" parent="Candles/Candle2"]
+[node name="CandleImg" type="TextureRect" parent="Candles/Candle2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -313,36 +302,27 @@ offset_right = 77.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_k278y")
-expand_mode = 1
-
-[node name="CandleBase" type="TextureRect" parent="Candles/Candle2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_px0ix")
+texture = ExtResource("8_bp7fh")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="Candles/Candle2"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 42.0
-offset_right = 96.0
-offset_bottom = 130.0
+offset_left = 24.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 67.0
 texture_normal = ExtResource("10_xx2s1")
 ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Candle3" type="Control" parent="Candles"]
 anchors_preset = 0
-offset_left = -454.0
-offset_top = -207.0
-offset_right = -326.0
-offset_bottom = -79.0
+offset_left = -278.0
+offset_top = -168.0
+offset_right = -230.0
+offset_bottom = -70.0
 
-[node name="Flame" type="TextureRect" parent="Candles/Candle3"]
+[node name="CandleImg" type="TextureRect" parent="Candles/Candle3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -355,36 +335,27 @@ offset_right = 77.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_k278y")
-expand_mode = 1
-
-[node name="CandleBase" type="TextureRect" parent="Candles/Candle3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_px0ix")
+texture = ExtResource("8_bp7fh")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="Candles/Candle3"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 42.0
-offset_right = 96.0
-offset_bottom = 130.0
+offset_left = 24.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 67.0
 texture_normal = ExtResource("10_xx2s1")
 ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Candle4" type="Control" parent="Candles"]
 anchors_preset = 0
-offset_left = -513.0
-offset_top = 51.0
-offset_right = -385.0
-offset_bottom = 179.0
+offset_left = -475.0
+offset_top = -23.0
+offset_right = -427.0
+offset_bottom = 75.0
 
-[node name="Flame" type="TextureRect" parent="Candles/Candle4"]
+[node name="CandleImg" type="TextureRect" parent="Candles/Candle4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -397,27 +368,18 @@ offset_right = 77.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_k278y")
-expand_mode = 1
-
-[node name="CandleBase" type="TextureRect" parent="Candles/Candle4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_px0ix")
+texture = ExtResource("8_bp7fh")
 expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="Candles/Candle4"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 42.0
-offset_right = 96.0
-offset_bottom = 130.0
+offset_left = 24.0
+offset_top = -13.0
+offset_right = 50.0
+offset_bottom = 67.0
 texture_normal = ExtResource("10_xx2s1")
 ignore_texture_size = true
+stretch_mode = 0
 
 [node name="BossQueueManager" parent="." instance=ExtResource("13_5t2sa")]
 
@@ -432,8 +394,18 @@ position = Vector2(738, 42)
 [node name="SceneLoadedWitness" type="Node" parent="."]
 script = ExtResource("12_e7igc")
 
+[connection signal="mouse_entered" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, true]]
+[connection signal="mouse_exited" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, false]]
 [connection signal="pressed" from="Candles/Candle0/TextureButton" to="CandleManager" method="ToggleCandle" binds= [0]]
+[connection signal="mouse_entered" from="Candles/Candle1/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [1, true]]
+[connection signal="mouse_exited" from="Candles/Candle1/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [1, false]]
 [connection signal="pressed" from="Candles/Candle1/TextureButton" to="CandleManager" method="ToggleCandle" binds= [1]]
+[connection signal="mouse_entered" from="Candles/Candle2/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [2, true]]
+[connection signal="mouse_exited" from="Candles/Candle2/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [2, false]]
 [connection signal="pressed" from="Candles/Candle2/TextureButton" to="CandleManager" method="ToggleCandle" binds= [2]]
+[connection signal="mouse_entered" from="Candles/Candle3/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [3, true]]
+[connection signal="mouse_exited" from="Candles/Candle3/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [3, false]]
 [connection signal="pressed" from="Candles/Candle3/TextureButton" to="CandleManager" method="ToggleCandle" binds= [3]]
+[connection signal="mouse_entered" from="Candles/Candle4/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [4, true]]
+[connection signal="mouse_exited" from="Candles/Candle4/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [4, false]]
 [connection signal="pressed" from="Candles/Candle4/TextureButton" to="CandleManager" method="ToggleCandle" binds= [4]]

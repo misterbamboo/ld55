@@ -8,8 +8,8 @@ script = ExtResource("1_8sjwy")
 RichTextLabel = NodePath("RichTextLabel")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 923.0
-offset_bottom = 229.0
+offset_right = 583.0
+offset_bottom = 504.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("2_xrpok")
 theme_override_font_sizes/normal_font_size = 50
