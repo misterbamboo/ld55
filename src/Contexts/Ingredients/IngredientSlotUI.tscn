@@ -23,8 +23,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.658824, 0.658824, 0.658824, 1)
+color = Color(0.109804, 0.109804, 0.109804, 0.32549)
 script = ExtResource("2_p6wvm")
+lightenAmount = 2.5
 
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(80, 80)
