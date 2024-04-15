@@ -4,6 +4,7 @@ public partial class CombatZoneUI : Node2D
 {
     [Export] private CombatSummonZoneUI CombatSummonZoneUI { get; set; }
 
+    private MonsterCardUI PlayerCard { get; set; }
     private MonsterCardUI EnemyCard { get; set; }
 
     private GameDataService GameDataService { get; set; }
@@ -17,20 +18,21 @@ public partial class CombatZoneUI : Node2D
         GameDataService = GetNode<GameDataService>(GameDataService.Path);
         DeskManager = GetNode<DeskManager>(DeskManager.Path);
         CombatSummonZoneUI.OnReadyToFight += CombatSummonZoneUI_OnReadyToFight;
+        DeskManager.OnFightCompleted += DeskManager_OnFightCompleted;
+    }
+
+    private void DeskManager_OnFightCompleted(BossFight bossFigth)
+    {
+        PlayerCard.QueueFree();
+        EnemyCard.QueueFree();
+        PlayerCard = null;
+        EnemyCard = null;
     }
 
     private void CombatSummonZoneUI_OnReadyToFight(MonsterCardUI card)
     {
-        DeskManager.FightStarting();
-
-        var bossFight = new BossFight(GameDataService);
-        bossFight.Combat(card.SummoningSpecs, EnemyCard.SummoningSpecs);
-
-        card.QueueFree();
-        EnemyCard.QueueFree();
-        EnemyCard = null;
-
-        DeskManager.FightCompleted(bossFight);
+        PlayerCard = card;
+        DeskManager.FightStarting(card.SummoningSpecs, EnemyCard.SummoningSpecs);
     }
 
     public override void _Process(double delta)

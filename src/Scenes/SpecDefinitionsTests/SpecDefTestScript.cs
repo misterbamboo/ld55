@@ -88,11 +88,8 @@ public partial class SpecDefTestScript : Node
     public void PlayerChanged()
     {
         var playerSpecs = new SummoningSpecs(PlayerEmotionSpec.Index, PlayerElementSpec.Index, PlayerSpeciesSpec.Index);
-        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, playerSpecs.Emotion.Index));
-        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, playerSpecs.Element.Index));
-        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, playerSpecs.Species.Index));
 
-        PlayerMonsterCardUI.Init(playerSpecs, emotion, element, species);
+        PlayerMonsterCardUI.Init(playerSpecs);
         PlayerMonsterCardUI.RedrawMonster();
         UpdateDisplayText();
     }
@@ -108,11 +105,8 @@ public partial class SpecDefTestScript : Node
     public void BossChanged()
     {
         var bossSpecs = new SummoningSpecs(BossEmotionSpec.Index, BossElementSpec.Index, BossSpeciesSpec.Index);
-        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, bossSpecs.Emotion.Index));
-        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, bossSpecs.Element.Index));
-        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, bossSpecs.Species.Index));
 
-        BossMonsterCardUI.Init(bossSpecs, emotion, element, species);
+        BossMonsterCardUI.Init(bossSpecs);
         BossMonsterCardUI.RedrawMonster();
 
         var bossFight = new BossFight(GameDataService);

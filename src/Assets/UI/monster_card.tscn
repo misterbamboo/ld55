@@ -44,7 +44,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="MonsterCard" type="PanelContainer" node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage")]
+[node name="MonsterCard" type="PanelContainer" node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage", "LifeDisplayProgressBar")]
 offset_right = 188.0
 offset_bottom = 263.0
 pivot_offset = Vector2(94, 205)
@@ -58,6 +58,7 @@ EmotionImage = NodePath("BoxContainer/MonsterComp/MonsterLayerTop")
 EmotionIconImage = NodePath("BoxContainer/MonsterAttributes/Emotion")
 ElementIconImage = NodePath("BoxContainer/MonsterAttributes/Element")
 SpeciesIconImage = NodePath("BoxContainer/MonsterAttributes/Species")
+LifeDisplayProgressBar = NodePath("Control/ProgressBar")
 metadata/_edit_use_anchors_ = true
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
@@ -148,6 +149,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_7nagw")
 theme_override_styles/background = SubResource("StyleBoxFlat_j4qbu")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nkjj2")
-value = 50.0
+step = 1.0
+value = 100.0
 fill_mode = 3
 show_percentage = false

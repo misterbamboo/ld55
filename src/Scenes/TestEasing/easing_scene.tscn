@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dklk6bjvd3klm"]
+
+[ext_resource type="Script" path="res://Scenes/TestEasing/EasingTestScript.cs" id="1_kgett"]
+
+[node name="EasingScene" type="Node2D" node_paths=PackedStringArray("vSlider", "hSlider", "itemList")]
+script = ExtResource("1_kgett")
+vSlider = NodePath("VSlider")
+hSlider = NodePath("HSlider")
+itemList = NodePath("ItemList")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_top = 300.0
+offset_right = 300.0
+offset_bottom = 316.0
+max_value = 1000.0
+
+[node name="VSlider" type="VSlider" parent="."]
+offset_left = 300.0
+offset_right = 316.0
+offset_bottom = 300.0
+max_value = 1000.0
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 364.0
+offset_right = 680.0
+offset_bottom = 316.0
+
+[connection signal="item_selected" from="ItemList" to="." method="ItemSelected"]

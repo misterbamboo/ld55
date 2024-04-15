@@ -58,7 +58,8 @@ public partial class SoundMusicService : Node
         DeskManager.OnItemGrabbed += DeskManager_OnItemGrabbed;
         DeskManager.OnItemDropped += DeskManager_OnItemDropped;
         DeskManager.OnFightCompleted += DeskManager_OnFightCompleted;
-        DeskManager.OnCardMoving += DeskManager_OnCardMoving; ; 
+        DeskManager.OnCardMoving += DeskManager_OnCardMoving;
+        DeskManager.OnFightHit += DeskManager_OnFightHit;
     }
 
     private void DeskManager_OnGameStart()
@@ -84,7 +85,7 @@ public partial class SoundMusicService : Node
         TryPlaying(CardSummoned);
     }
 
-    private void DeskManager_OnFightStarting()
+    private void DeskManager_OnFightStarting(SummoningSpecs player, SummoningSpecs enemy)
     {
         TryPlaying(CardPlaced);
     }
@@ -128,6 +129,11 @@ public partial class SoundMusicService : Node
     private void DeskManager_OnCardMoving()
     {
         TryPlaying(CardMoved);
+    }
+
+    private void DeskManager_OnFightHit()
+    {
+        TryPlaying(Hit);
     }
 
     private void TryPlaying(string musicKey)
