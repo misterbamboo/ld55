@@ -4,6 +4,7 @@ using System.Linq;
 
 public partial class BossQueueManager : Node
 {
+
     public const int MaxInQueue = 5;
     public static BossQueueManager Instance { get; private set; }
 
@@ -12,6 +13,8 @@ public partial class BossQueueManager : Node
     private double timeBeforeNextSpawn;
 
     private RandomNumberGenerator rand;
+
+    [Export] private Node CardContainer { get; set; }
 
     [Export] private PackedScene MonsterCardUIPrefab { get; set; }
 
@@ -79,8 +82,9 @@ public partial class BossQueueManager : Node
         newMonsterCard.RotationDegrees = 15;
         newMonsterCard.TriggerShiftAnim(targetPos);
 
-        AddChild(newMonsterCard);
-        MoveChild(newMonsterCard, 0);
+        var container = CardContainer ?? this;
+        container.AddChild(newMonsterCard);
+        container.MoveChild(newMonsterCard, 0);
 
         MonsterQueue.Enqueue(newMonsterCard);
         ShiftOtherMonsters();

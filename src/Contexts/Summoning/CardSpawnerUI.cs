@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class CardSpawnerUI : Node2D
 {
@@ -16,8 +15,6 @@ public partial class CardSpawnerUI : Node2D
 		spawnTarget = GetNode<Node2D>("SpawnTarget");
         deskManager.OnMonsterSummoned += SpawnCard;
 	}
-
-
 
     private void SpawnCard(SummoningSpecs summoningSpecs)
     {

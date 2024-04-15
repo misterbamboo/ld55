@@ -8,3 +8,4 @@ script = ExtResource("1_whgy0")
 MonsterCardUIPrefab = ExtResource("2_ddbh1")
 
 [node name="SpawnTarget" type="Node2D" parent="."]
+position = Vector2(1303, 681)
