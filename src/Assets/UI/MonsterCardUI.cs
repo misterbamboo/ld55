@@ -50,7 +50,6 @@ public partial class MonsterCardUI : Control
         ShiftAnim((float)delta);
     }
 
-
     public override void _Input(InputEvent @event)
     {
         if (IsDraggable)

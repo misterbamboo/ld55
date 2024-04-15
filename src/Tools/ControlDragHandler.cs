@@ -2,7 +2,7 @@
 
 public class ControlDragHandler
 {
-    private const bool DebugMode = true;
+    private const bool DebugMode = false;
 
     public bool MouseHover => mouseHover;
 
@@ -25,11 +25,13 @@ public class ControlDragHandler
         {
             MouseInHandle(mouseMoveIn);
         }
-        else if (!mouseDrag && mouseHover && @event is InputEventMouseMotion mouseMoveOut)
+
+        if (!mouseDrag && mouseHover && @event is InputEventMouseMotion mouseMoveOut)
         {
             MouseOutHandle(mouseMoveOut);
         }
-        else if (mouseHover && @event is InputEventMouseButton mouseClick)
+
+        if (mouseHover && @event is InputEventMouseButton mouseClick)
         {
             MouseClickHandle(mouseClick);
         }
@@ -42,7 +44,7 @@ public class ControlDragHandler
 
     private void MouseInHandle(InputEventMouseMotion mouseMoveIn)
     {
-        if (control.GetRect().HasPoint(mouseMoveIn.Position))
+        if (control.GetGlobalRect().HasPoint(mouseMoveIn.Position))
         {
             Debug("In");
             mouseHover = true;
@@ -51,7 +53,7 @@ public class ControlDragHandler
 
     private void MouseOutHandle(InputEventMouseMotion mouseMoveOut)
     {
-        if (!control.GetRect().HasPoint(mouseMoveOut.Position))
+        if (!control.GetGlobalRect().HasPoint(mouseMoveOut.Position))
         {
             Debug("Out");
             mouseHover = false;
