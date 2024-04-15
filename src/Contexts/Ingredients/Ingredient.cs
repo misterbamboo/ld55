@@ -29,6 +29,9 @@ public class Ingredient
     {
         return new Ingredient(None, None, None, None, 0,0,0);
     }
+    public double EmotionValue => Emotion * Processing;
+    public double SpeciesValue => Species * Processing;
+    public double ElementValue => Element * Processing;
 
     public bool IsVoid => Id == None;
 

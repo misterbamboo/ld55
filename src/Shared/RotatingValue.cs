@@ -12,6 +12,10 @@ public struct RotatingValue
         Value = AddInternal(Value, value);
     }
 
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
     private double AddInternal(double a, double b)
     {
         var sum = a + b;

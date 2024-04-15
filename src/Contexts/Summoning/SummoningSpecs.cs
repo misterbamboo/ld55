@@ -52,4 +52,9 @@ public class SummoningSpecs
     {
         return a.Combine(b);
     }
+
+    public override string ToString()
+    {
+        return $"(emotion:{Emotion}, species:{Species}, element:{Element})";
+    }
 }

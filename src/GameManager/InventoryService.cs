@@ -1,10 +1,10 @@
 using Godot;
-using System;
 using System.Linq;
 
 public partial class InventoryService : Node
 {
     private GameDataService gameDataService;
+    private DeskManager deskManager;
     [Export] private Godot.Collections.Array<IngredientSlotUI> InventorySlots;
     [Export] private SummoningStatsUI summoningStats;
 
@@ -12,18 +12,28 @@ public partial class InventoryService : Node
 
     public override void _Ready()
     {
+        deskManager = GetNode<DeskManager>(DeskManager.Path);
         gameDataService = GetNode<GameDataService>(GameDataService.Path);
         summoningStats = GetNode<SummoningStatsUI>("../SummoningStatsUI");
         Inventory = new Inventory();
 
+        deskManager.OnMonsterSummoned += ClearSummoningBoard;
+        deskManager.OnGameStart += HandleNewGame;
+     
+        VerifyInventorySlotsOrder();
+        RedrawInventoryItems();
+    }
+
+    private void HandleNewGame()
+    {
         foreach (var ingredient in gameDataService.Ingredients)
         {
             Inventory.AddItem(ingredient);
             Inventory.AddItem(ingredient);
         }
-     
-        VerifyInventorySlotsOrder();
         RedrawInventoryItems();
+
+        deskManager.NewMonster(new SummoningSpecs(2.5, 2.5, 2.5));
     }
 
     private void VerifyInventorySlotsOrder()
@@ -52,46 +62,54 @@ public partial class InventoryService : Node
         }
     }
 
-    public void Swap(int index1, int index2)
+    public void Swap(int sourceIndex, int destinationIndex)
     {
-        Inventory.SwapItems(index1, index2);
+        Inventory.SwapItems(sourceIndex, destinationIndex);
+
         RedrawInventoryItems();
 
-        if (index1 >= Inventory.InventorySlots || index2 >= Inventory.InventorySlots)
+        if (destinationIndex == ArcaneFocusSlot)
         {
-            CountProperties();
+            deskManager.FillArcaneForcus(Inventory.GetItemInSlot(ArcaneFocusSlot));
+        }
+        else if(sourceIndex == ArcaneFocusSlot)
+        {
+            deskManager.EmptyArcaneForcus();
+        }
+
+        if (sourceIndex >= Inventory.InventorySlots || destinationIndex >= Inventory.InventorySlots)
+        {
+            InsertInSummoningCircle();
         }
     }
 
-    public void CountProperties()
+    public void InsertInSummoningCircle()
     {
-        GD.Print("Something in special slots");
-        var monsterSpecs = new SummoningSpecs(2.5,2.5,2.5);
+        var monsterSpecs = new SummoningSpecs(2.5, 2.5, 2.5);
+        AddStatsForAllSlots(monsterSpecs);
+        deskManager.UpdateMonsterStats(monsterSpecs);
+    }
 
-        for(int i = Inventory.TotalSlots-2; i >= Inventory.TotalSlots-6; i--)
+    private int ArcaneFocusSlot => Inventory.TotalSlots - 1;
+
+    private void AddStatsForAllSlots(SummoningSpecs monsterSpecs)
+    {
+        for (int i = Inventory.TotalSlots - 2; i >= Inventory.TotalSlots - 6; i--)
         {
             var ingredient = Inventory.GetItemInSlot(i);
-            monsterSpecs.AddEmotion(ingredient.Emotion);
-            monsterSpecs.AddSpecies(ingredient.Species);
-            monsterSpecs.AddElement(ingredient.Element);
+            if(ingredient == null)
+            {
+                continue;
+            }
+            monsterSpecs.AddEmotion(ingredient.EmotionValue);
+            monsterSpecs.AddSpecies(ingredient.SpeciesValue);
+            monsterSpecs.AddElement(ingredient.ElementValue);
         }
 
-        summoningStats.SetBars(monsterSpecs);
-
-        if (!Inventory.GetItemInSlot(Inventory.TotalSlots - 1).IsVoid)
-        {
-            GD.Print("Something in the mixer");
-            var previewSpecs = new SummoningSpecs(monsterSpecs.Emotion.Value, monsterSpecs.Element.Value, monsterSpecs.Species.Value);
-            var ingredient = Inventory.GetItemInSlot(Inventory.TotalSlots - 1);
-            previewSpecs.AddEmotion(ingredient.Emotion);
-            previewSpecs.AddSpecies(ingredient.Species);
-            previewSpecs.AddElement(ingredient.Element);
-
-            summoningStats.SetPreviews(previewSpecs);
-        }
+        GD.Print(monsterSpecs);
     }
 
-    public void ClearSummoningBoard()
+    public void ClearSummoningBoard(SummoningSpecs monster)
     {
         Inventory.ClearSlot(20);
         Inventory.ClearSlot(21);
@@ -100,6 +118,13 @@ public partial class InventoryService : Node
         Inventory.ClearSlot(24);
 
         RedrawInventoryItems();
+        deskManager.NewMonster(new SummoningSpecs(2.5, 2.5, 2.5));
+    }
+
+    public override void _ExitTree()
+    {
+        deskManager.OnMonsterSummoned -= ClearSummoningBoard;
+        deskManager.OnGameStart -= HandleNewGame;
     }
 }
 

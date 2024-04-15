@@ -20,12 +20,14 @@ config/icon="res://icon.svg"
 GameDataService="*res://GameManager/GameDataService.tscn"
 GameAssetsService="*res://GameManager/GameAssetsService.tscn"
 MonsterImageLoader="*res://Assets/Monsters/MonsterImageLoader.cs"
+DeskManager="*res://GameManager/DeskManager.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position_type=2
+window/stretch/mode="viewport"
 
 [dotnet]
 

@@ -12,7 +12,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjgp0"]
 
 [node name="PropertyBar" type="Control"]
-custom_minimum_size = Vector2(400, 25)
+custom_minimum_size = Vector2(400, 50)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
@@ -110,7 +110,6 @@ editable = false
 scrollable = false
 
 [node name="SecondarySlider" type="HSlider" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
