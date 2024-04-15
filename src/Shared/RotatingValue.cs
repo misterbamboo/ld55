@@ -2,7 +2,9 @@
 
 public struct RotatingValue
 {
-    private const double MaxCount = 5;
+    private const int MaxCountInt = 5;
+    private const double MaxCount = MaxCountInt;
+
     public double Value { get; private set; }
     public int Index => (int)Value;
 
@@ -12,12 +14,25 @@ public struct RotatingValue
         Value = AddInternal(Value, value);
     }
 
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
+
     private double AddInternal(double a, double b)
     {
         var sum = a + b;
         var signedValue = sum % MaxCount;
         var positiveValue = (signedValue + MaxCount) % MaxCount;
         return RoundDigits(positiveValue);
+    }
+
+    private int AddIntInternal(int a, int b)
+    {
+        var sum = a + b;
+        var signedValue = sum % MaxCountInt;
+        var positiveValue = (signedValue + MaxCountInt) % MaxCountInt;
+        return positiveValue;
     }
 
     private double RoundDigits(double value)
@@ -53,9 +68,32 @@ public struct RotatingValue
         return Value.GetHashCode();
     }
 
+    public int InvertedIndexDistanceOf(RotatingValue destination)
+    {
+        return -IndexDistanceOf(destination);
+    }
+
     public int IndexDistanceOf(RotatingValue destination)
     {
-        return (int)DistanceOf(destination);
+        var src = Index;
+        var dst = destination.Index;
+
+        var distance = dst - src;
+        var overflowDistanceLeft = -AddIntInternal(0, src - dst);
+        var overFlowDistanceRight = (MaxCountInt - src) + dst;
+
+        if (Math.Abs(distance) < Math.Abs(overflowDistanceLeft) && Math.Abs(distance) < Math.Abs(overFlowDistanceRight))
+        {
+            return distance;
+        }
+        else if (Math.Abs(overflowDistanceLeft) < Math.Abs(overFlowDistanceRight))
+        {
+            return overflowDistanceLeft;
+        }
+        else
+        {
+            return overFlowDistanceRight;
+        }
     }
 
     public double DistanceOf(RotatingValue destination)

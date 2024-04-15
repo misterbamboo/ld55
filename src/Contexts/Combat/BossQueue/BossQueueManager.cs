@@ -1,36 +1,70 @@
 using Godot;
-using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public partial class BossQueueManager : Node
 {
-    private double time;
-    int mult = 0;
 
+    public const int MaxInQueue = 5;
+    public static BossQueueManager Instance { get; private set; }
+
+    private const double SpawnRateInSecs = 0.5;
+
+    private double timeBeforeNextSpawn;
 
     private RandomNumberGenerator rand;
 
+    [Export] private Node CardContainer { get; set; }
+
     [Export] private PackedScene MonsterCardUIPrefab { get; set; }
+
+    private Queue<MonsterCardUI> MonsterQueue { get; set; } = new Queue<MonsterCardUI>();
+    public bool IsFullAndWihtouAnimation => MonsterQueue.Where(c => !c.IsAnimating).Count() >= MaxInQueue;
+
+    private Vector2I ScreenSize { get; set; }
+
     private GameDataService GameDataService { get; set; }
+
+    internal MonsterCardUI PullNextCard()
+    {
+        if (!MonsterQueue.Any())
+        {
+            SpawnCard();
+        }
+
+        var card = MonsterQueue.Dequeue();
+        ShiftOtherMonsters();
+        return card;
+    }
 
     public override void _Ready()
     {
+        Instance = this;
+        ScreenSize = GetTree().Root.Size;
+
         GameDataService = GetNode<GameDataService>(GameDataService.Path);
 
         rand = new RandomNumberGenerator();
         rand.Randomize();
+
+        timeBeforeNextSpawn = SpawnRateInSecs;
     }
 
     public override void _Process(double delta)
     {
-        time -= delta;
-        if (time <= 0)
+        timeBeforeNextSpawn -= delta;
+        if (timeBeforeNextSpawn <= 0)
         {
-            time = 0.5;
-            SpawnMonster();
+            timeBeforeNextSpawn = SpawnRateInSecs;
+
+            if (MonsterQueue.Count < MaxInQueue)
+            {
+                SpawnCard();
+            }
         }
     }
 
-    private void SpawnMonster()
+    private void SpawnCard()
     {
         var newMonsterCard = MonsterCardUIPrefab.Instantiate<MonsterCardUI>();
         var monsterSpecs = new SummoningSpecs(rand.RandiRange(0, 4), rand.RandiRange(0, 4), rand.RandiRange(0, 4));
@@ -39,10 +73,32 @@ public partial class BossQueueManager : Node
         var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, monsterSpecs.Element.Index));
         var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, monsterSpecs.Species.Index));
 
+        newMonsterCard.IsDraggable = false;
         newMonsterCard.Init(monsterSpecs, emotion, element, species);
 
-        mult++;
-        newMonsterCard.Position = new Vector2(10 * mult, 10 * mult);
-        AddChild(newMonsterCard);
+        var targetPos = new Vector2(0, 0);
+        var spawnPos = new Vector2(-newMonsterCard.Position.X, 50);
+        newMonsterCard.Position = spawnPos;
+        newMonsterCard.RotationDegrees = 15;
+        newMonsterCard.TriggerShiftAnim(targetPos);
+
+        var container = CardContainer ?? this;
+        container.AddChild(newMonsterCard);
+        container.MoveChild(newMonsterCard, 0);
+
+        MonsterQueue.Enqueue(newMonsterCard);
+        ShiftOtherMonsters();
+    }
+
+    private void ShiftOtherMonsters()
+    {
+        float i = MonsterQueue.Count;
+        foreach (var monsterCard in MonsterQueue)
+        {
+            i--;
+            var offset = i * 5f;
+            var targetPos = new Vector2(offset, offset * 2);
+            monsterCard.TriggerShiftAnim(targetPos);
+        }
     }
 }

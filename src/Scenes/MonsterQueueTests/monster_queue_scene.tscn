@@ -1,7 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpi8gtwoep4uu"]
+[gd_scene load_steps=3 format=3 uid="uid://dpi8gtwoep4uu"]
 
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="1_2khxd"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="2_ggbgi"]
 
 [node name="MonsterQueueScene" type="Node2D"]
 
 [node name="BossQueueManager" parent="." instance=ExtResource("1_2khxd")]
+
+[node name="MonsterCard" parent="." instance=ExtResource("2_ggbgi")]
+offset_left = 281.0
+offset_top = 294.0
+offset_right = 469.0
+offset_bottom = 557.0
+
+[node name="MonsterCard2" parent="." node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage") instance=ExtResource("2_ggbgi")]
+offset_left = 548.0
+offset_top = 184.0
+offset_right = 736.0
+offset_bottom = 447.0
+NameLabel = NodePath("../MonsterCard/BoxContainer/MonsterName")
+SpeciesImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerBottom")
+EmotionImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerTop")
+EmotionIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Emotion")
+ElementIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Element")
+SpeciesIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Species")
+
+[node name="MonsterCard3" parent="." node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage") instance=ExtResource("2_ggbgi")]
+offset_left = 560.0
+offset_top = 470.0
+offset_right = 748.0
+offset_bottom = 733.0
+NameLabel = NodePath("../MonsterCard/BoxContainer/MonsterName")
+SpeciesImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerBottom")
+EmotionImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerTop")
+EmotionIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Emotion")
+ElementIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Element")
+SpeciesIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Species")

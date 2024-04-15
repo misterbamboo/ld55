@@ -35,10 +35,10 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 0.0392157)
-corner_radius_top_left = 88
-corner_radius_top_right = 88
-corner_radius_bottom_right = 88
-corner_radius_bottom_left = 88
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4qbu"]
 bg_color = Color(0.5, 0.452333, 0.39, 1)
@@ -61,16 +61,19 @@ corner_radius_bottom_left = 4
 
 [node name="MonsterCard" type="PanelContainer" node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage")]
 offset_right = 188.0
-offset_bottom = 296.0
-size_flags_vertical = 3
+offset_bottom = 263.0
+pivot_offset = Vector2(94, 205)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_dklhk")
 script = ExtResource("1_hlve0")
-NameLabel = NodePath("")
-SpeciesImage = NodePath("")
-EmotionImage = NodePath("")
-EmotionIconImage = NodePath("")
-ElementIconImage = NodePath("")
-SpeciesIconImage = NodePath("")
+NameLabel = NodePath("BoxContainer/MonsterName")
+SpeciesImage = NodePath("BoxContainer/MonsterComp/MonsterLayerBottom")
+EmotionImage = NodePath("BoxContainer/MonsterComp/MonsterLayerTop")
+EmotionIconImage = NodePath("BoxContainer/MonsterAttributes/Emotion")
+ElementIconImage = NodePath("BoxContainer/MonsterAttributes/Element")
+SpeciesIconImage = NodePath("BoxContainer/MonsterAttributes/Species")
+metadata/_edit_use_anchors_ = true
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 2
@@ -85,7 +88,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtjir")
 
 [node name="MonsterLayerBottom" type="TextureRect" parent="BoxContainer/MonsterComp"]
 clip_contents = true
-custom_minimum_size = Vector2(176, 176)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -96,7 +99,7 @@ stretch_mode = 5
 
 [node name="MonsterLayerTop" type="TextureRect" parent="BoxContainer/MonsterComp"]
 clip_contents = true
-custom_minimum_size = Vector2(176, 176)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -132,20 +135,14 @@ texture = ExtResource("6_wnqbb")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 42)
-layout_mode = 2
-alignment = 1
-
-[node name="MonsterName" type="RichTextLabel" parent="BoxContainer/VBoxContainer"]
+[node name="MonsterName" type="RichTextLabel" parent="BoxContainer"]
 modulate = Color(0.333333, 0.258824, 0.156863, 1)
-custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_7nagw")
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
-text = "[center]Disgusted Fire Undead
+text = "[center]Disgusted Water Undead
 [/center]"
 fit_content = true
 
@@ -155,9 +152,9 @@ layout_mode = 2
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 custom_minimum_size = Vector2(16, 2.08165e-12)
 layout_mode = 2
-offset_left = 200.0
-offset_right = 216.0
-offset_bottom = 288.0
+offset_left = 180.0
+offset_right = 196.0
+offset_bottom = 238.0
 size_flags_horizontal = 8
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.333333, 0.258824, 0.156863, 1)

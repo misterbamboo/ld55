@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ld 55"
-run/main_scene="res://Scenes/spood_scene.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,12 +20,15 @@ config/icon="res://icon.svg"
 GameDataService="*res://GameManager/GameDataService.tscn"
 GameAssetsService="*res://GameManager/GameAssetsService.tscn"
 MonsterImageLoader="*res://Assets/Monsters/MonsterImageLoader.cs"
+DeskManager="*res://GameManager/DeskManager.tscn"
+PlayerHandService="*res://Contexts/Combat/PlayerHand/player_hand_service.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position_type=2
+window/stretch/mode="viewport"
 
 [dotnet]
 

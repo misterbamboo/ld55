@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsxs73dlil5v8"]
+
+[ext_resource type="Script" path="res://Contexts/Combat/PlayerHand/PlayerHand.cs" id="1_xjpfb"]
+
+[node name="PlayerHandService" type="Node"]
+script = ExtResource("1_xjpfb")

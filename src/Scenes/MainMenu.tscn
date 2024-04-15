@@ -1,0 +1,195 @@
+[gd_scene load_steps=59 format=3 uid="uid://cwwbg1ksy2hjc"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.cs" id="1_65abr"]
+[ext_resource type="Texture2D" uid="uid://cyebqpxa506a1" path="res://Assets/Monsters/Slime/Slime_fire.png" id="2_kbl6r"]
+[ext_resource type="Texture2D" uid="uid://s66w64inst2o" path="res://Assets/Monsters/Slime/Slime_earth.png" id="2_ufwbh"]
+[ext_resource type="Texture2D" uid="uid://h4dioh5o3vkw" path="res://Assets/Monsters/Slime/Emotions/Slime_Anger.png" id="3_5ahts"]
+[ext_resource type="Texture2D" uid="uid://bvaqyehnwlo10" path="res://Assets/Monsters/Undead/Undead_water.png" id="3_5uq5q"]
+[ext_resource type="Texture2D" uid="uid://bps35t6edcpvt" path="res://Assets/Monsters/Slime/Emotions/Slime_Disgust.png" id="3_ttvvk"]
+[ext_resource type="Texture2D" uid="uid://bh8hj0mgtxlgp" path="res://Assets/Monsters/Slime/Slime_ice.png" id="4_jo5et"]
+[ext_resource type="Texture2D" uid="uid://q7rliysypffc" path="res://Assets/Monsters/Undead/Emotions/Undead_Anger.png" id="4_stmlb"]
+[ext_resource type="Texture2D" uid="uid://cb7410gcnwxwp" path="res://Assets/Monsters/Slime/Emotions/Slime_Fear.png" id="4_tn1jr"]
+[ext_resource type="Texture2D" uid="uid://ky8evuaukq5t" path="res://Assets/Monsters/Slime/Emotions/Slime_Joy.png" id="5_6ylcj"]
+[ext_resource type="Texture2D" uid="uid://c5mocvq7dh1h" path="res://Assets/Monsters/Slime/Slime_Lightning.png" id="5_e1p1t"]
+[ext_resource type="Texture2D" uid="uid://dwsoekogv44b1" path="res://Assets/Monsters/Slime/Slime_water.png" id="6_v1uge"]
+[ext_resource type="Texture2D" uid="uid://bidhmfa5d4ptt" path="res://Assets/Monsters/Slime/Emotions/Slime_Sadness.png" id="6_xwyry"]
+[ext_resource type="Texture2D" uid="uid://dyhvfn41x10f2" path="res://Assets/Monsters/Undead/Emotions/Undead_Disgust.png" id="8_l7rg0"]
+[ext_resource type="Texture2D" uid="uid://dee2balymomy1" path="res://Assets/Monsters/Undead/Emotions/Undead_Fear.png" id="9_p0cpm"]
+[ext_resource type="Texture2D" uid="uid://b8vn7kuquubjo" path="res://Assets/Monsters/Undead/Emotions/Undead_Joy.png" id="10_apshx"]
+[ext_resource type="Texture2D" uid="uid://cgehw5mw3j5n7" path="res://Assets/Monsters/Undead/Emotions/Undead_Sadness.png" id="11_apw11"]
+[ext_resource type="Texture2D" uid="uid://m55brumb1sjj" path="res://Assets/Monsters/Undead/Undead_earth.png" id="12_6yv58"]
+[ext_resource type="Texture2D" uid="uid://che5dhmodgxkk" path="res://Assets/Monsters/Undead/Undead_fire.png" id="13_pc074"]
+[ext_resource type="Texture2D" uid="uid://cuy36oenuklrr" path="res://Assets/Monsters/Undead/Undead_ice.png" id="14_gh2r6"]
+[ext_resource type="Texture2D" uid="uid://bkbw051h1u5nk" path="res://Assets/Monsters/Undead/Undead_Lightning.png" id="15_1lvaq"]
+[ext_resource type="Texture2D" uid="uid://bid1d66tojgli" path="res://Assets/Monsters/Golem/Golem_Earth.png" id="22_1228d"]
+[ext_resource type="Texture2D" uid="uid://ccmt5hq1xsntw" path="res://Assets/Monsters/Golem/Golem_fire.png" id="23_03tj7"]
+[ext_resource type="Texture2D" uid="uid://4r6wevt7hehf" path="res://Assets/Monsters/Ghost/Ghost_Earth.png" id="23_mw17h"]
+[ext_resource type="Texture2D" uid="uid://bliy55ondsm1x" path="res://Assets/Monsters/Ghost/Ghost_Fire.png" id="24_mjduk"]
+[ext_resource type="Texture2D" uid="uid://bunx0wjwqiyp4" path="res://Assets/Monsters/Golem/Golem_Ice.png" id="24_ug53u"]
+[ext_resource type="Texture2D" uid="uid://cvo74vyy2piim" path="res://Assets/Monsters/Golem/Golem_Lightning.png" id="25_5du8d"]
+[ext_resource type="Texture2D" uid="uid://d4ejqso3hyvtr" path="res://Assets/Monsters/Ghost/Ghost_Ice.png" id="25_qd5bi"]
+[ext_resource type="Texture2D" uid="uid://dgu0ms0wpveah" path="res://Assets/Monsters/Golem/Golem_water.png" id="26_dsqk7"]
+[ext_resource type="Texture2D" uid="uid://dviyiswjp7wcw" path="res://Assets/Monsters/Ghost/Ghost_Lightning.png" id="26_mqcob"]
+[ext_resource type="Texture2D" uid="uid://clas5rsy657oe" path="res://Assets/Monsters/Golem/Emotions/Golem_Anger.png" id="27_5hs4j"]
+[ext_resource type="Texture2D" uid="uid://h0x516s50uig" path="res://Assets/Monsters/Ghost/Ghost_Water.png" id="27_fd73s"]
+[ext_resource type="Texture2D" uid="uid://c6gbjpd6w5n6g" path="res://Assets/Monsters/Golem/Emotions/Golem_Disgust.png" id="28_7x0mc"]
+[ext_resource type="Texture2D" uid="uid://bs0rjtgharpey" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Anger.png" id="28_uvhc4"]
+[ext_resource type="Texture2D" uid="uid://by33qebirsvue" path="res://Assets/Monsters/Golem/Emotions/Golem_Fear.png" id="29_j0hsy"]
+[ext_resource type="Texture2D" uid="uid://ddc866dj6kh5s" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Disgust.png" id="29_not1o"]
+[ext_resource type="Texture2D" uid="uid://cqmlik4jj575y" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Fear.png" id="30_1q2o3"]
+[ext_resource type="Texture2D" uid="uid://cyoqxgshqap2g" path="res://Assets/Monsters/Golem/Emotions/Golem_Joy.png" id="30_w0yg2"]
+[ext_resource type="Texture2D" uid="uid://bel1p8r47q5hu" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Joy.png" id="31_gkpf5"]
+[ext_resource type="Texture2D" uid="uid://mtwsbrq7b7hc" path="res://Assets/Monsters/Golem/Emotions/Golem_Sadness.png" id="31_o7prl"]
+[ext_resource type="Texture2D" uid="uid://b837e13athr0v" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Sadness.png" id="32_mstm6"]
+[ext_resource type="Texture2D" uid="uid://ddd42u78jnw2i" path="res://Assets/Monsters/Fairy/Fairy_earth.png" id="42_visi6"]
+[ext_resource type="Texture2D" uid="uid://maxwedph6v5h" path="res://Assets/Monsters/Fairy/Fairy_fire.png" id="43_kwprh"]
+[ext_resource type="Texture2D" uid="uid://edja5adwj03d" path="res://Assets/Monsters/Fairy/Fairy_ice.png" id="44_lh4e1"]
+[ext_resource type="Texture2D" uid="uid://d1bcrr87ngogc" path="res://Assets/Monsters/Fairy/Fairy_Lightning.png" id="45_44ysv"]
+[ext_resource type="Texture2D" uid="uid://ch2kogadtc30h" path="res://Assets/Monsters/Fairy/Fairy_water.png" id="46_eqjak"]
+[ext_resource type="Texture2D" uid="uid://1flh0kj8hwkn" path="res://Assets/Monsters/Fairy/Emotions/Fairy_anger.png" id="47_1ffy0"]
+[ext_resource type="Texture2D" uid="uid://dog66j50jaf1i" path="res://Assets/Monsters/Fairy/Emotions/Fairy_disgust.png" id="48_bjc6o"]
+[ext_resource type="Texture2D" uid="uid://rf84qoj0aqm3" path="res://Assets/Monsters/Fairy/Emotions/Fairy_fear.png" id="49_0j5fr"]
+[ext_resource type="Texture2D" uid="uid://1tn26u0kvhkx" path="res://Assets/Monsters/Fairy/Emotions/Fairy_joy.png" id="50_ehflf"]
+[ext_resource type="Texture2D" uid="uid://17qcombvvukr" path="res://Assets/Monsters/Fairy/Emotions/Fairy_sadness.png" id="51_68w3q"]
+[ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="52_v3n4b"]
+[ext_resource type="StyleBox" uid="uid://pq8ic24dlb3a" path="res://Assets/UI/Styles/Button_Normal.tres" id="53_fb71j"]
+[ext_resource type="StyleBox" uid="uid://ts6wka07tfkn" path="res://Assets/UI/Styles/Button_Hover.tres" id="54_glx5p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_arvfb"]
+font_size = 216
+
+[sub_resource type="LabelSettings" id="LabelSettings_6njow"]
+font_size = 350
+
+[sub_resource type="LabelSettings" id="LabelSettings_asnfl"]
+font_size = 350
+
+[sub_resource type="LabelSettings" id="LabelSettings_q6jea"]
+font_size = 52
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65abr")
+slimeBodies = Array[Texture2D]([ExtResource("2_ufwbh"), ExtResource("2_kbl6r"), ExtResource("4_jo5et"), ExtResource("5_e1p1t"), ExtResource("6_v1uge")])
+slimeFaces = Array[Texture2D]([ExtResource("3_5ahts"), ExtResource("3_ttvvk"), ExtResource("4_tn1jr"), ExtResource("5_6ylcj"), ExtResource("6_xwyry")])
+undeadBodies = Array[Texture2D]([ExtResource("12_6yv58"), ExtResource("13_pc074"), ExtResource("14_gh2r6"), ExtResource("15_1lvaq"), ExtResource("3_5uq5q")])
+undeadFaces = Array[Texture2D]([ExtResource("4_stmlb"), ExtResource("8_l7rg0"), ExtResource("9_p0cpm"), ExtResource("10_apshx"), ExtResource("11_apw11")])
+golemBodies = Array[Texture2D]([ExtResource("22_1228d"), ExtResource("23_03tj7"), ExtResource("24_ug53u"), ExtResource("25_5du8d"), ExtResource("26_dsqk7")])
+golemFaces = Array[Texture2D]([ExtResource("27_5hs4j"), ExtResource("28_7x0mc"), ExtResource("29_j0hsy"), ExtResource("30_w0yg2"), ExtResource("31_o7prl")])
+ghostBodies = Array[Texture2D]([ExtResource("23_mw17h"), ExtResource("24_mjduk"), ExtResource("25_qd5bi"), ExtResource("26_mqcob"), ExtResource("27_fd73s")])
+ghostFaces = Array[Texture2D]([ExtResource("28_uvhc4"), ExtResource("29_not1o"), ExtResource("30_1q2o3"), ExtResource("31_gkpf5"), ExtResource("32_mstm6")])
+fairyBodies = Array[Texture2D]([ExtResource("42_visi6"), ExtResource("43_kwprh"), ExtResource("44_lh4e1"), ExtResource("45_44ysv"), ExtResource("46_eqjak")])
+fairyFaces = Array[Texture2D]([ExtResource("47_1ffy0"), ExtResource("48_bjc6o"), ExtResource("49_0j5fr"), ExtResource("50_ehflf"), ExtResource("51_68w3q")])
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -620.5
+offset_top = 43.0
+offset_right = 634.5
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("52_v3n4b")
+text = "UMMONIN"
+label_settings = SubResource("LabelSettings_arvfb")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -857.0
+offset_top = 3.0
+offset_right = -115.0
+offset_bottom = 481.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("52_v3n4b")
+text = "S"
+label_settings = SubResource("LabelSettings_6njow")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 625.0
+offset_top = 5.0
+offset_right = 1367.0
+offset_bottom = 483.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("52_v3n4b")
+text = "G"
+label_settings = SubResource("LabelSettings_asnfl")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -645.0
+offset_top = 295.0
+offset_right = 667.0
+offset_bottom = 470.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("52_v3n4b")
+text = "a game about summoning called Summoning"
+label_settings = SubResource("LabelSettings_q6jea")
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 569.0
+offset_right = 1144.0
+offset_bottom = 769.0
+theme_override_fonts/font = ExtResource("52_v3n4b")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = ExtResource("53_fb71j")
+theme_override_styles/hover = ExtResource("54_glx5p")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 867.0
+offset_right = 1045.0
+offset_bottom = 995.0
+theme_override_fonts/font = ExtResource("52_v3n4b")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("53_fb71j")
+theme_override_styles/hover = ExtResource("54_glx5p")
+text = "Quit"
+
+[node name="Monster2" type="Node2D" parent="."]
+position = Vector2(1633, 867)
+
+[node name="Monster2Body" type="Sprite2D" parent="Monster2"]
+position = Vector2(8, -73)
+texture = ExtResource("2_kbl6r")
+
+[node name="Monster2Face" type="Sprite2D" parent="Monster2"]
+position = Vector2(8, -73)
+texture = ExtResource("3_5ahts")
+
+[node name="Monster1" type="Node2D" parent="."]
+position = Vector2(593, 14)
+scale = Vector2(-1, 1)
+
+[node name="Monster1Body" type="Sprite2D" parent="Monster1"]
+position = Vector2(304, 767)
+texture = ExtResource("3_5uq5q")
+
+[node name="Monster1Face" type="Sprite2D" parent="Monster1"]
+position = Vector2(304, 767)
+texture = ExtResource("4_stmlb")
+
+[connection signal="pressed" from="StartButton" to="." method="PressPlay"]
+[connection signal="pressed" from="QuitButton" to="." method="PressQuit"]

@@ -52,6 +52,6 @@ public partial class IngredientSlotUI : Control
 
     public override void _DropData(Vector2 atPosition, Variant data)
     {
-        inventory.Swap(index, data.AsInt32());
+        inventory.Swap(data.AsInt32(), index);
     }
 }

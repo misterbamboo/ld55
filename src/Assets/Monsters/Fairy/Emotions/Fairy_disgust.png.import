@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkbw051h1u5nk"
-path="res://.godot/imported/Undead_lighting.png-8f8dbebe11b9eed1fd041ae976783944.ctex"
+uid="uid://dog66j50jaf1i"
+path="res://.godot/imported/Fairy_disgust.png-401c37fcb1a1fc577e4884559bdfecbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Undead/Undead_lighting.png"
-dest_files=["res://.godot/imported/Undead_lighting.png-8f8dbebe11b9eed1fd041ae976783944.ctex"]
+source_file="res://Assets/Monsters/Fairy/Emotions/Fairy_disgust.png"
+dest_files=["res://.godot/imported/Fairy_disgust.png-401c37fcb1a1fc577e4884559bdfecbb.ctex"]
 
 [params]
 
