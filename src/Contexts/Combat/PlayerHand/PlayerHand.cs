@@ -40,4 +40,9 @@ public partial class PlayerHand : Node
     {
         return HoldCards.FirstOrDefault();
     }
+
+    internal bool InHand(MonsterCardUI card)
+    {
+        return HoldCards.Contains(card);
+    }
 }

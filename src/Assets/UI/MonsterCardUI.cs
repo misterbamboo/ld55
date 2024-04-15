@@ -21,6 +21,7 @@ public partial class MonsterCardUI : Control
     private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
 
     private ControlDragHandler DragHandler { get; set; }
+    public bool IsAnimating => shiftAnimRun || stickToAnimRun;
 
     // ShiftAnim
     Vector2 shiftInitPos;
@@ -72,7 +73,7 @@ public partial class MonsterCardUI : Control
         if (stickToAnimRun)
         {
             shiftAnimRun = false;
-            TriggerStickToAnim((float)delta);
+            StickToAnim((float)delta);
         }
         else
         {
@@ -148,7 +149,7 @@ public partial class MonsterCardUI : Control
         stickToAnimCallback = callback;
     }
 
-    private void TriggerStickToAnim(float delta)
+    private void StickToAnim(float delta)
     {
         stickToT += delta;
         stickToT = Math.Clamp(stickToT, 0, 1);
@@ -156,15 +157,16 @@ public partial class MonsterCardUI : Control
         Position = stickToInitPos.Lerp(stickToTargetPos, t);
         RotationDegrees = Mathf.Lerp(stickToInitRot, stickToTargetRot, t);
 
-        if (stickToAnimCallback != null && stickToT >= 1)
-        {
-            stickToAnimCallback();
-            stickToAnimCallback = null;
-        }
-
         if (stickToAnimRequestStop && stickToT >= 1)
         {
             ForceReleaseStickToAnim();
+            stickToAnimCallback();
+            stickToAnimCallback = null;
+        }
+        else if (stickToAnimCallback != null && stickToT >= 1)
+        {
+            stickToAnimCallback();
+            stickToAnimCallback = null;
         }
     }
 

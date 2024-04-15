@@ -7,7 +7,7 @@ public partial class BossQueueManager : Node
     public const int MaxInQueue = 5;
     public static BossQueueManager Instance { get; private set; }
 
-    private const double SpawnRateInSecs = 1;
+    private const double SpawnRateInSecs = 0.5;
 
     private double timeBeforeNextSpawn;
 
@@ -16,6 +16,7 @@ public partial class BossQueueManager : Node
     [Export] private PackedScene MonsterCardUIPrefab { get; set; }
 
     private Queue<MonsterCardUI> MonsterQueue { get; set; } = new Queue<MonsterCardUI>();
+    public bool IsFullAndWihtouAnimation => MonsterQueue.Where(c => !c.IsAnimating).Count() >= MaxInQueue;
 
     private Vector2I ScreenSize { get; set; }
 
@@ -72,8 +73,8 @@ public partial class BossQueueManager : Node
         newMonsterCard.IsDraggable = false;
         newMonsterCard.Init(monsterSpecs, emotion, element, species);
 
-        var targetPos = new Vector2(ScreenSize.X - (newMonsterCard.Size.X), 0);
-        var spawnPos = new Vector2(ScreenSize.X, 50);
+        var targetPos = new Vector2(0, 0);
+        var spawnPos = new Vector2(-newMonsterCard.Position.X, 50);
         newMonsterCard.Position = spawnPos;
         newMonsterCard.RotationDegrees = 15;
         newMonsterCard.TriggerShiftAnim(targetPos);
@@ -91,8 +92,8 @@ public partial class BossQueueManager : Node
         foreach (var monsterCard in MonsterQueue)
         {
             i--;
-            var offset = i * 15f;
-            var targetPos = new Vector2(ScreenSize.X - monsterCard.Size.X - offset, offset);
+            var offset = i * 5f;
+            var targetPos = new Vector2(offset, offset * 2);
             monsterCard.TriggerShiftAnim(targetPos);
         }
     }

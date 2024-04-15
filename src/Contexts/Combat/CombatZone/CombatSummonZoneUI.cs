@@ -34,10 +34,17 @@ public partial class CombatSummonZoneUI : Control
 
     private void StickAnimEnded()
     {
-        if (playerStickCard != null)
+        if (playerStickCard == null)
+        {
+            return;
+        }
+
+        if (!PlayerHand.Instance.InHand(playerStickCard))
         {
             OnReadyToFight?.Invoke(playerStickCard);
         }
+
+        playerStickCard = null;
     }
 
     private void DragHandler_OnEndMouseHover()
@@ -48,7 +55,6 @@ public partial class CombatSummonZoneUI : Control
         }
 
         playerStickCard.ReleaseStickToAnim();
-        playerStickCard = null;
     }
 
     public override void _Process(double delta)
