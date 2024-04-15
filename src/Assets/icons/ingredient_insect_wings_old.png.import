@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://84u2vribydv"
-path="res://.godot/imported/ingredient_dark_crystal.png-a7691dfd37ad756c37b3485456a08d2c.ctex"
+uid="uid://dlmoilgja4p02"
+path="res://.godot/imported/ingredient_insect_wings_old.png-6fe42f6fd0d71166fd25e7db56f7c08a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_dark_crystal.png"
-dest_files=["res://.godot/imported/ingredient_dark_crystal.png-a7691dfd37ad756c37b3485456a08d2c.ctex"]
+source_file="res://Assets/icons/ingredient_insect_wings_old.png"
+dest_files=["res://.godot/imported/ingredient_insect_wings_old.png-6fe42f6fd0d71166fd25e7db56f7c08a.ctex"]
 
 [params]
 

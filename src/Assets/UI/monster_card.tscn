@@ -1,31 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://d208w3cp6gy31"]
+[gd_scene load_steps=13 format=3 uid="uid://d208w3cp6gy31"]
 
 [ext_resource type="Texture2D" uid="uid://dd5qxkpnaifvp" path="res://Assets/UI/Temp/Slime_fire.png" id="1_4dixt"]
 [ext_resource type="Script" path="res://Assets/UI/MonsterCardUI.cs" id="1_hlve0"]
+[ext_resource type="Texture2D" uid="uid://bljpv2b5a6le8" path="res://Assets/UI/Cards_Background.png" id="1_n2vsd"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="2_7nagw"]
 [ext_resource type="Texture2D" uid="uid://ctghhpoa0jdxo" path="res://Assets/UI/Temp/Slime_Joy.png" id="2_184oq"]
 [ext_resource type="Texture2D" uid="uid://chqd7teis2go" path="res://Assets/Monsters/Icons/Disgust.png" id="4_cfq16"]
 [ext_resource type="Texture2D" uid="uid://nh84v534uwf" path="res://Assets/Monsters/Icons/Water.png" id="5_gv0st"]
 [ext_resource type="Texture2D" uid="uid://0550hm0314jd" path="res://Assets/Monsters/Icons/Undead.png" id="6_wnqbb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dklhk"]
-content_margin_left = 12.0
-content_margin_top = 12.0
-content_margin_right = 12.0
-content_margin_bottom = 12.0
-bg_color = Color(0.866667, 0.807843, 0.729412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9, 0.8415, 0.765, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(0, 0, 0, 0.0588235)
-shadow_size = 8
-shadow_offset = Vector2(2.08165e-12, 8)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uobiy"]
+texture = ExtResource("1_n2vsd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtjir"]
 bg_color = Color(1, 1, 1, 0.156863)
@@ -65,7 +50,7 @@ offset_bottom = 263.0
 pivot_offset = Vector2(94, 205)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_dklhk")
+theme_override_styles/panel = SubResource("StyleBoxTexture_uobiy")
 script = ExtResource("1_hlve0")
 NameLabel = NodePath("BoxContainer/MonsterName")
 SpeciesImage = NodePath("BoxContainer/MonsterComp/MonsterLayerBottom")

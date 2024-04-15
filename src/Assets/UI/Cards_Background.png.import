@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://84u2vribydv"
-path="res://.godot/imported/ingredient_dark_crystal.png-a7691dfd37ad756c37b3485456a08d2c.ctex"
+uid="uid://bljpv2b5a6le8"
+path="res://.godot/imported/Cards_Background.png-3001cc635c87414429fab18e0a17a1f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_dark_crystal.png"
-dest_files=["res://.godot/imported/ingredient_dark_crystal.png-a7691dfd37ad756c37b3485456a08d2c.ctex"]
+source_file="res://Assets/UI/Cards_Background.png"
+dest_files=["res://.godot/imported/Cards_Background.png-3001cc635c87414429fab18e0a17a1f5.ctex"]
 
 [params]
 
