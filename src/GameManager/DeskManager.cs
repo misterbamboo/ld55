@@ -43,12 +43,14 @@ public partial class DeskManager : Node
     public void StartGame()
     {
         GameStarted = true;
+        GD.PrintRich("[color=cyan]DeskEvent: OnGameStart[/color]");
         OnGameStart?.Invoke();
     }
 
     public void StopGame()
     {
         GameStarted = false;
+        GD.PrintRich("[color=cyan]DeskEvent: OnGameStop[/color]");
         OnGameStop?.Invoke();
     }
 
