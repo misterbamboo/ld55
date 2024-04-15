@@ -5,6 +5,7 @@ public partial class InventoryService : Node
 {
     private GameDataService gameDataService;
     private DeskManager deskManager;
+    private RandomNumberGenerator rng = new RandomNumberGenerator();
     [Export] private Godot.Collections.Array<IngredientSlotUI> InventorySlots;
     [Export] private SummoningStatsUI summoningStats;
 
@@ -19,9 +20,25 @@ public partial class InventoryService : Node
 
         deskManager.OnMonsterSummoned += ClearSummoningBoard;
         deskManager.OnGameStart += HandleNewGame;
+        deskManager.OnFight += ReceiveLootFromMonster;
      
         VerifyInventorySlotsOrder();
         RedrawInventoryItems();
+    }
+
+    private void ReceiveLootFromMonster(BossFight bossFight)
+    {
+        if(bossFight.Result != BossFight.BossFightResult.PlayerWin)
+        {
+            return;
+        }
+
+        var possibleLoot = gameDataService.Ingredients;
+        for(var i = 0; i < bossFight.PlayerWins * 2; i++)
+        {
+            var ingredientIndex = rng.RandiRange(0, possibleLoot.Count());
+            Inventory.AddItem(possibleLoot.ElementAt(ingredientIndex));
+        }
     }
 
     private void HandleNewGame()

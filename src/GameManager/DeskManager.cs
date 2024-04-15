@@ -13,9 +13,11 @@ public partial class DeskManager : Node
 
     public delegate void MonsterStatsUpdatedHandler(SummoningSpecs monster);
     public delegate void MonsterSummonedHandler(SummoningSpecs monster);
+    public delegate void FightHandler(BossFight bossFigth);
 
     public event MonsterStatsUpdatedHandler OnMonsterStatsUpdated;
     public event MonsterSummonedHandler OnMonsterSummoned;
+    public event FightHandler OnFight;
 
 	public event GameStartedHandler OnGameStart;
     public event GameStopedHandler OnGameStop;
@@ -80,5 +82,11 @@ public partial class DeskManager : Node
     {
         //GD.PrintRich("[color=cyan]DeskEvent: OnArcaneFocusAdjusted[/color]");
         OnArcaneFocusAdjusted?.Invoke(ingredient);
+    }
+
+    public void CompleteFight(BossFight bossFight)
+    {
+        GD.PrintRich("[color=cyan]DeskEvent: OnFightCompleted[/color]");
+        OnFight?.Invoke(bossFight);
     }
 }

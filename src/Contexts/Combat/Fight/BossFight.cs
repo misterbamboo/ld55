@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +5,8 @@ public class BossFight
 {
     public BossFightResult Result { get; private set; }
     public string Hint { get; private set; }
+
+    public int PlayerWins = 0;
 
     private IHintProvider HintProvider { get; }
 
@@ -41,6 +42,7 @@ public class BossFight
         var nbrWin = indexDistances.Where(i => i > 0).Count();
         var nbrLose = indexDistances.Where(i => i < 0).Count();
         var nbrDraw = indexDistances.Where(i => i == 0).Count();
+        PlayerWins = nbrWin;
 
         return nbrWin > nbrLose;
     }

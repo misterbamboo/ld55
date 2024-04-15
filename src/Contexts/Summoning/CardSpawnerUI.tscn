@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl70lx0ltf2wi"]
+
+[ext_resource type="Script" path="res://Contexts/Summoning/CardSpawnerUI.cs" id="1_whgy0"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="2_ddbh1"]
+
+[node name="CardSpawnerUI" type="Node2D"]
+script = ExtResource("1_whgy0")
+MonsterCardUIPrefab = ExtResource("2_ddbh1")
+
+[node name="SpawnTarget" type="Node2D" parent="."]
