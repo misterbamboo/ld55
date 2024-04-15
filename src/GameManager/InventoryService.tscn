@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://t7ecarm6blew"]
+[gd_scene load_steps=2 format=3 uid="uid://8fi7m8pevqq3"]
 
 [ext_resource type="Script" path="res://GameManager/InventoryService.cs" id="1_t0hg4"]
 

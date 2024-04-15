@@ -57,5 +57,9 @@ theme_override_icons/grabber_highlight = ExtResource("3_qg36u")
 theme_override_icons/grabber_disabled = ExtResource("2_csq3p")
 theme_override_styles/slider = SubResource("StyleBoxTexture_6i1ao")
 
+[connection signal="drag_ended" from="HSlider" to="." method="DragEnd"]
+[connection signal="drag_started" from="HSlider" to="." method="DragStart"]
 [connection signal="value_changed" from="HSlider" to="." method="OnHSliderValueChanged"]
+[connection signal="drag_ended" from="VSlider" to="." method="DragEnd"]
+[connection signal="drag_started" from="VSlider" to="." method="DragStart"]
 [connection signal="value_changed" from="VSlider" to="." method="OnVSliderValueChanged"]

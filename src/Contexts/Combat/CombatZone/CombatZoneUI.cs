@@ -21,6 +21,8 @@ public partial class CombatZoneUI : Node2D
 
     private void CombatSummonZoneUI_OnReadyToFight(MonsterCardUI card)
     {
+        DeskManager.FightStarting();
+
         var bossFight = new BossFight(GameDataService);
         bossFight.Combat(card.SummoningSpecs, EnemyCard.SummoningSpecs);
 
@@ -28,7 +30,7 @@ public partial class CombatZoneUI : Node2D
         EnemyCard.QueueFree();
         EnemyCard = null;
 
-        DeskManager.CompleteFight(bossFight);
+        DeskManager.FightCompleted(bossFight);
     }
 
     public override void _Process(double delta)
