@@ -39,6 +39,8 @@ public partial class InventoryService : Node
             var ingredientIndex = rng.RandiRange(0, possibleLoot.Count());
             Inventory.AddItem(possibleLoot.ElementAt(ingredientIndex));
         }
+
+        RedrawInventoryItems();
     }
 
     private void HandleNewGame()
