@@ -13,9 +13,9 @@ public partial class MonsterCardUI : Control
     [Export] private TextureRect ElementIconImage { get; set; }
     [Export] private TextureRect SpeciesIconImage { get; set; }
 
-    private MonsterImageLoader MonsterImageLoader { get; set; }
-    public SummoningSpecs MonsterSpecs { get; set; } = new SummoningSpecs();
+    public SummoningSpecs SummoningSpecs { get; private set; } = new SummoningSpecs();
 
+    private MonsterImageLoader MonsterImageLoader { get; set; }
     private SpecDefinition Emotion { get; set; } = SpecDefinition.Empty();
     private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
     private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
@@ -30,9 +30,19 @@ public partial class MonsterCardUI : Control
     private double shiftT;
     private bool shiftAnimRun;
 
+    // StickToAnim
+    Action stickToAnimCallback;
+    Vector2 stickToInitPos;
+    Vector2 stickToTargetPos;
+    float stickToInitRot;
+    float stickToTargetRot;
+    private double stickToT;
+    private bool stickToAnimRun;
+    private bool stickToAnimRequestStop;
+
     public void Init(SummoningSpecs monsterSpecs, SpecDefinition emotion, SpecDefinition element, SpecDefinition species)
     {
-        MonsterSpecs = monsterSpecs;
+        SummoningSpecs = monsterSpecs;
         Emotion = emotion;
         Element = element;
         Species = species;
@@ -48,6 +58,7 @@ public partial class MonsterCardUI : Control
     }
     private void DragHandler_OnStartDraggin()
     {
+        ForceReleaseStickToAnim();
         PlayerHand.Instance.PutInHand(this);
     }
 
@@ -58,7 +69,15 @@ public partial class MonsterCardUI : Control
 
     public override void _Process(double delta)
     {
-        ShiftAnim((float)delta);
+        if (stickToAnimRun)
+        {
+            shiftAnimRun = false;
+            TriggerStickToAnim((float)delta);
+        }
+        else
+        {
+            ShiftAnim((float)delta);
+        }
     }
 
     public override void _Input(InputEvent @event)
@@ -87,7 +106,7 @@ public partial class MonsterCardUI : Control
     {
         ChangeName($"[center]{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}[/center]");
 
-        var imageResult = MonsterImageLoader.GetMonsterImage(MonsterSpecs);
+        var imageResult = MonsterImageLoader.GetMonsterImage(SummoningSpecs);
         ChangeImageAndIcons(imageResult);
     }
 
@@ -118,6 +137,48 @@ public partial class MonsterCardUI : Control
         }
     }
 
+    internal void TriggerStickToAnim(Vector2 targetPos, Action callback)
+    {
+        stickToInitPos = Position;
+        stickToTargetPos = targetPos;
+        stickToInitRot = RotationDegrees;
+        stickToTargetRot = 0;
+        stickToT = 0;
+        stickToAnimRun = true;
+        stickToAnimCallback = callback;
+    }
+
+    private void TriggerStickToAnim(float delta)
+    {
+        stickToT += delta;
+        stickToT = Math.Clamp(stickToT, 0, 1);
+        float t = (float)EaseOutElastic(stickToT);
+        Position = stickToInitPos.Lerp(stickToTargetPos, t);
+        RotationDegrees = Mathf.Lerp(stickToInitRot, stickToTargetRot, t);
+
+        if (stickToAnimCallback != null && stickToT >= 1)
+        {
+            stickToAnimCallback();
+            stickToAnimCallback = null;
+        }
+
+        if (stickToAnimRequestStop && stickToT >= 1)
+        {
+            ForceReleaseStickToAnim();
+        }
+    }
+
+    internal void ReleaseStickToAnim()
+    {
+        stickToAnimRequestStop = true;
+    }
+
+    private void ForceReleaseStickToAnim()
+    {
+        stickToAnimRun = false;
+        stickToAnimRequestStop = false;
+    }
+
     private double EaseOutElastic(double x)
     {
         var c4 = (2 * Math.PI) / 3;
@@ -125,10 +186,5 @@ public partial class MonsterCardUI : Control
         return x <= 0 ? 0 :
                x >= 1 ? 1 :
                Mathf.Pow(2, -10 * x) * Mathf.Sin((x * 10 - 0.75) * c4) + 1;
-    }
-
-    internal void TriggerStickToAnim(Vector2 position)
-    {
-        throw new NotImplementedException();
     }
 }
