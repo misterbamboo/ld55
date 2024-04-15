@@ -1,0 +1,32 @@
+[gd_scene load_steps=16 format=3 uid="uid://bbdcxfv4kjynp"]
+
+[ext_resource type="Script" path="res://Assets/Sounds/SoundMusicService.cs" id="1_4kfk0"]
+[ext_resource type="AudioStream" uid="uid://d37484rovls78" path="res://Assets/Sounds/ArcanicFocusSlide.wav" id="2_t0ns0"]
+[ext_resource type="AudioStream" uid="uid://b3j640ed1prbw" path="res://Assets/Sounds/CandleLit.wav" id="3_3s7q0"]
+[ext_resource type="AudioStream" uid="uid://dqyeom1502xoi" path="res://Assets/Sounds/CardMoved.wav" id="4_qtkce"]
+[ext_resource type="AudioStream" uid="uid://ddo1uqotb2ghy" path="res://Assets/Sounds/CardPlaced.wav" id="5_7hw6j"]
+[ext_resource type="AudioStream" uid="uid://hq1jdjgel7a1" path="res://Assets/Sounds/CardSummoned.wav" id="6_aqac7"]
+[ext_resource type="AudioStream" uid="uid://470n5d2rmnfq" path="res://Assets/Sounds/CardWon.wav" id="7_vbc1i"]
+[ext_resource type="AudioStream" uid="uid://dof18lpjmqcgo" path="res://Assets/Sounds/Draw.wav" id="8_g3j1f"]
+[ext_resource type="AudioStream" uid="uid://bxgelsu0rxgji" path="res://Assets/Sounds/GameOver.wav" id="9_8e8dx"]
+[ext_resource type="AudioStream" uid="uid://bwuc1y4cid0rt" path="res://Assets/Sounds/ItemDropped.wav" id="10_bg5om"]
+[ext_resource type="AudioStream" uid="uid://ctxshpuntj08x" path="res://Assets/Sounds/ItemGrabbed.wav" id="11_a8061"]
+[ext_resource type="AudioStream" uid="uid://c7qxqvo1c1ndi" path="res://Assets/Sounds/Lose.wav" id="12_3pkqa"]
+[ext_resource type="AudioStream" uid="uid://gqsajt346v5d" path="res://Assets/Sounds/StartGame.wav" id="13_03ngm"]
+[ext_resource type="AudioStream" uid="uid://deoaj5a2kuuq5" path="res://Assets/Sounds/Win-Critical.wav" id="14_necmi"]
+[ext_resource type="AudioStream" uid="uid://c3k2tadbk3yv6" path="res://Assets/Sounds/Win.wav" id="15_vw63m"]
+
+[node name="SoundMusicService" type="Node" node_paths=PackedStringArray("musicPlayers")]
+script = ExtResource("1_4kfk0")
+musicPlayers = [NodePath("AudioStreamPlayer_Channel1"), NodePath("AudioStreamPlayer_Channel2"), NodePath("AudioStreamPlayer_Channel3"), NodePath("AudioStreamPlayer_Channel4"), NodePath("AudioStreamPlayer_Channel5")]
+ResourceMusics = Array[AudioStreamWAV]([ExtResource("2_t0ns0"), ExtResource("3_3s7q0"), ExtResource("4_qtkce"), ExtResource("5_7hw6j"), ExtResource("6_aqac7"), ExtResource("7_vbc1i"), ExtResource("8_g3j1f"), ExtResource("9_8e8dx"), ExtResource("10_bg5om"), ExtResource("11_a8061"), ExtResource("12_3pkqa"), ExtResource("13_03ngm"), ExtResource("14_necmi"), ExtResource("15_vw63m")])
+
+[node name="AudioStreamPlayer_Channel1" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer_Channel2" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer_Channel3" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer_Channel4" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer_Channel5" type="AudioStreamPlayer" parent="."]
