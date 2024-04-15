@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class DeskManager : Node
 {
@@ -26,25 +27,30 @@ public partial class DeskManager : Node
     public event ArcaneFocusAdjustedHandler OnArcaneFocusAdjusted;
 	public event ArcaneFocusEmptiedHandler OnArcaneFocusEmptied;
 
-    private double GameStartTimer = 2;
 	private bool GameStarted = false;
 
     private SummoningSpecs currentMonsterStats = new SummoningSpecs(2.5,2.5,2.5);
     public SummoningSpecs CurrentMonsterStats => currentMonsterStats;
-
-	public override void _Process(double delta)
-	{
-		if(!GameStarted && GameStartTimer > 0)
-		{
-            GameStartTimer -= delta;
-            if(GameStartTimer <= 0)
-			{
-                GameStartTimer = 2;
-                GameStarted = true;
-                OnGameStart?.Invoke();
-            }
+    
+    public void _Process(float delta)
+    {
+        if(Input.IsKeyPressed(Key.Escape))
+        {
+            GetTree().Quit();
         }
-	}
+    }
+
+    public void StartGame()
+    {
+        GameStarted = true;
+        OnGameStart?.Invoke();
+    }
+
+    public void StopGame()
+    {
+        GameStarted = false;
+        OnGameStop?.Invoke();
+    }
 
 	public void SummonMonster()
 	{
@@ -88,5 +94,10 @@ public partial class DeskManager : Node
     {
         GD.PrintRich("[color=cyan]DeskEvent: OnFightCompleted[/color]");
         OnFight?.Invoke(bossFight);
+    }
+
+    public void SceneLoaded()
+    {
+        StartGame();
     }
 }
