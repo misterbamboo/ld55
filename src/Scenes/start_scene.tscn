@@ -384,12 +384,12 @@ stretch_mode = 0
 [node name="BossQueueManager" parent="." instance=ExtResource("13_5t2sa")]
 
 [node name="CombatZone" parent="." instance=ExtResource("13_56sqa")]
-position = Vector2(281, 40)
+position = Vector2(281, 15)
 
 [node name="CardSpawnerUI" parent="." instance=ExtResource("11_mi3xe")]
 
 [node name="CombatResultScene" parent="." instance=ExtResource("14_empf8")]
-position = Vector2(738, 42)
+position = Vector2(738, 20)
 
 [node name="SceneLoadedWitness" type="Node" parent="."]
 script = ExtResource("12_e7igc")
