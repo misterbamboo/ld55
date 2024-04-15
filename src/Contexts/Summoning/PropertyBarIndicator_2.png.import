@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kdsmnasa043"
-path="res://.godot/imported/Candle_Unlit_selected.png-034a1842fb6db08acf3ecfebb1ee9b4a.ctex"
+uid="uid://buex1cjk8cbll"
+path="res://.godot/imported/PropertyBarIndicator_2.png-472e1813837bbdf68d5e0f5e53b28dd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/candles/Candle_Unlit_selected.png"
-dest_files=["res://.godot/imported/Candle_Unlit_selected.png-034a1842fb6db08acf3ecfebb1ee9b4a.ctex"]
+source_file="res://Contexts/Summoning/PropertyBarIndicator_2.png"
+dest_files=["res://.godot/imported/PropertyBarIndicator_2.png-472e1813837bbdf68d5e0f5e53b28dd1.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyy4b0yhlojv4"]
 
-[ext_resource type="PackedScene" path="res://GameManager/InventoryService.tscn" id="1_4hsnk"]
+[ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="1_4hsnk"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="1_v6r5y"]
 
 [node name="SpoodScene" type="Control"]

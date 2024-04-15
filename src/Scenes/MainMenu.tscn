@@ -165,9 +165,9 @@ horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 720.0
+offset_left = 753.0
 offset_top = 567.0
-offset_right = 1148.0
+offset_right = 1181.0
 offset_bottom = 771.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 128
@@ -177,9 +177,9 @@ text = "Start"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 829.0
+offset_left = 862.0
 offset_top = 857.0
-offset_right = 1060.0
+offset_right = 1093.0
 offset_bottom = 1005.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 64

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kdsmnasa043"
-path="res://.godot/imported/Candle_Unlit_selected.png-034a1842fb6db08acf3ecfebb1ee9b4a.ctex"
+uid="uid://pileqeuf38pn"
+path="res://.godot/imported/Asset_Symbole_Simplified.png-6de92a88da0a8d7a3a22899f462c6826.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/candles/Candle_Unlit_selected.png"
-dest_files=["res://.godot/imported/Candle_Unlit_selected.png-034a1842fb6db08acf3ecfebb1ee9b4a.ctex"]
+source_file="res://Assets/DesktopAssets/Asset_Symbole_Simplified.png"
+dest_files=["res://.godot/imported/Asset_Symbole_Simplified.png-6de92a88da0a8d7a3a22899f462c6826.ctex"]
 
 [params]
 
