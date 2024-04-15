@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbdcxfv4kjynp"]
+[gd_scene load_steps=17 format=3 uid="uid://bbdcxfv4kjynp"]
 
 [ext_resource type="Script" path="res://Assets/Sounds/SoundMusicService.cs" id="1_4kfk0"]
 [ext_resource type="AudioStream" uid="uid://d37484rovls78" path="res://Assets/Sounds/ArcanicFocusSlide.wav" id="2_t0ns0"]
@@ -15,11 +15,12 @@
 [ext_resource type="AudioStream" uid="uid://gqsajt346v5d" path="res://Assets/Sounds/StartGame.wav" id="13_03ngm"]
 [ext_resource type="AudioStream" uid="uid://deoaj5a2kuuq5" path="res://Assets/Sounds/Win-Critical.wav" id="14_necmi"]
 [ext_resource type="AudioStream" uid="uid://c3k2tadbk3yv6" path="res://Assets/Sounds/Win.wav" id="15_vw63m"]
+[ext_resource type="AudioStream" uid="uid://ddxo8smhk1kcv" path="res://Assets/Sounds/Hit.wav" id="16_hnf16"]
 
 [node name="SoundMusicService" type="Node" node_paths=PackedStringArray("musicPlayers")]
 script = ExtResource("1_4kfk0")
 musicPlayers = [NodePath("AudioStreamPlayer_Channel1"), NodePath("AudioStreamPlayer_Channel2"), NodePath("AudioStreamPlayer_Channel3"), NodePath("AudioStreamPlayer_Channel4"), NodePath("AudioStreamPlayer_Channel5")]
-ResourceMusics = Array[AudioStreamWAV]([ExtResource("2_t0ns0"), ExtResource("3_3s7q0"), ExtResource("4_qtkce"), ExtResource("5_7hw6j"), ExtResource("6_aqac7"), ExtResource("7_vbc1i"), ExtResource("8_g3j1f"), ExtResource("9_8e8dx"), ExtResource("10_bg5om"), ExtResource("11_a8061"), ExtResource("12_3pkqa"), ExtResource("13_03ngm"), ExtResource("14_necmi"), ExtResource("15_vw63m")])
+ResourceMusics = Array[AudioStreamWAV]([ExtResource("2_t0ns0"), ExtResource("3_3s7q0"), ExtResource("4_qtkce"), ExtResource("5_7hw6j"), ExtResource("6_aqac7"), ExtResource("7_vbc1i"), ExtResource("8_g3j1f"), ExtResource("9_8e8dx"), ExtResource("10_bg5om"), ExtResource("11_a8061"), ExtResource("12_3pkqa"), ExtResource("13_03ngm"), ExtResource("14_necmi"), ExtResource("15_vw63m"), ExtResource("16_hnf16")])
 
 [node name="AudioStreamPlayer_Channel1" type="AudioStreamPlayer" parent="."]
 

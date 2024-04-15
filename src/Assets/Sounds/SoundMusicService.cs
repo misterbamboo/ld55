@@ -14,6 +14,7 @@ public partial class SoundMusicService : Node
     private const string CardWon = "CardWon";
     private const string Draw = "Draw";
     private const string GameOver = "GameOver";
+    private const string Hit = "Hit";
     private const string ItemDropped = "ItemDropped";
     private const string ItemGrabbed = "ItemGrabbed";
     private const string Lose = "Lose";
