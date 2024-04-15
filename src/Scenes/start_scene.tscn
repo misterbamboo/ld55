@@ -1,12 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=15 format=3 uid="uid://bayejy3qs7745"]
 
 [ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_u3gc2"]
-[ext_resource type="PackedScene" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
+[ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="3_t07eg"]
 [ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_sr65v"]
 [ext_resource type="Texture2D" uid="uid://cs11so735vm13" path="res://GameManager/candles/candle_lit.png" id="5_f0xyq"]
 [ext_resource type="Texture2D" uid="uid://lmjxns65vgu7" path="res://GameManager/candles/candle_off.png" id="6_k278y"]
-[ext_resource type="PackedScene" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
+[ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
 [ext_resource type="Texture2D" uid="uid://bhhe3thjoehn0" path="res://GameManager/candles/candle_trunk.png" id="9_px0ix"]
 [ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="10_xx2s1"]
@@ -418,8 +418,7 @@ offset_bottom = 130.0
 texture_normal = ExtResource("10_xx2s1")
 ignore_texture_size = true
 
-[node name="BossQueueManager" parent="." node_paths=PackedStringArray("CardContainer") instance=ExtResource("13_5t2sa")]
-CardContainer = NodePath("../CardSpawnerUI")
+[node name="BossQueueManager" parent="." instance=ExtResource("13_5t2sa")]
 
 [node name="CombatZone" parent="." instance=ExtResource("13_56sqa")]
 position = Vector2(281, 40)

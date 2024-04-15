@@ -113,7 +113,7 @@ public partial class MainMenu : Control
 
     public void PressPlay()
     {
-        GetTree().ChangeSceneToFile("res://Scenes/spood_scene_2.tscn");
+        GetTree().ChangeSceneToFile("res://Scenes/start_scene.tscn");
     }
 
     public void PressQuit()

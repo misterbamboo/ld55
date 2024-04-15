@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cwwbg1ksy2hjc"]
+[gd_scene load_steps=56 format=3 uid="uid://cwwbg1ksy2hjc"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.cs" id="1_65abr"]
 [ext_resource type="Texture2D" uid="uid://cyebqpxa506a1" path="res://Assets/Monsters/Slime/Slime_fire.png" id="2_kbl6r"]
@@ -21,17 +21,36 @@
 [ext_resource type="Texture2D" uid="uid://che5dhmodgxkk" path="res://Assets/Monsters/Undead/Undead_fire.png" id="13_pc074"]
 [ext_resource type="Texture2D" uid="uid://cuy36oenuklrr" path="res://Assets/Monsters/Undead/Undead_ice.png" id="14_gh2r6"]
 [ext_resource type="Texture2D" uid="uid://bkbw051h1u5nk" path="res://Assets/Monsters/Undead/Undead_Lightning.png" id="15_1lvaq"]
-[ext_resource type="Texture2D" uid="uid://bga3qa3y5ij6u" path="res://Assets/Monsters/default.png" id="22_qaoii"]
+[ext_resource type="Texture2D" uid="uid://bid1d66tojgli" path="res://Assets/Monsters/Golem/Golem_Earth.png" id="22_1228d"]
+[ext_resource type="Texture2D" uid="uid://ccmt5hq1xsntw" path="res://Assets/Monsters/Golem/Golem_fire.png" id="23_03tj7"]
 [ext_resource type="Texture2D" uid="uid://4r6wevt7hehf" path="res://Assets/Monsters/Ghost/Ghost_Earth.png" id="23_mw17h"]
 [ext_resource type="Texture2D" uid="uid://bliy55ondsm1x" path="res://Assets/Monsters/Ghost/Ghost_Fire.png" id="24_mjduk"]
+[ext_resource type="Texture2D" uid="uid://bunx0wjwqiyp4" path="res://Assets/Monsters/Golem/Golem_Ice.png" id="24_ug53u"]
+[ext_resource type="Texture2D" uid="uid://cvo74vyy2piim" path="res://Assets/Monsters/Golem/Golem_Lightning.png" id="25_5du8d"]
 [ext_resource type="Texture2D" uid="uid://d4ejqso3hyvtr" path="res://Assets/Monsters/Ghost/Ghost_Ice.png" id="25_qd5bi"]
+[ext_resource type="Texture2D" uid="uid://dgu0ms0wpveah" path="res://Assets/Monsters/Golem/Golem_water.png" id="26_dsqk7"]
 [ext_resource type="Texture2D" uid="uid://dviyiswjp7wcw" path="res://Assets/Monsters/Ghost/Ghost_Lightning.png" id="26_mqcob"]
+[ext_resource type="Texture2D" uid="uid://clas5rsy657oe" path="res://Assets/Monsters/Golem/Emotions/Golem_Anger.png" id="27_5hs4j"]
 [ext_resource type="Texture2D" uid="uid://h0x516s50uig" path="res://Assets/Monsters/Ghost/Ghost_Water.png" id="27_fd73s"]
+[ext_resource type="Texture2D" uid="uid://c6gbjpd6w5n6g" path="res://Assets/Monsters/Golem/Emotions/Golem_Disgust.png" id="28_7x0mc"]
 [ext_resource type="Texture2D" uid="uid://bs0rjtgharpey" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Anger.png" id="28_uvhc4"]
+[ext_resource type="Texture2D" uid="uid://by33qebirsvue" path="res://Assets/Monsters/Golem/Emotions/Golem_Fear.png" id="29_j0hsy"]
 [ext_resource type="Texture2D" uid="uid://ddc866dj6kh5s" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Disgust.png" id="29_not1o"]
 [ext_resource type="Texture2D" uid="uid://cqmlik4jj575y" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Fear.png" id="30_1q2o3"]
+[ext_resource type="Texture2D" uid="uid://cyoqxgshqap2g" path="res://Assets/Monsters/Golem/Emotions/Golem_Joy.png" id="30_w0yg2"]
 [ext_resource type="Texture2D" uid="uid://bel1p8r47q5hu" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Joy.png" id="31_gkpf5"]
+[ext_resource type="Texture2D" uid="uid://mtwsbrq7b7hc" path="res://Assets/Monsters/Golem/Emotions/Golem_Sadness.png" id="31_o7prl"]
 [ext_resource type="Texture2D" uid="uid://b837e13athr0v" path="res://Assets/Monsters/Ghost/Emotions/Ghost_Sadness.png" id="32_mstm6"]
+[ext_resource type="Texture2D" uid="uid://ddd42u78jnw2i" path="res://Assets/Monsters/Fairy/Fairy_earth.png" id="42_visi6"]
+[ext_resource type="Texture2D" uid="uid://maxwedph6v5h" path="res://Assets/Monsters/Fairy/Fairy_fire.png" id="43_kwprh"]
+[ext_resource type="Texture2D" uid="uid://edja5adwj03d" path="res://Assets/Monsters/Fairy/Fairy_ice.png" id="44_lh4e1"]
+[ext_resource type="Texture2D" uid="uid://d1bcrr87ngogc" path="res://Assets/Monsters/Fairy/Fairy_Lightning.png" id="45_44ysv"]
+[ext_resource type="Texture2D" uid="uid://ch2kogadtc30h" path="res://Assets/Monsters/Fairy/Fairy_water.png" id="46_eqjak"]
+[ext_resource type="Texture2D" uid="uid://1flh0kj8hwkn" path="res://Assets/Monsters/Fairy/Emotions/Fairy_anger.png" id="47_1ffy0"]
+[ext_resource type="Texture2D" uid="uid://dog66j50jaf1i" path="res://Assets/Monsters/Fairy/Emotions/Fairy_disgust.png" id="48_bjc6o"]
+[ext_resource type="Texture2D" uid="uid://rf84qoj0aqm3" path="res://Assets/Monsters/Fairy/Emotions/Fairy_fear.png" id="49_0j5fr"]
+[ext_resource type="Texture2D" uid="uid://1tn26u0kvhkx" path="res://Assets/Monsters/Fairy/Emotions/Fairy_joy.png" id="50_ehflf"]
+[ext_resource type="Texture2D" uid="uid://17qcombvvukr" path="res://Assets/Monsters/Fairy/Emotions/Fairy_sadness.png" id="51_68w3q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_arvfb"]
 font_size = 248
@@ -58,12 +77,12 @@ slimeBodies = Array[Texture2D]([ExtResource("2_ufwbh"), ExtResource("2_kbl6r"), 
 slimeFaces = Array[Texture2D]([ExtResource("3_5ahts"), ExtResource("3_ttvvk"), ExtResource("4_tn1jr"), ExtResource("5_6ylcj"), ExtResource("6_xwyry")])
 undeadBodies = Array[Texture2D]([ExtResource("12_6yv58"), ExtResource("13_pc074"), ExtResource("14_gh2r6"), ExtResource("15_1lvaq"), ExtResource("3_5uq5q")])
 undeadFaces = Array[Texture2D]([ExtResource("4_stmlb"), ExtResource("8_l7rg0"), ExtResource("9_p0cpm"), ExtResource("10_apshx"), ExtResource("11_apw11")])
-golemBodies = Array[Texture2D]([ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii")])
-golemFaces = Array[Texture2D]([ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii")])
+golemBodies = Array[Texture2D]([ExtResource("22_1228d"), ExtResource("23_03tj7"), ExtResource("24_ug53u"), ExtResource("25_5du8d"), ExtResource("26_dsqk7")])
+golemFaces = Array[Texture2D]([ExtResource("27_5hs4j"), ExtResource("28_7x0mc"), ExtResource("29_j0hsy"), ExtResource("30_w0yg2"), ExtResource("31_o7prl")])
 ghostBodies = Array[Texture2D]([ExtResource("23_mw17h"), ExtResource("24_mjduk"), ExtResource("25_qd5bi"), ExtResource("26_mqcob"), ExtResource("27_fd73s")])
 ghostFaces = Array[Texture2D]([ExtResource("28_uvhc4"), ExtResource("29_not1o"), ExtResource("30_1q2o3"), ExtResource("31_gkpf5"), ExtResource("32_mstm6")])
-fairyBodies = Array[Texture2D]([ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii")])
-fairyFaces = Array[Texture2D]([ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii"), ExtResource("22_qaoii")])
+fairyBodies = Array[Texture2D]([ExtResource("42_visi6"), ExtResource("43_kwprh"), ExtResource("44_lh4e1"), ExtResource("45_44ysv"), ExtResource("46_eqjak")])
+fairyFaces = Array[Texture2D]([ExtResource("47_1ffy0"), ExtResource("48_bjc6o"), ExtResource("49_0j5fr"), ExtResource("50_ehflf"), ExtResource("51_68w3q")])
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
