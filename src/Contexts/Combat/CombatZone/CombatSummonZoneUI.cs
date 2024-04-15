@@ -1,8 +1,11 @@
 ﻿
 using Godot;
+using System;
 
 public partial class CombatSummonZoneUI : Control
 {
+    public event Action<MonsterCardUI> OnReadyToFight;
+
     private ControlDragHandler DragHandler { get; set; }
     public CombatSummonZoneUI()
     {
@@ -22,35 +25,44 @@ public partial class CombatSummonZoneUI : Control
         var card = PlayerHand.Instance.FirstCardInHand();
         if (card == null)
         {
-
+            return;
         }
 
-        card.TriggerStickToAnim(Position);
+        playerStickCard = card;
+        playerStickCard.TriggerStickToAnim(GlobalPosition + new Vector2(2, 2), StickAnimEnded);
+    }
+
+    private void StickAnimEnded()
+    {
+        if (playerStickCard == null)
+        {
+            return;
+        }
+
+        if (!PlayerHand.Instance.InHand(playerStickCard))
+        {
+            OnReadyToFight?.Invoke(playerStickCard);
+        }
+
+        playerStickCard = null;
     }
 
     private void DragHandler_OnEndMouseHover()
     {
+        if (playerStickCard == null)
+        {
+            return;
+        }
+
+        playerStickCard.ReleaseStickToAnim();
     }
 
     public override void _Process(double delta)
     {
-        CheckCardOver();
     }
 
     public override void _Input(InputEvent @event)
     {
         DragHandler.HandleInput(@event);
-    }
-
-    private void CheckCardOver()
-    {
-        //if (DragHandler.MouseHover)
-        //{
-        //    GD.Print("ZoneOver");
-        //}
-        //else
-        //{
-        //    GD.Print("Zone OUT");
-        //}
     }
 }

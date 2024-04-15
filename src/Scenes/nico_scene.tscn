@@ -9,7 +9,7 @@
 [node name="BossQueueManager" parent="." instance=ExtResource("1_2jicv")]
 
 [node name="CombatZone" parent="." instance=ExtResource("2_cmisy")]
-position = Vector2(1670, 460)
+position = Vector2(281, 40)
 
 [node name="MonsterCard" parent="." instance=ExtResource("3_rlun8")]
 offset_left = 286.0
