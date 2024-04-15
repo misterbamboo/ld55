@@ -1,4 +1,6 @@
-﻿public class HintDef
+﻿using System;
+
+public class HintDef
 {
     public HintDef(SpecTypes specType, int fromIndex, int toIndex, string text)
     {
@@ -15,4 +17,9 @@
     public int FromIndex { get; }
     public int ToIndex { get; }
     public string Text { get; }
+
+    internal static string CreateId(SpecTypes specType, int playerIndex, int bossIndex)
+    {
+        return $"{specType}_{playerIndex}_{bossIndex}";
+    }
 }

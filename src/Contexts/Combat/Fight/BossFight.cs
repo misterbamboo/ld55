@@ -34,9 +34,9 @@ public class BossFight
 
     private bool PlayerWin(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
     {
-        var emotionIndexDistance = summonSpecs.Emotion.IndexDistanceOf(bossSpecs.Emotion);
-        var elementIndexDistance = summonSpecs.Element.IndexDistanceOf(bossSpecs.Element);
-        var speciesIndexDistance = summonSpecs.Species.IndexDistanceOf(bossSpecs.Species);
+        var emotionIndexDistance = summonSpecs.Emotion.InvertedIndexDistanceOf(bossSpecs.Emotion);
+        var elementIndexDistance = summonSpecs.Element.InvertedIndexDistanceOf(bossSpecs.Element);
+        var speciesIndexDistance = summonSpecs.Species.InvertedIndexDistanceOf(bossSpecs.Species);
 
         var indexDistances = new[] { emotionIndexDistance, elementIndexDistance, speciesIndexDistance };
         var nbrWin = indexDistances.Where(i => i > 0).Count();
@@ -49,9 +49,9 @@ public class BossFight
 
     private bool PlayerLose(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
     {
-        var emotionIndexDistance = summonSpecs.Emotion.IndexDistanceOf(bossSpecs.Emotion);
-        var elementIndexDistance = summonSpecs.Element.IndexDistanceOf(bossSpecs.Element);
-        var speciesIndexDistance = summonSpecs.Species.IndexDistanceOf(bossSpecs.Species);
+        var emotionIndexDistance = summonSpecs.Emotion.InvertedIndexDistanceOf(bossSpecs.Emotion);
+        var elementIndexDistance = summonSpecs.Element.InvertedIndexDistanceOf(bossSpecs.Element);
+        var speciesIndexDistance = summonSpecs.Species.InvertedIndexDistanceOf(bossSpecs.Species);
 
         var indexDistances = new[] { emotionIndexDistance, elementIndexDistance, speciesIndexDistance };
         var nbrWin = indexDistances.Where(i => i > 0).Count();
@@ -61,6 +61,9 @@ public class BossFight
         return nbrWin < nbrLose;
     }
 
+    /// <summary>
+    /// TODO: DOUBLE CHECK THIS WITH GD.PRINT()
+    /// </summary>
     private void ChooseHint(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
     {
         var fightResults = new List<BossFightResultSpecInfo>();
@@ -73,22 +76,25 @@ public class BossFight
         Hint = HintProvider.GetHintFor(hintSpecType.SpecType, hintSpecType.SummonIndex, hintSpecType.BossIndex);
     }
 
+    /// <summary>
+    /// TODO: DOUBLE CHECK THIS WITH GD.PRINT()
+    /// </summary>
     private void FillFightResults(
         List<BossFightResultSpecInfo> fightResults,
         SpecTypes specType,
         RotatingValue summonValue,
         RotatingValue bossValue)
     {
-        var indexDistance = summonValue.IndexDistanceOf(bossValue);
-        var result = GetBossFightResultOfDistance(indexDistance);
+        var invertedIndexDistance = summonValue.InvertedIndexDistanceOf(bossValue);
+        var result = GetBossFightResultOfDistance(invertedIndexDistance);
         fightResults.Add(new BossFightResultSpecInfo(result, summonValue.Index, bossValue.Index, specType));
     }
 
-    private BossFightResult GetBossFightResultOfDistance(int indexDistance)
+    private BossFightResult GetBossFightResultOfDistance(int invertedIndexDistance)
     {
         return
-            indexDistance < 0 ? BossFightResult.PlayerLose :
-            indexDistance > 0 ? BossFightResult.PlayerWin :
+            invertedIndexDistance < 0 ? BossFightResult.PlayerLose :
+            invertedIndexDistance > 0 ? BossFightResult.PlayerWin :
             BossFightResult.Draw;
     }
 

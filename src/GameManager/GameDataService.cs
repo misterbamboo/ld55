@@ -96,6 +96,7 @@ public partial class GameDataService : Node, IHintProvider
 
     public string GetHintFor(SpecTypes specType, int summonIndex, int bossIndex)
     {
-        return GetHintDefinition($"{specType}_{summonIndex}_{bossIndex}").Text;
+        var id = HintDef.CreateId(specType, summonIndex, bossIndex);
+        return GetHintDefinition(id).Text;
     }
 }

@@ -114,12 +114,22 @@ public partial class SpecDefTestScript : Node
 
         BossMonsterCardUI.Init(bossSpecs, emotion, element, species);
         BossMonsterCardUI.RedrawMonster();
-        UpdateDisplayCombatText();
+
+        var bossFight = new BossFight(GameDataService);
+        var playerSpecs = new SummoningSpecs(PlayerEmotionSpec.Index, PlayerElementSpec.Index, PlayerSpeciesSpec.Index);
+        bossFight.Combat(playerSpecs, bossSpecs);
+
+        UpdateDisplayCombatText(bossFight.Result, playerSpecs, bossSpecs);
     }
 
-    private void UpdateDisplayCombatText()
+    private void UpdateDisplayCombatText(BossFight.BossFightResult result, SummoningSpecs playerSpecs, SummoningSpecs bossSpecs)
     {
-        var hint = GameDataService.GetHintDefinition($"{CombatType}_{PlayerIndex}_{BossIndex}");
-        CombatRichTextLabel.Text = hint.Text;
+        string id = HintDef.CreateId(CombatType, PlayerIndex, BossIndex);
+        var hint = GameDataService.GetHintDefinition(id);
+        string line1 = $"{result}. {hint.Text}";
+        string line2 = $"player: {playerSpecs}";
+        string line3 = $"boss: {bossSpecs}";
+        var ln = System.Environment.NewLine;
+        CombatRichTextLabel.Text = $"{line1}{ln}{line2}{ln}{line3}";
     }
 }

@@ -21,22 +21,22 @@ public partial class InventoryService : Node
         deskManager.OnMonsterSummoned += ClearSummoningBoard;
         deskManager.OnGameStart += HandleNewGame;
         deskManager.OnFight += ReceiveLootFromMonster;
-     
+
         VerifyInventorySlotsOrder();
         RedrawInventoryItems();
     }
 
     private void ReceiveLootFromMonster(BossFight bossFight)
     {
-        if(bossFight.Result != BossFight.BossFightResult.PlayerWin)
+        if (bossFight.Result != BossFight.BossFightResult.PlayerWin)
         {
             return;
         }
 
         var possibleLoot = gameDataService.Ingredients;
-        for(var i = 0; i < bossFight.PlayerWins * 2; i++)
+        for (var i = 0; i < bossFight.PlayerWins * 2; i++)
         {
-            var ingredientIndex = rng.RandiRange(0, possibleLoot.Count());
+            var ingredientIndex = rng.RandiRange(0, possibleLoot.Count() - 1);
             Inventory.AddItem(possibleLoot.ElementAt(ingredientIndex));
         }
 
@@ -91,7 +91,7 @@ public partial class InventoryService : Node
         {
             deskManager.FillArcaneForcus(Inventory.GetItemInSlot(ArcaneFocusSlot));
         }
-        else if(sourceIndex == ArcaneFocusSlot)
+        else if (sourceIndex == ArcaneFocusSlot)
         {
             deskManager.EmptyArcaneForcus();
         }
@@ -116,7 +116,7 @@ public partial class InventoryService : Node
         for (int i = Inventory.TotalSlots - 2; i >= Inventory.TotalSlots - 6; i--)
         {
             var ingredient = Inventory.GetItemInSlot(i);
-            if(ingredient == null)
+            if (ingredient == null)
             {
                 continue;
             }
