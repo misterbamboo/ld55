@@ -15,7 +15,9 @@ public partial class MonsterCardUI : Control
 
 	public SummoningSpecs SummoningSpecs { get; private set; } = new SummoningSpecs();
 
-	private MonsterImageLoader MonsterImageLoader { get; set; }
+    private DeskManager deskManager;
+
+    private MonsterImageLoader MonsterImageLoader { get; set; }
 	private SpecDefinition Emotion { get; set; } = SpecDefinition.Empty();
 	private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
 	private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
@@ -51,8 +53,9 @@ public partial class MonsterCardUI : Control
 
 	public override void _Ready()
 	{
-		MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
-		DragHandler = new ControlDragHandler(this, allowDrag: true);
+        deskManager = GetNode<DeskManager>(DeskManager.Path);
+        MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
+        DragHandler = new ControlDragHandler(this, allowDrag: true);
 		DragHandler.OnStartDraggin += DragHandler_OnStartDraggin;
 		DragHandler.OnEndDraggin += DragHandler_OnEndDraggin;
 		RedrawMonster();
@@ -61,7 +64,8 @@ public partial class MonsterCardUI : Control
 	{
 		ForceReleaseStickToAnim();
 		PlayerHand.Instance.PutInHand(this);
-	}
+		deskManager.CardMoving();
+    }
 
 	private void DragHandler_OnEndDraggin()
 	{

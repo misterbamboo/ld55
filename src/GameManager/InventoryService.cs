@@ -20,7 +20,7 @@ public partial class InventoryService : Node
 
         deskManager.OnMonsterSummoned += ClearSummoningBoard;
         deskManager.OnGameStart += HandleNewGame;
-        deskManager.OnFight += ReceiveLootFromMonster;
+        deskManager.OnFightCompleted += ReceiveLootFromMonster;
 
         VerifyInventorySlotsOrder();
         RedrawInventoryItems();

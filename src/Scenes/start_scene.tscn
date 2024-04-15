@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_sr65v"]
 [ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/Candle_Lit.png" id="6_thiw4"]
 [ext_resource type="Texture2D" uid="uid://cqadmcqr81l3h" path="res://GameManager/candles/Candle_Lit_Selected.png" id="7_4d6mw"]
-[ext_resource type="PackedScene" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
+[ext_resource type="PackedScene" uid="uid://8fi7m8pevqq3" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
 [ext_resource type="Texture2D" uid="uid://kdsmnasa043" path="res://GameManager/candles/Candle_Unlit_Selected.png" id="9_eprp0"]

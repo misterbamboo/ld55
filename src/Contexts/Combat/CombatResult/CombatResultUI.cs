@@ -9,7 +9,7 @@ public partial class CombatResultUI : Node
     {
         RichTextLabel.Text = string.Empty;
         DeskManager = GetNode<DeskManager>(DeskManager.Path);
-        DeskManager.OnFight += DeskManager_OnFight;
+        DeskManager.OnFightCompleted += DeskManager_OnFight;
     }
 
     private void DeskManager_OnFight(BossFight bossFigth)
@@ -39,6 +39,6 @@ public partial class CombatResultUI : Node
     public override void _ExitTree()
     {
         base._ExitTree();
-        DeskManager.OnFight -= DeskManager_OnFight;
+        DeskManager.OnFightCompleted -= DeskManager_OnFight;
     }
 }
