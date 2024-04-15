@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cwwbg1ksy2hjc"]
+[gd_scene load_steps=66 format=3 uid="uid://cwwbg1ksy2hjc"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.cs" id="1_65abr"]
 [ext_resource type="Texture2D" uid="uid://cyebqpxa506a1" path="res://Assets/Monsters/Slime/Slime_fire.png" id="2_kbl6r"]
@@ -51,9 +51,12 @@
 [ext_resource type="Texture2D" uid="uid://rf84qoj0aqm3" path="res://Assets/Monsters/Fairy/Emotions/Fairy_fear.png" id="49_0j5fr"]
 [ext_resource type="Texture2D" uid="uid://1tn26u0kvhkx" path="res://Assets/Monsters/Fairy/Emotions/Fairy_joy.png" id="50_ehflf"]
 [ext_resource type="Texture2D" uid="uid://17qcombvvukr" path="res://Assets/Monsters/Fairy/Emotions/Fairy_sadness.png" id="51_68w3q"]
+[ext_resource type="Texture2D" uid="uid://d2cwyk4g0yfxi" path="res://Assets/Menus/Background_Menu.png" id="52_fcj1r"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="52_v3n4b"]
-[ext_resource type="StyleBox" uid="uid://pq8ic24dlb3a" path="res://Assets/UI/Styles/Button_Normal.tres" id="53_fb71j"]
-[ext_resource type="StyleBox" uid="uid://ts6wka07tfkn" path="res://Assets/UI/Styles/Button_Hover.tres" id="54_glx5p"]
+[ext_resource type="Texture2D" uid="uid://mnbbukrh3pru" path="res://Assets/Menus/Bouton_Play.png" id="54_4ewff"]
+[ext_resource type="Texture2D" uid="uid://jma7thplab23" path="res://Assets/Menus/Bouton_Play_selected.png" id="55_20cv5"]
+[ext_resource type="Texture2D" uid="uid://c8josnyfwsq4i" path="res://Assets/Menus/Bouton_Exit.png" id="56_u3psu"]
+[ext_resource type="Texture2D" uid="uid://dvkdc5y5al8vx" path="res://Assets/Menus/Bouton_Exit_selected.png" id="57_s7i8i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_arvfb"]
 font_size = 216
@@ -66,6 +69,18 @@ font_size = 350
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6jea"]
 font_size = 52
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ratgm"]
+texture = ExtResource("54_4ewff")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ih6w5"]
+texture = ExtResource("55_20cv5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xaku6"]
+texture = ExtResource("56_u3psu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4d5x"]
+texture = ExtResource("57_s7i8i")
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -87,15 +102,19 @@ ghostFaces = Array[Texture2D]([ExtResource("28_uvhc4"), ExtResource("29_not1o"),
 fairyBodies = Array[Texture2D]([ExtResource("42_visi6"), ExtResource("43_kwprh"), ExtResource("44_lh4e1"), ExtResource("45_44ysv"), ExtResource("46_eqjak")])
 fairyFaces = Array[Texture2D]([ExtResource("47_1ffy0"), ExtResource("48_bjc6o"), ExtResource("49_0j5fr"), ExtResource("50_ehflf"), ExtResource("51_68w3q")])
 
+[node name="BackgroundMenu" type="Sprite2D" parent="."]
+position = Vector2(963, 538)
+texture = ExtResource("52_fcj1r")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -620.5
-offset_top = 43.0
-offset_right = 634.5
-offset_bottom = 349.0
+offset_left = -720.5
+offset_top = -1037.0
+offset_right = 534.5
+offset_bottom = -731.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("52_v3n4b")
 text = "UMMONIN"
@@ -106,10 +125,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -857.0
-offset_top = 3.0
-offset_right = -115.0
-offset_bottom = 481.0
+offset_left = -957.0
+offset_top = -1077.0
+offset_right = -215.0
+offset_bottom = -581.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("52_v3n4b")
 text = "S"
@@ -120,10 +139,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 625.0
-offset_top = 5.0
-offset_right = 1367.0
-offset_bottom = 483.0
+offset_left = 525.0
+offset_top = -1075.0
+offset_right = 1267.0
+offset_bottom = -579.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("52_v3n4b")
 text = "G"
@@ -134,10 +153,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -645.0
-offset_top = 295.0
-offset_right = 667.0
-offset_bottom = 470.0
+offset_left = -745.0
+offset_top = -785.0
+offset_right = 567.0
+offset_bottom = -610.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("52_v3n4b")
 text = "a game about summoning called Summoning"
@@ -146,26 +165,26 @@ horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 724.0
-offset_top = 569.0
-offset_right = 1144.0
-offset_bottom = 769.0
+offset_left = 720.0
+offset_top = 567.0
+offset_right = 1148.0
+offset_bottom = 771.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 128
-theme_override_styles/normal = ExtResource("53_fb71j")
-theme_override_styles/hover = ExtResource("54_glx5p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ratgm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ih6w5")
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 845.0
-offset_top = 867.0
-offset_right = 1045.0
-offset_bottom = 995.0
+offset_left = 829.0
+offset_top = 857.0
+offset_right = 1060.0
+offset_bottom = 1005.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = ExtResource("53_fb71j")
-theme_override_styles/hover = ExtResource("54_glx5p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j4d5x")
 text = "Quit"
 
 [node name="Monster2" type="Node2D" parent="."]

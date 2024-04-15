@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://gnynltn8oj4w"]
 
 [ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_u3gc2"]
-[ext_resource type="PackedScene" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
+[ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="3_t07eg"]
 [ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_sr65v"]
 [ext_resource type="Texture2D" uid="uid://cs11so735vm13" path="res://GameManager/candles/candle_lit.png" id="5_f0xyq"]
