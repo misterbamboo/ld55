@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ivv04qm8881o"]
+[gd_scene load_steps=13 format=3 uid="uid://ivv04qm8881o"]
 
 [ext_resource type="Texture2D" uid="uid://rxhv8ialew20" path="res://Assets/icons/Setup 3.png" id="1_ir7a2"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="1_nag1a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bhhe3thjoehn0" path="res://GameManager/candles/candle_trunk.png" id="8_b6sgq"]
 [ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="9_b8wiq"]
 [ext_resource type="PackedScene" uid="uid://dl70lx0ltf2wi" path="res://Contexts/Summoning/CardSpawnerUI.tscn" id="11_4biwo"]
+[ext_resource type="Script" path="res://Scenes/SceneLoadedWitness.cs" id="12_brlip"]
 
 [node name="SpoodScene" type="Control"]
 layout_mode = 3
@@ -417,6 +418,9 @@ ignore_texture_size = true
 
 [node name="CardSpawnerUI" parent="." instance=ExtResource("11_4biwo")]
 position = Vector2(1303, 681)
+
+[node name="SceneLoadedWitness" type="Node" parent="."]
+script = ExtResource("12_brlip")
 
 [connection signal="pressed" from="Candles/Candle0/TextureButton" to="CandleManager" method="ToggleCandle" binds= [0]]
 [connection signal="pressed" from="Candles/Candle1/TextureButton" to="CandleManager" method="ToggleCandle" binds= [1]]
