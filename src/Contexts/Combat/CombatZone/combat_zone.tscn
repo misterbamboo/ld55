@@ -1,35 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmgne0x5bexws"]
+[gd_scene load_steps=9 format=3 uid="uid://dmgne0x5bexws"]
 
 [ext_resource type="Script" path="res://Contexts/Combat/CombatZone/CombatZoneUI.cs" id="1_0l3wj"]
 [ext_resource type="Texture2D" uid="uid://b1u047pxc5g20" path="res://Contexts/Combat/CombatZone/combat_zone_bg.tres" id="2_x3vv3"]
 [ext_resource type="FontFile" uid="uid://vd2bt6mspnx3" path="res://Contexts/Combat/CombatZone/Jacquard24-Regular.ttf" id="3_xxvxc"]
 [ext_resource type="Script" path="res://Contexts/Combat/CombatZone/CombatSummonZoneUI.cs" id="4_4xpm1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnk65"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3in84"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u6o7k"]
 texture = ExtResource("2_x3vv3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuwnu"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="CombatZone" type="Node2D" node_paths=PackedStringArray("CombatSummonZoneUI")]
 script = ExtResource("1_0l3wj")
 CombatSummonZoneUI = NodePath("Control")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 192.0
-offset_bottom = 267.0
+clip_children = 1
+offset_right = 212.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gnk65")
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 material = SubResource("CanvasItemMaterial_3in84")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u6o7k")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-offset_left = 2.0
-offset_top = 166.0
-offset_right = 187.0
-offset_bottom = 266.0
-theme_override_colors/default_color = Color(0, 0, 0, 0.588235)
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(1, 0.9, 0.8, 0.588235)
 theme_override_fonts/normal_font = ExtResource("3_xxvxc")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
@@ -37,29 +49,24 @@ text = "[center]enemy[/center]"
 fit_content = true
 scroll_active = false
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="Control" type="PanelContainer" parent="."]
+clip_children = 1
 offset_left = 236.0
-offset_right = 428.0
-offset_bottom = 267.0
+offset_right = 448.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xuwnu")
 script = ExtResource("4_4xpm1")
 
 [node name="Panel2" type="Panel" parent="Control"]
 material = SubResource("CanvasItemMaterial_3in84")
 layout_mode = 2
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 194.0
-offset_bottom = 269.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_u6o7k")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Panel2"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-offset_top = 164.0
-offset_right = 185.0
-offset_bottom = 264.0
-theme_override_colors/default_color = Color(0, 0, 0, 0.607843)
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(1, 0.9, 0.8, 0.588235)
 theme_override_fonts/normal_font = ExtResource("3_xxvxc")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
