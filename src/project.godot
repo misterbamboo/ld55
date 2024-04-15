@@ -21,6 +21,7 @@ GameDataService="*res://GameManager/GameDataService.tscn"
 GameAssetsService="*res://GameManager/GameAssetsService.tscn"
 MonsterImageLoader="*res://Assets/Monsters/MonsterImageLoader.cs"
 DeskManager="*res://GameManager/DeskManager.tscn"
+PlayerHandService="*res://Contexts/Combat/PlayerHand/player_hand_service.tscn"
 
 [display]
 

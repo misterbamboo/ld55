@@ -16,3 +16,27 @@ offset_left = 286.0
 offset_top = 695.0
 offset_right = 474.0
 offset_bottom = 958.0
+
+[node name="MonsterCard2" parent="." node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage") instance=ExtResource("3_rlun8")]
+offset_left = 605.0
+offset_top = 784.0
+offset_right = 793.0
+offset_bottom = 1047.0
+NameLabel = NodePath("../MonsterCard/BoxContainer/MonsterName")
+SpeciesImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerBottom")
+EmotionImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerTop")
+EmotionIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Emotion")
+ElementIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Element")
+SpeciesIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Species")
+
+[node name="MonsterCard3" parent="." node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage") instance=ExtResource("3_rlun8")]
+offset_left = 555.0
+offset_top = 460.0
+offset_right = 743.0
+offset_bottom = 723.0
+NameLabel = NodePath("../MonsterCard/BoxContainer/MonsterName")
+SpeciesImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerBottom")
+EmotionImage = NodePath("../MonsterCard/BoxContainer/MonsterComp/MonsterLayerTop")
+EmotionIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Emotion")
+ElementIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Element")
+SpeciesIconImage = NodePath("../MonsterCard/BoxContainer/MonsterAttributes/Species")

@@ -42,7 +42,18 @@ public partial class MonsterCardUI : Control
     {
         MonsterImageLoader = GetNode<MonsterImageLoader>(MonsterImageLoader.Path);
         DragHandler = new ControlDragHandler(this, allowDrag: true);
+        DragHandler.OnStartDraggin += DragHandler_OnStartDraggin;
+        DragHandler.OnEndDraggin += DragHandler_OnEndDraggin;
         RedrawMonster();
+    }
+    private void DragHandler_OnStartDraggin()
+    {
+        PlayerHand.Instance.PutInHand(this);
+    }
+
+    private void DragHandler_OnEndDraggin()
+    {
+        PlayerHand.Instance.RemoveFromHand(this);
     }
 
     public override void _Process(double delta)
@@ -114,5 +125,10 @@ public partial class MonsterCardUI : Control
         return x <= 0 ? 0 :
                x >= 1 ? 1 :
                Mathf.Pow(2, -10 * x) * Mathf.Sin((x * 10 - 0.75) * c4) + 1;
+    }
+
+    internal void TriggerStickToAnim(Vector2 position)
+    {
+        throw new NotImplementedException();
     }
 }

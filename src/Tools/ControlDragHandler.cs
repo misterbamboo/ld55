@@ -1,8 +1,15 @@
 ﻿using Godot;
+using System;
 
 public class ControlDragHandler
 {
     private const bool DebugMode = false;
+
+    public event Action OnStartDraggin;
+    public event Action OnEndDraggin;
+
+    public event Action OnStartMouseHover;
+    public event Action OnEndMouseHover;
 
     public bool MouseHover => mouseHover;
 
@@ -48,6 +55,7 @@ public class ControlDragHandler
         {
             Debug("In");
             mouseHover = true;
+            OnStartMouseHover?.Invoke();
         }
     }
 
@@ -55,9 +63,13 @@ public class ControlDragHandler
     {
         if (!control.GetGlobalRect().HasPoint(mouseMoveOut.Position))
         {
+            Debug("Stop drag");
+            mouseDrag = false;
+            OnEndDraggin?.Invoke();
+
             Debug("Out");
             mouseHover = false;
-            mouseDrag = false;
+            OnEndMouseHover?.Invoke();
         }
     }
 
@@ -70,11 +82,13 @@ public class ControlDragHandler
                 mouseDrag = true;
                 mouseOffset = mouseClick.Position - control.Position;
                 Debug($"Start drag ({mouseOffset})");
+                OnStartDraggin?.Invoke();
             }
             else if (mouseDrag && !mouseClick.Pressed && mouseClick.ButtonIndex == MouseButton.Left)
             {
                 Debug("Stop drag");
                 mouseDrag = false;
+                OnEndDraggin?.Invoke();
             }
         }
     }
