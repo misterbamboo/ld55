@@ -178,3 +178,4 @@ position = Vector2(304, 767)
 texture = ExtResource("4_stmlb")
 
 [connection signal="pressed" from="StartButton" to="." method="PressPlay"]
+[connection signal="pressed" from="QuitButton" to="." method="PressQuit"]

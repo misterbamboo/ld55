@@ -32,9 +32,9 @@ public partial class DeskManager : Node
     private SummoningSpecs currentMonsterStats = new SummoningSpecs(2.5,2.5,2.5);
     public SummoningSpecs CurrentMonsterStats => currentMonsterStats;
     
-    public void _Process(float delta)
+    public override void _Process(double delta)
     {
-        if(Input.IsKeyPressed(Key.Escape))
+        if(Input.IsActionPressed("ui_cancel"))
         {
             GetTree().Quit();
         }
