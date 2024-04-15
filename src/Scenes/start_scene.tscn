@@ -38,10 +38,10 @@ texture = ExtResource("1_u3gc2")
 
 [node name="ArcaneFocus" parent="." instance=ExtResource("2_emx3q")]
 layout_mode = 1
-offset_left = -253.0
-offset_top = -221.0
-offset_right = 347.0
-offset_bottom = 379.0
+offset_left = -215.0
+offset_top = -201.0
+offset_right = 385.0
+offset_bottom = 399.0
 scale = Vector2(0.75, 0.75)
 
 [node name="IngredientSlotUI20" parent="." instance=ExtResource("3_t07eg")]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://waatooubwhwk"]
 
 [ext_resource type="Script" path="res://Contexts/Ingredients/ArcaneFocusUI.cs" id="1_7ju3c"]
-[ext_resource type="Texture2D" uid="uid://byhp5pr15l3l3" path="res://Contexts/Ingredients/arcane_focus_pillar.png" id="1_jqrpx"]
-[ext_resource type="Texture2D" uid="uid://bvwqv8b1peg8x" path="res://Contexts/Ingredients/arcane_focus_base.png" id="1_xctjy"]
+[ext_resource type="Texture2D" uid="uid://cuuxtjjxay1yv" path="res://Contexts/Ingredients/Divination_Sphere.png" id="2_csq3p"]
+[ext_resource type="Texture2D" uid="uid://2uo74pknxgo7" path="res://Contexts/Ingredients/Divination_Sphere_Selected.png" id="3_qg36u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g660"]
 
@@ -26,42 +26,18 @@ script = ExtResource("1_7ju3c")
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -392.0
-offset_top = -75.0
-offset_right = 308.0
-offset_bottom = 437.0
-grow_horizontal = 2
-theme_override_icons/grabber = ExtResource("1_jqrpx")
-theme_override_icons/grabber_highlight = ExtResource("1_jqrpx")
-theme_override_icons/grabber_disabled = ExtResource("1_jqrpx")
-theme_override_styles/slider = SubResource("StyleBoxTexture_1g660")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -3.0
-offset_top = 188.0
-offset_right = -3.0
-offset_bottom = 188.0
-grow_horizontal = 2
+offset_left = -218.0
+offset_top = -274.0
+offset_right = 482.0
+offset_bottom = -18.0
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_xctjy")
+theme_override_icons/grabber = ExtResource("2_csq3p")
+theme_override_icons/grabber_highlight = ExtResource("3_qg36u")
+theme_override_icons/grabber_disabled = ExtResource("2_csq3p")
+theme_override_styles/slider = SubResource("StyleBoxTexture_1g660")
 
 [node name="VSlider" type="VSlider" parent="."]
 layout_mode = 1
@@ -70,15 +46,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -135.0
+offset_left = -111.0
 offset_top = -142.0
-offset_right = 121.0
+offset_right = 145.0
 offset_bottom = 558.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_icons/grabber = ExtResource("1_jqrpx")
-theme_override_icons/grabber_highlight = ExtResource("1_jqrpx")
-theme_override_icons/grabber_disabled = ExtResource("1_jqrpx")
+theme_override_icons/grabber = ExtResource("2_csq3p")
+theme_override_icons/grabber_highlight = ExtResource("3_qg36u")
+theme_override_icons/grabber_disabled = ExtResource("2_csq3p")
 theme_override_styles/slider = SubResource("StyleBoxTexture_6i1ao")
 
 [connection signal="value_changed" from="HSlider" to="." method="OnHSliderValueChanged"]
