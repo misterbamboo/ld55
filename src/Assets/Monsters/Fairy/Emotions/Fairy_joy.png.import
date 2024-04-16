@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1tn26u0kvhkx"
-path="res://.godot/imported/Fairy_joy.png-54013c434b49ebbd230482e801c62d58.ctex"
+path="res://.godot/imported/Fairy_Joy.png-181a3bc91fcd165ca6694f3393aec7fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Fairy/Emotions/Fairy_joy.png"
-dest_files=["res://.godot/imported/Fairy_joy.png-54013c434b49ebbd230482e801c62d58.ctex"]
+source_file="res://Assets/Monsters/Fairy/Emotions/Fairy_Joy.png"
+dest_files=["res://.godot/imported/Fairy_Joy.png-181a3bc91fcd165ca6694f3393aec7fa.ctex"]
 
 [params]
 

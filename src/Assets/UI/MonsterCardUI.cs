@@ -219,7 +219,16 @@ public partial class MonsterCardUI : Control
     {
         lifeAnim = true;
         lifeAnimT = 0;
-        lifeAnimInitRatio = (LifeDisplayProgressBar.Value / LifeDisplayProgressBar.MaxValue);
+
+        if (LifeDisplayProgressBar != null)
+        {
+            lifeAnimInitRatio = (LifeDisplayProgressBar.Value / LifeDisplayProgressBar.MaxValue);
+        }
+        else
+        {
+            lifeAnimInitRatio = 1f;
+        }
+
         lifeAnimTargetRatio = ratio;
         GD.Print($"life ratio: {lifeAnimInitRatio} to {lifeAnimTargetRatio}");
     }
@@ -228,6 +237,12 @@ public partial class MonsterCardUI : Control
     {
         if (lifeAnim)
         {
+            if (LifeDisplayProgressBar == null)
+            {
+                lifeAnim = false;
+                return;
+            }
+
             lifeAnimT += delta;
             var t = lifeAnimT / lifeAnimTMax;
             t = Mathf.Clamp(t, 0, 1);

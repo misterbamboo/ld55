@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh8hj0mgtxlgp"
-path="res://.godot/imported/Slime_ice.png-e2fcd7d72017c0a2bf08f83aedc057c8.ctex"
+path="res://.godot/imported/Slime_Ice.png-ecc3b990f171341a60f1e295c0062a64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Slime/Slime_ice.png"
-dest_files=["res://.godot/imported/Slime_ice.png-e2fcd7d72017c0a2bf08f83aedc057c8.ctex"]
+source_file="res://Assets/Monsters/Slime/Slime_Ice.png"
+dest_files=["res://.godot/imported/Slime_Ice.png-ecc3b990f171341a60f1e295c0062a64.ctex"]
 
 [params]
 

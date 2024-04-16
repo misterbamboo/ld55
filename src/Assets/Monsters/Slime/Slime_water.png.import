@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwsoekogv44b1"
-path="res://.godot/imported/Slime_water.png-f408d48dd097b3db42ea3d9f4c5626c9.ctex"
+path="res://.godot/imported/Slime_Water.png-c1a360021114e912c461e69956970b11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Slime/Slime_water.png"
-dest_files=["res://.godot/imported/Slime_water.png-f408d48dd097b3db42ea3d9f4c5626c9.ctex"]
+source_file="res://Assets/Monsters/Slime/Slime_Water.png"
+dest_files=["res://.godot/imported/Slime_Water.png-c1a360021114e912c461e69956970b11.ctex"]
 
 [params]
 

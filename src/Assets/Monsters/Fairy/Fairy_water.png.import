@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch2kogadtc30h"
-path="res://.godot/imported/Fairy_water.png-6e1a7f42e77170ec33e0aa9f7d7e0672.ctex"
+path="res://.godot/imported/Fairy_Water.png-638b4ded32ea37c564e145466c49a68f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Fairy/Fairy_water.png"
-dest_files=["res://.godot/imported/Fairy_water.png-6e1a7f42e77170ec33e0aa9f7d7e0672.ctex"]
+source_file="res://Assets/Monsters/Fairy/Fairy_Water.png"
+dest_files=["res://.godot/imported/Fairy_Water.png-638b4ded32ea37c564e145466c49a68f.ctex"]
 
 [params]
 

@@ -6,11 +6,11 @@ public class MonsterImageResult
         int speciesIndex,
         int elementIndex,
         int emotionIndex,
-        ImageTexture speciesElementImage,
-        ImageTexture speciesEmotionImage,
-        ImageTexture speciesIconImage,
-        ImageTexture elementIconImage,
-        ImageTexture emotionIconImage)
+        Texture2D speciesElementImage,
+        Texture2D speciesEmotionImage,
+        Texture2D speciesIconImage,
+        Texture2D elementIconImage,
+        Texture2D emotionIconImage)
     {
         SpeciesIndex = speciesIndex;
         ElementIndex = elementIndex;
@@ -25,9 +25,9 @@ public class MonsterImageResult
     public int SpeciesIndex { get; }
     public int ElementIndex { get; }
     public int EmotionIndex { get; }
-    public ImageTexture SpeciesImage { get; }
-    public ImageTexture EmotionImage { get; }
-    public ImageTexture SpeciesIconImage { get; }
-    public ImageTexture ElementIconImage { get; }
-    public ImageTexture EmotionIconImage { get; }
+    public Texture2D SpeciesImage { get; }
+    public Texture2D EmotionImage { get; }
+    public Texture2D SpeciesIconImage { get; }
+    public Texture2D ElementIconImage { get; }
+    public Texture2D EmotionIconImage { get; }
 }

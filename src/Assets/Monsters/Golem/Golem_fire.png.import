@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccmt5hq1xsntw"
-path="res://.godot/imported/Golem_fire.png-bda55a8216545dc9b555659e080a3c38.ctex"
+path="res://.godot/imported/Golem_Fire.png-72be746e65f01b558c4eff61fa5537a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Golem/Golem_fire.png"
-dest_files=["res://.godot/imported/Golem_fire.png-bda55a8216545dc9b555659e080a3c38.ctex"]
+source_file="res://Assets/Monsters/Golem/Golem_Fire.png"
+dest_files=["res://.godot/imported/Golem_Fire.png-72be746e65f01b558c4eff61fa5537a7.ctex"]
 
 [params]
 

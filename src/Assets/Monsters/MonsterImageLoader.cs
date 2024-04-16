@@ -1,6 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 public partial class MonsterImageLoader : Node
 {
@@ -107,18 +108,18 @@ public partial class MonsterImageLoader : Node
         return speciesEmotionPath;
     }
 
-    private static ImageTexture LoadImageFromFile(string speciesElementPath)
+    private static Texture2D LoadImageFromFile(string speciesElementPath)
     {
-        Image image = null;
+        Texture2D texture = null;
         if (ResourceLoader.Exists(speciesElementPath))
         {
-            image = Image.LoadFromFile(speciesElementPath);
+            var res = GD.Load(speciesElementPath);
+            return (Texture2D)res;
         }
         else
         {
-            image = Image.LoadFromFile(NoImagePath);
+            return (Texture2D)GD.Load(NoImagePath);
         }
-        return ImageTexture.CreateFromImage(image);
     }
 
     private class MonsterImageLoaderCache

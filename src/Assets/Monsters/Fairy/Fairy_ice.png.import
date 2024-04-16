@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://edja5adwj03d"
-path="res://.godot/imported/Fairy_ice.png-4bbc7fd8b115ec1ab0bc75545e22b5fc.ctex"
+path="res://.godot/imported/Fairy_Ice.png-a44b49e845ed7f303aedf97648814f6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Fairy/Fairy_ice.png"
-dest_files=["res://.godot/imported/Fairy_ice.png-4bbc7fd8b115ec1ab0bc75545e22b5fc.ctex"]
+source_file="res://Assets/Monsters/Fairy/Fairy_Ice.png"
+dest_files=["res://.godot/imported/Fairy_Ice.png-a44b49e845ed7f303aedf97648814f6e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://che5dhmodgxkk"
-path="res://.godot/imported/Undead_fire.png-0cf0644631bd0588c3d518552192230f.ctex"
+path="res://.godot/imported/Undead_Fire.png-a2b1e6f994d07d4e77afb24f50649152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Undead/Undead_fire.png"
-dest_files=["res://.godot/imported/Undead_fire.png-0cf0644631bd0588c3d518552192230f.ctex"]
+source_file="res://Assets/Monsters/Undead/Undead_Fire.png"
+dest_files=["res://.godot/imported/Undead_Fire.png-a2b1e6f994d07d4e77afb24f50649152.ctex"]
 
 [params]
 

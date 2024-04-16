@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvaqyehnwlo10"
-path="res://.godot/imported/Undead_water.png-179b079b5fb266193e306c8c132b188d.ctex"
+path="res://.godot/imported/Undead_Water.png-aa0959fa10211e5035aff80c9e9f3559.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Undead/Undead_water.png"
-dest_files=["res://.godot/imported/Undead_water.png-179b079b5fb266193e306c8c132b188d.ctex"]
+source_file="res://Assets/Monsters/Undead/Undead_Water.png"
+dest_files=["res://.godot/imported/Undead_Water.png-aa0959fa10211e5035aff80c9e9f3559.ctex"]
 
 [params]
 

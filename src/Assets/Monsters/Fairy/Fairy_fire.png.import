@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://maxwedph6v5h"
-path="res://.godot/imported/Fairy_fire.png-7f64dcac3a07aba93aa25e1aed4d941c.ctex"
+path="res://.godot/imported/Fairy_Fire.png-d12dc670f811a05734fd6e41ad1f4ac5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/Fairy/Fairy_fire.png"
-dest_files=["res://.godot/imported/Fairy_fire.png-7f64dcac3a07aba93aa25e1aed4d941c.ctex"]
+source_file="res://Assets/Monsters/Fairy/Fairy_Fire.png"
+dest_files=["res://.godot/imported/Fairy_Fire.png-d12dc670f811a05734fd6e41ad1f4ac5.ctex"]
 
 [params]
 
