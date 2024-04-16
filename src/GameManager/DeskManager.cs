@@ -3,7 +3,7 @@ using System;
 
 public partial class DeskManager : Node
 {
-	public const string Path = "/root/DeskManager";
+    public const string Path = "/root/DeskManager";
 
     public delegate void GameStartedHandler();
     public delegate void GameStopedHandler();
@@ -18,23 +18,22 @@ public partial class DeskManager : Node
 
     public event MonsterStatsUpdatedHandler OnMonsterStatsUpdated;
     public event MonsterSummonedHandler OnMonsterSummoned;
-    public event FightHandler OnFight;
 
-	public event GameStartedHandler OnGameStart;
+    public event GameStartedHandler OnGameStart;
     public event GameStopedHandler OnGameStop;
 
-	public event ArcaneFocusFilledHandler OnArcaneFocusFilled;
+    public event ArcaneFocusFilledHandler OnArcaneFocusFilled;
     public event ArcaneFocusAdjustedHandler OnArcaneFocusAdjusted;
-	public event ArcaneFocusEmptiedHandler OnArcaneFocusEmptied;
+    public event ArcaneFocusEmptiedHandler OnArcaneFocusEmptied;
 
-	private bool GameStarted = false;
+    public bool GameStarted { get; private set; } = false;
 
-    private SummoningSpecs currentMonsterStats = new SummoningSpecs(2.5,2.5,2.5);
+    private SummoningSpecs currentMonsterStats = new SummoningSpecs(2.5, 2.5, 2.5);
     public SummoningSpecs CurrentMonsterStats => currentMonsterStats;
-    
+
     public override void _Process(double delta)
     {
-        if(Input.IsActionPressed("ui_cancel"))
+        if (Input.IsActionPressed("ui_cancel"))
         {
             GetTree().Quit();
         }
@@ -54,11 +53,11 @@ public partial class DeskManager : Node
         OnGameStop?.Invoke();
     }
 
-	public void SummonMonster()
-	{
+    public void SummonMonster()
+    {
         GD.PrintRich("[color=cyan]DeskEvent: OnMonsterSummoned[/color]");
-		OnMonsterSummoned?.Invoke(currentMonsterStats);
-	}
+        OnMonsterSummoned?.Invoke(currentMonsterStats);
+    }
 
     public void NewMonster(SummoningSpecs monster)
     {
@@ -80,8 +79,8 @@ public partial class DeskManager : Node
         OnArcaneFocusFilled?.Invoke(ingredient);
     }
 
-	public void EmptyArcaneForcus()
-	{
+    public void EmptyArcaneForcus()
+    {
         GD.PrintRich("[color=cyan]DeskEvent: OnArcaneFocusEmptied[/color]");
         OnArcaneFocusEmptied?.Invoke();
     }
@@ -92,14 +91,72 @@ public partial class DeskManager : Node
         OnArcaneFocusAdjusted?.Invoke(ingredient);
     }
 
-    public void CompleteFight(BossFight bossFight)
+    public event FightHandler OnFightCompleted;
+    public void FightCompleted(BossFight bossFight)
     {
-        GD.PrintRich("[color=cyan]DeskEvent: OnFightCompleted[/color]");
-        OnFight?.Invoke(bossFight);
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnFightCompleted)}[/color]");
+        OnFightCompleted?.Invoke(bossFight);
     }
 
     public void SceneLoaded()
     {
         StartGame();
+    }
+
+    public event Action OnArcaneFocusDragStart;
+    internal void ArcaneFocusDragStart()
+    {
+        GD.PrintRich("[color=cyan]DeskEvent: OnArcaneFocusDragStart[/color]");
+        OnArcaneFocusDragStart?.Invoke();
+    }
+
+    public event Action OnArcaneFocusDragEnd;
+    internal void ArcaneFocusDragEnd()
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnArcaneFocusDragEnd)}[/color]");
+        OnArcaneFocusDragEnd?.Invoke();
+    }
+
+    public event Action<bool> OnCandleToggled;
+    internal void CandleToggled(bool state)
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnCandleToggled)}[/color]");
+        OnCandleToggled?.Invoke(state);
+    }
+
+    public event Action<SummoningSpecs, SummoningSpecs> OnFightStarting;
+    internal void FightStarting(SummoningSpecs playerSummoningSpecs, SummoningSpecs bossSummoningSpecs)
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnFightStarting)}[/color]");
+        OnFightStarting?.Invoke(playerSummoningSpecs, bossSummoningSpecs);
+    }
+
+
+    public event Action OnItemGrabbed;
+    internal void ItemGrabbed()
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnItemGrabbed)}[/color]");
+        OnItemGrabbed?.Invoke();
+    }
+
+    public event Action OnItemDropped;
+    internal void ItemDropped()
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnItemDropped)}[/color]");
+        OnItemDropped?.Invoke();
+    }
+
+    public event Action OnCardMoving;
+    internal void CardMoving()
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnCardMoving)}[/color]");
+        OnCardMoving?.Invoke();
+    }
+
+    public event Action OnFightHit;
+    internal void FightHit()
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnFightHit)}[/color]");
+        OnFightHit?.Invoke();
     }
 }

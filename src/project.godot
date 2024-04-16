@@ -22,6 +22,7 @@ GameAssetsService="*res://GameManager/GameAssetsService.tscn"
 MonsterImageLoader="*res://Assets/Monsters/MonsterImageLoader.cs"
 DeskManager="*res://GameManager/DeskManager.tscn"
 PlayerHandService="*res://Contexts/Combat/PlayerHand/player_hand_service.tscn"
+SoundMusicService="*res://Assets/Sounds/sound_music_service.tscn"
 
 [display]
 

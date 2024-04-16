@@ -3,6 +3,7 @@ using Godot;
 public partial class IngredientSlotUI : Control
 {
 	private GameAssetsService gameAssetsService;
+    private DeskManager deskManager;
     private InventoryService inventory;
 	private TextureRect Icon;
 
@@ -16,7 +17,8 @@ public partial class IngredientSlotUI : Control
 	{
         Icon = GetNode<TextureRect>("Icon");
 		gameAssetsService = GetNode<GameAssetsService>(GameAssetsService.Path);
-	}
+        deskManager = GetNode<DeskManager>(DeskManager.Path);
+    }
 
 	public override void _Process(double delta)
 	{
@@ -35,6 +37,8 @@ public partial class IngredientSlotUI : Control
 
     public override Variant _GetDragData(Vector2 position)
     {
+        deskManager.ItemGrabbed();
+
         var rect = new TextureRect();
         rect.Texture = Icon.Texture;
         rect.CustomMinimumSize = new Vector2(80, 80);
@@ -53,5 +57,6 @@ public partial class IngredientSlotUI : Control
     public override void _DropData(Vector2 atPosition, Variant data)
     {
         inventory.Swap(data.AsInt32(), index);
+        deskManager.ItemDropped();
     }
 }

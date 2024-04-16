@@ -1,4 +1,5 @@
 using Godot;
+using System.Collections.Generic;
 using System.Linq;
 
 public partial class CandlesManager : Node
@@ -36,6 +37,8 @@ public partial class CandlesManager : Node
             candles = new bool[5];
             DrawCandles();
         }
+
+        deskManager.CandleToggled(candles[index]);
     }
 
     public void DrawCandles()

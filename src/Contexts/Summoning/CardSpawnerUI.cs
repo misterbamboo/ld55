@@ -20,12 +20,8 @@ public partial class CardSpawnerUI : Node2D
     {
         var newMonsterCard = MonsterCardUIPrefab.Instantiate<MonsterCardUI>();
 
-        var emotionSpecDef = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, summoningSpecs.Emotion.Index));
-        var elementSpecDef = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, summoningSpecs.Element.Index));
-        var speciesSpecDef = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, summoningSpecs.Species.Index));
-
         newMonsterCard.IsDraggable = true;
-        newMonsterCard.Init(summoningSpecs, emotionSpecDef, elementSpecDef, speciesSpecDef);
+        newMonsterCard.Init(summoningSpecs);
        
         newMonsterCard.Position = spawnTarget.Position;
 

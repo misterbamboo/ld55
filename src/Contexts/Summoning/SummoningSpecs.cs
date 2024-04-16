@@ -57,4 +57,9 @@ public class SummoningSpecs
     {
         return $"(emotion:{Emotion}, species:{Species}, element:{Element})";
     }
+
+    internal SummoningSpecs Clone()
+    {
+        return new SummoningSpecs(Emotion.Value, Element.Value, Species.Value);
+    }
 }
