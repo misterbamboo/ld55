@@ -102,6 +102,14 @@ offset_right = -256.0
 offset_bottom = -66.0
 index = 20
 
+[node name="IngredientSlotUI26" parent="." instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 1564.0
+offset_top = 914.0
+offset_right = -256.0
+offset_bottom = -66.0
+index = 20
+
 [node name="IngredientSlotUI21" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
 offset_left = 1693.0

@@ -9,5 +9,5 @@ DisplayName = "Dark Crystal"
 Icon = "ingredient_dark_crystal"
 ProcessedIcon = "ingredient_dark_crystal"
 Emotion = 0.0
-Species = 2.0
-Elements = 0.0
+Species = 1.0
+Elements = -1.0
