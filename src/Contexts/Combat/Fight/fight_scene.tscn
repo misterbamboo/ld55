@@ -16,7 +16,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Node2D_MiddleHitPoint" type="Node2D" parent="Control"]
-position = Vector2(960, 477)
+position = Vector2(960, 409)
 
 [node name="EnemyMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
 layout_mode = 1

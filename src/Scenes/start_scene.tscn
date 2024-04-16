@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=23 format=3 uid="uid://gnynltn8oj4w"]
 
 [ext_resource type="Texture2D" uid="uid://dphr7baavvpdl" path="res://Assets/DesktopAssets/Asset_Background.png" id="2_7eihi"]
 [ext_resource type="Texture2D" uid="uid://pileqeuf38pn" path="res://Assets/DesktopAssets/Asset_Symbole_Simplified.png" id="2_ae42r"]
@@ -17,7 +17,9 @@
 [ext_resource type="Script" path="res://Scenes/SceneLoadedWitness.cs" id="12_e7igc"]
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="13_5t2sa"]
 [ext_resource type="PackedScene" uid="uid://dmgne0x5bexws" path="res://Contexts/Combat/CombatZone/combat_zone.tscn" id="13_56sqa"]
+[ext_resource type="Texture2D" uid="uid://cqadmcqr81l3h" path="res://GameManager/candles/Candle_Lit_Selected.png" id="14_agsfo"]
 [ext_resource type="PackedScene" uid="uid://esf1ygalb74e" path="res://Contexts/Combat/CombatResult/combat_result_scene.tscn" id="14_empf8"]
+[ext_resource type="Texture2D" uid="uid://kdsmnasa043" path="res://GameManager/candles/Candle_Unlit_Selected.png" id="16_wcw50"]
 [ext_resource type="PackedScene" uid="uid://cukq1a2uy1jpa" path="res://Contexts/Combat/Fight/fight_scene.tscn" id="18_bq8qp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ww0f"]
@@ -236,12 +238,6 @@ index = 18
 layout_mode = 2
 index = 19
 
-[node name="CandleManager" type="Node" parent="." node_paths=PackedStringArray("candleTextures")]
-script = ExtResource("4_sr65v")
-candleTextures = [NodePath("../Candles/Candle0/CandleImg"), NodePath("../Candles/Candle1/CandleImg"), NodePath("../Candles/Candle2/CandleImg"), NodePath("../Candles/Candle3/CandleImg"), NodePath("../Candles/Candle4/CandleImg")]
-litCandle = ExtResource("6_thiw4")
-unlitCandle = ExtResource("8_bp7fh")
-
 [node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("7_cohdj")]
 InventorySlots = [NodePath("../Panel/GridContainer/IngredientSlotUI0"), NodePath("../Panel/GridContainer/IngredientSlotUI1"), NodePath("../Panel/GridContainer/IngredientSlotUI2"), NodePath("../Panel/GridContainer/IngredientSlotUI3"), NodePath("../Panel/GridContainer/IngredientSlotUI4"), NodePath("../Panel/GridContainer/IngredientSlotUI5"), NodePath("../Panel/GridContainer/IngredientSlotUI6"), NodePath("../Panel/GridContainer/IngredientSlotUI7"), NodePath("../Panel/GridContainer/IngredientSlotUI8"), NodePath("../Panel/GridContainer/IngredientSlotUI9"), NodePath("../Panel/GridContainer/IngredientSlotUI10"), NodePath("../Panel/GridContainer/IngredientSlotUI11"), NodePath("../Panel/GridContainer/IngredientSlotUI12"), NodePath("../Panel/GridContainer/IngredientSlotUI13"), NodePath("../Panel/GridContainer/IngredientSlotUI14"), NodePath("../Panel/GridContainer/IngredientSlotUI15"), NodePath("../Panel/GridContainer/IngredientSlotUI16"), NodePath("../Panel/GridContainer/IngredientSlotUI17"), NodePath("../Panel/GridContainer/IngredientSlotUI18"), NodePath("../Panel/GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
 
@@ -278,6 +274,14 @@ index = 25
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="CandleManager" type="Node" parent="." node_paths=PackedStringArray("candleTextures")]
+script = ExtResource("4_sr65v")
+candleTextures = [NodePath("../Candles/Candle0/CandleImg"), NodePath("../Candles/Candle1/CandleImg"), NodePath("../Candles/Candle2/CandleImg"), NodePath("../Candles/Candle3/CandleImg"), NodePath("../Candles/Candle4/CandleImg")]
+litCandle = ExtResource("6_thiw4")
+litCandleHover = ExtResource("14_agsfo")
+unlitCandle = ExtResource("8_bp7fh")
+unlitCandleHover = ExtResource("16_wcw50")
 
 [node name="Candles" type="Control" parent="."]
 anchors_preset = 0
@@ -460,8 +464,18 @@ script = ExtResource("12_e7igc")
 
 [node name="FightScene" parent="." instance=ExtResource("18_bq8qp")]
 
+[connection signal="mouse_entered" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, true]]
+[connection signal="mouse_exited" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, false]]
 [connection signal="pressed" from="Candles/Candle0/TextureButton" to="CandleManager" method="ToggleCandle" binds= [0]]
+[connection signal="mouse_entered" from="Candles/Candle1/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [1, true]]
+[connection signal="mouse_exited" from="Candles/Candle1/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [1, false]]
 [connection signal="pressed" from="Candles/Candle1/TextureButton" to="CandleManager" method="ToggleCandle" binds= [1]]
+[connection signal="mouse_entered" from="Candles/Candle2/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [2, true]]
+[connection signal="mouse_exited" from="Candles/Candle2/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [2, false]]
 [connection signal="pressed" from="Candles/Candle2/TextureButton" to="CandleManager" method="ToggleCandle" binds= [2]]
+[connection signal="mouse_entered" from="Candles/Candle3/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [3, true]]
+[connection signal="mouse_exited" from="Candles/Candle3/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [3, false]]
 [connection signal="pressed" from="Candles/Candle3/TextureButton" to="CandleManager" method="ToggleCandle" binds= [3]]
+[connection signal="mouse_entered" from="Candles/Candle4/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [4, true]]
+[connection signal="mouse_exited" from="Candles/Candle4/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [4, false]]
 [connection signal="pressed" from="Candles/Candle4/TextureButton" to="CandleManager" method="ToggleCandle" binds= [4]]
