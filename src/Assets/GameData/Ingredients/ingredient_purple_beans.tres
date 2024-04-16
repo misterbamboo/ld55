@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ckjy0o5ifks8k"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_noqt2"]
+
+[resource]
+script = ExtResource("1_noqt2")
+Id = "ingredient_purple_beans"
+DisplayName = "Purple Beans"
+Icon = "ingredient_purple_beans"
+ProcessedIcon = "ingredient_purple_beans"
+Emotion = -2.0
+Species = 0.0
+Elements = 0.0

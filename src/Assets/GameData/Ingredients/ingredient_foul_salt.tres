@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cfn86t31w73ac"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_pvko6"]
+
+[resource]
+script = ExtResource("1_pvko6")
+Id = "ingredient_foul_salt"
+DisplayName = "Foul Salt"
+Icon = "ingredient_foul_salt"
+ProcessedIcon = "ingredient_foul_salt"
+Emotion = 0.0
+Species = 0.0
+Elements = -2.0

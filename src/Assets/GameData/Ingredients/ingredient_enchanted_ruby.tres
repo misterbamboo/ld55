@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://caan6ns7bc1v5"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_08slj"]
+
+[resource]
+script = ExtResource("1_08slj")
+Id = "ingredient_enchanted_ruby"
+DisplayName = "Enchanted Ruby"
+Icon = "ingredient_enchanted_ruby"
+ProcessedIcon = "ingredient_enchanted_ruby"
+Emotion = 0.0
+Species = 0.0
+Elements = 2.0
