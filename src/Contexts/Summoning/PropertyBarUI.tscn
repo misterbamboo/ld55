@@ -27,7 +27,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjgp0"]
 
-[node name="PropertyBar" type="Control" node_paths=PackedStringArray("textureRects")]
+[node name="PropertyBar" type="Control"]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 3
 anchors_preset = 0
@@ -38,7 +38,6 @@ Emotions = Array[Texture2D]([ExtResource("2_3g3l3"), ExtResource("3_lpc13"), Ext
 Species = Array[Texture2D]([ExtResource("7_el1ew"), ExtResource("8_aca1c"), ExtResource("2_qgwax"), ExtResource("10_27ipg"), ExtResource("11_fcpl8")])
 Elements = Array[Texture2D]([ExtResource("12_l1tj3"), ExtResource("13_0igld"), ExtResource("14_18clm"), ExtResource("15_71hyj"), ExtResource("16_0uywg")])
 deadzoneTexture = ExtResource("17_7jld4")
-textureRects = NodePath("TextureRects")
 
 [node name="TextureRects" type="HBoxContainer" parent="."]
 layout_mode = 0

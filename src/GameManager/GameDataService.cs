@@ -84,7 +84,7 @@ public partial class GameDataService : Node, IHintProvider
                     T res = GD.Load<T>($"{fullpath}/{fileName}");
                     assets.Add(res);
                 }
-                if (fileName.EndsWith(".tres.remap"))
+                else if (fileName.EndsWith(".tres.remap"))
                 {
                     // to remove ".remap" at the end
                     fileName = System.IO.Path.GetFileNameWithoutExtension(fileName);

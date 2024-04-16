@@ -6,13 +6,17 @@ public partial class GameAssetsService : Node
 {
     public static string Path = "/root/GameAssetsService";
 
-    private Dictionary<string, Texture2D> gameIcons;
+    private Dictionary<string, Texture2D> gameIcons = new Dictionary<string, Texture2D>();
 
     public Texture2D GetSprite(string name)
     {
         if (!gameIcons.ContainsKey(name))
         {
             GD.PrintRich($"[color=red]Sprite {name} has no corresponding sprite, using default[/color]");
+            foreach (var gameIcon in gameIcons)
+            {
+                GD.Print(gameIcon.Key + ": " + gameIcon.Value.ResourcePath);
+            }
             return gameIcons["default"];
         }
 
@@ -26,9 +30,29 @@ public partial class GameAssetsService : Node
         GD.Print("Service Loaded GameAssetsService");
     }
 
+    private HashSet<string> fuck = new HashSet<string>();
     private string ExtractNameFromFilePath(string path)
     {
-        return System.IO.Path.GetFileNameWithoutExtension(path);
+        var name = string.Empty;
+        if (path.EndsWith(".png"))
+        {
+            name = System.IO.Path.GetFileNameWithoutExtension(path);
+        }
+        else if (path.EndsWith(".png.import"))
+        {
+            name = System.IO.Path.GetFileNameWithoutExtension(System.IO.Path.GetFileNameWithoutExtension(path));
+        }
+
+        if (fuck.Contains(name))
+        {
+            name += ".fuck";
+        }
+        else
+        {
+            fuck.Add(name);
+        }
+
+        return name;
     }
 
     private List<Texture2D> LoadAssetsRecursive(string path)
@@ -48,15 +72,14 @@ public partial class GameAssetsService : Node
                 GD.Print("Discovered icons: " + fileName);
                 if (fileName.EndsWith(".png"))
                 {
-                    GD.Print($"loading {fileName}");
+                    GD.Print($"loading png? {fileName}");
                     Texture2D res = ResourceLoader.Load<Texture2D>($"{fullpath}/{fileName}");
                     assets.Add(res);
                 }
-
-                if (fileName.EndsWith(".import"))
+                else if (fileName.EndsWith(".png.import"))
                 {
                     fileName = System.IO.Path.GetFileNameWithoutExtension(fileName);
-                    GD.Print($"loading {fileName}");
+                    GD.Print($"loading png/import? {fileName}");
                     Texture2D res = ResourceLoader.Load<Texture2D>($"{fullpath}/{fileName}");
                     assets.Add(res);
                 }
