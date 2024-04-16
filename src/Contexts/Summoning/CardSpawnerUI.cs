@@ -18,6 +18,8 @@ public partial class CardSpawnerUI : Node2D
 
     private void SpawnCard(SummoningSpecs summoningSpecs)
     {
+        GD.Print("Spawning card");
+        GD.Print(summoningSpecs);
         var newMonsterCard = MonsterCardUIPrefab.Instantiate<MonsterCardUI>();
 
         newMonsterCard.IsDraggable = true;

@@ -51,8 +51,6 @@ public partial class InventoryService : Node
             Inventory.AddItem(ingredient);
         }
         RedrawInventoryItems();
-
-        deskManager.NewMonster(new SummoningSpecs(2.5, 2.5, 2.5));
     }
 
     private void VerifyInventorySlotsOrder()
@@ -96,37 +94,25 @@ public partial class InventoryService : Node
             deskManager.EmptyArcaneForcus();
         }
 
-        if (sourceIndex >= Inventory.InventorySlots || destinationIndex >= Inventory.InventorySlots)
+        if (IsOnSummoningBoard(sourceIndex) || IsOnSummoningBoard(destinationIndex))
         {
+            GD.Print($"source: {sourceIndex}, destination: {destinationIndex}, focus: {ArcaneFocusSlot}");
             InsertInSummoningCircle();
         }
     }
 
+    public bool IsOnSummoningBoard(int index)
+    {
+        return index >= 20 && index <= 24;
+    }
+
     public void InsertInSummoningCircle()
     {
-        var monsterSpecs = new SummoningSpecs(2.5, 2.5, 2.5);
-        AddStatsForAllSlots(monsterSpecs);
-        deskManager.UpdateMonsterStats(monsterSpecs);
+        var ingredientsOnBoard = Inventory.Items().Skip(Inventory.InventorySlots+1).Take(5);
+        deskManager.UpdateIngredientsOnSummoningBoard(ingredientsOnBoard);
     }
 
     private int ArcaneFocusSlot => Inventory.TotalSlots - 1;
-
-    private void AddStatsForAllSlots(SummoningSpecs monsterSpecs)
-    {
-        for (int i = Inventory.TotalSlots - 2; i >= Inventory.TotalSlots - 6; i--)
-        {
-            var ingredient = Inventory.GetItemInSlot(i);
-            if (ingredient == null)
-            {
-                continue;
-            }
-            monsterSpecs.AddEmotion(ingredient.EmotionValue);
-            monsterSpecs.AddSpecies(ingredient.SpeciesValue);
-            monsterSpecs.AddElement(ingredient.ElementValue);
-        }
-
-        GD.Print(monsterSpecs);
-    }
 
     public void ClearSummoningBoard(SummoningSpecs monster)
     {
@@ -137,7 +123,6 @@ public partial class InventoryService : Node
         Inventory.ClearSlot(24);
 
         RedrawInventoryItems();
-        deskManager.NewMonster(new SummoningSpecs(2.5, 2.5, 2.5));
     }
 
     public override void _ExitTree()

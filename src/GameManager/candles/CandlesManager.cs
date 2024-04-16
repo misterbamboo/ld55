@@ -1,5 +1,4 @@
 using Godot;
-using System.Collections.Generic;
 using System.Linq;
 
 public partial class CandlesManager : Node
@@ -28,6 +27,11 @@ public partial class CandlesManager : Node
 
     public void ToggleCandle(int index)
     {
+        if(!deskManager.MonsterIsReadyToSummon)
+        {
+            return;
+        }
+
         candles[index] = !candles[index];
         DrawCandles();
 
