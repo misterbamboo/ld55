@@ -238,9 +238,6 @@ index = 18
 layout_mode = 2
 index = 19
 
-[node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("7_cohdj")]
-InventorySlots = [NodePath("../Panel/GridContainer/IngredientSlotUI0"), NodePath("../Panel/GridContainer/IngredientSlotUI1"), NodePath("../Panel/GridContainer/IngredientSlotUI2"), NodePath("../Panel/GridContainer/IngredientSlotUI3"), NodePath("../Panel/GridContainer/IngredientSlotUI4"), NodePath("../Panel/GridContainer/IngredientSlotUI5"), NodePath("../Panel/GridContainer/IngredientSlotUI6"), NodePath("../Panel/GridContainer/IngredientSlotUI7"), NodePath("../Panel/GridContainer/IngredientSlotUI8"), NodePath("../Panel/GridContainer/IngredientSlotUI9"), NodePath("../Panel/GridContainer/IngredientSlotUI10"), NodePath("../Panel/GridContainer/IngredientSlotUI11"), NodePath("../Panel/GridContainer/IngredientSlotUI12"), NodePath("../Panel/GridContainer/IngredientSlotUI13"), NodePath("../Panel/GridContainer/IngredientSlotUI14"), NodePath("../Panel/GridContainer/IngredientSlotUI15"), NodePath("../Panel/GridContainer/IngredientSlotUI16"), NodePath("../Panel/GridContainer/IngredientSlotUI17"), NodePath("../Panel/GridContainer/IngredientSlotUI18"), NodePath("../Panel/GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
-
 [node name="SummoningStatsUI" parent="." instance=ExtResource("8_nubsx")]
 layout_mode = 0
 offset_left = 791.0
@@ -459,10 +456,13 @@ stretch_mode = 0
 [node name="CombatResultScene" parent="." instance=ExtResource("14_empf8")]
 position = Vector2(1451, 12)
 
+[node name="FightScene" parent="." instance=ExtResource("18_bq8qp")]
+
+[node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("7_cohdj")]
+InventorySlots = [NodePath("../Panel/GridContainer/IngredientSlotUI0"), NodePath("../Panel/GridContainer/IngredientSlotUI1"), NodePath("../Panel/GridContainer/IngredientSlotUI2"), NodePath("../Panel/GridContainer/IngredientSlotUI3"), NodePath("../Panel/GridContainer/IngredientSlotUI4"), NodePath("../Panel/GridContainer/IngredientSlotUI5"), NodePath("../Panel/GridContainer/IngredientSlotUI6"), NodePath("../Panel/GridContainer/IngredientSlotUI7"), NodePath("../Panel/GridContainer/IngredientSlotUI8"), NodePath("../Panel/GridContainer/IngredientSlotUI9"), NodePath("../Panel/GridContainer/IngredientSlotUI10"), NodePath("../Panel/GridContainer/IngredientSlotUI11"), NodePath("../Panel/GridContainer/IngredientSlotUI12"), NodePath("../Panel/GridContainer/IngredientSlotUI13"), NodePath("../Panel/GridContainer/IngredientSlotUI14"), NodePath("../Panel/GridContainer/IngredientSlotUI15"), NodePath("../Panel/GridContainer/IngredientSlotUI16"), NodePath("../Panel/GridContainer/IngredientSlotUI17"), NodePath("../Panel/GridContainer/IngredientSlotUI18"), NodePath("../Panel/GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
+
 [node name="SceneLoadedWitness" type="Node" parent="."]
 script = ExtResource("12_e7igc")
-
-[node name="FightScene" parent="." instance=ExtResource("18_bq8qp")]
 
 [connection signal="mouse_entered" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, true]]
 [connection signal="mouse_exited" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, false]]
