@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=21 format=3 uid="uid://gnynltn8oj4w"]
 
 [ext_resource type="Texture2D" uid="uid://dphr7baavvpdl" path="res://Assets/DesktopAssets/Asset_Background.png" id="2_7eihi"]
 [ext_resource type="Texture2D" uid="uid://pileqeuf38pn" path="res://Assets/DesktopAssets/Asset_Symbole_Simplified.png" id="2_ae42r"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crwa5q7qiu0wl" path="res://Assets/DesktopAssets/Asset_Box.png" id="5_r4fxm"]
 [ext_resource type="Texture2D" uid="uid://c86tc8gh55wm7" path="res://Assets/DesktopAssets/Asset_Feuille.png" id="6_4ye3g"]
 [ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/candle_lit.png" id="6_thiw4"]
-[ext_resource type="PackedScene" uid="uid://t7ecarm6blew" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
+[ext_resource type="PackedScene" uid="uid://8fi7m8pevqq3" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
 [ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="10_xx2s1"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="13_5t2sa"]
 [ext_resource type="PackedScene" uid="uid://dmgne0x5bexws" path="res://Contexts/Combat/CombatZone/combat_zone.tscn" id="13_56sqa"]
 [ext_resource type="PackedScene" uid="uid://esf1ygalb74e" path="res://Contexts/Combat/CombatResult/combat_result_scene.tscn" id="14_empf8"]
+[ext_resource type="PackedScene" uid="uid://cukq1a2uy1jpa" path="res://Contexts/Combat/Fight/fight_scene.tscn" id="18_bq8qp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ww0f"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -251,7 +252,8 @@ offset_top = 888.0
 offset_right = 1191.0
 offset_bottom = 1078.0
 
-[node name="BossQueueManager" parent="." instance=ExtResource("13_5t2sa")]
+[node name="BossQueueManager" parent="." node_paths=PackedStringArray("CardContainer") instance=ExtResource("13_5t2sa")]
+CardContainer = NodePath("../CardSpawnerUI")
 
 [node name="CombatZone" parent="." instance=ExtResource("13_56sqa")]
 position = Vector2(562, 6)
@@ -455,6 +457,8 @@ position = Vector2(1451, 12)
 
 [node name="SceneLoadedWitness" type="Node" parent="."]
 script = ExtResource("12_e7igc")
+
+[node name="FightScene" parent="." instance=ExtResource("18_bq8qp")]
 
 [connection signal="pressed" from="Candles/Candle0/TextureButton" to="CandleManager" method="ToggleCandle" binds= [0]]
 [connection signal="pressed" from="Candles/Candle1/TextureButton" to="CandleManager" method="ToggleCandle" binds= [1]]

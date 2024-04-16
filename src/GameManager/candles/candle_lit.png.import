@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1ncqbwtdgpre"
-path="res://.godot/imported/Candle_Lit.png-16e326b8038e64efe038af154b9b8cfe.ctex"
+path="res://.godot/imported/candle_lit.png-592051515e508d4aa48cb454d80a8a85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/candles/Candle_Lit.png"
-dest_files=["res://.godot/imported/Candle_Lit.png-16e326b8038e64efe038af154b9b8cfe.ctex"]
+source_file="res://GameManager/candles/candle_lit.png"
+dest_files=["res://.godot/imported/candle_lit.png-592051515e508d4aa48cb454d80a8a85.ctex"]
 
 [params]
 

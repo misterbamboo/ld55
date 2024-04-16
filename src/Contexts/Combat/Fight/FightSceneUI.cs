@@ -28,7 +28,7 @@ public partial class FightSceneUI : Node2D
     // Phase2: Tackle
     private bool tackleAnim;
     private double tackleAnimT;
-    private double tackleAnimRotation = 15;
+    private double tackleAnimRotation = -15;
     private bool tackleHitPending;
     private float tacklePlayerRemainingLife;
     private float tackleEnemyRemainingLife;

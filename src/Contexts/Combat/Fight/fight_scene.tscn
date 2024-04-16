@@ -20,24 +20,26 @@ position = Vector2(960, 477)
 
 [node name="EnemyMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.45
-anchor_right = 1.45
+anchor_left = -1.85
+anchor_top = -4.0125
+anchor_right = 2.85
+anchor_bottom = 0.0124756
 offset_left = 329.0
 offset_top = 450.0
 offset_right = 517.0
 offset_bottom = 713.001
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 IsDraggable = false
 
 [node name="PlayerMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.45
-anchor_right = 1.45
+anchor_left = -1.85
+anchor_top = -4.0125
+anchor_right = 2.85
+anchor_bottom = 0.0124756
 offset_left = 1273.0
 offset_top = 450.0
 offset_right = 1461.0
 offset_bottom = 713.001
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 IsDraggable = false

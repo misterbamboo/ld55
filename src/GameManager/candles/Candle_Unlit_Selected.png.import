@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kdsmnasa043"
-path="res://.godot/imported/Candle_Unlit_selected.png-034a1842fb6db08acf3ecfebb1ee9b4a.ctex"
+path="res://.godot/imported/Candle_Unlit_Selected.png-fe2e454b47bfa64f0aaf49c25550177d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/candles/Candle_Unlit_selected.png"
-dest_files=["res://.godot/imported/Candle_Unlit_selected.png-034a1842fb6db08acf3ecfebb1ee9b4a.ctex"]
+source_file="res://GameManager/candles/Candle_Unlit_Selected.png"
+dest_files=["res://.godot/imported/Candle_Unlit_Selected.png-fe2e454b47bfa64f0aaf49c25550177d.ctex"]
 
 [params]
 
