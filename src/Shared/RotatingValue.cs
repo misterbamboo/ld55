@@ -2,14 +2,16 @@
 
 public struct RotatingValue
 {
-    private const int MaxCountInt = 5;
-    private const double MaxCount = MaxCountInt;
+    private int MaxCountInt;
+    private double MaxCount;
 
     public double Value { get; private set; }
     public int Index => (int)Value;
 
-    public RotatingValue(double value)
+    public RotatingValue(double value, int maxCount)
     {
+        MaxCount = maxCount;
+        MaxCountInt = maxCount;
         Value = 0;
         Value = AddInternal(Value, value);
     }
@@ -42,7 +44,7 @@ public struct RotatingValue
 
     public RotatingValue Add(double added)
     {
-        return new RotatingValue(Value + added);
+        return new RotatingValue(Value + added, MaxCountInt);
     }
 
     public override bool Equals(object obj)
@@ -122,17 +124,17 @@ public struct RotatingValue
     #region RotatingValue operators
     public static RotatingValue operator +(RotatingValue a, RotatingValue b)
     {
-        return new RotatingValue(a.Value + b.Value);
+        return new RotatingValue(a.Value + b.Value, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(RotatingValue a, RotatingValue b)
     {
-        return new RotatingValue(a.Value - b.Value);
+        return new RotatingValue(a.Value - b.Value, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(RotatingValue a, RotatingValue b)
     {
-        return new RotatingValue(a.Value * b.Value);
+        return new RotatingValue(a.Value * b.Value, a.MaxCountInt);
     }
 
     public static bool operator ==(RotatingValue a, RotatingValue b)
@@ -151,32 +153,32 @@ public struct RotatingValue
 
     public static RotatingValue operator +(RotatingValue a, int b)
     {
-        return new RotatingValue(a.Value + b);
+        return new RotatingValue(a.Value + b, a.MaxCountInt);
     }
 
     public static RotatingValue operator +(int b, RotatingValue a)
     {
-        return new RotatingValue(a.Value + b);
+        return new RotatingValue(a.Value + b, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(RotatingValue a, int b)
     {
-        return new RotatingValue(a.Value - b);
+        return new RotatingValue(a.Value - b, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(int b, RotatingValue a)
     {
-        return new RotatingValue(a.Value - b);
+        return new RotatingValue(a.Value - b, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(RotatingValue a, int b)
     {
-        return new RotatingValue(a.Value * b);
+        return new RotatingValue(a.Value * b, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(int b, RotatingValue a)
     {
-        return new RotatingValue(a.Value * b);
+        return new RotatingValue(a.Value * b, a.MaxCountInt);
     }
 
 
@@ -206,32 +208,32 @@ public struct RotatingValue
 
     public static RotatingValue operator +(RotatingValue a, double b)
     {
-        return new RotatingValue(a.Value + b);
+        return new RotatingValue(a.Value + b, a.MaxCountInt);
     }
 
     public static RotatingValue operator +(double b, RotatingValue a)
     {
-        return new RotatingValue(a.Value + b);
+        return new RotatingValue(a.Value + b, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(RotatingValue a, double b)
     {
-        return new RotatingValue(a.Value - b);
+        return new RotatingValue(a.Value - b, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(double b, RotatingValue a)
     {
-        return new RotatingValue(a.Value - b);
+        return new RotatingValue(a.Value - b, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(RotatingValue a, double b)
     {
-        return new RotatingValue(a.Value * b);
+        return new RotatingValue(a.Value * b, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(double b, RotatingValue a)
     {
-        return new RotatingValue(a.Value * b);
+        return new RotatingValue(a.Value * b, a.MaxCountInt);
     }
 
 
@@ -261,32 +263,32 @@ public struct RotatingValue
 
     public static RotatingValue operator +(RotatingValue a, float b)
     {
-        return new RotatingValue(a.Value + b);
+        return new RotatingValue(a.Value + b, a.MaxCountInt);
     }
 
     public static RotatingValue operator +(float b, RotatingValue a)
     {
-        return new RotatingValue(a.Value + b);
+        return new RotatingValue(a.Value + b, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(RotatingValue a, float b)
     {
-        return new RotatingValue(a.Value - b);
+        return new RotatingValue(a.Value - b, a.MaxCountInt);
     }
 
     public static RotatingValue operator -(float b, RotatingValue a)
     {
-        return new RotatingValue(a.Value - b);
+        return new RotatingValue(a.Value - b, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(RotatingValue a, float b)
     {
-        return new RotatingValue(a.Value * b);
+        return new RotatingValue(a.Value * b, a.MaxCountInt);
     }
 
     public static RotatingValue operator *(float b, RotatingValue a)
     {
-        return new RotatingValue(a.Value * b);
+        return new RotatingValue(a.Value * b, a.MaxCountInt);
     }
 
 

@@ -1,9 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://vqavlstvgnvl"]
+[gd_scene load_steps=24 format=3 uid="uid://vqavlstvgnvl"]
 
 [ext_resource type="Texture2D" uid="uid://olv4j3424k1y" path="res://Assets/Shapes/square_2px.png" id="1_gdkt8"]
 [ext_resource type="Script" path="res://Contexts/Summoning/PropertyBarUI.cs" id="1_ycs4q"]
+[ext_resource type="Texture2D" uid="uid://bpp8xkuw1np4o" path="res://Assets/Monsters/Icons/Sadness.png" id="2_3g3l3"]
 [ext_resource type="Texture2D" uid="uid://cfkvim0kijkvv" path="res://Contexts/Summoning/PropertyBarIndicator.png" id="2_6rv24"]
+[ext_resource type="Texture2D" uid="uid://dl2nwolx1sh2b" path="res://Assets/Monsters/Icons/Fairy.png" id="2_qgwax"]
+[ext_resource type="Texture2D" uid="uid://b6ypy6fnno4m" path="res://Assets/Monsters/Icons/Fear.png" id="3_lpc13"]
 [ext_resource type="Texture2D" uid="uid://cjhxvyip8q0su" path="res://Contexts/Summoning/PropertyBarIndicatorPreview.png" id="3_smua6"]
+[ext_resource type="Texture2D" uid="uid://dp4ftx8ctng7e" path="res://Assets/Monsters/Icons/Anger.png" id="4_b5jpc"]
+[ext_resource type="Texture2D" uid="uid://chqd7teis2go" path="res://Assets/Monsters/Icons/Disgust.png" id="5_jhlg8"]
+[ext_resource type="Texture2D" uid="uid://dvjn3pwaope4t" path="res://Assets/Monsters/Icons/Joy.png" id="6_cx7se"]
+[ext_resource type="Texture2D" uid="uid://0550hm0314jd" path="res://Assets/Monsters/Icons/Undead.png" id="7_el1ew"]
+[ext_resource type="Texture2D" uid="uid://d1skrc2waycoh" path="res://Assets/Monsters/Icons/Ghost.png" id="8_aca1c"]
+[ext_resource type="Texture2D" uid="uid://bq7ao0i6l45mi" path="res://Assets/Monsters/Icons/Slime.png" id="10_27ipg"]
+[ext_resource type="Texture2D" uid="uid://dhwri2fmqt85j" path="res://Assets/Monsters/Icons/Golem.png" id="11_fcpl8"]
+[ext_resource type="Texture2D" uid="uid://nh84v534uwf" path="res://Assets/Monsters/Icons/Water.png" id="12_l1tj3"]
+[ext_resource type="Texture2D" uid="uid://bgnymtwhannlt" path="res://Assets/Monsters/Icons/Ice.png" id="13_0igld"]
+[ext_resource type="Texture2D" uid="uid://tsl6wipgvaoe" path="res://Assets/Monsters/Icons/Lightning.png" id="14_18clm"]
+[ext_resource type="Texture2D" uid="uid://b5o457mpieu7a" path="res://Assets/Monsters/Icons/Fire.png" id="15_71hyj"]
+[ext_resource type="Texture2D" uid="uid://bmtn1p8hklloe" path="res://Assets/Monsters/Icons/Earth.png" id="16_0uywg"]
+[ext_resource type="Texture2D" uid="uid://pib2wbli2jrr" path="res://Assets/Monsters/Icons/Deadzone.png" id="17_7jld4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rdsv"]
 
@@ -11,13 +27,65 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjgp0"]
 
-[node name="PropertyBar" type="Control"]
+[node name="PropertyBar" type="Control" node_paths=PackedStringArray("textureRects")]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 25.0
 script = ExtResource("1_ycs4q")
+Emotions = Array[Texture2D]([ExtResource("2_3g3l3"), ExtResource("3_lpc13"), ExtResource("4_b5jpc"), ExtResource("5_jhlg8"), ExtResource("6_cx7se")])
+Species = Array[Texture2D]([ExtResource("7_el1ew"), ExtResource("8_aca1c"), ExtResource("2_qgwax"), ExtResource("10_27ipg"), ExtResource("11_fcpl8")])
+Elements = Array[Texture2D]([ExtResource("12_l1tj3"), ExtResource("13_0igld"), ExtResource("14_18clm"), ExtResource("15_71hyj"), ExtResource("16_0uywg")])
+deadzoneTexture = ExtResource("17_7jld4")
+textureRects = NodePath("TextureRects")
+
+[node name="TextureRects" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 50.0
+
+[node name="TextureRect0" type="TextureRect" parent="TextureRects"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qgwax")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect1" type="TextureRect" parent="TextureRects"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qgwax")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRects"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qgwax")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRects"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qgwax")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRects"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qgwax")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRects"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qgwax")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -69,6 +137,16 @@ patch_margin_right = 1
 patch_margin_bottom = 1
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_gdkt8")
+region_rect = Rect2(1, 1, 48, 48)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_gdkt8")

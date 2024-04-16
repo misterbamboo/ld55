@@ -18,6 +18,8 @@ public partial class CardSpawnerUI : Node2D
 
     private void SpawnCard(SummoningSpecs summoningSpecs)
     {
+        GD.Print("Spawning card");
+        GD.Print(summoningSpecs);
         var newMonsterCard = MonsterCardUIPrefab.Instantiate<MonsterCardUI>();
 
         var emotionSpecDef = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, summoningSpecs.Emotion.Index));

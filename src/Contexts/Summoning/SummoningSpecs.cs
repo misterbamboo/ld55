@@ -13,9 +13,9 @@ public class SummoningSpecs
 
     public SummoningSpecs(double emotion, double element, double species)
     {
-        Emotion = new RotatingValue(emotion);
-        Element = new RotatingValue(element);
-        Species = new RotatingValue(species);
+        Emotion = new RotatingValue(emotion,5);
+        Element = new RotatingValue(element,5);
+        Species = new RotatingValue(species,5);
     }
 
     public SummoningSpecs(RotatingValue emotion, RotatingValue element, RotatingValue species)

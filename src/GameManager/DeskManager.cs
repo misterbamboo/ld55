@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class DeskManager : Node
 {
@@ -8,16 +9,18 @@ public partial class DeskManager : Node
     public delegate void GameStartedHandler();
     public delegate void GameStopedHandler();
 
+    public delegate void IngredientOnSummoningBoardUpdatedHandler(IEnumerable<Ingredient> ingregients);
     public delegate void ArcaneFocusFilledHandler(Ingredient ingredient);
     public delegate void ArcaneFocusAdjustedHandler(Ingredient ingredient);
     public delegate void ArcaneFocusEmptiedHandler();
 
-    public delegate void MonsterStatsUpdatedHandler(SummoningSpecs monster);
     public delegate void MonsterSummonedHandler(SummoningSpecs monster);
+    public delegate void MonsterReadyToSummonHandler(SummoningSpecs monster);
     public delegate void FightHandler(BossFight bossFigth);
 
-    public event MonsterStatsUpdatedHandler OnMonsterStatsUpdated;
+    public event IngredientOnSummoningBoardUpdatedHandler OnIngredientsOnSummoningBoardUpdated;
     public event MonsterSummonedHandler OnMonsterSummoned;
+    public event MonsterReadyToSummonHandler OnMonsterReadyToSummon;
 
     public event GameStartedHandler OnGameStart;
     public event GameStopedHandler OnGameStop;
@@ -28,8 +31,10 @@ public partial class DeskManager : Node
 
     private bool GameStarted = false;
 
-    private SummoningSpecs currentMonsterStats = new SummoningSpecs(2.5, 2.5, 2.5);
+    private SummoningSpecs currentMonsterStats;
     public SummoningSpecs CurrentMonsterStats => currentMonsterStats;
+
+    public bool MonsterIsReadyToSummon => currentMonsterStats != null;
 
     public override void _Process(double delta)
     {
@@ -41,6 +46,7 @@ public partial class DeskManager : Node
 
     public void StartGame()
     {
+        currentMonsterStats = null;
         GameStarted = true;
         GD.PrintRich("[color=cyan]DeskEvent: OnGameStart[/color]");
         OnGameStart?.Invoke();
@@ -57,20 +63,13 @@ public partial class DeskManager : Node
     {
         GD.PrintRich("[color=cyan]DeskEvent: OnMonsterSummoned[/color]");
         OnMonsterSummoned?.Invoke(currentMonsterStats);
+        currentMonsterStats = null;
     }
 
-    public void NewMonster(SummoningSpecs monster)
+    public void UpdateIngredientsOnSummoningBoard(IEnumerable<Ingredient> ingregients)
     {
-        currentMonsterStats = monster;
         GD.PrintRich("[color=cyan]DeskEvent: OnMonsterStatsUpdated[/color]");
-        OnMonsterStatsUpdated?.Invoke(currentMonsterStats);
-    }
-
-    public void UpdateMonsterStats(SummoningSpecs monster)
-    {
-        currentMonsterStats = monster;
-        GD.PrintRich("[color=cyan]DeskEvent: OnMonsterStatsUpdated[/color]");
-        OnMonsterStatsUpdated?.Invoke(currentMonsterStats);
+        OnIngredientsOnSummoningBoardUpdated?.Invoke(ingregients);
     }
 
     public void FillArcaneForcus(Ingredient ingredient)
@@ -89,6 +88,14 @@ public partial class DeskManager : Node
     {
         //GD.PrintRich("[color=cyan]DeskEvent: OnArcaneFocusAdjusted[/color]");
         OnArcaneFocusAdjusted?.Invoke(ingredient);
+    }
+
+    public void ReadyMonsterForSummon(SummoningSpecs monster)
+    {
+        currentMonsterStats = monster;
+        GD.PrintRich("[color=cyan]DeskEvent: OnMonsterReadyToSummon[/color]");
+        GD.PrintRich($"[color=cyan]{monster}[/color]");
+        OnMonsterReadyToSummon?.Invoke(monster);
     }
 
     public event FightHandler OnFightCompleted;

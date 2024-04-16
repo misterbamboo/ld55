@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="3_t07eg"]
 [ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_sr65v"]
-[ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/Candle_Lit.png" id="6_thiw4"]
+[ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/candle_lit.png" id="6_thiw4"]
 [ext_resource type="Texture2D" uid="uid://cqadmcqr81l3h" path="res://GameManager/candles/Candle_Lit_Selected.png" id="7_4d6mw"]
 [ext_resource type="PackedScene" uid="uid://8fi7m8pevqq3" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
