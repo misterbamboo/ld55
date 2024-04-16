@@ -29,10 +29,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -331.0
-offset_right = 641.0
-offset_bottom = -75.0
+offset_left = -220.0
+offset_top = -198.0
+offset_right = 480.0
+offset_bottom = 58.0
 grow_vertical = 2
 theme_override_icons/grabber = ExtResource("2_csq3p")
 theme_override_icons/grabber_highlight = ExtResource("3_qg36u")
@@ -47,7 +47,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -111.0
-offset_top = -221.0
+offset_top = -142.0
 offset_right = 145.0
 offset_bottom = 558.0
 grow_horizontal = 0
@@ -57,9 +57,5 @@ theme_override_icons/grabber_highlight = ExtResource("3_qg36u")
 theme_override_icons/grabber_disabled = ExtResource("2_csq3p")
 theme_override_styles/slider = SubResource("StyleBoxTexture_6i1ao")
 
-[connection signal="drag_ended" from="HSlider" to="." method="DragEnd"]
-[connection signal="drag_started" from="HSlider" to="." method="DragStart"]
 [connection signal="value_changed" from="HSlider" to="." method="OnHSliderValueChanged"]
-[connection signal="drag_ended" from="VSlider" to="." method="DragEnd"]
-[connection signal="drag_started" from="VSlider" to="." method="DragStart"]
 [connection signal="value_changed" from="VSlider" to="." method="OnVSliderValueChanged"]

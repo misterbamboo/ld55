@@ -7,6 +7,8 @@ public class BossFight
     public string Hint { get; private set; }
 
     public int PlayerWins = 0;
+    public int PlayerLoses = 0;
+    public int PlayerDraws = 0;
 
     private IHintProvider HintProvider { get; }
 
@@ -17,6 +19,8 @@ public class BossFight
 
     public void Combat(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
     {
+        CountWinLoseDraw(summonSpecs, bossSpecs);
+
         if (PlayerWin(summonSpecs, bossSpecs))
         {
             Result = BossFightResult.PlayerWin;
@@ -32,33 +36,26 @@ public class BossFight
         ChooseHint(summonSpecs, bossSpecs);
     }
 
-    private bool PlayerWin(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
+    private void CountWinLoseDraw(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
     {
         var emotionIndexDistance = summonSpecs.Emotion.InvertedIndexDistanceOf(bossSpecs.Emotion);
         var elementIndexDistance = summonSpecs.Element.InvertedIndexDistanceOf(bossSpecs.Element);
         var speciesIndexDistance = summonSpecs.Species.InvertedIndexDistanceOf(bossSpecs.Species);
 
         var indexDistances = new[] { emotionIndexDistance, elementIndexDistance, speciesIndexDistance };
-        var nbrWin = indexDistances.Where(i => i > 0).Count();
-        var nbrLose = indexDistances.Where(i => i < 0).Count();
-        var nbrDraw = indexDistances.Where(i => i == 0).Count();
-        PlayerWins = nbrWin;
+        PlayerWins = indexDistances.Where(i => i > 0).Count();
+        PlayerLoses = indexDistances.Where(i => i < 0).Count();
+        PlayerDraws = indexDistances.Where(i => i == 0).Count();
+    }
 
-        return nbrWin > nbrLose;
+    private bool PlayerWin(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
+    {
+        return PlayerWins > PlayerLoses;
     }
 
     private bool PlayerLose(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
     {
-        var emotionIndexDistance = summonSpecs.Emotion.InvertedIndexDistanceOf(bossSpecs.Emotion);
-        var elementIndexDistance = summonSpecs.Element.InvertedIndexDistanceOf(bossSpecs.Element);
-        var speciesIndexDistance = summonSpecs.Species.InvertedIndexDistanceOf(bossSpecs.Species);
-
-        var indexDistances = new[] { emotionIndexDistance, elementIndexDistance, speciesIndexDistance };
-        var nbrWin = indexDistances.Where(i => i > 0).Count();
-        var nbrLose = indexDistances.Where(i => i < 0).Count();
-        var nbrDraw = indexDistances.Where(i => i == 0).Count();
-
-        return nbrWin < nbrLose;
+        return PlayerWins < PlayerLoses;
     }
 
     /// <summary>

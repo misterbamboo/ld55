@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Contexts/Combat/CombatZone/CombatZoneUI.cs" id="1_0l3wj"]
 [ext_resource type="Texture2D" uid="uid://b1u047pxc5g20" path="res://Contexts/Combat/CombatZone/combat_zone_bg.tres" id="2_x3vv3"]
-[ext_resource type="FontFile" uid="uid://vd2bt6mspnx3" path="res://Contexts/Combat/CombatZone/Jacquard24-Regular.ttf" id="3_xxvxc"]
+[ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="3_4agro"]
 [ext_resource type="Script" path="res://Contexts/Combat/CombatZone/CombatSummonZoneUI.cs" id="4_4xpm1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnk65"]
@@ -28,11 +28,12 @@ CombatSummonZoneUI = NodePath("Control")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 clip_children = 1
-offset_right = 212.0
-offset_bottom = 360.0
+offset_right = 416.0
+offset_bottom = 432.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gnk65")
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
+modulate = Color(1, 1, 1, 0.862745)
 material = SubResource("CanvasItemMaterial_3in84")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u6o7k")
@@ -42,22 +43,24 @@ custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/default_color = Color(1, 0.9, 0.8, 0.588235)
-theme_override_fonts/normal_font = ExtResource("3_xxvxc")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_fonts/normal_font = ExtResource("3_4agro")
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]enemy[/center]"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
 
 [node name="Control" type="PanelContainer" parent="."]
 clip_children = 1
-offset_left = 236.0
-offset_right = 448.0
-offset_bottom = 360.0
+offset_left = 446.0
+offset_right = 862.0
+offset_bottom = 432.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xuwnu")
 script = ExtResource("4_4xpm1")
 
 [node name="Panel2" type="Panel" parent="Control"]
+modulate = Color(1, 1, 1, 0.862745)
 material = SubResource("CanvasItemMaterial_3in84")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u6o7k")
@@ -67,8 +70,8 @@ custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/default_color = Color(1, 0.9, 0.8, 0.588235)
-theme_override_fonts/normal_font = ExtResource("3_xxvxc")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_fonts/normal_font = ExtResource("3_4agro")
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]your summon[/center]"
 fit_content = true

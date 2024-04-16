@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cukq1a2uy1jpa"]
+
+[ext_resource type="Script" path="res://Contexts/Combat/Fight/FightSceneUI.cs" id="1_7wdno"]
+[ext_resource type="PackedScene" uid="uid://d208w3cp6gy31" path="res://Assets/UI/monster_card.tscn" id="2_loup7"]
+
+[node name="FightScene" type="Node2D" node_paths=PackedStringArray("playerCard", "enemyCard", "middleHitPoint")]
+script = ExtResource("1_7wdno")
+playerCard = NodePath("Control/PlayerMonsterCard")
+enemyCard = NodePath("Control/EnemyMonsterCard")
+middleHitPoint = NodePath("Control/Node2D_MiddleHitPoint")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2D_MiddleHitPoint" type="Node2D" parent="Control"]
+position = Vector2(960, 409)
+
+[node name="EnemyMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
+layout_mode = 1
+anchor_left = -1.85
+anchor_top = -4.0125
+anchor_right = 2.85
+anchor_bottom = 0.0124756
+offset_left = 329.0
+offset_top = 450.0
+offset_right = 517.0
+offset_bottom = 713.001
+scale = Vector2(1.5, 1.5)
+IsDraggable = false
+
+[node name="PlayerMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
+layout_mode = 1
+anchor_left = -1.85
+anchor_top = -4.0125
+anchor_right = 2.85
+anchor_bottom = 0.0124756
+offset_left = 1273.0
+offset_top = 450.0
+offset_right = 1461.0
+offset_bottom = 713.001
+scale = Vector2(1.5, 1.5)
+IsDraggable = false

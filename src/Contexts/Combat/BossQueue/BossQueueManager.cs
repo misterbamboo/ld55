@@ -69,12 +69,8 @@ public partial class BossQueueManager : Node
         var newMonsterCard = MonsterCardUIPrefab.Instantiate<MonsterCardUI>();
         var monsterSpecs = new SummoningSpecs(rand.RandiRange(0, 4), rand.RandiRange(0, 4), rand.RandiRange(0, 4));
 
-        var emotion = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, monsterSpecs.Emotion.Index));
-        var element = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, monsterSpecs.Element.Index));
-        var species = GameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, monsterSpecs.Species.Index));
-
         newMonsterCard.IsDraggable = false;
-        newMonsterCard.Init(monsterSpecs, emotion, element, species);
+        newMonsterCard.Init(monsterSpecs);
 
         var targetPos = new Vector2(0, 0);
         var spawnPos = new Vector2(-newMonsterCard.Position.X, 50);

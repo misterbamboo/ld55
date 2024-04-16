@@ -29,7 +29,7 @@ public partial class DeskManager : Node
     public event ArcaneFocusAdjustedHandler OnArcaneFocusAdjusted;
     public event ArcaneFocusEmptiedHandler OnArcaneFocusEmptied;
 
-    private bool GameStarted = false;
+    public bool GameStarted { get; private set; } = false;
 
     private SummoningSpecs currentMonsterStats;
     public SummoningSpecs CurrentMonsterStats => currentMonsterStats;
@@ -131,11 +131,11 @@ public partial class DeskManager : Node
         OnCandleToggled?.Invoke(state);
     }
 
-    public event Action OnFightStarting;
-    internal void FightStarting()
+    public event Action<SummoningSpecs, SummoningSpecs> OnFightStarting;
+    internal void FightStarting(SummoningSpecs playerSummoningSpecs, SummoningSpecs bossSummoningSpecs)
     {
         GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnFightStarting)}[/color]");
-        OnFightStarting?.Invoke();
+        OnFightStarting?.Invoke(playerSummoningSpecs, bossSummoningSpecs);
     }
 
 
@@ -158,5 +158,12 @@ public partial class DeskManager : Node
     {
         GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnCardMoving)}[/color]");
         OnCardMoving?.Invoke();
+    }
+
+    public event Action OnFightHit;
+    internal void FightHit()
+    {
+        GD.PrintRich($"[color=cyan]DeskEvent: {nameof(OnFightHit)}[/color]");
+        OnFightHit?.Invoke();
     }
 }
