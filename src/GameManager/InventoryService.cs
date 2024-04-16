@@ -81,6 +81,7 @@ public partial class InventoryService : Node
 
     public void Swap(int sourceIndex, int destinationIndex)
     {
+        GD.Print($"source: {sourceIndex}, destination: {destinationIndex}, focus: {ArcaneFocusSlot}");
         Inventory.SwapItems(sourceIndex, destinationIndex);
 
         RedrawInventoryItems();
@@ -96,7 +97,6 @@ public partial class InventoryService : Node
 
         if (IsOnSummoningBoard(sourceIndex) || IsOnSummoningBoard(destinationIndex))
         {
-            GD.Print($"source: {sourceIndex}, destination: {destinationIndex}, focus: {ArcaneFocusSlot}");
             InsertInSummoningCircle();
         }
     }
@@ -108,7 +108,7 @@ public partial class InventoryService : Node
 
     public void InsertInSummoningCircle()
     {
-        var ingredientsOnBoard = Inventory.Items().Skip(Inventory.InventorySlots+1).Take(5);
+        var ingredientsOnBoard = Inventory.Items().Skip(Inventory.InventorySlots).Take(5);
         deskManager.UpdateIngredientsOnSummoningBoard(ingredientsOnBoard);
     }
 
