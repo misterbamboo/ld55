@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3kmf5ranmrps"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_t4grh"]
+
+[resource]
+script = ExtResource("1_t4grh")
+Id = "ingredient_kidney_stone"
+DisplayName = "Kidney Stone"
+Icon = "ingredient_kidney_stone"
+ProcessedIcon = "ingredient_kidney_stone"
+Emotion = 0.0
+Species = -2.0
+Elements = 0.0

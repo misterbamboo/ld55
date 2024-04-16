@@ -8,6 +8,6 @@ Id = "ingredient_sappling_root"
 DisplayName = "Saplling Roots"
 Icon = "ingredient_sappling_root"
 ProcessedIcon = "ingredient_sappling_root"
-Emotion = 1.0
+Emotion = -1.0
 Species = 1.0
 Elements = 0.0

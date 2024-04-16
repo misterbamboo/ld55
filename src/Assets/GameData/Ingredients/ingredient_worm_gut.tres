@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b5y18j42wab7p"]
+
+[ext_resource type="Script" path="res://Contexts/Ingredients/ScriptableIngredient.cs" id="1_6ab42"]
+
+[resource]
+script = ExtResource("1_6ab42")
+Id = "ingredient_worm_gut"
+DisplayName = "Worm Gut"
+Icon = "ingredient_worm_gut"
+ProcessedIcon = "ingredient_worm_gut"
+Emotion = 0.0
+Species = 1.0
+Elements = 0.0

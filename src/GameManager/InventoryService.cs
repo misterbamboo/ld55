@@ -45,11 +45,13 @@ public partial class InventoryService : Node
 
     private void HandleNewGame()
     {
-        foreach (var ingredient in gameDataService.Ingredients)
+        for(var i = 0; i < 8; i++)
         {
-            Inventory.AddItem(ingredient);
-            Inventory.AddItem(ingredient);
+            var count = gameDataService.Ingredients.Count();
+            var item = rng.RandiRange(0, count - 1);
+            Inventory.AddItem(gameDataService.Ingredients.ElementAt(item));
         }
+       
         RedrawInventoryItems();
     }
 
