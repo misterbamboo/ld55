@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qgtjdgoitd14"
-path="res://.godot/imported/ingredient_worm_gut.png-79264d17f878555f78b1ee1771cea379.ctex"
+path="res://.godot/imported/ingredient_worm_gut.png-30685828c455cafbb2c580282f5d8044.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_worm_gut.png"
-dest_files=["res://.godot/imported/ingredient_worm_gut.png-79264d17f878555f78b1ee1771cea379.ctex"]
+source_file="res://Assets/Icons/ingredient_worm_gut.png"
+dest_files=["res://.godot/imported/ingredient_worm_gut.png-30685828c455cafbb2c580282f5d8044.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlmoilgja4p02"
-path="res://.godot/imported/ingredient_insect_wings_old.png-6fe42f6fd0d71166fd25e7db56f7c08a.ctex"
+path="res://.godot/imported/ingredient_insect_wings_old.png-7c4b18ff8066bb9e1a053631068b74fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_insect_wings_old.png"
-dest_files=["res://.godot/imported/ingredient_insect_wings_old.png-6fe42f6fd0d71166fd25e7db56f7c08a.ctex"]
+source_file="res://Assets/Icons/ingredient_insect_wings_old.png"
+dest_files=["res://.godot/imported/ingredient_insect_wings_old.png-7c4b18ff8066bb9e1a053631068b74fa.ctex"]
 
 [params]
 

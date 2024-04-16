@@ -45,8 +45,17 @@ public partial class GameAssetsService : Node
             string fileName = dir.GetNext();
             while (fileName != "")
             {
-                if (System.IO.Path.GetExtension(fileName) == ".png")
+                GD.Print("Discovered icons: " + fileName);
+                if (fileName.EndsWith(".png"))
                 {
+                    GD.Print($"loading {fileName}");
+                    Texture2D res = ResourceLoader.Load<Texture2D>($"{fullpath}/{fileName}");
+                    assets.Add(res);
+                }
+
+                if (fileName.EndsWith(".import"))
+                {
+                    fileName = System.IO.Path.GetFileNameWithoutExtension(fileName);
                     GD.Print($"loading {fileName}");
                     Texture2D res = ResourceLoader.Load<Texture2D>($"{fullpath}/{fileName}");
                     assets.Add(res);

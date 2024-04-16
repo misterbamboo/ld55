@@ -11,7 +11,7 @@ public partial class GameDataService : Node, IHintProvider
     private Dictionary<string, SpecDefinition> specDefinitionsById;
     private Dictionary<string, HintDef> HintDefById;
 
-    public IEnumerable<Ingredient> Ingredients => ingredientsById.Select(kvp=>kvp.Value);
+    public IEnumerable<Ingredient> Ingredients => ingredientsById.Select(kvp => kvp.Value);
 
     public override void _Ready()
     {
@@ -31,6 +31,12 @@ public partial class GameDataService : Node, IHintProvider
     {
         if (!specDefinitionsById.ContainsKey(specDefinitionId))
         {
+            GD.Print("Before Error");
+            foreach (var specDefinitionById in specDefinitionsById)
+            {
+                GD.Print(specDefinitionById.Key + " : " + specDefinitionById.Value.Id);
+            }
+
             throw new IndexOutOfRangeException($"SpecDefinition {specDefinitionId} not found");
         }
 
@@ -71,10 +77,19 @@ public partial class GameDataService : Node, IHintProvider
             string fileName = dir.GetNext();
             while (fileName != "")
             {
-                if (System.IO.Path.GetExtension(fileName) == ".tres")
+                GD.Print("DiscoveredFile: " + fileName);
+                if (fileName.EndsWith(".tres"))
                 {
                     GD.Print($"loading {fileName}");
-                    T res = ResourceLoader.Load<T>($"{fullpath}/{fileName}");
+                    T res = GD.Load<T>($"{fullpath}/{fileName}");
+                    assets.Add(res);
+                }
+                if (fileName.EndsWith(".tres.remap"))
+                {
+                    // to remove ".remap" at the end
+                    fileName = System.IO.Path.GetFileNameWithoutExtension(fileName);
+                    GD.Print($"loading {fileName}");
+                    T res = GD.Load<T>($"{fullpath}/{fileName}");
                     assets.Add(res);
                 }
 

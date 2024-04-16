@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Contexts/Ingredients/IngredientSlotUI.cs" id="1_ngp23"]
 [ext_resource type="Script" path="res://Contexts/LightenOnHover.cs" id="2_p6wvm"]
-[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="3_0jqmq"]
+[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/Icons/None.png" id="3_0jqmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbcva"]
 bg_color = Color(0.39, 0.3354, 0.3081, 0.862745)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfc48mlw3axxy"
-path="res://.godot/imported/ingredient_kidney_stone_selected.png-0d523481644ffd7ea0b1808868bd857a.ctex"
+path="res://.godot/imported/ingredient_kidney_stone_selected.png-ea17de40c9ea9a6a4e239104df141b0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_kidney_stone_selected.png"
-dest_files=["res://.godot/imported/ingredient_kidney_stone_selected.png-0d523481644ffd7ea0b1808868bd857a.ctex"]
+source_file="res://Assets/Icons/ingredient_kidney_stone_selected.png"
+dest_files=["res://.godot/imported/ingredient_kidney_stone_selected.png-ea17de40c9ea9a6a4e239104df141b0f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ltn6y572wld"
-path="res://.godot/imported/ingredient_enchanted_ruby.png-823869251e276b4036bc49d26afe9a2e.ctex"
+path="res://.godot/imported/ingredient_enchanted_ruby.png-5f2b3faa2fd0ad544f888cfa6bc1d653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_enchanted_ruby.png"
-dest_files=["res://.godot/imported/ingredient_enchanted_ruby.png-823869251e276b4036bc49d26afe9a2e.ctex"]
+source_file="res://Assets/Icons/ingredient_enchanted_ruby.png"
+dest_files=["res://.godot/imported/ingredient_enchanted_ruby.png-5f2b3faa2fd0ad544f888cfa6bc1d653.ctex"]
 
 [params]
 

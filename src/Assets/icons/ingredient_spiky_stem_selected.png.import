@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk3qbtk02bq4y"
-path="res://.godot/imported/ingredient_spiky_stem_selected.png-80bb6f0b114127f98e7afe8b7ee93c89.ctex"
+path="res://.godot/imported/ingredient_spiky_stem_selected.png-2beb128eb5ae150f4f33bf92d6aa2c32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_spiky_stem_selected.png"
-dest_files=["res://.godot/imported/ingredient_spiky_stem_selected.png-80bb6f0b114127f98e7afe8b7ee93c89.ctex"]
+source_file="res://Assets/Icons/ingredient_spiky_stem_selected.png"
+dest_files=["res://.godot/imported/ingredient_spiky_stem_selected.png-2beb128eb5ae150f4f33bf92d6aa2c32.ctex"]
 
 [params]
 

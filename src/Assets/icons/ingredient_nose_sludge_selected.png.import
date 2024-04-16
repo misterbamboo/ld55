@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch1u63esroemg"
-path="res://.godot/imported/ingredient_nose_sludge_selected.png-db671b475761a1b2364de62f58066139.ctex"
+path="res://.godot/imported/ingredient_nose_sludge_selected.png-4137b4b6c48fd817b8c7e67af7ffa771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/ingredient_nose_sludge_selected.png"
-dest_files=["res://.godot/imported/ingredient_nose_sludge_selected.png-db671b475761a1b2364de62f58066139.ctex"]
+source_file="res://Assets/Icons/ingredient_nose_sludge_selected.png"
+dest_files=["res://.godot/imported/ingredient_nose_sludge_selected.png-4137b4b6c48fd817b8c7e67af7ffa771.ctex"]
 
 [params]
 
