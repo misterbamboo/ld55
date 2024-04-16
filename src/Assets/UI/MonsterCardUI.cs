@@ -55,10 +55,15 @@ public partial class MonsterCardUI : Control
     private double lifeAnimInitRatio;
     private double lifeAnimTargetRatio;
 
-    public void Init(SummoningSpecs summoningSpecs)
+    public string tiNom = string.Empty;
+
+    public void Init(SummoningSpecs summoningSpecs, string name = "")
     {
-        SummoningSpecs = summoningSpecs;
+        SummoningSpecs = summoningSpecs.Clone();
         initPending = true;
+
+        tiNom = name;
+        GD.Print(tiNom + ": " + SummoningSpecs);
     }
 
     public override void _Ready()
@@ -116,27 +121,36 @@ public partial class MonsterCardUI : Control
     private void ChangeName(string name)
     {
         NameLabel.Text = name;
+        NameLabel.QueueRedraw();
     }
 
     private void ChangeImageAndIcons(MonsterImageResult imageResult)
     {
         SpeciesImage.Texture = imageResult.SpeciesImage;
+        SpeciesImage.QueueRedraw();
+
         EmotionImage.Texture = imageResult.EmotionImage;
+        EmotionImage.QueueRedraw();
+
         EmotionIconImage.Texture = imageResult.EmotionIconImage;
+        EmotionIconImage.QueueRedraw();
+
         ElementIconImage.Texture = imageResult.ElementIconImage;
+        ElementIconImage.QueueRedraw();
+
         SpeciesIconImage.Texture = imageResult.SpeciesIconImage;
+        SpeciesIconImage.QueueRedraw();
     }
 
     public void RedrawMonster()
     {
-        var emotion = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, SummoningSpecs.Emotion.Index));
-        var element = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, SummoningSpecs.Element.Index));
-        var species = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, SummoningSpecs.Species.Index));
-        Emotion = emotion;
-        Element = element;
-        Species = species;
+        Emotion = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, SummoningSpecs.Emotion.Index));
+        Element = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, SummoningSpecs.Element.Index));
+        Species = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, SummoningSpecs.Species.Index));
 
-        ChangeName($"[center]{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}[/center]");
+        var fullName = $"[center]{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}[/center]";
+        GD.Print(tiNom + ": " + SummoningSpecs + " fullname: " + fullName);
+        ChangeName(fullName);
 
         var imageResult = MonsterImageLoader.GetMonsterImage(SummoningSpecs);
         ChangeImageAndIcons(imageResult);

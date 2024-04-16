@@ -12,6 +12,7 @@ public partial class FightSceneUI : Node2D
     [Export] private MonsterCardUI playerCard;
     [Export] private MonsterCardUI enemyCard;
     [Export] private Node2D middleHitPoint;
+
     private GameDataService gameDataService;
     private DeskManager deskManager;
 
@@ -93,8 +94,8 @@ public partial class FightSceneUI : Node2D
         bossFight.Combat(player, enemy);
 
         tackleRemaining = 3;
-        playerCard.Init(player);
-        enemyCard.Init(enemy);
+        playerCard.Init(player, "player");
+        enemyCard.Init(enemy, "enemy");
 
         Phase1_TriggerFadeIn();
     }

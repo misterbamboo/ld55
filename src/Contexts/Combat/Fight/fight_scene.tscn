@@ -12,42 +12,32 @@ middleHitPoint = NodePath("Control/Node2D_MiddleHitPoint")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="EnemyMonsterCard" parent="Control" node_paths=PackedStringArray("NameLabel", "SpeciesImage", "EmotionImage", "EmotionIconImage", "ElementIconImage", "SpeciesIconImage") instance=ExtResource("2_loup7")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.256771
-anchor_top = 0.318519
-anchor_right = 0.256771
-anchor_bottom = 0.318519
-offset_left = -67.0
-offset_top = 0.999481
-offset_right = 121.0
-offset_bottom = 263.999
-scale = Vector2(2, 2)
-IsDraggable = false
-NameLabel = NodePath("../PlayerMonsterCard/BoxContainer/MonsterName")
-SpeciesImage = NodePath("../PlayerMonsterCard/BoxContainer/MonsterComp/MonsterLayerBottom")
-EmotionImage = NodePath("../PlayerMonsterCard/BoxContainer/MonsterComp/MonsterLayerTop")
-EmotionIconImage = NodePath("../PlayerMonsterCard/BoxContainer/MonsterAttributes/Emotion")
-ElementIconImage = NodePath("../PlayerMonsterCard/BoxContainer/MonsterAttributes/Element")
-SpeciesIconImage = NodePath("../PlayerMonsterCard/BoxContainer/MonsterAttributes/Species")
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Node2D_MiddleHitPoint" type="Node2D" parent="Control"]
-position = Vector2(960, 345)
+position = Vector2(960, 477)
+
+[node name="EnemyMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.45
+anchor_right = 1.45
+offset_left = 329.0
+offset_top = 450.0
+offset_right = 517.0
+offset_bottom = 713.001
+scale = Vector2(2, 2)
+IsDraggable = false
 
 [node name="PlayerMonsterCard" parent="Control" instance=ExtResource("2_loup7")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.313021
-anchor_top = 0.318519
-anchor_right = 0.313021
-anchor_bottom = 0.318519
-offset_left = 695.0
-offset_top = 0.999481
-offset_right = 883.0
-offset_bottom = 263.999
+anchor_left = 1.45
+anchor_right = 1.45
+offset_left = 1273.0
+offset_top = 450.0
+offset_right = 1461.0
+offset_bottom = 713.001
 scale = Vector2(2, 2)
 IsDraggable = false
