@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cury266482kyk"]
+
+[ext_resource type="Texture2D" uid="uid://ce31lgyc33j6f" path="res://Assets/Menus/Credit Menu/Background_Credits.png" id="1_euveq"]
+[ext_resource type="Script" path="res://Scenes/CreditMenu.cs" id="2_4n4vx"]
+
+[node name="CreditMenu" type="Node2D"]
+
+[node name="BackgroundCredits" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_euveq")
+script = ExtResource("2_4n4vx")

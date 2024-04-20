@@ -51,12 +51,12 @@
 [ext_resource type="Texture2D" uid="uid://rf84qoj0aqm3" path="res://Assets/Monsters/Fairy/Emotions/Fairy_Fear.png" id="49_0j5fr"]
 [ext_resource type="Texture2D" uid="uid://1tn26u0kvhkx" path="res://Assets/Monsters/Fairy/Emotions/Fairy_Joy.png" id="50_ehflf"]
 [ext_resource type="Texture2D" uid="uid://17qcombvvukr" path="res://Assets/Monsters/Fairy/Emotions/Fairy_Sadness.png" id="51_68w3q"]
-[ext_resource type="Texture2D" uid="uid://d2cwyk4g0yfxi" path="res://Assets/Menus/Background_Menu.png" id="52_fcj1r"]
+[ext_resource type="Texture2D" uid="uid://d2cwyk4g0yfxi" path="res://Assets/Menus/Main Menu/Background_Menu.png" id="52_fcj1r"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="52_v3n4b"]
-[ext_resource type="Texture2D" uid="uid://mnbbukrh3pru" path="res://Assets/Menus/Bouton_Play.png" id="54_4ewff"]
-[ext_resource type="Texture2D" uid="uid://jma7thplab23" path="res://Assets/Menus/Bouton_Play_selected.png" id="55_20cv5"]
-[ext_resource type="Texture2D" uid="uid://c8josnyfwsq4i" path="res://Assets/Menus/Bouton_Exit.png" id="56_u3psu"]
-[ext_resource type="Texture2D" uid="uid://dvkdc5y5al8vx" path="res://Assets/Menus/Bouton_Exit_selected.png" id="57_s7i8i"]
+[ext_resource type="Texture2D" uid="uid://mnbbukrh3pru" path="res://Assets/Menus/Main Menu/Bouton_Play.png" id="54_4ewff"]
+[ext_resource type="Texture2D" uid="uid://jma7thplab23" path="res://Assets/Menus/Main Menu/Bouton_Play_selected.png" id="55_20cv5"]
+[ext_resource type="Texture2D" uid="uid://c8josnyfwsq4i" path="res://Assets/Menus/Main Menu/Bouton_Exit.png" id="56_u3psu"]
+[ext_resource type="Texture2D" uid="uid://dvkdc5y5al8vx" path="res://Assets/Menus/Main Menu/Bouton_Exit_selected.png" id="57_s7i8i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_arvfb"]
 font_size = 216
@@ -103,7 +103,7 @@ fairyBodies = Array[Texture2D]([ExtResource("42_visi6"), ExtResource("43_kwprh")
 fairyFaces = Array[Texture2D]([ExtResource("47_1ffy0"), ExtResource("48_bjc6o"), ExtResource("49_0j5fr"), ExtResource("50_ehflf"), ExtResource("51_68w3q")])
 
 [node name="BackgroundMenu" type="Sprite2D" parent="."]
-position = Vector2(963, 538)
+position = Vector2(960, 540)
 texture = ExtResource("52_fcj1r")
 
 [node name="Label" type="Label" parent="."]
@@ -166,21 +166,33 @@ horizontal_alignment = 1
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 753.0
-offset_top = 567.0
+offset_top = 473.0
 offset_right = 1181.0
-offset_bottom = 771.0
+offset_bottom = 677.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxTexture_ratgm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ih6w5")
 text = "Start"
 
+[node name="CreditButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 725.0
+offset_right = 1181.0
+offset_bottom = 873.0
+theme_override_fonts/font = ExtResource("52_v3n4b")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j4d5x")
+text = "Credits"
+
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 862.0
-offset_top = 857.0
+offset_top = 885.0
 offset_right = 1093.0
-offset_bottom = 1005.0
+offset_bottom = 1033.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
@@ -211,4 +223,5 @@ position = Vector2(304, 767)
 texture = ExtResource("4_stmlb")
 
 [connection signal="pressed" from="StartButton" to="." method="PressPlay"]
+[connection signal="pressed" from="CreditButton" to="." method="PressCredits"]
 [connection signal="pressed" from="QuitButton" to="." method="PressQuit"]

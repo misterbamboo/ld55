@@ -116,7 +116,12 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("res://Scenes/start_scene.tscn");
 	}
 
-	public void PressQuit()
+    public void PressCredits()
+    {
+        GetTree().ChangeSceneToFile("res://Scenes/CreditMenu.tscn");
+    }
+
+    public void PressQuit()
 	{
 		GetTree().Quit();
 	}

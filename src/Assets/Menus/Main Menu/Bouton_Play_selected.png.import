@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvkdc5y5al8vx"
-path="res://.godot/imported/Bouton_Exit_selected.png-de1e2db5451e587a1ff471d4f78bb6b2.ctex"
+uid="uid://jma7thplab23"
+path="res://.godot/imported/Bouton_Play_selected.png-88db8b26170437f58ffca9babcc91e9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menus/Bouton_Exit_selected.png"
-dest_files=["res://.godot/imported/Bouton_Exit_selected.png-de1e2db5451e587a1ff471d4f78bb6b2.ctex"]
+source_file="res://Assets/Menus/Main Menu/Bouton_Play_selected.png"
+dest_files=["res://.godot/imported/Bouton_Play_selected.png-88db8b26170437f58ffca9babcc91e9d.ctex"]
 
 [params]
 

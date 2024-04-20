@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mnbbukrh3pru"
-path="res://.godot/imported/Bouton_Play.png-4fee36a7df2fd9014d1612b92a43e3a2.ctex"
+uid="uid://ce31lgyc33j6f"
+path="res://.godot/imported/Background_Credits.png-f51860798689157d1af7f7af7770cf02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menus/Bouton_Play.png"
-dest_files=["res://.godot/imported/Bouton_Play.png-4fee36a7df2fd9014d1612b92a43e3a2.ctex"]
+source_file="res://Assets/Menus/Credit Menu/Background_Credits.png"
+dest_files=["res://.godot/imported/Background_Credits.png-f51860798689157d1af7f7af7770cf02.ctex"]
 
 [params]
 
