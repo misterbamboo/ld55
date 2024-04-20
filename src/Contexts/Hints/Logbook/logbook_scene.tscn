@@ -13,8 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bjphbevn30fm3" path="res://Assets/Logbook/Species_Circle/Monsters_Undead.png" id="10_si77g"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="11_7tl7a"]
 
-[node name="LogbookScene" type="Node2D"]
+[node name="LogbookScene" type="Node2D" node_paths=PackedStringArray("logbookTextLabel")]
 script = ExtResource("1_p0p5x")
+logbookTextLabel = NodePath("CombatLogs/ScrollContainer/Control/RichTextLabel")
 
 [node name="BackgroundBook" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -100,5 +101,5 @@ offset_bottom = 747.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("11_7tl7a")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 20
 text = "A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if "

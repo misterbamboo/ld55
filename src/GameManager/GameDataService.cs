@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 public partial class GameDataService : Node, IHintProvider
 {
@@ -113,5 +114,14 @@ public partial class GameDataService : Node, IHintProvider
     {
         var id = HintDef.CreateId(specType, summonIndex, bossIndex);
         return GetHintDefinition(id).Text;
+    }
+
+    internal string GetMonsterName(SummoningSpecs summoningSpecs)
+    {
+        var emotion = GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, summoningSpecs.Emotion.Index));
+        var element = GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, summoningSpecs.Element.Index));
+        var species = GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, summoningSpecs.Species.Index));
+
+        return $"{emotion.MonsterNaming} {element.MonsterNaming} {species.MonsterNaming}";
     }
 }

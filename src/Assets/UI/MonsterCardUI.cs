@@ -21,9 +21,6 @@ public partial class MonsterCardUI : Control
     private DeskManager deskManager;
 
     private MonsterImageLoader MonsterImageLoader { get; set; }
-    private SpecDefinition Emotion { get; set; } = SpecDefinition.Empty();
-    private SpecDefinition Element { get; set; } = SpecDefinition.Empty();
-    private SpecDefinition Species { get; set; } = SpecDefinition.Empty();
 
     private ControlDragHandler DragHandler { get; set; }
     public bool IsAnimating => shiftAnimRun || stickToAnimRun;
@@ -144,11 +141,9 @@ public partial class MonsterCardUI : Control
 
     public void RedrawMonster()
     {
-        Emotion = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, SummoningSpecs.Emotion.Index));
-        Element = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, SummoningSpecs.Element.Index));
-        Species = gameDataService.GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, SummoningSpecs.Species.Index));
+        var monsterName = gameDataService.GetMonsterName(SummoningSpecs);
 
-        var fullName = $"[center]{Emotion.MonsterNaming} {Element.MonsterNaming} {Species.MonsterNaming}[/center]";
+        var fullName = $"[center]{monsterName}[/center]";
         GD.Print(tiNom + ": " + SummoningSpecs + " fullname: " + fullName);
         ChangeName(fullName);
 
