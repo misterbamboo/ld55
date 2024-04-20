@@ -109,9 +109,9 @@ public partial class SpecDefTestScript : Node
         BossMonsterCardUI.Init(bossSpecs);
         BossMonsterCardUI.RedrawMonster();
 
-        var bossFight = new BossFight(GameDataService);
         var playerSpecs = new SummoningSpecs(PlayerEmotionSpec.Index, PlayerElementSpec.Index, PlayerSpeciesSpec.Index);
-        bossFight.Combat(playerSpecs, bossSpecs);
+        var bossFight = new BossFight(GameDataService, playerSpecs, bossSpecs);
+        bossFight.Combat();
 
         UpdateDisplayCombatText(bossFight.Result, playerSpecs, bossSpecs);
     }

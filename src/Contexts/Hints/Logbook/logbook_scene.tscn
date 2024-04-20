@@ -1,15 +1,104 @@
-[gd_scene load_steps=2 format=3 uid="uid://1fp5cnwec8rs"]
+[gd_scene load_steps=13 format=3 uid="uid://1fp5cnwec8rs"]
 
+[ext_resource type="Script" path="res://Contexts/Hints/Logbook/LogbookSceneUI.cs" id="1_p0p5x"]
 [ext_resource type="Texture2D" uid="uid://dqd4sxm46i7h" path="res://Assets/Logbook/Background_Book.png" id="1_sq2lq"]
+[ext_resource type="Texture2D" uid="uid://dag6e25etja0c" path="res://Assets/Logbook/Elements_Circle/Elements_Earth.png" id="2_4m5sg"]
+[ext_resource type="Texture2D" uid="uid://dvft7t7gux0h" path="res://Assets/Logbook/Elements_Circle/Arrow_Ligthing_Ice.png" id="3_mkc88"]
+[ext_resource type="Texture2D" uid="uid://d2ojurntxicql" path="res://Assets/Logbook/Elements_Circle/Elements_Ice.png" id="4_wp43g"]
+[ext_resource type="Texture2D" uid="uid://bglgco64svsxl" path="res://Assets/Logbook/Emotions_Circle/Arrow_fear_joy.png" id="5_1jdee"]
+[ext_resource type="Texture2D" uid="uid://b7da0x1gllne5" path="res://Assets/Logbook/Emotions_Circle/Feelings_FaceFear.png" id="7_lglmw"]
+[ext_resource type="Texture2D" uid="uid://dvmixf4acjtic" path="res://Assets/Logbook/Emotions_Circle/Feelings_FaceJoy.png" id="7_nd7js"]
+[ext_resource type="Texture2D" uid="uid://cmgd2l48te82u" path="res://Assets/Logbook/Species_Circle/Arrow_Ghost_Undead.png" id="8_7ep3u"]
+[ext_resource type="Texture2D" uid="uid://chqbre1jgv8b5" path="res://Assets/Logbook/Species_Circle/Monsters_Ghost.png" id="9_3frxi"]
+[ext_resource type="Texture2D" uid="uid://bjphbevn30fm3" path="res://Assets/Logbook/Species_Circle/Monsters_Undead.png" id="10_si77g"]
+[ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="11_7tl7a"]
 
 [node name="LogbookScene" type="Node2D"]
+script = ExtResource("1_p0p5x")
 
 [node name="BackgroundBook" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_sq2lq")
 
 [node name="ElementsHints" type="Node2D" parent="."]
+position = Vector2(336, 258)
+
+[node name="ElementsEarth" type="Sprite2D" parent="ElementsHints"]
+position = Vector2(28, -19)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4m5sg")
+
+[node name="ArrowLigthingIce" type="Sprite2D" parent="ElementsHints"]
+position = Vector2(100, -32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_mkc88")
+
+[node name="ElementsIce" type="Sprite2D" parent="ElementsHints"]
+position = Vector2(159, 20)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_wp43g")
 
 [node name="EmotionHints" type="Node2D" parent="."]
+position = Vector2(336, 425)
+
+[node name="ArrowFearJoy" type="Sprite2D" parent="EmotionHints"]
+position = Vector2(190, 39)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_1jdee")
+
+[node name="FeelingsFaceJoy" type="Sprite2D" parent="EmotionHints"]
+position = Vector2(90, 25)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_nd7js")
+
+[node name="FeelingsFaceFear" type="Sprite2D" parent="EmotionHints"]
+position = Vector2(280, 102)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_lglmw")
 
 [node name="SpeciesHints" type="Node2D" parent="."]
+position = Vector2(336, 644)
+
+[node name="ArrowGhostUndead" type="Sprite2D" parent="SpeciesHints"]
+position = Vector2(105, 138)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_7ep3u")
+
+[node name="MonstersGhost" type="Sprite2D" parent="SpeciesHints"]
+position = Vector2(41, 228)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_3frxi")
+
+[node name="MonstersUndead" type="Sprite2D" parent="SpeciesHints"]
+position = Vector2(92, 38)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_si77g")
+
+[node name="CombatLogs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1008.0
+offset_top = 142.0
+offset_right = 1694.0
+offset_bottom = 889.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CombatLogs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CombatLogs/ScrollContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CombatLogs/ScrollContainer/Control"]
+layout_mode = 2
+offset_right = 686.0
+offset_bottom = 747.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_7tl7a")
+theme_override_font_sizes/normal_font_size = 25
+text = "A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if A very long text could take a lot of place. But with scroll container we could do something about it. I this I will try to do it very long so we can test it. Like that we could test how if "

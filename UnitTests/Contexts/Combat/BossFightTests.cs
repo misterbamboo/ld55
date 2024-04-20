@@ -32,7 +32,7 @@ public class BossFightTests
     public void Create_BossFight()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
+        var bossFight = new BossFight(hintProviderMock, SummoningSpecs.Empty(), SummoningSpecs.Empty());
 
         // Act
 
@@ -44,12 +44,12 @@ public class BossFightTests
     public void Combat_result_draw()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_1_Ghost);
         var bossSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_1_Ghost);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.Draw, bossFight.Result);
@@ -59,12 +59,12 @@ public class BossFightTests
     public void Combat_result_draw_when_1_win_1lose_1draw()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_2_Anger, Ele_1_Ice, Spe_0_Undead);
         var bossSpecs = new SummoningSpecs(Emo_1_Fear, Ele_2_Lightning, Spe_0_Undead);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.Draw, bossFight.Result);
@@ -74,12 +74,12 @@ public class BossFightTests
     public void Combat_result_lose_on_2_specs()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_0_Undead);
         var bossSpecs = new SummoningSpecs(Emo_2_Anger, Ele_2_Lightning, Spe_0_Undead);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerLose, bossFight.Result);
@@ -89,12 +89,12 @@ public class BossFightTests
     public void Combat_result_lose_on_3_specs()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_1_Ghost);
         var bossSpecs = new SummoningSpecs(Emo_2_Anger, Ele_2_Lightning, Spe_2_Fairy);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerLose, bossFight.Result);
@@ -104,12 +104,12 @@ public class BossFightTests
     public void Combat_result_win_on_1_specs()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_3_Disgust, Ele_0_Water, Spe_0_Undead);
         var bossSpecs = new SummoningSpecs(Emo_1_Fear, Ele_0_Water, Spe_0_Undead);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerWin, bossFight.Result);
@@ -119,12 +119,12 @@ public class BossFightTests
     public void Combat_result_win_on_2_specs()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_3_Disgust, Ele_3_Fire, Spe_0_Undead);
         var bossSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_0_Undead);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerWin, bossFight.Result);
@@ -134,12 +134,12 @@ public class BossFightTests
     public void Combat_result_win_on_2_specs_and_lose_on_1()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_3_Disgust, Ele_3_Fire, Spe_0_Undead);
         var bossSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_2_Fairy);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerWin, bossFight.Result);
@@ -149,12 +149,12 @@ public class BossFightTests
     public void Combat_result_win_on_3_specs()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_3_Disgust, Ele_3_Fire, Spe_3_Slime);
         var bossSpecs = new SummoningSpecs(Emo_1_Fear, Ele_1_Ice, Spe_1_Ghost);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerWin, bossFight.Result);
@@ -164,12 +164,12 @@ public class BossFightTests
     public void Combat_golem_fire_joy_shouldwin_agains_golem_lightning_joy()
     {
         // Arrange
-        var bossFight = new BossFight(hintProviderMock);
         var summonSpecs = new SummoningSpecs(Emo_4_Joy, Ele_3_Fire, Spe_4_Golem);
         var bossSpecs = new SummoningSpecs(Emo_4_Joy, Ele_2_Lightning, Spe_4_Golem);
+        var bossFight = new BossFight(hintProviderMock, summonSpecs, bossSpecs);
 
         // Act
-        bossFight.Combat(summonSpecs, bossSpecs);
+        bossFight.Combat();
 
         // Assert
         Assert.Equal(BossFight.BossFightResult.PlayerWin, bossFight.Result);

@@ -62,4 +62,9 @@ public class SummoningSpecs
     {
         return new SummoningSpecs(Emotion.Value, Element.Value, Species.Value);
     }
+
+    public static SummoningSpecs Empty()
+    {
+        return new SummoningSpecs();
+    }
 }

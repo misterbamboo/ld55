@@ -3,6 +3,8 @@ using System.Linq;
 
 public class BossFight
 {
+    public SummoningSpecs Player { get; }
+    public SummoningSpecs Enemy { get; }
     public BossFightResult Result { get; private set; }
     public string Hint { get; private set; }
 
@@ -12,20 +14,22 @@ public class BossFight
 
     private IHintProvider HintProvider { get; }
 
-    public BossFight(IHintProvider hintProvider)
+    public BossFight(IHintProvider hintProvider, SummoningSpecs player, SummoningSpecs enemy)
     {
         HintProvider = hintProvider;
+        Player = player;
+        Enemy = enemy;
     }
 
-    public void Combat(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)
+    public void Combat()
     {
-        CountWinLoseDraw(summonSpecs, bossSpecs);
+        CountWinLoseDraw(Player, Enemy);
 
-        if (PlayerWin(summonSpecs, bossSpecs))
+        if (PlayerWin(Player, Enemy))
         {
             Result = BossFightResult.PlayerWin;
         }
-        else if (PlayerLose(summonSpecs, bossSpecs))
+        else if (PlayerLose(Player, Enemy))
         {
             Result = BossFightResult.PlayerLose;
         }
@@ -33,7 +37,7 @@ public class BossFight
         {
             Result = BossFightResult.Draw;
         }
-        ChooseHint(summonSpecs, bossSpecs);
+        ChooseHint(Player, Enemy);
     }
 
     private void CountWinLoseDraw(SummoningSpecs summonSpecs, SummoningSpecs bossSpecs)

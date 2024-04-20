@@ -16,6 +16,8 @@ public partial class FightSceneUI : Node2D
     private GameDataService gameDataService;
     private DeskManager deskManager;
 
+    private BossFightFactory bossFightFactory;
+
     // Initial positions
     private Vector2 playerInitPos;
     private Vector2 enemyInitPos;
@@ -45,6 +47,7 @@ public partial class FightSceneUI : Node2D
     public override void _Ready()
     {
         gameDataService = GetNode<GameDataService>(GameDataService.Path);
+        bossFightFactory = new BossFightFactory(gameDataService);
         deskManager = GetNode<DeskManager>(DeskManager.Path);
         deskManager.OnFightStarting += DeskManager_OnFightStarting;
 
@@ -90,8 +93,7 @@ public partial class FightSceneUI : Node2D
     public void StartFight(SummoningSpecs player, SummoningSpecs enemy)
     {
         Position = new Vector2(0, 0);
-        bossFight = new BossFight(gameDataService);
-        bossFight.Combat(player, enemy);
+        bossFight = bossFightFactory.Combat(player, enemy);
 
         tackleRemaining = 3;
         playerCard.Init(player, "player");
