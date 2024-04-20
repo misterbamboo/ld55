@@ -1,0 +1,64 @@
+[gd_scene load_steps=16 format=3 uid="uid://dfg5jrdsfh1hg"]
+
+[ext_resource type="Texture2D" uid="uid://mxvitdgqyksv" path="res://Assets/Logbook/Elements_Circle/Arrow_Earth_Fire.png" id="1_noslq"]
+[ext_resource type="Texture2D" uid="uid://b7hk3iowkp1eo" path="res://Assets/Logbook/Elements_Circle/Arrow_Earth_Ligthing.png" id="2_3wyxa"]
+[ext_resource type="Texture2D" uid="uid://dfefmgmq7mbp3" path="res://Assets/Logbook/Elements_Circle/Arrow_Fire_Ice.png" id="3_pvmcr"]
+[ext_resource type="Texture2D" uid="uid://bkda2do7jgmv2" path="res://Assets/Logbook/Elements_Circle/Arrow_Fire_Ligthing.png" id="4_nybsx"]
+[ext_resource type="Texture2D" uid="uid://bdl5f3x3keivi" path="res://Assets/Logbook/Elements_Circle/Arrow_Ice_Earth.png" id="5_yqg48"]
+[ext_resource type="Texture2D" uid="uid://bv7tvar4s8ch8" path="res://Assets/Logbook/Elements_Circle/Arrow_Ice_water.png" id="6_bjpty"]
+[ext_resource type="Texture2D" uid="uid://5j17bhj3m50v" path="res://Assets/Logbook/Elements_Circle/Arrow_Lighting_Water.png" id="7_c6l1w"]
+[ext_resource type="Texture2D" uid="uid://dvft7t7gux0h" path="res://Assets/Logbook/Elements_Circle/Arrow_Ligthing_Ice.png" id="8_65mwy"]
+[ext_resource type="Texture2D" uid="uid://opdh4blhfkrb" path="res://Assets/Logbook/Elements_Circle/Arrow_Water_Earth.png" id="9_0y4v1"]
+[ext_resource type="Texture2D" uid="uid://cpguyc5s01scb" path="res://Assets/Logbook/Elements_Circle/Arrow_Water_Fire.png" id="10_lrrtm"]
+[ext_resource type="Texture2D" uid="uid://dag6e25etja0c" path="res://Assets/Logbook/Elements_Circle/Elements_Earth.png" id="11_tsr7e"]
+[ext_resource type="Texture2D" uid="uid://1674cbpirrco" path="res://Assets/Logbook/Elements_Circle/Elements_Fire.png" id="12_2xe35"]
+[ext_resource type="Texture2D" uid="uid://d2ojurntxicql" path="res://Assets/Logbook/Elements_Circle/Elements_Ice.png" id="13_ghemy"]
+[ext_resource type="Texture2D" uid="uid://dcm16i13o4nm7" path="res://Assets/Logbook/Elements_Circle/Elements_Lighting.png" id="14_fqrxy"]
+[ext_resource type="Texture2D" uid="uid://bu0dlx8yva2fj" path="res://Assets/Logbook/Elements_Circle/Elements_Water.png" id="15_3f7ni"]
+
+[node name="VisualHitCircle" type="Node2D"]
+
+[node name="ArrowEarthFire" type="Sprite2D" parent="."]
+texture = ExtResource("1_noslq")
+
+[node name="ArrowEarthLigthing" type="Sprite2D" parent="."]
+texture = ExtResource("2_3wyxa")
+
+[node name="ArrowFireIce" type="Sprite2D" parent="."]
+texture = ExtResource("3_pvmcr")
+
+[node name="ArrowFireLigthing" type="Sprite2D" parent="."]
+texture = ExtResource("4_nybsx")
+
+[node name="ArrowIceEarth" type="Sprite2D" parent="."]
+texture = ExtResource("5_yqg48")
+
+[node name="ArrowIceWater" type="Sprite2D" parent="."]
+texture = ExtResource("6_bjpty")
+
+[node name="ArrowLightingWater" type="Sprite2D" parent="."]
+texture = ExtResource("7_c6l1w")
+
+[node name="ArrowLigthingIce" type="Sprite2D" parent="."]
+texture = ExtResource("8_65mwy")
+
+[node name="ArrowWaterEarth" type="Sprite2D" parent="."]
+texture = ExtResource("9_0y4v1")
+
+[node name="ArrowWaterFire" type="Sprite2D" parent="."]
+texture = ExtResource("10_lrrtm")
+
+[node name="ElementsEarth" type="Sprite2D" parent="."]
+texture = ExtResource("11_tsr7e")
+
+[node name="ElementsFire" type="Sprite2D" parent="."]
+texture = ExtResource("12_2xe35")
+
+[node name="ElementsIce" type="Sprite2D" parent="."]
+texture = ExtResource("13_ghemy")
+
+[node name="ElementsLighting" type="Sprite2D" parent="."]
+texture = ExtResource("14_fqrxy")
+
+[node name="ElementsWater" type="Sprite2D" parent="."]
+texture = ExtResource("15_3f7ni")

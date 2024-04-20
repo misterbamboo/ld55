@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://1fp5cnwec8rs"]
+
+[ext_resource type="Texture2D" uid="uid://dqd4sxm46i7h" path="res://Assets/Logbook/Background_Book.png" id="1_sq2lq"]
+
+[node name="LogbookScene" type="Node2D"]
+
+[node name="BackgroundBook" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_sq2lq")
+
+[node name="ElementsHints" type="Node2D" parent="."]
+
+[node name="EmotionHints" type="Node2D" parent="."]
+
+[node name="SpeciesHints" type="Node2D" parent="."]
