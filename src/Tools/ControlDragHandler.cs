@@ -3,7 +3,7 @@ using System;
 
 public class ControlDragHandler
 {
-    private const bool DebugMode = false;
+    private const bool DebugMode = true;
 
     public event Action OnStartDraggin;
     public event Action OnEndDraggin;
@@ -24,6 +24,21 @@ public class ControlDragHandler
         this.control = control;
 
         AllowDrag = allowDrag;
+    }
+
+    internal void Reset()
+    {
+        if (mouseDrag)
+        {
+            mouseDrag = false;
+            OnEndDraggin?.Invoke();
+        }
+
+        if (mouseHover)
+        {
+            mouseHover = false;
+            OnEndMouseHover?.Invoke();
+        }
     }
 
     internal void HandleInput(InputEvent @event)
@@ -51,7 +66,7 @@ public class ControlDragHandler
 
     private void MouseInHandle(InputEventMouseMotion mouseMoveIn)
     {
-        if (control.GetGlobalRect().HasPoint(mouseMoveIn.Position))
+        if (control.GetGlobalRect().HasPoint(mouseMoveIn.GlobalPosition))
         {
             Debug("In");
             mouseHover = true;
@@ -61,7 +76,7 @@ public class ControlDragHandler
 
     private void MouseOutHandle(InputEventMouseMotion mouseMoveOut)
     {
-        if (!control.GetGlobalRect().HasPoint(mouseMoveOut.Position))
+        if (!control.GetGlobalRect().HasPoint(mouseMoveOut.GlobalPosition))
         {
             Debug("Stop drag");
             mouseDrag = false;
@@ -80,7 +95,7 @@ public class ControlDragHandler
             if (!mouseDrag && mouseClick.Pressed && mouseClick.ButtonIndex == MouseButton.Left)
             {
                 mouseDrag = true;
-                mouseOffset = mouseClick.Position - control.Position;
+                mouseOffset = mouseClick.GlobalPosition - control.GlobalPosition;
                 Debug($"Start drag ({mouseOffset})");
                 OnStartDraggin?.Invoke();
             }
@@ -97,8 +112,8 @@ public class ControlDragHandler
     {
         if (AllowDrag)
         {
-            Debug($"{mouseMoveDrag.Position} - {mouseOffset} = {mouseMoveDrag.Position - mouseOffset}");
-            control.Position = mouseMoveDrag.Position - mouseOffset;
+            Debug($"{mouseMoveDrag.GlobalPosition} - {mouseOffset} = {mouseMoveDrag.GlobalPosition - mouseOffset}");
+            control.GlobalPosition = mouseMoveDrag.GlobalPosition - mouseOffset;
         }
     }
 

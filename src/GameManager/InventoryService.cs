@@ -15,7 +15,7 @@ public partial class InventoryService : Node
     {
         deskManager = GetNode<DeskManager>(DeskManager.Path);
         gameDataService = GetNode<GameDataService>(GameDataService.Path);
-        summoningStats = GetNode<SummoningStatsUI>("../SummoningStatsUI");
+        summoningStats = GetNode<SummoningStatsUI>(SummoningStatsUI.Path);
         Inventory = new Inventory();
 
         deskManager.OnMonsterSummoned += ClearSummoningBoard;
@@ -45,13 +45,13 @@ public partial class InventoryService : Node
 
     private void HandleNewGame()
     {
-        for(var i = 0; i < 8; i++)
+        for (var i = 0; i < 8; i++)
         {
             var count = gameDataService.Ingredients.Count();
             var item = rng.RandiRange(0, count - 1);
             Inventory.AddItem(gameDataService.Ingredients.ElementAt(item));
         }
-       
+
         RedrawInventoryItems();
     }
 

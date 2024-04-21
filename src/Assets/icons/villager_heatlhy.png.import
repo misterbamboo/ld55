@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn8dattgi2dcq"
-path="res://.godot/imported/villager_heatlhy.png-e1d26753f42d9954129b87c288b0c5b4.ctex"
+path="res://.godot/imported/villager_heatlhy.png-0e2e9229d385cdcb00b0526c066ab90e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/icons/villager_heatlhy.png"
-dest_files=["res://.godot/imported/villager_heatlhy.png-e1d26753f42d9954129b87c288b0c5b4.ctex"]
+source_file="res://Assets/Icons/villager_heatlhy.png"
+dest_files=["res://.godot/imported/villager_heatlhy.png-0e2e9229d385cdcb00b0526c066ab90e.ctex"]
 
 [params]
 

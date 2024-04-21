@@ -1,9 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=26 format=3 uid="uid://gnynltn8oj4w"]
 
+[ext_resource type="PackedScene" uid="uid://1fp5cnwec8rs" path="res://Contexts/Hints/Logbook/logbook_scene.tscn" id="1_uh3t4"]
 [ext_resource type="Texture2D" uid="uid://dphr7baavvpdl" path="res://Assets/DesktopAssets/Asset_Background.png" id="2_7eihi"]
 [ext_resource type="Texture2D" uid="uid://pileqeuf38pn" path="res://Assets/DesktopAssets/Asset_Symbole_Simplified.png" id="2_ae42r"]
 [ext_resource type="PackedScene" uid="uid://waatooubwhwk" path="res://Contexts/Ingredients/arcane_focus.tscn" id="2_emx3q"]
 [ext_resource type="PackedScene" uid="uid://cx58s8livf8hi" path="res://Contexts/Ingredients/IngredientSlotUI.tscn" id="3_t07eg"]
+[ext_resource type="Script" path="res://Tools/DragZoneUI.cs" id="3_wvvf0"]
 [ext_resource type="Texture2D" uid="uid://bca30uamt8s8s" path="res://Assets/DesktopAssets/Asset_ArcaneTable.png" id="4_n5rbe"]
 [ext_resource type="Script" path="res://GameManager/candles/CandlesManager.cs" id="4_sr65v"]
 [ext_resource type="Texture2D" uid="uid://crwa5q7qiu0wl" path="res://Assets/DesktopAssets/Asset_Box.png" id="5_r4fxm"]
@@ -13,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://8fi7m8pevqq3" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
-[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="10_xx2s1"]
+[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/Icons/None.png" id="10_xx2s1"]
 [ext_resource type="PackedScene" uid="uid://dl70lx0ltf2wi" path="res://Contexts/Summoning/CardSpawnerUI.tscn" id="11_mi3xe"]
 [ext_resource type="Script" path="res://Scenes/SceneLoadedWitness.cs" id="12_e7igc"]
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="13_5t2sa"]
@@ -47,129 +49,314 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Table" type="TextureRect" parent="."]
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Table" type="TextureRect" parent="Background"]
 modulate = Color(0.768627, 0.768627, 0.768627, 1)
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_7eihi")
 stretch_mode = 3
 
-[node name="Pentagram" type="TextureRect" parent="."]
+[node name="CombatZone" parent="Background" instance=ExtResource("13_56sqa")]
+position = Vector2(552, 8)
+
+[node name="PentagramDragZone" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1403.0
+offset_top = 618.0
+offset_right = 1886.0
+offset_bottom = 1083.0
+script = ExtResource("3_wvvf0")
+
+[node name="Pentagram" type="TextureRect" parent="PentagramDragZone"]
 modulate = Color(0.419608, 0.34902, 0.294118, 1)
 layout_mode = 0
-offset_left = 1309.0
-offset_top = 568.0
-offset_right = 1935.68
-offset_bottom = 1076.58
+offset_left = -61.0
+offset_top = -40.0
+offset_right = 565.68
+offset_bottom = 468.58
 texture = ExtResource("2_ae42r")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ArcaneTable" type="TextureRect" parent="."]
+[node name="IngredientSlotUI20" parent="PentagramDragZone" instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 194.0
+offset_top = 306.0
+offset_right = -186.0
+offset_bottom = -59.0
+index = 20
+
+[node name="IngredientSlotUI21" parent="PentagramDragZone" instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 323.0
+offset_top = 193.0
+offset_right = -57.0
+offset_bottom = -172.0
+index = 21
+
+[node name="IngredientSlotUI22" parent="PentagramDragZone" instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 274.0
+offset_top = 56.0
+offset_right = -106.0
+offset_bottom = -309.0
+index = 22
+
+[node name="IngredientSlotUI23" parent="PentagramDragZone" instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 109.0
+offset_top = 51.0
+offset_right = -271.0
+offset_bottom = -314.0
+index = 23
+
+[node name="IngredientSlotUI24" parent="PentagramDragZone" instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 64.0
+offset_top = 192.0
+offset_right = -316.0
+offset_bottom = -173.0
+index = 24
+
+[node name="Candles" type="Control" parent="PentagramDragZone"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 483.0
+offset_top = 153.0
+offset_right = 523.0
+offset_bottom = 193.0
+
+[node name="Candle0" type="Control" parent="PentagramDragZone/Candles"]
+anchors_preset = 0
+offset_left = -390.0
+offset_top = 212.0
+offset_right = -342.0
+offset_bottom = 310.0
+
+[node name="CandleImg" type="TextureRect" parent="PentagramDragZone/Candles/Candle0"]
+modulate = Color(1.2, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -160.0
+offset_right = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bp7fh")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="PentagramDragZone/Candles/Candle0"]
 layout_mode = 0
-offset_left = 657.0
-offset_top = 465.0
-offset_right = 1427.0
-offset_bottom = 1116.0
+offset_left = -26.0
+offset_top = -65.0
+offset_right = 94.0
+offset_bottom = 55.0
+texture_normal = ExtResource("10_xx2s1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Candle1" type="Control" parent="PentagramDragZone/Candles"]
+anchors_preset = 0
+offset_left = -150.0
+offset_top = 230.0
+offset_right = -102.0
+offset_bottom = 328.0
+
+[node name="CandleImg" type="TextureRect" parent="PentagramDragZone/Candles/Candle1"]
+modulate = Color(1.2, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -160.0
+offset_right = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bp7fh")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="PentagramDragZone/Candles/Candle1"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -65.0
+offset_right = 94.0
+offset_bottom = 55.0
+texture_normal = ExtResource("10_xx2s1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Candle2" type="Control" parent="PentagramDragZone/Candles"]
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -33.0
+offset_bottom = 65.0
+
+[node name="CandleImg" type="TextureRect" parent="PentagramDragZone/Candles/Candle2"]
+modulate = Color(1.2, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -160.0
+offset_right = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bp7fh")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="PentagramDragZone/Candles/Candle2"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -65.0
+offset_right = 94.0
+offset_bottom = 55.0
+texture_normal = ExtResource("10_xx2s1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Candle3" type="Control" parent="PentagramDragZone/Candles"]
+anchors_preset = 0
+offset_left = -278.0
+offset_top = -168.0
+offset_right = -230.0
+offset_bottom = -70.0
+
+[node name="CandleImg" type="TextureRect" parent="PentagramDragZone/Candles/Candle3"]
+modulate = Color(1.2, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -160.0
+offset_right = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bp7fh")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="PentagramDragZone/Candles/Candle3"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -65.0
+offset_right = 94.0
+offset_bottom = 55.0
+texture_normal = ExtResource("10_xx2s1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Candle4" type="Control" parent="PentagramDragZone/Candles"]
+anchors_preset = 0
+offset_left = -483.0
+offset_top = -23.0
+offset_right = -435.0
+offset_bottom = 75.0
+
+[node name="CandleImg" type="TextureRect" parent="PentagramDragZone/Candles/Candle4"]
+modulate = Color(1.2, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -160.0
+offset_right = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bp7fh")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="PentagramDragZone/Candles/Candle4"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -65.0
+offset_right = 94.0
+offset_bottom = 55.0
+texture_normal = ExtResource("10_xx2s1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ArcaneTableDragZone" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 730.0
+offset_top = 528.0
+offset_right = 1249.0
+offset_bottom = 991.0
+script = ExtResource("3_wvvf0")
+
+[node name="ArcaneTable" type="TextureRect" parent="ArcaneTableDragZone"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = -63.0
+offset_right = 697.0
+offset_bottom = 588.0
 scale = Vector2(0.880362, 0.880362)
 texture = ExtResource("4_n5rbe")
 stretch_mode = 3
 
-[node name="Inventory" type="TextureRect" parent="."]
+[node name="ArcaneFocus" parent="ArcaneTableDragZone" instance=ExtResource("2_emx3q")]
+layout_mode = 1
+offset_left = -207.5
+offset_top = -367.5
+offset_right = 392.5
+offset_bottom = 232.5
+scale = Vector2(0.75, 0.75)
+
+[node name="IngredientSlotUI25" parent="ArcaneTableDragZone" instance=ExtResource("3_t07eg")]
+layout_mode = 1
+offset_left = 208.0
+offset_top = 177.0
+offset_right = -211.0
+offset_bottom = -186.0
+index = 25
+
+[node name="Control" type="Control" parent="ArcaneTableDragZone/IngredientSlotUI25"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryDragZone" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 506.0
+offset_right = 654.0
+offset_bottom = 1072.0
+script = ExtResource("3_wvvf0")
+
+[node name="Inventory" type="TextureRect" parent="InventoryDragZone"]
 layout_mode = 0
-offset_left = -129.0
-offset_top = 479.0
-offset_right = 702.81
-offset_bottom = 1173.6
+offset_left = -126.0
+offset_top = -39.0
+offset_right = 705.81
+offset_bottom = 655.6
 texture = ExtResource("5_r4fxm")
 stretch_mode = 3
 
-[node name="AttributesBG" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="InventoryDragZone"]
 layout_mode = 0
-offset_left = 689.0
-offset_top = 845.0
-offset_right = 1249.0
-offset_bottom = 1155.0
-texture = ExtResource("6_4ye3g")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="CombatResultScene" parent="." instance=ExtResource("14_empf8")]
-position = Vector2(1420, 150)
-
-[node name="HealthBar" type="BoxContainer" parent="."]
-layout_mode = 0
-offset_left = 1420.0
-offset_top = 28.0
-offset_right = 1900.0
-offset_bottom = 124.0
-theme_override_constants/separation = 0
-
-[node name="HealthContainer1" parent="HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer2" parent="HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer3" parent="HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer4" parent="HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer5" parent="HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="IngredientSlotUI20" parent="." instance=ExtResource("3_t07eg")]
-layout_mode = 1
-offset_left = 1564.0
-offset_top = 914.0
-offset_right = -256.0
-offset_bottom = -66.0
-index = 20
-
-[node name="IngredientSlotUI21" parent="." instance=ExtResource("3_t07eg")]
-layout_mode = 1
-offset_left = 1693.0
-offset_top = 801.0
-offset_right = -127.0
-offset_bottom = -179.0
-index = 21
-
-[node name="IngredientSlotUI22" parent="." instance=ExtResource("3_t07eg")]
-layout_mode = 1
-offset_left = 1644.0
-offset_top = 664.0
-offset_right = -176.0
-offset_bottom = -316.0
-index = 22
-
-[node name="IngredientSlotUI23" parent="." instance=ExtResource("3_t07eg")]
-layout_mode = 1
-offset_left = 1479.0
-offset_top = 659.0
-offset_right = -341.0
-offset_bottom = -321.0
-index = 23
-
-[node name="IngredientSlotUI24" parent="." instance=ExtResource("3_t07eg")]
-layout_mode = 1
-offset_left = 1434.0
-offset_top = 800.0
-offset_right = -386.0
-offset_bottom = -180.0
-index = 24
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 588.0
-offset_right = 592.0
-offset_bottom = 1018.0
+offset_left = 55.0
+offset_top = 70.0
+offset_right = 595.0
+offset_bottom = 500.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3ww0f")
 
-[node name="GridContainer" type="GridContainer" parent="Panel"]
+[node name="GridContainer" type="GridContainer" parent="InventoryDragZone/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -186,321 +373,173 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 5
 
-[node name="IngredientSlotUI0" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI0" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 
-[node name="IngredientSlotUI1" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI1" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 1
 
-[node name="IngredientSlotUI2" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI2" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 2
 
-[node name="IngredientSlotUI3" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI3" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 3
 
-[node name="IngredientSlotUI4" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI4" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 4
 
-[node name="IngredientSlotUI5" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI5" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 5
 
-[node name="IngredientSlotUI6" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI6" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 6
 
-[node name="IngredientSlotUI7" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI7" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 7
 
-[node name="IngredientSlotUI8" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI8" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 8
 
-[node name="IngredientSlotUI9" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI9" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 9
 
-[node name="IngredientSlotUI10" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI10" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 10
 
-[node name="IngredientSlotUI11" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI11" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 11
 
-[node name="IngredientSlotUI12" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI12" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 12
 
-[node name="IngredientSlotUI13" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI13" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 13
 
-[node name="IngredientSlotUI14" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI14" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 14
 
-[node name="IngredientSlotUI15" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI15" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 15
 
-[node name="IngredientSlotUI16" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI16" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 16
 
-[node name="IngredientSlotUI17" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI17" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 17
 
-[node name="IngredientSlotUI18" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI18" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 18
 
-[node name="IngredientSlotUI19" parent="Panel/GridContainer" instance=ExtResource("3_t07eg")]
+[node name="IngredientSlotUI19" parent="InventoryDragZone/Panel/GridContainer" instance=ExtResource("3_t07eg")]
 layout_mode = 2
 index = 19
 
-[node name="SummoningStatsUI" parent="." instance=ExtResource("8_nubsx")]
-layout_mode = 0
+[node name="LogbookDragZone" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="LogbookScene" parent="LogbookDragZone" instance=ExtResource("1_uh3t4")]
+position = Vector2(1920, 0)
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="CardSpawnerUI" parent="GUI" instance=ExtResource("11_mi3xe")]
+position = Vector2(8, 8)
+
+[node name="AttributesZone" type="Node2D" parent="GUI"]
+
+[node name="AttributesBG" type="TextureRect" parent="GUI/AttributesZone"]
+offset_left = 689.0
+offset_top = 845.0
+offset_right = 1249.0
+offset_bottom = 1155.0
+texture = ExtResource("6_4ye3g")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SummoningStatsUI" parent="GUI/AttributesZone" instance=ExtResource("8_nubsx")]
 offset_left = 782.0
 offset_top = 888.0
 offset_right = 1182.0
 offset_bottom = 1078.0
 
-[node name="BossQueueManager" parent="." node_paths=PackedStringArray("CardContainer") instance=ExtResource("13_5t2sa")]
-CardContainer = NodePath("../CardSpawnerUI")
+[node name="CombatResultScene" parent="GUI" instance=ExtResource("14_empf8")]
+position = Vector2(1420, 150)
 
-[node name="CombatZone" parent="." instance=ExtResource("13_56sqa")]
-position = Vector2(552, 8)
+[node name="HealthBarZone" type="Node2D" parent="GUI"]
 
-[node name="ArcaneFocus" parent="." instance=ExtResource("2_emx3q")]
-layout_mode = 1
-offset_left = -122.0
-offset_top = -185.0
-offset_right = 478.0
-offset_bottom = 415.0
-scale = Vector2(0.75, 0.75)
+[node name="HealthBar" type="BoxContainer" parent="GUI/HealthBarZone"]
+offset_left = 1420.0
+offset_top = 28.0
+offset_right = 1900.0
+offset_bottom = 124.0
+theme_override_constants/separation = 0
 
-[node name="IngredientSlotUI25" parent="." instance=ExtResource("3_t07eg")]
-layout_mode = 1
-offset_left = 938.0
-offset_top = 705.0
-offset_right = -882.0
-offset_bottom = -275.0
-index = 25
+[node name="HealthContainer1" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
 
-[node name="Control" type="Control" parent="IngredientSlotUI25"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="HealthContainer2" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
 
-[node name="CandleManager" type="Node" parent="." node_paths=PackedStringArray("candleTextures")]
+[node name="HealthContainer3" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="HealthContainer4" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="HealthContainer5" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="FightScene" parent="GUI" instance=ExtResource("18_bq8qp")]
+
+[node name="Systems" type="Node" parent="."]
+
+[node name="BossQueueManager" parent="Systems" node_paths=PackedStringArray("CardContainer") instance=ExtResource("13_5t2sa")]
+CardContainer = NodePath("../../GUI/CardSpawnerUI")
+
+[node name="CandleManager" type="Node" parent="Systems" node_paths=PackedStringArray("candleTextures")]
 script = ExtResource("4_sr65v")
-candleTextures = [NodePath("../Candles/Candle0/CandleImg"), NodePath("../Candles/Candle1/CandleImg"), NodePath("../Candles/Candle2/CandleImg"), NodePath("../Candles/Candle3/CandleImg"), NodePath("../Candles/Candle4/CandleImg")]
+candleTextures = [NodePath("../../PentagramDragZone/Candles/Candle0/CandleImg"), NodePath("../../PentagramDragZone/Candles/Candle1/CandleImg"), NodePath("../../PentagramDragZone/Candles/Candle2/CandleImg"), NodePath("../../PentagramDragZone/Candles/Candle3/CandleImg"), NodePath("../../PentagramDragZone/Candles/Candle4/CandleImg")]
 litCandle = ExtResource("6_thiw4")
 litCandleHover = ExtResource("14_agsfo")
 unlitCandle = ExtResource("8_bp7fh")
 unlitCandleHover = ExtResource("16_wcw50")
 
-[node name="Candles" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 1853.0
-offset_top = 761.0
-offset_right = 1893.0
-offset_bottom = 801.0
+[node name="InventoryService" parent="Systems" node_paths=PackedStringArray("InventorySlots") instance=ExtResource("7_cohdj")]
+InventorySlots = [NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI0"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI1"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI2"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI3"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI4"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI5"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI6"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI7"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI8"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI9"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI10"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI11"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI12"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI13"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI14"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI15"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI16"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI17"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI18"), NodePath("../../InventoryDragZone/Panel/GridContainer/IngredientSlotUI19"), NodePath("../../PentagramDragZone/IngredientSlotUI20"), NodePath("../../PentagramDragZone/IngredientSlotUI21"), NodePath("../../PentagramDragZone/IngredientSlotUI22"), NodePath("../../PentagramDragZone/IngredientSlotUI23"), NodePath("../../PentagramDragZone/IngredientSlotUI24"), NodePath("../../ArcaneTableDragZone/IngredientSlotUI25")]
 
-[node name="Candle0" type="Control" parent="Candles"]
-anchors_preset = 0
-offset_left = -390.0
-offset_top = 212.0
-offset_right = -342.0
-offset_bottom = 310.0
-
-[node name="CandleImg" type="TextureRect" parent="Candles/Candle0"]
-modulate = Color(1.2, 1, 1, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -160.0
-offset_right = 89.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_bp7fh")
-expand_mode = 1
-
-[node name="TextureButton" type="TextureButton" parent="Candles/Candle0"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = -65.0
-offset_right = 94.0
-offset_bottom = 55.0
-texture_normal = ExtResource("10_xx2s1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Candle1" type="Control" parent="Candles"]
-anchors_preset = 0
-offset_left = -150.0
-offset_top = 230.0
-offset_right = -102.0
-offset_bottom = 328.0
-
-[node name="CandleImg" type="TextureRect" parent="Candles/Candle1"]
-modulate = Color(1.2, 1, 1, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -160.0
-offset_right = 89.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_bp7fh")
-expand_mode = 1
-
-[node name="TextureButton" type="TextureButton" parent="Candles/Candle1"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = -65.0
-offset_right = 94.0
-offset_bottom = 55.0
-texture_normal = ExtResource("10_xx2s1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Candle2" type="Control" parent="Candles"]
-anchors_preset = 0
-offset_left = -48.0
-offset_top = -33.0
-offset_bottom = 65.0
-
-[node name="CandleImg" type="TextureRect" parent="Candles/Candle2"]
-modulate = Color(1.2, 1, 1, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -160.0
-offset_right = 89.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_bp7fh")
-expand_mode = 1
-
-[node name="TextureButton" type="TextureButton" parent="Candles/Candle2"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = -65.0
-offset_right = 94.0
-offset_bottom = 55.0
-texture_normal = ExtResource("10_xx2s1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Candle3" type="Control" parent="Candles"]
-anchors_preset = 0
-offset_left = -278.0
-offset_top = -168.0
-offset_right = -230.0
-offset_bottom = -70.0
-
-[node name="CandleImg" type="TextureRect" parent="Candles/Candle3"]
-modulate = Color(1.2, 1, 1, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -160.0
-offset_right = 89.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_bp7fh")
-expand_mode = 1
-
-[node name="TextureButton" type="TextureButton" parent="Candles/Candle3"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = -65.0
-offset_right = 94.0
-offset_bottom = 55.0
-texture_normal = ExtResource("10_xx2s1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Candle4" type="Control" parent="Candles"]
-anchors_preset = 0
-offset_left = -483.0
-offset_top = -23.0
-offset_right = -435.0
-offset_bottom = 75.0
-
-[node name="CandleImg" type="TextureRect" parent="Candles/Candle4"]
-modulate = Color(1.2, 1, 1, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -160.0
-offset_right = 89.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_bp7fh")
-expand_mode = 1
-
-[node name="TextureButton" type="TextureButton" parent="Candles/Candle4"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = -65.0
-offset_right = 94.0
-offset_bottom = 55.0
-texture_normal = ExtResource("10_xx2s1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="CardSpawnerUI" parent="." instance=ExtResource("11_mi3xe")]
-position = Vector2(8, 8)
-
-[node name="FightScene" parent="." instance=ExtResource("18_bq8qp")]
-
-[node name="InventoryService" parent="." node_paths=PackedStringArray("InventorySlots") instance=ExtResource("7_cohdj")]
-InventorySlots = [NodePath("../Panel/GridContainer/IngredientSlotUI0"), NodePath("../Panel/GridContainer/IngredientSlotUI1"), NodePath("../Panel/GridContainer/IngredientSlotUI2"), NodePath("../Panel/GridContainer/IngredientSlotUI3"), NodePath("../Panel/GridContainer/IngredientSlotUI4"), NodePath("../Panel/GridContainer/IngredientSlotUI5"), NodePath("../Panel/GridContainer/IngredientSlotUI6"), NodePath("../Panel/GridContainer/IngredientSlotUI7"), NodePath("../Panel/GridContainer/IngredientSlotUI8"), NodePath("../Panel/GridContainer/IngredientSlotUI9"), NodePath("../Panel/GridContainer/IngredientSlotUI10"), NodePath("../Panel/GridContainer/IngredientSlotUI11"), NodePath("../Panel/GridContainer/IngredientSlotUI12"), NodePath("../Panel/GridContainer/IngredientSlotUI13"), NodePath("../Panel/GridContainer/IngredientSlotUI14"), NodePath("../Panel/GridContainer/IngredientSlotUI15"), NodePath("../Panel/GridContainer/IngredientSlotUI16"), NodePath("../Panel/GridContainer/IngredientSlotUI17"), NodePath("../Panel/GridContainer/IngredientSlotUI18"), NodePath("../Panel/GridContainer/IngredientSlotUI19"), NodePath("../IngredientSlotUI20"), NodePath("../IngredientSlotUI21"), NodePath("../IngredientSlotUI22"), NodePath("../IngredientSlotUI23"), NodePath("../IngredientSlotUI24"), NodePath("../IngredientSlotUI25")]
-
-[node name="SceneLoadedWitness" type="Node" parent="."]
+[node name="SceneLoadedWitness" type="Node" parent="Systems"]
 script = ExtResource("12_e7igc")
 
-[connection signal="mouse_entered" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, true]]
-[connection signal="mouse_exited" from="Candles/Candle0/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [0, false]]
-[connection signal="pressed" from="Candles/Candle0/TextureButton" to="CandleManager" method="ToggleCandle" binds= [0]]
-[connection signal="mouse_entered" from="Candles/Candle1/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [1, true]]
-[connection signal="mouse_exited" from="Candles/Candle1/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [1, false]]
-[connection signal="pressed" from="Candles/Candle1/TextureButton" to="CandleManager" method="ToggleCandle" binds= [1]]
-[connection signal="mouse_entered" from="Candles/Candle2/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [2, true]]
-[connection signal="mouse_exited" from="Candles/Candle2/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [2, false]]
-[connection signal="pressed" from="Candles/Candle2/TextureButton" to="CandleManager" method="ToggleCandle" binds= [2]]
-[connection signal="mouse_entered" from="Candles/Candle3/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [3, true]]
-[connection signal="mouse_exited" from="Candles/Candle3/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [3, false]]
-[connection signal="pressed" from="Candles/Candle3/TextureButton" to="CandleManager" method="ToggleCandle" binds= [3]]
-[connection signal="mouse_entered" from="Candles/Candle4/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [4, true]]
-[connection signal="mouse_exited" from="Candles/Candle4/TextureButton" to="CandleManager" method="ChangeHoverCandle" binds= [4, false]]
-[connection signal="pressed" from="Candles/Candle4/TextureButton" to="CandleManager" method="ToggleCandle" binds= [4]]
+[connection signal="mouse_entered" from="PentagramDragZone/Candles/Candle0/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [0, true]]
+[connection signal="mouse_exited" from="PentagramDragZone/Candles/Candle0/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [0, false]]
+[connection signal="pressed" from="PentagramDragZone/Candles/Candle0/TextureButton" to="Systems/CandleManager" method="ToggleCandle" binds= [0]]
+[connection signal="mouse_entered" from="PentagramDragZone/Candles/Candle1/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [1, true]]
+[connection signal="mouse_exited" from="PentagramDragZone/Candles/Candle1/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [1, false]]
+[connection signal="pressed" from="PentagramDragZone/Candles/Candle1/TextureButton" to="Systems/CandleManager" method="ToggleCandle" binds= [1]]
+[connection signal="mouse_entered" from="PentagramDragZone/Candles/Candle2/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [2, true]]
+[connection signal="mouse_exited" from="PentagramDragZone/Candles/Candle2/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [2, false]]
+[connection signal="pressed" from="PentagramDragZone/Candles/Candle2/TextureButton" to="Systems/CandleManager" method="ToggleCandle" binds= [2]]
+[connection signal="mouse_entered" from="PentagramDragZone/Candles/Candle3/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [3, true]]
+[connection signal="mouse_exited" from="PentagramDragZone/Candles/Candle3/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [3, false]]
+[connection signal="pressed" from="PentagramDragZone/Candles/Candle3/TextureButton" to="Systems/CandleManager" method="ToggleCandle" binds= [3]]
+[connection signal="mouse_entered" from="PentagramDragZone/Candles/Candle4/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [4, true]]
+[connection signal="mouse_exited" from="PentagramDragZone/Candles/Candle4/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [4, false]]
+[connection signal="pressed" from="PentagramDragZone/Candles/Candle4/TextureButton" to="Systems/CandleManager" method="ToggleCandle" binds= [4]]
