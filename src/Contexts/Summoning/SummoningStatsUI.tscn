@@ -43,8 +43,8 @@ theme_override_constants/separation = 14
 [node name="EmotionBar" parent="VBoxContainer" instance=ExtResource("1_24ueg")]
 layout_mode = 2
 
-[node name="SpeciesBar" parent="VBoxContainer" instance=ExtResource("1_24ueg")]
+[node name="ElementBar" parent="VBoxContainer" instance=ExtResource("1_24ueg")]
 layout_mode = 2
 
-[node name="ElementBar" parent="VBoxContainer" instance=ExtResource("1_24ueg")]
+[node name="SpeciesBar" parent="VBoxContainer" instance=ExtResource("1_24ueg")]
 layout_mode = 2
