@@ -452,12 +452,6 @@ index = 18
 layout_mode = 2
 index = 19
 
-[node name="LogbookDragZone" type="Control" parent="."]
-anchors_preset = 0
-
-[node name="LogbookScene" parent="LogbookDragZone" instance=ExtResource("1_uh3t4")]
-position = Vector2(1920, 0)
-
 [node name="GUI" type="Node2D" parent="."]
 
 [node name="CardSpawnerUI" parent="GUI" instance=ExtResource("11_mi3xe")]
@@ -508,6 +502,17 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="FightScene" parent="GUI" instance=ExtResource("18_bq8qp")]
+
+[node name="LogbookDragZone" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1829.0
+offset_top = 983.0
+offset_right = 3518.0
+offset_bottom = 1887.0
+script = ExtResource("3_wvvf0")
+
+[node name="LogbookScene" parent="LogbookDragZone" instance=ExtResource("1_uh3t4")]
+position = Vector2(-118, -93)
 
 [node name="Systems" type="Node" parent="."]
 
