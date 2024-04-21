@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=24 format=3 uid="uid://gnynltn8oj4w"]
 
 [ext_resource type="Texture2D" uid="uid://dphr7baavvpdl" path="res://Assets/DesktopAssets/Asset_Background.png" id="2_7eihi"]
 [ext_resource type="Texture2D" uid="uid://pileqeuf38pn" path="res://Assets/DesktopAssets/Asset_Symbole_Simplified.png" id="2_ae42r"]
@@ -9,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://crwa5q7qiu0wl" path="res://Assets/DesktopAssets/Asset_Box.png" id="5_r4fxm"]
 [ext_resource type="Texture2D" uid="uid://c86tc8gh55wm7" path="res://Assets/DesktopAssets/Asset_Feuille.png" id="6_4ye3g"]
 [ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/candle_lit.png" id="6_thiw4"]
+[ext_resource type="PackedScene" uid="uid://psa1oi3hy3f1" path="res://Contexts/Combat/HealthBar/health_container.tscn" id="7_7eyeh"]
 [ext_resource type="PackedScene" uid="uid://8fi7m8pevqq3" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
-[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/Icons/None.png" id="10_xx2s1"]
+[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="10_xx2s1"]
 [ext_resource type="PackedScene" uid="uid://dl70lx0ltf2wi" path="res://Contexts/Summoning/CardSpawnerUI.tscn" id="11_mi3xe"]
 [ext_resource type="Script" path="res://Scenes/SceneLoadedWitness.cs" id="12_e7igc"]
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="13_5t2sa"]
@@ -67,32 +68,58 @@ stretch_mode = 5
 
 [node name="ArcaneTable" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 665.0
-offset_top = 453.0
-offset_right = 1435.0
-offset_bottom = 1104.0
+offset_left = 657.0
+offset_top = 465.0
+offset_right = 1427.0
+offset_bottom = 1116.0
 scale = Vector2(0.880362, 0.880362)
 texture = ExtResource("4_n5rbe")
 stretch_mode = 3
 
 [node name="Inventory" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -136.0
-offset_top = 496.0
-offset_right = 695.81
-offset_bottom = 1190.6
+offset_left = -129.0
+offset_top = 479.0
+offset_right = 702.81
+offset_bottom = 1173.6
 texture = ExtResource("5_r4fxm")
 stretch_mode = 3
 
 [node name="AttributesBG" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 698.0
+offset_left = 689.0
 offset_top = 845.0
-offset_right = 1258.0
+offset_right = 1249.0
 offset_bottom = 1155.0
 texture = ExtResource("6_4ye3g")
 expand_mode = 2
 stretch_mode = 5
+
+[node name="CombatResultScene" parent="." instance=ExtResource("14_empf8")]
+position = Vector2(1420, 150)
+
+[node name="HealthBar" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 28.0
+offset_right = 1900.0
+offset_bottom = 124.0
+theme_override_constants/separation = 0
+
+[node name="HealthContainer1" parent="HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="HealthContainer2" parent="HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="HealthContainer3" parent="HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="HealthContainer4" parent="HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
+
+[node name="HealthContainer5" parent="HealthBar" instance=ExtResource("7_7eyeh")]
+layout_mode = 2
 
 [node name="IngredientSlotUI20" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
@@ -136,10 +163,10 @@ index = 24
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 605.0
-offset_right = 585.0
-offset_bottom = 1035.0
+offset_left = 52.0
+offset_top = 588.0
+offset_right = 592.0
+offset_bottom = 1018.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3ww0f")
 
 [node name="GridContainer" type="GridContainer" parent="Panel"]
@@ -240,31 +267,31 @@ index = 19
 
 [node name="SummoningStatsUI" parent="." instance=ExtResource("8_nubsx")]
 layout_mode = 0
-offset_left = 791.0
+offset_left = 782.0
 offset_top = 888.0
-offset_right = 1191.0
+offset_right = 1182.0
 offset_bottom = 1078.0
 
 [node name="BossQueueManager" parent="." node_paths=PackedStringArray("CardContainer") instance=ExtResource("13_5t2sa")]
 CardContainer = NodePath("../CardSpawnerUI")
 
 [node name="CombatZone" parent="." instance=ExtResource("13_56sqa")]
-position = Vector2(562, 6)
+position = Vector2(552, 8)
 
 [node name="ArcaneFocus" parent="." instance=ExtResource("2_emx3q")]
 layout_mode = 1
-offset_left = -114.0
-offset_top = -197.0
-offset_right = 486.0
-offset_bottom = 403.0
+offset_left = -122.0
+offset_top = -185.0
+offset_right = 478.0
+offset_bottom = 415.0
 scale = Vector2(0.75, 0.75)
 
 [node name="IngredientSlotUI25" parent="." instance=ExtResource("3_t07eg")]
 layout_mode = 1
-offset_left = 946.0
-offset_top = 693.0
-offset_right = -874.0
-offset_bottom = -287.0
+offset_left = 938.0
+offset_top = 705.0
+offset_right = -882.0
+offset_bottom = -275.0
 index = 25
 
 [node name="Control" type="Control" parent="IngredientSlotUI25"]
@@ -452,9 +479,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="CardSpawnerUI" parent="." instance=ExtResource("11_mi3xe")]
-
-[node name="CombatResultScene" parent="." instance=ExtResource("14_empf8")]
-position = Vector2(1451, 12)
+position = Vector2(8, 8)
 
 [node name="FightScene" parent="." instance=ExtResource("18_bq8qp")]
 

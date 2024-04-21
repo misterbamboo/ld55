@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://psa1oi3hy3f1"]
+
+[ext_resource type="Texture2D" uid="uid://bn8dattgi2dcq" path="res://Assets/icons/villager_heatlhy.png" id="1_uvqec"]
+[ext_resource type="Texture2D" uid="uid://cgguy1mbm3o1e" path="res://Assets/icons/villager_hurt.png" id="2_gs0p2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dumfx"]
+
+[node name="HealthContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(96, 96)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dumfx")
+
+[node name="Healthy" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_uvqec")
+expand_mode = 1
+
+[node name="Hurt" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture = ExtResource("2_gs0p2")
+expand_mode = 1
