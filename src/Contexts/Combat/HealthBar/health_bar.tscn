@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://csjj5imbnfk77"]
+
+[ext_resource type="PackedScene" uid="uid://psa1oi3hy3f1" path="res://Contexts/Combat/HealthBar/health_container.tscn" id="1_t4k82"]
+
+[node name="HealthBar" type="BoxContainer"]
+offset_left = 1420.0
+offset_top = 28.0
+offset_right = 1900.0
+offset_bottom = 124.0
+theme_override_constants/separation = 0
+
+[node name="HealthContainer1" parent="." instance=ExtResource("1_t4k82")]
+layout_mode = 2
+
+[node name="HealthContainer2" parent="." instance=ExtResource("1_t4k82")]
+layout_mode = 2
+
+[node name="HealthContainer3" parent="." instance=ExtResource("1_t4k82")]
+layout_mode = 2
+
+[node name="HealthContainer4" parent="." instance=ExtResource("1_t4k82")]
+layout_mode = 2
+
+[node name="HealthContainer5" parent="." instance=ExtResource("1_t4k82")]
+layout_mode = 2

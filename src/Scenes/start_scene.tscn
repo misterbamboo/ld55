@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://gnynltn8oj4w"]
+[gd_scene load_steps=28 format=3 uid="uid://gnynltn8oj4w"]
 
 [ext_resource type="PackedScene" uid="uid://1fp5cnwec8rs" path="res://Contexts/Hints/Logbook/logbook_scene.tscn" id="1_uh3t4"]
 [ext_resource type="Texture2D" uid="uid://dphr7baavvpdl" path="res://Assets/DesktopAssets/Asset_Background.png" id="2_7eihi"]
@@ -11,19 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://crwa5q7qiu0wl" path="res://Assets/DesktopAssets/Asset_Box.png" id="5_r4fxm"]
 [ext_resource type="Texture2D" uid="uid://c86tc8gh55wm7" path="res://Assets/DesktopAssets/Asset_Feuille.png" id="6_4ye3g"]
 [ext_resource type="Texture2D" uid="uid://c1ncqbwtdgpre" path="res://GameManager/candles/candle_lit.png" id="6_thiw4"]
-[ext_resource type="PackedScene" uid="uid://psa1oi3hy3f1" path="res://Contexts/Combat/HealthBar/health_container.tscn" id="7_7eyeh"]
 [ext_resource type="PackedScene" uid="uid://8fi7m8pevqq3" path="res://GameManager/InventoryService.tscn" id="7_cohdj"]
 [ext_resource type="Texture2D" uid="uid://dr4nakwsxx0ts" path="res://GameManager/candles/Candle_Unlit.png" id="8_bp7fh"]
 [ext_resource type="PackedScene" uid="uid://2p7mktjrd7ag" path="res://Contexts/Summoning/SummoningStatsUI.tscn" id="8_nubsx"]
-[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/Icons/None.png" id="10_xx2s1"]
+[ext_resource type="Texture2D" uid="uid://cc8mtpsgt51tq" path="res://Assets/icons/None.png" id="10_xx2s1"]
 [ext_resource type="PackedScene" uid="uid://dl70lx0ltf2wi" path="res://Contexts/Summoning/CardSpawnerUI.tscn" id="11_mi3xe"]
 [ext_resource type="Script" path="res://Scenes/SceneLoadedWitness.cs" id="12_e7igc"]
 [ext_resource type="PackedScene" uid="uid://0u23ffo6lfqg" path="res://Contexts/Combat/BossQueue/boss_queue_manager.tscn" id="13_5t2sa"]
 [ext_resource type="PackedScene" uid="uid://dmgne0x5bexws" path="res://Contexts/Combat/CombatZone/combat_zone.tscn" id="13_56sqa"]
 [ext_resource type="Texture2D" uid="uid://cqadmcqr81l3h" path="res://GameManager/candles/Candle_Lit_Selected.png" id="14_agsfo"]
 [ext_resource type="PackedScene" uid="uid://esf1ygalb74e" path="res://Contexts/Combat/CombatResult/combat_result_scene.tscn" id="14_empf8"]
+[ext_resource type="PackedScene" uid="uid://csjj5imbnfk77" path="res://Contexts/Combat/HealthBar/health_bar.tscn" id="15_52x35"]
 [ext_resource type="Texture2D" uid="uid://kdsmnasa043" path="res://GameManager/candles/Candle_Unlit_Selected.png" id="16_wcw50"]
 [ext_resource type="PackedScene" uid="uid://cukq1a2uy1jpa" path="res://Contexts/Combat/Fight/fight_scene.tscn" id="18_bq8qp"]
+[ext_resource type="PackedScene" uid="uid://csikrpefp4px7" path="res://Assets/UI/screen_roundover.tscn" id="25_5piqx"]
+[ext_resource type="PackedScene" uid="uid://q1klv0yhfldh" path="res://Assets/UI/screen_gameover.tscn" id="26_asfox"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ww0f"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -479,29 +481,12 @@ position = Vector2(1420, 150)
 
 [node name="HealthBarZone" type="Node2D" parent="GUI"]
 
-[node name="HealthBar" type="BoxContainer" parent="GUI/HealthBarZone"]
-offset_left = 1420.0
-offset_top = 28.0
-offset_right = 1900.0
-offset_bottom = 124.0
-theme_override_constants/separation = 0
-
-[node name="HealthContainer1" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer2" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer3" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer4" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
-
-[node name="HealthContainer5" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
-layout_mode = 2
+[node name="HealthBar" parent="GUI/HealthBarZone" instance=ExtResource("15_52x35")]
+offset_left = 1421.0
+offset_right = 1901.0
 
 [node name="FightScene" parent="GUI" instance=ExtResource("18_bq8qp")]
+visible = false
 
 [node name="LogbookDragZone" type="Control" parent="."]
 anchors_preset = 0
@@ -532,6 +517,14 @@ InventorySlots = [NodePath("../../InventoryDragZone/Panel/GridContainer/Ingredie
 
 [node name="SceneLoadedWitness" type="Node" parent="Systems"]
 script = ExtResource("12_e7igc")
+
+[node name="ScreenRoundover" parent="." instance=ExtResource("25_5piqx")]
+visible = false
+layout_mode = 1
+
+[node name="ScreenGameover" parent="." instance=ExtResource("26_asfox")]
+visible = false
+layout_mode = 1
 
 [connection signal="mouse_entered" from="PentagramDragZone/Candles/Candle0/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [0, true]]
 [connection signal="mouse_exited" from="PentagramDragZone/Candles/Candle0/TextureButton" to="Systems/CandleManager" method="ChangeHoverCandle" binds= [0, false]]
