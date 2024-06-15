@@ -23,6 +23,12 @@ public partial class CombatZoneUI : Node2D
 
     private void DeskManager_OnFightCompleted(BossFight bossFigth)
     {
+        if (PlayerCard == null || EnemyCard == null)
+        {
+            GD.PrintErr("Player card and enemyCard not supposed to be empty in " + nameof(CombatZoneUI));
+            return;
+        }
+
         PlayerCard.QueueFree();
         EnemyCard.QueueFree();
         PlayerCard = null;

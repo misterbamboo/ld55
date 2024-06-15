@@ -58,8 +58,9 @@ offset_bottom = 1080.0
 texture = ExtResource("2_7eihi")
 stretch_mode = 3
 
-[node name="CombatZone" parent="Background" instance=ExtResource("13_56sqa")]
+[node name="CombatZone" parent="Background" node_paths=PackedStringArray("CombatSummonZoneUI") instance=ExtResource("13_56sqa")]
 position = Vector2(552, 8)
+CombatSummonZoneUI = NodePath("Control")
 
 [node name="PentagramDragZone" type="Control" parent="."]
 anchors_preset = 0
@@ -474,8 +475,9 @@ offset_top = 888.0
 offset_right = 1182.0
 offset_bottom = 1078.0
 
-[node name="CombatResultScene" parent="GUI" instance=ExtResource("14_empf8")]
+[node name="CombatResultScene" parent="GUI" node_paths=PackedStringArray("RichTextLabel") instance=ExtResource("14_empf8")]
 position = Vector2(1420, 150)
+RichTextLabel = NodePath("PanelContainer/RichTextLabel")
 
 [node name="HealthBarZone" type="Node2D" parent="GUI"]
 
@@ -501,7 +503,10 @@ layout_mode = 2
 [node name="HealthContainer5" parent="GUI/HealthBarZone/HealthBar" instance=ExtResource("7_7eyeh")]
 layout_mode = 2
 
-[node name="FightScene" parent="GUI" instance=ExtResource("18_bq8qp")]
+[node name="FightScene" parent="GUI" node_paths=PackedStringArray("playerCard", "enemyCard", "middleHitPoint") instance=ExtResource("18_bq8qp")]
+playerCard = NodePath("Control/PlayerMonsterCard")
+enemyCard = NodePath("Control/EnemyMonsterCard")
+middleHitPoint = NodePath("Control/Node2D_MiddleHitPoint")
 
 [node name="LogbookDragZone" type="Control" parent="."]
 anchors_preset = 0
@@ -511,8 +516,10 @@ offset_right = 3518.0
 offset_bottom = 1887.0
 script = ExtResource("3_wvvf0")
 
-[node name="LogbookScene" parent="LogbookDragZone" instance=ExtResource("1_uh3t4")]
+[node name="LogbookScene" parent="LogbookDragZone" node_paths=PackedStringArray("logbookTextLabel", "arrowsParentNodes") instance=ExtResource("1_uh3t4")]
 position = Vector2(-118, -93)
+logbookTextLabel = NodePath("CombatLogs/ScrollContainer/Control/RichTextLabel")
+arrowsParentNodes = [NodePath("ElementsHints"), NodePath("EmotionHints"), NodePath("SpeciesHints")]
 
 [node name="Systems" type="Node" parent="."]
 

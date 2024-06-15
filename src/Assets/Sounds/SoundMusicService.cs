@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -5,6 +6,8 @@ using Godot;
 
 public partial class SoundMusicService : Node
 {
+    private const float DefaultPercentage = 0.01f;
+
     private const string ArcanicFocusSlide = "ArcanicFocusSlide";
     private const string CandleLit = "CandleLit";
     private const string CardMoved = "CardMoved";
@@ -29,6 +32,8 @@ public partial class SoundMusicService : Node
 
     public override void _Ready()
     {
+        AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), 0);
+
         foreach (var resourceMusics in ResourceMusics)
         {
             string key = ExtractKey(resourceMusics);
@@ -136,7 +141,7 @@ public partial class SoundMusicService : Node
         TryPlaying(Hit);
     }
 
-    private void TryPlaying(string musicKey)
+    private void TryPlaying(string musicKey, float percentage = DefaultPercentage)
     {
         var availableChannel = GetAvailableChannel();
         if (availableChannel == null)
@@ -145,7 +150,7 @@ public partial class SoundMusicService : Node
             return;
         }
 
-        PlayOnChannel(musicKey, availableChannel);
+        PlayOnChannel(musicKey, availableChannel, percentage);
     }
 
     private AudioStreamPlayer? GetAvailableChannel()
@@ -153,9 +158,18 @@ public partial class SoundMusicService : Node
         return musicPlayers.Where(p => !p.Playing).FirstOrDefault();
     }
 
-    private void PlayOnChannel(string musicKey, AudioStreamPlayer availableChannel)
+    private void PlayOnChannel(string musicKey, AudioStreamPlayer availableChannel, double percentage)
     {
         availableChannel.Stream = Musics[musicKey];
+        availableChannel.VolumeDb = (float)ConvertPercentToDecibels(percentage);
         availableChannel.Play();
+    }
+
+    private double ConvertPercentToDecibels(double percentage)
+    {
+        var value = percentage * 100;
+        double scale = 20;
+        double divisor = 50;
+        return scale * Math.Log10(value / divisor);
     }
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7tvar4s8ch8"
-path="res://.godot/imported/Arrow_Ice_water.png-6bf2ad4ea4885613f653fb5044a552a2.ctex"
+uid="uid://ckl7ywd8d1u82"
+path="res://.godot/imported/Arrow_Ice_Water.png-3842fd70c3e138484dc4c5c5c0718e15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Logbook/Elements_Circle/Arrow_Ice_water.png"
-dest_files=["res://.godot/imported/Arrow_Ice_water.png-6bf2ad4ea4885613f653fb5044a552a2.ctex"]
+source_file="res://Assets/Logbook/Elements_Circle/Arrow_Ice_Water.png"
+dest_files=["res://.godot/imported/Arrow_Ice_Water.png-3842fd70c3e138484dc4c5c5c0718e15.ctex"]
 
 [params]
 

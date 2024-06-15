@@ -35,6 +35,8 @@ public partial class MainMenu : Control
 		monster1Face = GetNode<Sprite2D>("Monster1/Monster1Face");
 		monster2Body = GetNode<Sprite2D>("Monster2/Monster2Body");
 		monster2Face = GetNode<Sprite2D>("Monster2/Monster2Face");
+
+		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -113,8 +115,8 @@ public partial class MainMenu : Control
 
 	public void PressPlay()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/start_scene.tscn");
-	}
+		GetTree().ChangeSceneToFile("res://Scenes/TutorialScreen/tutorial_scene.tscn");
+    }
 
     public void PressCredits()
     {

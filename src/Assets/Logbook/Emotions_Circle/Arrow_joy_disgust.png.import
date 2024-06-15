@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l50dsln7lv0h"
-path="res://.godot/imported/Arrow_joy_disgust.png-d2e63e1ebe94adc1884861e7e49ec870.ctex"
+uid="uid://8ruapt65f6x7"
+path="res://.godot/imported/Arrow_Joy_Disgust.png-75c39a544a5a7ead8bf2df2c404c32e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Logbook/Emotions_Circle/Arrow_joy_disgust.png"
-dest_files=["res://.godot/imported/Arrow_joy_disgust.png-d2e63e1ebe94adc1884861e7e49ec870.ctex"]
+source_file="res://Assets/Logbook/Emotions_Circle/Arrow_Joy_Disgust.png"
+dest_files=["res://.godot/imported/Arrow_Joy_Disgust.png-75c39a544a5a7ead8bf2df2c404c32e4.ctex"]
 
 [params]
 

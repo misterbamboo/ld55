@@ -124,4 +124,19 @@ public partial class GameDataService : Node, IHintProvider
 
         return $"{emotion.MonsterNaming} {element.MonsterNaming} {species.MonsterNaming}";
     }
+
+    internal string GetSpecName(SpecTypes spec, int index)
+    {
+        switch (spec)
+        {
+            case SpecTypes.Emotion:
+                return GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Emotion, index)).SpecNaming;
+            case SpecTypes.Element:
+                return GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Element, index)).SpecNaming;
+            case SpecTypes.Species:
+                return GetSpecDefinition(SpecDefinition.CreateId(SpecTypes.Species, index)).SpecNaming;
+            default:
+                return "<spec not found>";
+        }
+    }
 }

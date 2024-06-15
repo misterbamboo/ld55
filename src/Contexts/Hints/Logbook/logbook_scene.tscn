@@ -1,78 +1,208 @@
-[gd_scene load_steps=13 format=3 uid="uid://1fp5cnwec8rs"]
+[gd_scene load_steps=49 format=3 uid="uid://1fp5cnwec8rs"]
 
 [ext_resource type="Script" path="res://Contexts/Hints/Logbook/LogbookSceneUI.cs" id="1_p0p5x"]
 [ext_resource type="Texture2D" uid="uid://dqd4sxm46i7h" path="res://Assets/Logbook/Background_Book.png" id="1_sq2lq"]
 [ext_resource type="Texture2D" uid="uid://dag6e25etja0c" path="res://Assets/Logbook/Elements_Circle/Elements_Earth.png" id="2_4m5sg"]
-[ext_resource type="Texture2D" uid="uid://dvft7t7gux0h" path="res://Assets/Logbook/Elements_Circle/Arrow_Ligthing_Ice.png" id="3_mkc88"]
+[ext_resource type="Texture2D" uid="uid://342ifqob3cjs" path="res://Assets/Logbook/Elements_Circle/Arrow_Earth_Fire.png" id="3_li3gw"]
+[ext_resource type="Texture2D" uid="uid://cakca83t4mcu3" path="res://Assets/Logbook/Elements_Circle/Arrow_Earth_Lightning.png" id="4_txin3"]
 [ext_resource type="Texture2D" uid="uid://d2ojurntxicql" path="res://Assets/Logbook/Elements_Circle/Elements_Ice.png" id="4_wp43g"]
-[ext_resource type="Texture2D" uid="uid://bglgco64svsxl" path="res://Assets/Logbook/Emotions_Circle/Arrow_fear_joy.png" id="5_1jdee"]
-[ext_resource type="Texture2D" uid="uid://b7da0x1gllne5" path="res://Assets/Logbook/Emotions_Circle/Feelings_FaceFear.png" id="7_lglmw"]
-[ext_resource type="Texture2D" uid="uid://dvmixf4acjtic" path="res://Assets/Logbook/Emotions_Circle/Feelings_FaceJoy.png" id="7_nd7js"]
-[ext_resource type="Texture2D" uid="uid://cmgd2l48te82u" path="res://Assets/Logbook/Species_Circle/Arrow_Ghost_Undead.png" id="8_7ep3u"]
-[ext_resource type="Texture2D" uid="uid://chqbre1jgv8b5" path="res://Assets/Logbook/Species_Circle/Monsters_Ghost.png" id="9_3frxi"]
-[ext_resource type="Texture2D" uid="uid://bjphbevn30fm3" path="res://Assets/Logbook/Species_Circle/Monsters_Undead.png" id="10_si77g"]
+[ext_resource type="Texture2D" uid="uid://d3jsr47tq3fjn" path="res://Assets/Logbook/Elements_Circle/Arrow_Fire_Ice.png" id="5_n6uak"]
+[ext_resource type="Texture2D" uid="uid://bnrayuo8xgyem" path="res://Assets/Logbook/Elements_Circle/Arrow_Fire_Lightning.png" id="6_mpyvp"]
+[ext_resource type="Texture2D" uid="uid://c2r0gj14r0vf4" path="res://Assets/Logbook/Elements_Circle/Arrow_Ice_Earth.png" id="7_f5d01"]
+[ext_resource type="Texture2D" uid="uid://b7da0x1gllne5" path="res://Assets/Logbook/Emotions_Circle/Emotion_FaceFear.png" id="7_lglmw"]
+[ext_resource type="Texture2D" uid="uid://dvmixf4acjtic" path="res://Assets/Logbook/Emotions_Circle/Emotion_FaceJoy.png" id="7_nd7js"]
+[ext_resource type="Texture2D" uid="uid://bk6vfqdhn2eqy" path="res://Assets/Logbook/Species_Circle/Arrow_Ghost_Undead.png" id="8_7ep3u"]
+[ext_resource type="Texture2D" uid="uid://ckl7ywd8d1u82" path="res://Assets/Logbook/Elements_Circle/Arrow_Ice_Water.png" id="8_mwdlx"]
+[ext_resource type="Texture2D" uid="uid://chqbre1jgv8b5" path="res://Assets/Logbook/Species_Circle/Species_Ghost.png" id="9_3frxi"]
+[ext_resource type="Texture2D" uid="uid://bqusnha7nacjk" path="res://Assets/Logbook/Elements_Circle/Arrow_Lightning_Ice.png" id="9_hd6hq"]
+[ext_resource type="Texture2D" uid="uid://corha8t1qt4qc" path="res://Assets/Logbook/Elements_Circle/Arrow_Lightning_Water.png" id="10_p3hc6"]
+[ext_resource type="Texture2D" uid="uid://bjphbevn30fm3" path="res://Assets/Logbook/Species_Circle/Species_Undead.png" id="10_si77g"]
 [ext_resource type="FontFile" uid="uid://b0kyst44lxfdd" path="res://Assets/UI/Font/YoungSerif-Regular.ttf" id="11_7tl7a"]
+[ext_resource type="Texture2D" uid="uid://cmq0d3qig8ymq" path="res://Assets/Logbook/Elements_Circle/Arrow_Water_Earth.png" id="11_lcfaa"]
+[ext_resource type="Texture2D" uid="uid://d3wd0kn0ic5ou" path="res://Assets/Logbook/Elements_Circle/Arrow_Water_Fire.png" id="12_ok2b8"]
+[ext_resource type="Texture2D" uid="uid://da15rk1lr0ikf" path="res://Assets/Logbook/Emotions_Circle/Arrow_Anger_Fear.png" id="13_kc4tc"]
+[ext_resource type="Texture2D" uid="uid://1674cbpirrco" path="res://Assets/Logbook/Elements_Circle/Elements_Fire.png" id="14_yoasu"]
+[ext_resource type="Texture2D" uid="uid://60xaibwwvtcv" path="res://Assets/Logbook/Emotions_Circle/Arrow_Disgust_Anger.png" id="15_n3fc8"]
+[ext_resource type="Texture2D" uid="uid://2t1cg4y8y8dg" path="res://Assets/Logbook/Emotions_Circle/Arrow_Disgust_Fear.png" id="16_7kvo1"]
+[ext_resource type="Texture2D" uid="uid://dcm16i13o4nm7" path="res://Assets/Logbook/Elements_Circle/Elements_Lightning.png" id="16_ukwqn"]
+[ext_resource type="Texture2D" uid="uid://ebexjnxb0m8k" path="res://Assets/Logbook/Emotions_Circle/Arrow_Fear_Joy.png" id="17_1273o"]
+[ext_resource type="Texture2D" uid="uid://bu0dlx8yva2fj" path="res://Assets/Logbook/Elements_Circle/Elements_Water.png" id="17_ar07h"]
+[ext_resource type="Texture2D" uid="uid://dbilmya5tragc" path="res://Assets/Logbook/Emotions_Circle/Arrow_Joy_Anger.png" id="19_lxmje"]
+[ext_resource type="Texture2D" uid="uid://mcghyuq0vujv" path="res://Assets/Logbook/Emotions_Circle/Arrow_Anger_Sadness.png" id="19_w310y"]
+[ext_resource type="Texture2D" uid="uid://8ruapt65f6x7" path="res://Assets/Logbook/Emotions_Circle/Arrow_Joy_Disgust.png" id="20_2vp51"]
+[ext_resource type="Texture2D" uid="uid://cqu2xkkt4cjtp" path="res://Assets/Logbook/Emotions_Circle/Arrow_Fear_Sadness.png" id="23_m6i8a"]
+[ext_resource type="Texture2D" uid="uid://cwnxij4vpd8ml" path="res://Assets/Logbook/Species_Circle/Arrow_Fairy_Ghost.png" id="23_u2y8g"]
+[ext_resource type="Texture2D" uid="uid://ceqgxeaxcp2ww" path="res://Assets/Logbook/Species_Circle/Arrow_Fairy_Undead.png" id="24_ls4e7"]
+[ext_resource type="Texture2D" uid="uid://cfwslcm3mv5ih" path="res://Assets/Logbook/Species_Circle/Arrow_Ghost_Golem.png" id="25_a2xxv"]
+[ext_resource type="Texture2D" uid="uid://v8ffagk1c27p" path="res://Assets/Logbook/Emotions_Circle/Arrow_Sadness_Disgust.png" id="26_n6ylh"]
+[ext_resource type="Texture2D" uid="uid://btn8a5ti42j16" path="res://Assets/Logbook/Emotions_Circle/Arrow_Sadness_Joy.png" id="27_ttif5"]
+[ext_resource type="Texture2D" uid="uid://dv25ooyuf20ta" path="res://Assets/Logbook/Species_Circle/Arrow_Golem_Fairy.png" id="27_uvh0t"]
+[ext_resource type="Texture2D" uid="uid://dhfp504lk2xue" path="res://Assets/Logbook/Species_Circle/Arrow_Golem_Slime.png" id="28_lhs85"]
+[ext_resource type="Texture2D" uid="uid://dw4bhu52y7sxd" path="res://Assets/Logbook/Emotions_Circle/Emotion_FaceAnger.png" id="28_t4wms"]
+[ext_resource type="Texture2D" uid="uid://ddueeoshedynn" path="res://Assets/Logbook/Emotions_Circle/Emotion_FaceDisgust.png" id="29_7kce7"]
+[ext_resource type="Texture2D" uid="uid://csfuihu4kw4bd" path="res://Assets/Logbook/Species_Circle/Arrow_Slime_Fairy.png" id="29_8pgrb"]
+[ext_resource type="Texture2D" uid="uid://b4xagmg6wwv3b" path="res://Assets/Logbook/Species_Circle/Arrow_Slime_Ghost.png" id="30_2plrg"]
+[ext_resource type="Texture2D" uid="uid://damo0kmc8qkmt" path="res://Assets/Logbook/Species_Circle/Arrow_Undead_Golem.png" id="31_fkesm"]
+[ext_resource type="Texture2D" uid="uid://d27ktbu5hy5ar" path="res://Assets/Logbook/Species_Circle/Arrow_Undead_Slime.png" id="32_a8i3k"]
+[ext_resource type="Texture2D" uid="uid://dtf178c75lsky" path="res://Assets/Logbook/Emotions_Circle/Emotion_FaceSadness.png" id="32_dqd4x"]
+[ext_resource type="Texture2D" uid="uid://5ttn0cwk76r3" path="res://Assets/Logbook/Species_Circle/Species_Fairy.png" id="43_ta8nk"]
+[ext_resource type="Texture2D" uid="uid://cbg0bkctctiaj" path="res://Assets/Logbook/Species_Circle/Species_Golem.png" id="45_cjeom"]
+[ext_resource type="Texture2D" uid="uid://duymg725svb8e" path="res://Assets/Logbook/Species_Circle/Species_Slime.png" id="46_0u14d"]
 
-[node name="LogbookScene" type="Node2D" node_paths=PackedStringArray("logbookTextLabel")]
+[node name="LogbookScene" type="Node2D" node_paths=PackedStringArray("logbookTextLabel", "arrowsParentNodes")]
 script = ExtResource("1_p0p5x")
 logbookTextLabel = NodePath("CombatLogs/ScrollContainer/Control/RichTextLabel")
+arrowsParentNodes = [NodePath("ElementsHints"), NodePath("EmotionHints"), NodePath("SpeciesHints")]
 
 [node name="BackgroundBook" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_sq2lq")
 
 [node name="ElementsHints" type="Node2D" parent="."]
-position = Vector2(336, 258)
+position = Vector2(490, 347)
+scale = Vector2(0.7, 0.7)
+
+[node name="ArrowEarthFire" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("3_li3gw")
+
+[node name="ArrowEarthLightning" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("4_txin3")
+
+[node name="ArrowFireIce" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("5_n6uak")
+
+[node name="ArrowFireLightning" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("6_mpyvp")
+
+[node name="ArrowIceEarth" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("7_f5d01")
+
+[node name="ArrowIceWater" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("8_mwdlx")
+
+[node name="ArrowLightningIce" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("9_hd6hq")
+
+[node name="ArrowLightningWater" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("10_p3hc6")
+
+[node name="ArrowWaterEarth" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("11_lcfaa")
+
+[node name="ArrowWaterFire" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("12_ok2b8")
 
 [node name="ElementsEarth" type="Sprite2D" parent="ElementsHints"]
-position = Vector2(28, -19)
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_4m5sg")
 
-[node name="ArrowLigthingIce" type="Sprite2D" parent="ElementsHints"]
-position = Vector2(100, -32)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_mkc88")
+[node name="ElementsFire" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("14_yoasu")
 
 [node name="ElementsIce" type="Sprite2D" parent="ElementsHints"]
-position = Vector2(159, 20)
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_wp43g")
 
+[node name="ElementsLightning" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("16_ukwqn")
+
+[node name="ElementsWater" type="Sprite2D" parent="ElementsHints"]
+texture = ExtResource("17_ar07h")
+
 [node name="EmotionHints" type="Node2D" parent="."]
-position = Vector2(336, 425)
+position = Vector2(745, 597)
+scale = Vector2(0.7, 0.7)
+
+[node name="ArrowAngerFear" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("13_kc4tc")
+
+[node name="ArrowAngerSadness" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("19_w310y")
+
+[node name="ArrowDisgustAnger" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("15_n3fc8")
+
+[node name="ArrowDisgustFear" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("16_7kvo1")
 
 [node name="ArrowFearJoy" type="Sprite2D" parent="EmotionHints"]
-position = Vector2(190, 39)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_1jdee")
+texture = ExtResource("17_1273o")
 
-[node name="FeelingsFaceJoy" type="Sprite2D" parent="EmotionHints"]
-position = Vector2(90, 25)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_nd7js")
+[node name="ArrowFearSadness" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("23_m6i8a")
 
-[node name="FeelingsFaceFear" type="Sprite2D" parent="EmotionHints"]
-position = Vector2(280, 102)
-scale = Vector2(0.25, 0.25)
+[node name="ArrowJoyAnger" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("19_lxmje")
+
+[node name="ArrowJoyDisgust" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("20_2vp51")
+
+[node name="ArrowSadnessDisgust" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("26_n6ylh")
+
+[node name="ArrowSadnessJoy" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("27_ttif5")
+
+[node name="EmotionFaceAnger" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("28_t4wms")
+
+[node name="EmotionFaceDisgust" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("29_7kce7")
+
+[node name="EmotionFaceFear" type="Sprite2D" parent="EmotionHints"]
 texture = ExtResource("7_lglmw")
 
+[node name="EmotionFaceJoy" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("7_nd7js")
+
+[node name="EmotionFaceSadness" type="Sprite2D" parent="EmotionHints"]
+texture = ExtResource("32_dqd4x")
+
 [node name="SpeciesHints" type="Node2D" parent="."]
-position = Vector2(336, 644)
+position = Vector2(378, 740)
+scale = Vector2(0.7, 0.7)
+
+[node name="ArrowFairyGhost" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("23_u2y8g")
+
+[node name="ArrowFairyUndead" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("24_ls4e7")
+
+[node name="ArrowGhostGolem" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("25_a2xxv")
 
 [node name="ArrowGhostUndead" type="Sprite2D" parent="SpeciesHints"]
-position = Vector2(105, 138)
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_7ep3u")
 
-[node name="MonstersGhost" type="Sprite2D" parent="SpeciesHints"]
-position = Vector2(41, 228)
-scale = Vector2(0.25, 0.25)
+[node name="ArrowGolemFairy" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("27_uvh0t")
+
+[node name="ArrowGolemSlime" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("28_lhs85")
+
+[node name="ArrowSlimeFairy" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("29_8pgrb")
+
+[node name="ArrowSlimeGhost" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("30_2plrg")
+
+[node name="ArrowUndeadGolem" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("31_fkesm")
+
+[node name="ArrowUndeadSlime" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("32_a8i3k")
+
+[node name="SpeciesFairy" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("43_ta8nk")
+
+[node name="SpeciesGhost" type="Sprite2D" parent="SpeciesHints"]
 texture = ExtResource("9_3frxi")
 
-[node name="MonstersUndead" type="Sprite2D" parent="SpeciesHints"]
-position = Vector2(92, 38)
-scale = Vector2(0.25, 0.25)
+[node name="SpeciesGolem" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("45_cjeom")
+
+[node name="SpeciesSlime" type="Sprite2D" parent="SpeciesHints"]
+texture = ExtResource("46_0u14d")
+
+[node name="SpeciesUndead" type="Sprite2D" parent="SpeciesHints"]
 texture = ExtResource("10_si77g")
 
 [node name="CombatLogs" type="Control" parent="."]

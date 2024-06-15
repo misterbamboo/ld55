@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://begsfpaffyqui"]
+
+[ext_resource type="Script" path="res://Scenes/TutorialScreen/TutorialScene.cs" id="1_plyfv"]
+[ext_resource type="Texture2D" uid="uid://dx0woljpyp2d4" path="res://Scenes/TutorialScreen/Background_Tutorial_PNG.png" id="1_u7dyr"]
+[ext_resource type="Texture2D" uid="uid://ilv6nq2g7w7e" path="res://Scenes/TutorialScreen/BG_Tutoriel.png" id="2_ebrwo"]
+
+[node name="TutorialScene" type="Node2D" node_paths=PackedStringArray("card")]
+script = ExtResource("1_plyfv")
+card = NodePath("Card")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_ebrwo")
+
+[node name="Card" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_u7dyr")

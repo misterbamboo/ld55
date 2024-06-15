@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6t72e1ex3nnl"
-path="res://.godot/imported/Arrow_fear_Sadness.png-d140d5e09cd6a818a162fa2f6aa2859e.ctex"
+uid="uid://cqu2xkkt4cjtp"
+path="res://.godot/imported/Arrow_Fear_Sadness.png-e2f8c6347b8c662bfb917405d5b3efd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Logbook/Emotions_Circle/Arrow_fear_Sadness.png"
-dest_files=["res://.godot/imported/Arrow_fear_Sadness.png-d140d5e09cd6a818a162fa2f6aa2859e.ctex"]
+source_file="res://Assets/Logbook/Emotions_Circle/Arrow_Fear_Sadness.png"
+dest_files=["res://.godot/imported/Arrow_Fear_Sadness.png-e2f8c6347b8c662bfb917405d5b3efd8.ctex"]
 
 [params]
 

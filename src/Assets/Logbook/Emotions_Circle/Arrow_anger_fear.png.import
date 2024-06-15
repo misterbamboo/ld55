@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqjpjlkudow6s"
-path="res://.godot/imported/Arrow_anger_fear.png-ed308680f2566b1b7be4b618f0523bb7.ctex"
+uid="uid://da15rk1lr0ikf"
+path="res://.godot/imported/Arrow_Anger_Fear.png-e739ae3837cc3bd9ab5b5cc016a45304.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Logbook/Emotions_Circle/Arrow_anger_fear.png"
-dest_files=["res://.godot/imported/Arrow_anger_fear.png-ed308680f2566b1b7be4b618f0523bb7.ctex"]
+source_file="res://Assets/Logbook/Emotions_Circle/Arrow_Anger_Fear.png"
+dest_files=["res://.godot/imported/Arrow_Anger_Fear.png-e739ae3837cc3bd9ab5b5cc016a45304.ctex"]
 
 [params]
 

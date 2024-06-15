@@ -70,17 +70,17 @@ font_size = 350
 [sub_resource type="LabelSettings" id="LabelSettings_q6jea"]
 font_size = 52
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ratgm"]
-texture = ExtResource("54_4ewff")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ih6w5"]
 texture = ExtResource("55_20cv5")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xaku6"]
-texture = ExtResource("56_u3psu")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ratgm"]
+texture = ExtResource("54_4ewff")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4d5x"]
 texture = ExtResource("57_s7i8i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xaku6"]
+texture = ExtResource("56_u3psu")
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -171,8 +171,8 @@ offset_right = 1181.0
 offset_bottom = 677.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 128
-theme_override_styles/normal = SubResource("StyleBoxTexture_ratgm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ih6w5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ratgm")
 text = "Start"
 
 [node name="CreditButton" type="Button" parent="."]
@@ -183,8 +183,8 @@ offset_right = 1181.0
 offset_bottom = 873.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j4d5x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="."]
@@ -195,8 +195,8 @@ offset_right = 1093.0
 offset_bottom = 1033.0
 theme_override_fonts/font = ExtResource("52_v3n4b")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j4d5x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xaku6")
 text = "Quit"
 
 [node name="Monster2" type="Node2D" parent="."]
